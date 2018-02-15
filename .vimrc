@@ -1,4 +1,6 @@
 "       .vimrc  (sudo apt-get install vim)
+"	.vimrc	1.0.5	2018-02-15_10:51:02_CST uadmin four-rpi3b.cptx86.com  
+"	   Inital commit of basic .vimrc settings 
 
 "       activates filetype detection
 "          plugin - plugin file is loaded (if there is one for the detected
@@ -26,4 +28,5 @@
 " set hidden
 "       just hit backspace without this one and see for yourself
 " set backspace=indent,eol,start
-~                                  
+
+
