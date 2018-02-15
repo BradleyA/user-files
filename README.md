@@ -20,8 +20,6 @@ To install, change directory to the location you want to download. Use git to pu
 
 .vimrc
 
-ile 
-
 #### System OS script tested
  * Ubuntu 14.04.3 LTS
  * Ubuntu 16.04.3 LTS (armv7l)
