@@ -1,6 +1,7 @@
 # user-work-files
 General user files for new systems
-# markit
+
+#### WARNING: These instructions are incomplete. Consider them as notes quickly drafted on a napkin rather than proper documentation!
 
 ## Install
 
