@@ -10,14 +10,17 @@ To install, change directory to the location you want to download. Use git to pu
     git clone https://github.com/BradleyA/user-work-files.git
     cd user-work-files
 
-## Usage
+## Files
 
-u
+.bashrc
 
-    file 
+.gitignore
 
-## Output
-    $ 
+.profile
+
+.vimrc
+
+ile 
 
 #### System OS script tested
  * Ubuntu 14.04.3 LTS
