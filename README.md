@@ -1,5 +1,5 @@
 # user-work-files
-General user files for new systems
+General user files when moving to new systems
 
 #### WARNING: These instructions are incomplete. Consider them as notes quickly drafted on a napkin rather than proper documentation!
 
