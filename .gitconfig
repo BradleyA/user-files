@@ -1,0 +1,16 @@
+#
+#	.gitconfig	1.0.13	2018-02-19_13:51:41_CST uadmin six-rpi3b.cptx86.com 1.0-7-g15108a2 
+#	   added .bash_aliases & .gitconfig 
+#
+[user]
+        name = BradleyA
+	email = allen.bradley@ymail.com
+[core]
+        editor = vi
+[push]
+        default = simple
+[credential]
+	helper = cache --timeout=1800
+
+[alias]
+	changed = show --pretty=\"format:\" --name-only
