@@ -1,11 +1,9 @@
 # user-work-files
 General user files when moving to new systems
 
-#### WARNING: These instructions are incomplete. Consider them as notes quickly drafted on a napkin rather than proper documentation!
-
 ## Install
 
-To install, change directory to the location you want to download. Use git to pull or clone this script into the directory. If you do not have Git then enter; "sudo apt-get install git". On the GitHub page of this script use the "HTTPS clone URL" with the 'git clone' command.
+To install, change to the location you want to download. Use git to pull or clone these files into the directory. If you do not have Git then enter; "sudo apt-get install git". On the GitHub page of this script use the "HTTPS clone URL" with the 'git clone' command.
 
     git clone https://github.com/BradleyA/user-work-files.git
     cd user-work-files
@@ -19,6 +17,10 @@ To install, change directory to the location you want to download. Use git to pu
 .profile
 
 .vimrc
+
+.bash_aliases
+
+.gitconfig
 
 #### System OS script tested
  * Ubuntu 14.04.3 LTS
