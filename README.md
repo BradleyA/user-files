@@ -1,11 +1,12 @@
 # user-work-files
 General user files when moving to a new system.
 
-## Install one File
+## Install a File
 
 To download the latest commit of one of these files, for example .gitignore, change to the location you want to download.
 
-    curl -L https://api.github.com/repos/BradleyA/user-work-files/tarball | tar -xzf - --wildcards BradleyA-user-work-files-*/.gitignore ; mv BradleyA-user-work-files-*/.gitignore . ; rmdir BradleyA-user-work-files-*/
+    SUPPORT_FILE=.gitignore
+    curl -L https://api.github.com/repos/BradleyA/user-work-files/tarball | tar -xzf - --wildcards BradleyA-user-work-files-*/$SUPPORT_FILE ; mv BradleyA-user-work-files-*/$SUPPORT_FILE . ; rmdir BradleyA-user-work-files-*/
 
 ## Clone
 
