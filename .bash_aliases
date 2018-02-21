@@ -1,7 +1,6 @@
-#
-#	.bash_aliases	1.0.13	2018-02-19_13:51:41_CST uadmin six-rpi3b.cptx86.com 1.0-7-g15108a2 
-#	   added .bash_aliases & .gitconfig 
-#
+
+#	.bash_aliases	1.1.19	2018-02-20_19:42:38_CST uadmin six-rpi3b.cptx86.com 1.0-13-g6d5681d 
+#	   create gitlog alias in .bash_aliases 
 #	git config --global --list
 # GitHub download examples:
 #	curl -L https://api.github.com/repos/BradleyA/markit/tarball | tar -xzf - --wildcards */markit ; mv BradleyA*/markit . ; rmdir BradleyA*/
@@ -49,6 +48,8 @@
 #	alias glgga='git log --graph --decorate --all'
 #	alias glo='git log --oneline --decorate --color'
 #	alias glog='git log --oneline --decorate --color --graph'
+alias gitlog='git log --graph --decorate --oneline --color --stat'
+#
 #	alias gss='git status -s'
 #	alias ga='git add'
 #	alias gm='git merge'
