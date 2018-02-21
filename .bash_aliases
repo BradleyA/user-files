@@ -1,4 +1,6 @@
-
+###
+#	.bash_aliases	1.1.20	2018-02-20_19:45:09_CST uadmin six-rpi3b.cptx86.com 1.1 
+#	   typo 
 #	.bash_aliases	1.1.19	2018-02-20_19:42:38_CST uadmin six-rpi3b.cptx86.com 1.0-13-g6d5681d 
 #	   create gitlog alias in .bash_aliases 
 #	git config --global --list
