@@ -1,0 +1,12 @@
+.bzrignore
+.chefignore
+.cvsignore
+.dockerignore
+.gitignore
+.hgignore
+LICENSE
+*.log
+Makefile
+.p4ignore
+README.md
+VERSION
