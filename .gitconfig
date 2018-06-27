@@ -1,4 +1,6 @@
 #
+#	.gitconfig  1.2.22  2018-06-26_20:15:55_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  five-rpi3b.cptx86.com 1.1-2-gf106a7b  
+#	   added username to .gitconfig 
 #	.gitconfig	1.0.13	2018-02-19_13:51:41_CST uadmin six-rpi3b.cptx86.com 1.0-7-g15108a2 
 #	   added .bash_aliases & .gitconfig 
 #
@@ -11,6 +13,7 @@
         default = simple
 [credential]
 	helper = cache --timeout=1800
-
+        username = BradleyA
+#	username = cptx86
 [alias]
 	changed = show --pretty=\"format:\" --name-only
