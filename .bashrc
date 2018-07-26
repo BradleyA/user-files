@@ -1,4 +1,6 @@
 #
+#	.bashrc  1.4.24  2018-07-25_20:24:59_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  three-rpi3b.cptx86.com 1.3  
+#	   add VISUAL=/usr/bin/vi to .bahrc to help with crontab editor for uadmin 
 #	.bashrc	1.0.8	2018-02-15_11:02:45_CST uadmin four-rpi3b.cptx86.com 1.0-2-g5586028 
 #	   Inital commit of basic .bashrc settings 
 # ~/.bashrc: executed by bash(1) for non-login shells.
@@ -17,6 +19,8 @@ export DOCKER_CERT_PATH=$HOME/.docker
 #       Docker Private Registry Host and Port
 export REGISTRY_HOST=two.cptx86.com
 export REGISTRY_PORT=17313
+####    Other environment variables
+export VISUAL=/usr/bin/vi
 
 # If not running interactively, don't do anything
 case $- in
