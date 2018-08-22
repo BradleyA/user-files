@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	find-code.sh  1.6.27  2018-08-22_10:18:08_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 1.5  
+# 	   ready to begin testing design 
 # 	find-code.sh  1.5.26  2018-08-22_09:57:26_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 1.4-1-g0130c6e  
 # 	   design script to check remote & local systems for clones from remote repositories 
 ###
@@ -10,15 +12,15 @@ BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
 ###
 display_help() {
-echo -e "\n${NORMAL}${0} - "
-echo -e "\nUSAGE\n   ${0} "
+echo -e "\n${NORMAL}${0} - Search systems from clones from repositories"
+echo -e "\nUSAGE\n   ${0} [<path>/<HOSTFILE>]"
 echo    "   ${0} [--help | -help | help | -h | h | -? | ?]"
 echo    "   ${0} [--version | -version | -v]"
-echo -e "\nDESCRIPTION\n"
+echo -e "\nDESCRIPTION\nThis script runs a command xxxxx ->"
 echo    "xxx"
 echo -e "\nOPTIONS\n"
-echo    "   yyy       xxxx"
-echo -e "\nDOCUMENTATION\n"
+echo    "   HOSTFILE   File with hostnames, default /usr/local/data/us-tx-cluster-1/SYSTEMS"
+echo -e "\nDOCUMENTATION\nhttps://github.com/BradleyA/user-work-files"
 echo -e "\nEXAMPLES\n   ${0}\n\n   what does it do\n"
 if ! [ "${LANG}" == "en_US.UTF-8" ] ; then
 	echo -e "${NORMAL}${0} ${LINENO} [${BOLD}WARNING${NORMAL}]:	Your language, ${LANG}, is not supported.\n\tWould you like to help?\n"	1>&2
@@ -33,8 +35,25 @@ if [ "$1" == "--version" ] || [ "$1" == "-version" ] || [ "$1" == "version" ] ||
 	exit 0
 fi
 ###
-if [ "${DEBUG}" == "1" ] ; then echo -e "> DEBUG ${LINENO}  >${0}<  >${1}<" 1>&2 ; fi
-#	
+HOSTFILE=${1:-"/usr/local/data/us-tx-cluster-1/SYSTEMS"}
+LOCALHOST=`hostname -f`
+REMOTECOMMAND="find /home/uadmin -type d \( -name 'git*' -o -name 'bitbucket' \)  -print"
+#
+if [ "${DEBUG}" == "1" ] ; then echo -e "> DEBUG ${LINENO}  LOCALHOST >${LOCALHOST}<  HOSTFILE >${HOSTFILE}<" 1>&2 ; fi
+#       Check for ${HOSTFILE} file
+if [ ! -e ${HOSTFILE} ] ; then
+        echo -e "${0} ${LINENO} [WARN]:        ${HOSTFILE} NOT found"   1>&2
+        exit 0
+fi
+REMOTEHOST=`grep -v "#" ${HOSTFILE}`
+for NODE in ${REMOTEHOST} ; do
+        echo -e "\n${BOLD}  -->  ${NODE}${NORMAL}       ->${REMOTECOMMAND}<-" 
+        if [ "${LOCALHOST}" != "${NODE}" ] ; then
+                ssh -t ${USER}@${NODE} ${REMOTECOMMAND}
+        else
+                eval ${REMOTECOMMAND}
+        fi
+done
 #
 echo -e "${NORMAL}\n${0} ${LINENO} [${BOLD}INFO${NORMAL}]:	Done.\n"	1>&2
 ###
