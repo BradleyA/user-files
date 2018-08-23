@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	find-code.sh  1.7.28  2018-08-22_20:42:43_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 1.6  
+# 	   change find command 
 # 	find-code.sh  1.6.27  2018-08-22_10:18:08_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 1.5  
 # 	   ready to begin testing design 
 # 	find-code.sh  1.5.26  2018-08-22_09:57:26_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 1.4-1-g0130c6e  
@@ -37,7 +39,8 @@ fi
 ###
 HOSTFILE=${1:-"/usr/local/data/us-tx-cluster-1/SYSTEMS"}
 LOCALHOST=`hostname -f`
-REMOTECOMMAND="find /home/uadmin -type d \( -name 'git*' -o -name 'bitbucket' \)  -print"
+#	REMOTECOMMAND="find /home/uadmin -type d \( -name 'git*' -o -name 'bitbucket' \)  -print"
+REMOTECOMMAND="find ~/.. -type d -execdir test -d '.git' \; -print -prune"
 #
 if [ "${DEBUG}" == "1" ] ; then echo -e "> DEBUG ${LINENO}  LOCALHOST >${LOCALHOST}<  HOSTFILE >${HOSTFILE}<" 1>&2 ; fi
 #       Check for ${HOSTFILE} file
