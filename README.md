@@ -17,7 +17,13 @@ To download the latest commit of one of these files, for example .gitignore, cha
 
 ## Files
 
+.bash_aliases
+
 .bashrc
+
+.dockerignore
+
+.gitconfig
 
 .gitignore
 
@@ -25,9 +31,9 @@ To download the latest commit of one of these files, for example .gitignore, cha
 
 .vimrc
 
-.bash_aliases
+./ssh/config
 
-.gitconfig
+./bin/
 
 #### System OS script tested
  * Ubuntu 14.04.3   LTS
