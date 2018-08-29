@@ -35,7 +35,7 @@ To download the latest commit of one of these files, for example .gitignore, cha
 
 ./bin/find-code.sh
 
-./template/tamplate.py
+./template/template.py
 
 ./template/template.sh
 
