@@ -1,19 +1,19 @@
 # user-work-files
 General user files when moving to a new system.
 
-## Install a File
-
-To download the latest commit of one of these files, for example .gitignore, change to the location you want to download.
-
-    FILEX=.gitignore
-    curl -L https://api.github.com/repos/BradleyA/user-work-files/tarball | tar -xzf - --wildcards BradleyA-user-work-files-*/$FILEX ; mv BradleyA-user-work-files-*/$FILEX . ; rmdir BradleyA-user-work-files-*/
-
 ## Clone
 
 To clone, change to the location you want to download. Use git to pull or clone these files into the directory. If you do not have Git then enter; "sudo apt-get install git". On the GitHub page of this script use the "HTTPS clone URL" with the 'git clone' command.
 
     git clone https://github.com/BradleyA/user-work-files.git
     cd user-work-files
+
+## Install a File
+
+To download the latest commit of one of these files, for example .gitignore, change to the location you want to download.
+
+    FILEX=.gitignore
+    curl -L https://api.github.com/repos/BradleyA/user-work-files/tarball | tar -xzf - --wildcards BradleyA-user-work-files-*/$FILEX ; mv BradleyA-user-work-files-*/$FILEX . ; rmdir BradleyA-user-work-files-*/
 
 ## Files
 
