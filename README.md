@@ -33,7 +33,11 @@ To download the latest commit of one of these files, for example .gitignore, cha
 
 ./ssh/config
 
-./bin/
+./bin/find-code.sh
+
+./template/tamplate.py
+
+./template/template.sh
 
 #### System OS script tested
  * Ubuntu 14.04.3   LTS
