@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# 	template.py  2.04.38  2018-08-31_22:19:21_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.03  
+# 	   test display_help 
 # 	template.py  2.03.37  2018-08-31_22:00:17_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.02  
 # 	   move --version to a different line from --help 
 # 	template.py  2.02.36  2018-08-29_15:10:02_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.01-2-gaa4ae32  
@@ -16,9 +18,9 @@ class color:
 def display_help():
    LANGUAGE = os.getenv("LANG")
    print "\n", __file__, "- <one line description>"
-   print "\nUSAGE\n  ", __file__, "[xxx | yyy | zzz]"
-   print "  ", __file__, "[--help | -help | help | -h | h | -? | ?]"
-   print "  ", __file__, "[--version | -version | -v]"
+   print "\nUSAGE\n   ", __file__, "[xxx | yyy | zzz]"
+   print "   ", __file__, "[--help | -help | help | -h | h | -? | ?]"
+   print "   ", __file__, "[--version | -version | -v]"
    print "\nDESCRIPTION\n<<your help output goes here>>"
    print "\nOPTIONS\n   <<your options go here>>"
    print "\nDOCUMENTATION\n   <<URL to GITHUB README>>"
