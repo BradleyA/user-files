@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# 	template.py  2.07.41  2018-09-02_12:23:34_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 2.06  
+# 	   typo 
 # 	template.py  2.06.40  2018-09-02_11:09:24_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 2.05  
 # 	   changed print statements to python 3 
 # 	template.py  2.05.39  2018-09-01_23:42:46_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.04  
@@ -47,7 +49,6 @@ if no_arguments == 2 :
          line2 = f.readline()
          line2 = line2.split()
          print ("{} {}".format(line2[1], line2[2]))
-
       sys.exit()
 #       Check argument 1 for non-default ______
 if no_arguments == 2 :
