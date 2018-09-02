@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template.sh  2.05.39  2018-09-01_23:42:46_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.04  
+# 	   display-help, comments, setup example with correct date-stamp 
 # 	template.sh  2.01.33  2018-08-29_15:02:34_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 1.8-3-gf319f0f  
 # 	   first pass at sh template 
 ###
@@ -23,8 +25,8 @@ echo    "   XX       xxx xxxxxxx xxx"
 echo    "   YY       xxx xxxxx xxx "
 echo    "   zz       xx xxxxxxx xx"
 echo -e "\nDOCUMENTATION\n   https://github.com/BradleyA/REPOSITORY"
-echo -e "\nEXAMPLES\n   ${0}\n\n   description\n"
-echo -e "   ${0} xxx\n\n   description\n"
+echo -e "\nEXAMPLES\n   <<your code examples description goes here>>\n\n${0} <<code example goes here>>\n"
+#
 if ! [ "${LANG}" == "en_US.UTF-8" ] ; then
 	echo -e "${NORMAL}${0} ${LINENO} [${BOLD}WARNING${NORMAL}]:	Your language, ${LANG}, is not supported.\n\tWould you like to help?\n"	1>&2
 fi
@@ -40,7 +42,7 @@ fi
 ###
 OPTION1=${1:-default_value1}
 OPTION2=${2:-default_value2}
-TIME_STAMP=`date +%Y-%m-%d_%H:%M:%S_%Z`
+TIME_STAMP=`date +%Y-%m-%d-%H-%M-%S-%Z`
 ###
 if [ "${DEBUG}" == "1" ] ; then echo -e "> DEBUG ${LINENO} Name_of_command >${0}< Name_of_arg1 >${1}<" 1>&2 ; fi
 #
