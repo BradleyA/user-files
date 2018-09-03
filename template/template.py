@@ -1,12 +1,8 @@
 #!/usr/bin/env python
-# 	template.py  2.07.41  2018-09-02_12:23:34_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 2.06  
-# 	   typo 
-# 	template.py  2.06.40  2018-09-02_11:09:24_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 2.05  
-# 	   changed print statements to python 3 
+# 	template.py  2.08.42  2018-09-03_11:38:29_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 2.07  
+# 	   correct print statment for python 3 
 # 	template.py  2.05.39  2018-09-01_23:42:46_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.04  
 # 	   display-help, comments, setup example with correct date-stamp 
-# 	template.py  2.04.38  2018-08-31_22:19:21_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.03  
-# 	   test display_help 
 ###
 import subprocess
 import sys
@@ -78,7 +74,7 @@ print ("Argument List: {}".format(str(sys.argv)))
 print ("command = {}".format(sys.argv[0]))
 #	print date 2018-09-01-17-08-42-CDT
 print ("\nprint date 2018-09-01-17-08-42-CDT")
-print ("{}".format(time.strftime("%Y-%m-%d-%H-%M-%S-%Z")))
+print (time.strftime("%Y-%m-%d-%H-%M-%S-%Z"))
 TIME_STAMP = time.strftime("%Y-%m-%d-%H-%M-%S-%Z")
 print ("TIME_STAMP = {}".format(TIME_STAMP))
 ###
