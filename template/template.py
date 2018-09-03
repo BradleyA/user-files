@@ -1,9 +1,13 @@
 #!/usr/bin/env python
+# 	template.py  2.09.43  2018-09-03_18:59:20_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 2.08  
+# 	   add DEBUG 
 # 	template.py  2.08.42  2018-09-03_11:38:29_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 2.07  
 # 	   correct print statment for python 3 
 # 	template.py  2.05.39  2018-09-01_23:42:46_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.04  
 # 	   display-help, comments, setup example with correct date-stamp 
 ###
+DEBUG = 0       # 0 = debug off, 1 = debug on
+#
 import subprocess
 import sys
 import time
@@ -46,6 +50,8 @@ if no_arguments == 2 :
          line2 = line2.split()
          print ("{} {}".format(line2[1], line2[2]))
       sys.exit()
+#
+if DEBUG == 1 : print ("> DEBUG {} Name_of_command >{}<".format(get_line_no(),__file__))
 #       Check argument 1 for non-default ______
 if no_arguments == 2 :
    LINE_ARG1 = sys.argv[1]
