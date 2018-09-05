@@ -13,7 +13,7 @@ To clone, change to the location you want to download. Use git to pull or clone 
 To download the latest commit of one of these files, for example .gitignore, change to the location you want to download.
 
     FILEX=.gitignore
-    curl -L https://api.github.com/repos/BradleyA/user-work-files/tarball | tar -xzf - --wildcards BradleyA-user-work-files-*/$FILEX ; mv BradleyA-user-work-files-*/$FILEX . ; rmdir BradleyA-user-work-files-*/
+    curl -L https://api.github.com/repos/BradleyA/user-work-files/tarball | tar -xzf - --wildcards BradleyA-user-work-files-*/$FILEX ; mv BradleyA-user-work-files-*/$FILEX . ; rm -r BradleyA-user-work-files-*/
 
 ## Files
 
