@@ -30,15 +30,15 @@ def display_help():
    print ("\nDOCUMENTATION\n   <<URL to GITHUB README>>")
    print ("\nEXAMPLES\n   <<your code examples description goes here>>")
    print ("   {} <<code example goes here>>\n".format(__file__))
-#       After displaying help in english check for other languages
+#  After displaying help in english check for other languages
    if LANGUAGE != "en_US.UTF-8" :
       print ("{}{} {} {}[WARNING]{} Your language, {} is not supported, Would you like to help?".format(color.END,__file__,get_line_no(),color.BOLD,color.END,LANGUAGE))
    return
 #	line number function
 from inspect import currentframe
 def get_line_no():
-    cf = currentframe()
-    return cf.f_back.f_lineno
+   cf = currentframe()
+   return cf.f_back.f_lineno
 #	default help and version arguments
 no_arguments =  int(len(sys.argv))
 if no_arguments == 2 :
@@ -54,7 +54,7 @@ if no_arguments == 2 :
       sys.exit()
 #
 if DEBUG == 1 : print (">{} DEBUG{} {}  Name_of_command >{}<".format(color.BOLD,color.END,get_line_no(),__file__))
-#       Check argument 1 for non-default ______
+#  Check argument 1 for non-default ______
 if no_arguments == 2 :
    LINE_ARG1 = sys.argv[1]
    print ("\n{}{} {} {}[INFO]{} Using MESSAGE file {}".format(color.END,__file__,get_line_no(),color.BOLD,color.END,LINE_ARG1))
@@ -62,7 +62,7 @@ else :
 #	set default MESSAGE file with path
    LINE_ARG1 = "/usr/local/data/us-tx-cluster-1/MESSAGE"
    print ("\n{}{} {} {}[INFO]{} Using MESSAGE file {}".format(color.END,__file__,get_line_no(),color.BOLD,color.END,LINE_ARG1))
-#       Check argument 2 for non-default SSHPORT number
+#  Check argument 2 for non-default SSHPORT number
 if no_arguments == 3 :
    SSHPORT = sys.argv[2]
    print ("\n{}{} {} {}[INFO]{} Using PORT number {}".format(color.END,__file__,get_line_no(),color.BOLD,color.END,SSHPORT))
