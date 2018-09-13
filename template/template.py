@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# 	template/template.py  2.13.51  2018-09-12_21:46:19_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.12-2-g6408ce0  
+# 	   correct smapling in template.py 
 # 	template.py  2.10.44  2018-09-03_19:09:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 2.09  
 # 	   deGUB statement changes 
 # 	template.py  2.09.43  2018-09-03_18:59:20_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 2.08  
@@ -34,12 +36,12 @@ def display_help():
    if LANGUAGE != "en_US.UTF-8" :
       print ("{}{} {} {}[WARNING]{} Your language, {} is not supported, Would you like to help?".format(color.END,__file__,get_line_no(),color.BOLD,color.END,LANGUAGE))
    return
-#	line number function
+#  Line number function
 from inspect import currentframe
 def get_line_no():
    cf = currentframe()
    return cf.f_back.f_lineno
-#	default help and version arguments
+#  Default help and version arguments
 no_arguments =  int(len(sys.argv))
 if no_arguments == 2 :
    if sys.argv[1] == '--help' or sys.argv[1] == '-help' or sys.argv[1] == 'help' or sys.argv[1] == '-h' or sys.argv[1] == 'h' or sys.argv[1] == '-?' or sys.argv[1] == '?' :
@@ -52,35 +54,34 @@ if no_arguments == 2 :
          line2 = line2.split()
          print ("{} {}".format(line2[1], line2[2]))
       sys.exit()
-#
+#  DEBUG example
 if DEBUG == 1 : print (">{} DEBUG{} {}  Name_of_command >{}<".format(color.BOLD,color.END,get_line_no(),__file__))
 #  Check argument 1 for non-default ______
 if no_arguments == 2 :
    LINE_ARG1 = sys.argv[1]
    print ("\n{}{} {} {}[INFO]{} Using MESSAGE file {}".format(color.END,__file__,get_line_no(),color.BOLD,color.END,LINE_ARG1))
 else :
-#	set default MESSAGE file with path
+#  Set default MESSAGE file with path example
    LINE_ARG1 = "/usr/local/data/us-tx-cluster-1/MESSAGE"
    print ("\n{}{} {} {}[INFO]{} Using MESSAGE file {}".format(color.END,__file__,get_line_no(),color.BOLD,color.END,LINE_ARG1))
-#  Check argument 2 for non-default SSHPORT number
+#  Check argument 2 for non-default SSHPORT number example
 if no_arguments == 3 :
    SSHPORT = sys.argv[2]
    print ("\n{}{} {} {}[INFO]{} Using PORT number {}".format(color.END,__file__,get_line_no(),color.BOLD,color.END,SSHPORT))
-#		
-#	echo -e "${NORMAL}${0} ${LINENO} [${BOLD}ERROR${NORMAL}]: ${USER} does NOT have write permission\n\tin local Git repository directory `pwd`"      1>&2
+#  ERROR example		
 print ("\n{}{} {} {}[ERROR]{} USER don't do that!".format(color.END,__file__,get_line_no(),color.BOLD,color.END))
-#	
+#  Examples	
 print ("\ncommand with path = {}".format(__file__))
 print ("module = {}".format(__name__))
 print ("name = {}".format(__name__))
-#	
+#  Examples
 from os import getcwd
 print ("pwd = {}".format(getcwd()))
-#	
+#  Examples
 print ("\nNumber of arguments: {} arguments.".format(len(sys.argv)))
 print ("Argument List: {}".format(str(sys.argv)))
 print ("command = {}".format(sys.argv[0]))
-#	print date 2018-09-01-17-08-42-CDT
+#  Example date time
 print ("\nprint date 2018-09-01-17-08-42-CDT")
 print (time.strftime("%Y-%m-%d-%H-%M-%S-%Z"))
 TIME_STAMP = time.strftime("%Y-%m-%d-%H-%M-%S-%Z")

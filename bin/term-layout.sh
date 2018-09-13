@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	bin/term-layout.sh  2.13.51  2018-09-12_21:46:19_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.12-2-g6408ce0  
+# 	   correct smapling in template.py 
 # 	term-layout.sh  2.12.48  2018-09-12_20:06:09_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.11  
 # 	   added my perferred terminal window size and layout for screen one 
 ###
