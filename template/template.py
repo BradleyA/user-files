@@ -1,12 +1,8 @@
 #!/usr/bin/env python
+# 	template.py  2.14.52  2018-09-15_09:36:54_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.13  
+# 	   formating changes 
 # 	template/template.py  2.13.51  2018-09-12_21:46:19_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.12-2-g6408ce0  
 # 	   correct smapling in template.py 
-# 	template.py  2.10.44  2018-09-03_19:09:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 2.09  
-# 	   deGUB statement changes 
-# 	template.py  2.09.43  2018-09-03_18:59:20_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 2.08  
-# 	   add DEBUG 
-# 	template.py  2.08.42  2018-09-03_11:38:29_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 2.07  
-# 	   correct print statment for python 3 
 # 	template.py  2.05.39  2018-09-01_23:42:46_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.04  
 # 	   display-help, comments, setup example with correct date-stamp 
 ###
@@ -56,6 +52,9 @@ if no_arguments == 2 :
       sys.exit()
 #  DEBUG example
 if DEBUG == 1 : print (">{} DEBUG{} {}  Name_of_command >{}<".format(color.BOLD,color.END,get_line_no(),__file__))
+###
+#  Examples -->
+#
 #  Check argument 1 for non-default ______
 if no_arguments == 2 :
    LINE_ARG1 = sys.argv[1]
