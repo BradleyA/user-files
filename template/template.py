@@ -1,12 +1,6 @@
 #!/usr/bin/env python
-# 	template.py  2.15.53  2018-09-15_11:57:15_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.14  
-# 	   added date to debug print line 
-# 	template.py  2.14.52  2018-09-15_09:36:54_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.13  
-# 	   formating changes 
-# 	template/template.py  2.13.51  2018-09-12_21:46:19_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.12-2-g6408ce0  
-# 	   correct smapling in template.py 
-# 	template.py  2.05.39  2018-09-01_23:42:46_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.04  
-# 	   display-help, comments, setup example with correct date-stamp 
+# 	template.py  2.16.54  2018-09-15_12:34:34_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.15  
+# 	   add get_time_stamp function 
 ###
 DEBUG = 0       # 0 = debug off, 1 = debug on
 #
@@ -19,8 +13,8 @@ class color:
    BOLD = '\033[1m'
    END = '\033[0m'
 ###
+LANGUAGE = os.getenv("LANG")
 def display_help():
-   LANGUAGE = os.getenv("LANG")
    print ("\n{} - <one line description>".format( __file__))
    print ("\nUSAGE\n   {} [xxx | yyy | zzz]".format(__file__))
    print ("   {} [--help | -help | help | -h | h | -? | ?]".format(__file__))
@@ -39,6 +33,9 @@ from inspect import currentframe
 def get_line_no():
    cf = currentframe()
    return cf.f_back.f_lineno
+#  date and time function
+def get_time_stamp():
+   return time.strftime("%Y-%m-%d-%H-%M-%S-%Z")
 #  Default help and version arguments
 no_arguments =  int(len(sys.argv))
 if no_arguments == 2 :
