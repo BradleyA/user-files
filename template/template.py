@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# 	template.py  2.22.60  2018-09-15_21:36:41_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.21  
+# 	   change MESSAGE_file to MESSAGE_FILE 
 # 	template.py  2.21.59  2018-09-15_21:26:41_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.20  
 # 	   typos 
 ###
@@ -67,12 +69,12 @@ if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Name_of_command >{}<".format(color.B
 # >>>	needs testing
 if no_arguments == 2 :
 #  Set non-default MESSAGE file with path
-   LINE_ARG1 = sys.argv[1]
-   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), LINE_ARG1))
+   MESSAGE_FILE = sys.argv[1]
+   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE_FILE))
 else :
 #  Set default MESSAGE file with path
-   LINE_ARG1 = "/usr/local/data/us-tx-cluster-1/MESSAGE"
-   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), LINE_ARG1))
+   MESSAGE_FILE = "/usr/local/data/us-tx-cluster-1/MESSAGE"
+   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE_FILE))
 
 #  Check if two arguments after command if TRUE save second argument 
 # >>>	needs testing
@@ -103,9 +105,9 @@ print ("command = {}".format(sys.argv[0]))
 
 #  Read MESSAGEHD_file contents and return contents
 def get_msg():
-   with open(MESSAGEHD_file,"r") as file:
+   with open(MESSAGE_FILE,"r") as file:
       temp = file.read().splitlines()
-      if DEBUG == 1 : print ("> {}DEBUG{} {}  File contents >{}<".format(color.BOLD,color.END,get_line_no(),temp))
+      if DEBUG == 1 : print ("> {}DEBUG{} {}  File contents >{}<".format(color.BOLD, color.END, get_line_no(), temp))
    return temp
 #
 lines = get_msg()
