@@ -1,10 +1,6 @@
 #!/usr/bin/env python
-# 	template.py  2.20.58  2018-09-15_21:16:30_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.19  
-# 	   add DONE. 
-# 	template.py  2.19.57  2018-09-15_21:02:30_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.18  
-# 	   cleanup template.py 
-# 	template.py  2.16.54  2018-09-15_12:34:34_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.15  
-# 	   add get_time_stamp function 
+# 	template.py  2.21.59  2018-09-15_21:26:41_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.20  
+# 	   typos 
 ###
 DEBUG = 0       # 0 = debug off, 1 = debug on
 #
@@ -61,6 +57,7 @@ if no_arguments == 2 :
          line2 = line2.split()
          print ("{} {}".format(line2[1], line2[2]))
       sys.exit()
+
 #  DEBUG example
 if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Name_of_command >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), __file__))
 
