@@ -1,8 +1,6 @@
 #!/usr/bin/env python
-# 	template.py  2.22.60  2018-09-15_21:36:41_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.21  
-# 	   change MESSAGE_file to MESSAGE_FILE 
-# 	template.py  2.21.59  2018-09-15_21:26:41_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.20  
-# 	   typos 
+# 	template.py  2.23.61  2018-09-15_21:48:14_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.22  
+# 	   format 
 ###
 DEBUG = 0       # 0 = debug off, 1 = debug on
 #
@@ -11,12 +9,12 @@ import sys
 import time
 import os
 ###
-class color:
+class color :
    BOLD = '\033[1m'
    END = '\033[0m'
 ###
 LANGUAGE = os.getenv("LANG")
-def display_help():
+def display_help() :
    print ("\n{} - <one line description>".format( __file__))
    print ("\nUSAGE\n   {} [xxx | yyy | zzz]".format(__file__))
    print ("   {} [--help | -help | help | -h | h | -? | ?]".format(__file__))
@@ -36,12 +34,12 @@ def display_help():
 
 #  Line number function
 from inspect import currentframe
-def get_line_no():
+def get_line_no() :
    cf = currentframe()
    return cf.f_back.f_lineno
 
 #  date and time function
-def get_time_stamp():
+def get_time_stamp() :
    return time.strftime("%Y-%m-%d-%H-%M-%S-%Z")
 
 #  Default help and version arguments
@@ -53,7 +51,7 @@ if no_arguments == 2 :
       sys.exit()
 #  Default version output  
    if sys.argv[1] == '--version' or sys.argv[1] == '-version' or sys.argv[1] == 'version' or sys.argv[1] == '-v' :
-      with open(__file__) as f:
+      with open(__file__) as f :
          f.readline()
          line2 = f.readline()
          line2 = line2.split()
@@ -103,9 +101,9 @@ print ("\nNumber of arguments: {} arguments.".format(len(sys.argv)))
 print ("Argument List: {}".format(str(sys.argv)))
 print ("command = {}".format(sys.argv[0]))
 
-#  Read MESSAGEHD_file contents and return contents
-def get_msg():
-   with open(MESSAGE_FILE,"r") as file:
+#  Read MESSAGE_FILE contents and return contents
+def get_msg() :
+   with open(MESSAGE_FILE,"r") as file :
       temp = file.read().splitlines()
       if DEBUG == 1 : print ("> {}DEBUG{} {}  File contents >{}<".format(color.BOLD, color.END, get_line_no(), temp))
    return temp
