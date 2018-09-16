@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# 	template.py  2.20.58  2018-09-15_21:16:30_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.19  
+# 	   add DONE. 
 # 	template.py  2.19.57  2018-09-15_21:02:30_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.18  
 # 	   cleanup template.py 
 # 	template.py  2.16.54  2018-09-15_12:34:34_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.15  
@@ -39,9 +41,11 @@ from inspect import currentframe
 def get_line_no():
    cf = currentframe()
    return cf.f_back.f_lineno
+
 #  date and time function
 def get_time_stamp():
    return time.strftime("%Y-%m-%d-%H-%M-%S-%Z")
+
 #  Default help and version arguments
 no_arguments =  int(len(sys.argv))
 if no_arguments == 2 :
@@ -61,6 +65,7 @@ if no_arguments == 2 :
 if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Name_of_command >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), __file__))
 
 ###	#  Examples -->
+
 #  Check if there is an argument after command if TRUE use the argument to replace MESSAGE filename else use default MESSAGE
 # >>>	needs testing
 if no_arguments == 2 :
@@ -123,4 +128,7 @@ print ("name = {}".format(__name__))
 #  Examples pwd - Print Working Directory
 from os import getcwd
 print ("pwd = {}".format(getcwd()))
+
+#  Example Done
+print ("\n{}{} {} {}[INFO]{}  {}  Done.\n".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
 ###
