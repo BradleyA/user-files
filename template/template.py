@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# 	template.py  2.24.62  2018-09-16_13:56:23_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.23  
+# 	   added python version to first DEBUG statement 
 # 	template.py  2.23.61  2018-09-15_21:48:14_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.22  
 # 	   format 
 ###
@@ -59,7 +61,8 @@ if no_arguments == 2 :
       sys.exit()
 
 #  DEBUG example
-if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Name_of_command >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), __file__))
+import platform
+if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Name of command >{}<  Version of python >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), __file__, platform.python_version()))
 
 ###	#  Examples -->
 
