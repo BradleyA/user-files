@@ -1,8 +1,6 @@
 #!/usr/bin/env python
-# 	template.py  2.18.56  2018-09-15_20:40:09_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.17  
-# 	   add DEBUG and examples 
-# 	template.py  2.17.55  2018-09-15_19:20:12_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.16  
-# 	   add comments and get_time_stamp() 
+# 	template.py  2.19.57  2018-09-15_21:02:30_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.18  
+# 	   cleanup template.py 
 # 	template.py  2.16.54  2018-09-15_12:34:34_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.15  
 # 	   add get_time_stamp function 
 ###
@@ -35,6 +33,7 @@ def display_help():
 #     print display_help in french
 #  else :
    return
+
 #  Line number function
 from inspect import currentframe
 def get_line_no():
@@ -95,6 +94,11 @@ if no_arguments == 3 :
    OPTION2 = sys.argv[2]
    if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using OPTION1 >{}<  OPTION2 >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), OPTION1, OPTION2))
 
+#  Examples
+print ("\nNumber of arguments: {} arguments.".format(len(sys.argv)))
+print ("Argument List: {}".format(str(sys.argv)))
+print ("command = {}".format(sys.argv[0]))
+
 #  Read MESSAGEHD_file contents and return contents
 def get_msg():
    with open(MESSAGEHD_file,"r") as file:
@@ -110,15 +114,13 @@ print ("\n{}{} {} {}[ERROR]{}  {}  USER don't do that!".format(color.END, __file
 
 #  INFO example
 print ("\n{}{} {} {}[INFO]{}  {}  Using OPTION >{}<".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp(), OPTION3))
+
 #  Examples	
 print ("\ncommand with path = {}".format(__file__))
 print ("module = {}".format(__name__))
 print ("name = {}".format(__name__))
+
 #  Examples pwd - Print Working Directory
 from os import getcwd
 print ("pwd = {}".format(getcwd()))
-#  Examples
-print ("\nNumber of arguments: {} arguments.".format(len(sys.argv)))
-print ("Argument List: {}".format(str(sys.argv)))
-print ("command = {}".format(sys.argv[0]))
 ###
