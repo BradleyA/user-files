@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# 	template.py  2.25.63  2018-09-16_23:16:32_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.24  
+# 	   begin testing import incidents code 
 # 	template.py  2.24.62  2018-09-16_13:56:23_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.23  
 # 	   added python version to first DEBUG statement 
 # 	template.py  2.23.61  2018-09-15_21:48:14_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.22  
@@ -131,4 +133,21 @@ print ("pwd = {}".format(getcwd()))
 
 #  Example Done
 print ("\n{}{} {} {}[INFO]{}  {}  Done.\n".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
+
+# >>>	 This trying to complete the design and testing   
+# >>>   import scrollphat
+try :
+   import scrollphat
+except ImportError :
+   if sys.version_info[0] < 3 :
+      sys.exit("\n{}{} {} {}[ERROR]{}  {}  This library requires python-scrollphat. To install:\n\tsudo apt-get install python-scrollphat".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
+# >>>   org      sys.exit("This library requires python-smbus\nInstall with: sudo apt-get install python-smbus")
+   elif sys.version_info[0] == 3 :
+      sys.exit("\n{}{} {} {}[ERROR]{}  {}  This library requires python3-scrollphat. To install:\n\tsudo apt-get install python3-scrollphat".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
+   else :
+      sys.exit("\n{}{} {} {}[ERROR]{}  {}  Unknow library incident".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
+except IOError :
+      sys.exit("\n{}{} {} {}[ERROR]{}  {}  No such file or directory . . . not sure what this is. . . missing the scrollphat ?".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
+# >>>	CUT line ---
+
 ###
