@@ -1,10 +1,6 @@
 #!/usr/bin/env python
-# 	template.py  2.26.64  2018-09-18_06:26:51_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.25  
-# 	   update to import error reporting 
-# 	template.py  2.25.63  2018-09-16_23:16:32_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.24  
-# 	   begin testing import incidents code 
-# 	template.py  2.24.62  2018-09-16_13:56:23_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.23  
-# 	   added python version to first DEBUG statement 
+# 	template.py  2.27.65  2018-09-18_15:36:01_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.26  
+# 	   remove else from import errors, add MESSAGE variables 
 # 	template.py  2.23.61  2018-09-15_21:48:14_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.22  
 # 	   format 
 ###
@@ -72,13 +68,17 @@ if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Name of command >{}<  Version of pyt
 
 #  Check if there is an argument after command if TRUE use the argument to replace MESSAGE filename else use default MESSAGE
 # >>>	needs testing
+DATA_DIR = "/usr/local/data/"
+CLUSTER = "us-tx-cluster-1/"
+MESSAGE_FILE = DATA_DIR + CLUSTER + "MESSAGE"
+if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Set default MESSAGE_FILE >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE_FILE))
+#
 if no_arguments == 2 :
 #  Set non-default MESSAGE file with path
    MESSAGE_FILE = sys.argv[1]
    if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE_FILE))
 else :
 #  Set default MESSAGE file with path
-   MESSAGE_FILE = "/usr/local/data/us-tx-cluster-1/MESSAGE"
    if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE_FILE))
 
 #  Check if two arguments after command if TRUE save second argument 
@@ -146,10 +146,8 @@ except ImportError :
 # >>>   org      sys.exit("This library requires python-smbus\nInstall with: sudo apt-get install python-smbus")
    elif sys.version_info[0] == 3 :
       sys.exit("\n{}{} {} {}[ERROR]{}  {}  This library requires python3-scrollphat. To install:\n\tsudo apt-get install python3-scrollphat".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
-   else :
-      sys.exit("\n{}{} {} {}[ERROR]{}  {}  Unknow library incident".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
 except IOError :
-      sys.exit("\n{}{} {} {}[ERROR]{}  {}  No such file or directory . . . not sure what this is. . . missing the scrollphat hardware ? ? ?".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
+      sys.exit("\n{}{} {} {}[ERROR]{}  {}  No such file or directory . is the hat not installed on raspberry pi . . not sure what this is. . . missing the scrollphat hardware ? ? ?".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
 # >>>	CUT line ---
 
 ###
