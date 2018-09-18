@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# 	template.py  2.26.64  2018-09-18_06:26:51_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.25  
+# 	   update to import error reporting 
 # 	template.py  2.25.63  2018-09-16_23:16:32_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.24  
 # 	   begin testing import incidents code 
 # 	template.py  2.24.62  2018-09-16_13:56:23_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.23  
@@ -147,7 +149,7 @@ except ImportError :
    else :
       sys.exit("\n{}{} {} {}[ERROR]{}  {}  Unknow library incident".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
 except IOError :
-      sys.exit("\n{}{} {} {}[ERROR]{}  {}  No such file or directory . . . not sure what this is. . . missing the scrollphat ?".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
+      sys.exit("\n{}{} {} {}[ERROR]{}  {}  No such file or directory . . . not sure what this is. . . missing the scrollphat hardware ? ? ?".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
 # >>>	CUT line ---
 
 ###
