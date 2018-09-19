@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  2.29.67  2018-09-19_16:29:23_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.28  
+# 	   add support for environment variables to override default 
 # 	template.py  2.28.66  2018-09-19_16:26:04_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.27  
 # 	   set to python3 because 2.7 is not supported in 2020 
 ###
@@ -63,21 +65,41 @@ import platform
 if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Name of command >{}<  Version of python >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), __file__, platform.python_version()))
 
 ###	#  Examples -->
-
-#  Check if there is an argument after command if TRUE use the argument to replace MESSAGE filename else use default MESSAGE
-# >>>	needs testing
-DATA_DIR = "/usr/local/data/"
-CLUSTER = "us-tx-cluster-1/"
-MESSAGE_FILE = DATA_DIR + CLUSTER + "MESSAGE"
-if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Set default MESSAGE_FILE >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE_FILE))
-#
+#  if argument; use argument -> do not use default or environment variables for MESSAGE
 if no_arguments == 2 :
-#  Set non-default MESSAGE file with path
-   MESSAGE_FILE = sys.argv[1]
-   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE_FILE))
+#  Set non-default MESSAGE file including path
+   MESSAGE = sys.argv[1]
+   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE))
 else :
-#  Set default MESSAGE file with path
-   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE_FILE))
+#  if no argument; -> use default and/or environment variables for MESSAGE
+   #  Check DATA_DIR; set using os environment variable
+   if "DATA_DIR" in os.environ :
+      DATA_DIR = os.getenv("DATA_DIR")
+      if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using environment variable DATA_DIR >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), DATA_DIR))
+   else :
+   #  Set DATA_DIR with default
+      DATA_DIR = "/usr/local/data/"
+      if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Environment variable DATA_DIR NOT set, using default >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), DATA_DIR))
+   if "CLUSTER" in os.environ :
+   #  Check CLUSTER; set using os environment variable
+      CLUSTER = os.getenv("CLUSTER")
+      if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using environment variable CLUSTER >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), CLUSTER))
+   else :
+   #  Set CLUSTER with default
+      CLUSTER = "us-tx-cluster-1/"
+      if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Environment variable CLUSTER NOT set, using default >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), CLUSTER))
+   if "MESSAGE_FILE" in os.environ :
+   #  Check MESSAGE_FILE; set using os environment variable
+      MESSAGE_FILE = os.getenv("MESSAGE_FILE")
+      if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using environment variable MESSAGE_FILE >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE_FILE))
+   else :
+   #  Set MESSAGE_FILE with default
+      MESSAGE_FILE = "MESSAGE"
+      if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Environment variable MESSAGE_FILE NOT set, using default >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE_FILE))
+   #  Set default MESSAGE file with path
+   MESSAGE = DATA_DIR + CLUSTER + MESSAGE_FILE
+if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE))
+###
 
 #  Check if two arguments after command if TRUE save second argument 
 # >>>	needs testing
