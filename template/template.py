@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.30.68  2018-09-19_16:36:53_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.29  
+# 	   updated get_msg 
 # 	template.py  2.29.67  2018-09-19_16:29:23_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.28  
 # 	   add support for environment variables to override default 
 # 	template.py  2.28.66  2018-09-19_16:26:04_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.27  
@@ -128,14 +130,16 @@ print ("\nNumber of arguments: {} arguments.".format(len(sys.argv)))
 print ("Argument List: {}".format(str(sys.argv)))
 print ("command = {}".format(sys.argv[0]))
 
-#  Read MESSAGE_FILE contents and return contents
-def get_msg() :
-   with open(MESSAGE_FILE,"r") as file :
-      temp = file.read().splitlines()
-      if DEBUG == 1 : print ("> {}DEBUG{} {}  File contents >{}<".format(color.BOLD, color.END, get_line_no(), temp))
-   return temp
+#  Read TEMP_FILE contents and return contents
+def get_msg(TEMP_FILE) :
+   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Reading MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), TEMP_FILE))
+   file = open(TEMP_FILE,"r")
+   FILE_CONTENT = file.read()
+   file.close()
+   FILE_CONTENT = FILE_CONTENT + " ---> "
+   return FILE_CONTENT
 #
-lines = get_msg()
+lines = get_msg(MESSAGE)
 #
 
 #  ERROR example		
