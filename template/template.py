@@ -1,8 +1,6 @@
-#!/usr/bin/env python
-# 	template.py  2.27.65  2018-09-18_15:36:01_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.26  
-# 	   remove else from import errors, add MESSAGE variables 
-# 	template.py  2.23.61  2018-09-15_21:48:14_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.22  
-# 	   format 
+#!/usr/bin/env python3
+# 	template.py  2.28.66  2018-09-19_16:26:04_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.27  
+# 	   set to python3 because 2.7 is not supported in 2020 
 ###
 DEBUG = 0       # 0 = debug off, 1 = debug on
 #
