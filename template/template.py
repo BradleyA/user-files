@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.31.70  2018-09-20_17:06:19_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.30-1-gf938c9d  
+# 	   added to display_help Environment Variables 
 # 	template.py  3.30.69  2018-09-19_23:39:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.30  
 # 	   cleanup comments 
 # 	template.py  3.30.68  2018-09-19_16:36:53_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.29  
@@ -22,6 +24,7 @@ def display_help() :
    print ("   {} [--help | -help | help | -h | h | -? | ?]".format(__file__))
    print ("   {} [--version | -version | -v]".format(__file__))
    print ("\nDESCRIPTION\n<<your help output goes here>>")
+   print ("\nEnvironment Variables\n   <<your variables go here>>")
    print ("\nOPTIONS\n   <<your options go here>>")
    print ("\nDOCUMENTATION\n   <<URL to GITHUB README>>")
    print ("\nEXAMPLES\n   <<your code examples description goes here>>")
