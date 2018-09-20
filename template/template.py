@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
+# 	template.py  3.30.69  2018-09-19_23:39:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.30  
+# 	   cleanup comments 
 # 	template.py  3.30.68  2018-09-19_16:36:53_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.29  
 # 	   updated get_msg 
-# 	template.py  2.29.67  2018-09-19_16:29:23_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.28  
-# 	   add support for environment variables to override default 
-# 	template.py  2.28.66  2018-09-19_16:26:04_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.27  
-# 	   set to python3 because 2.7 is not supported in 2020 
 ###
 DEBUG = 0       # 0 = debug off, 1 = debug on
 #
