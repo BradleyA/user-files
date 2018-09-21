@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
+# 	template.py  3.33.72  2018-09-20_21:47:55_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.32  
+# 	   update import scrollphat 
 # 	template.py  3.32.71  2018-09-20_21:18:35_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.31  
 # 	   remove linefeed in get_msg 
-# 	template.py  3.31.70  2018-09-20_17:06:19_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.30-1-gf938c9d  
-# 	   added to display_help Environment Variables 
 ###
 DEBUG = 1       # 0 = debug off, 1 = debug on
 #
@@ -72,7 +72,7 @@ if no_arguments == 2 :
    MESSAGE = sys.argv[1]
    if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE))
 else :
-#  if no argument; -> use default and/or environment variables for MESSAGE
+#  if no argument; -> use default if environment variables not defined
    #  Check DATA_DIR; set using os environment variable
    if "DATA_DIR" in os.environ :
       DATA_DIR = os.getenv("DATA_DIR")
@@ -97,7 +97,7 @@ else :
    #  Set MESSAGE_FILE with default
       MESSAGE_FILE = "MESSAGE"
       if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Environment variable MESSAGE_FILE NOT set, using default >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE_FILE))
-   #  Set default MESSAGE file with path
+   #  Set MESSAGE with absolute path
    MESSAGE = DATA_DIR + CLUSTER + MESSAGE_FILE
 if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), MESSAGE))
 ###
@@ -159,18 +159,17 @@ print ("pwd = {}".format(getcwd()))
 #  Example Done
 print ("\n{}{} {} {}[INFO]{}  {}  Done.\n".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
 
-# >>>	 Trying to complete the design and testing   
-# >>>   import scrollphat
+#  import scrollphat and check if scrollphat installed 
 try :
    import scrollphat
 except ImportError :
    if sys.version_info[0] < 3 :
-      sys.exit("\n{}{} {} {}[ERROR]{}  {}  This library requires python-scrollphat. To install:\n\tsudo apt-get install python-scrollphat".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
-# >>>   org      sys.exit("This library requires python-smbus\nInstall with: sudo apt-get install python-smbus")
+      sys.exit("\n{}{} {} {}[ERROR]{}  {}  Library scrollphat required. To install:\n\tsudo apt-get install python-scrollphat".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
    elif sys.version_info[0] == 3 :
-      sys.exit("\n{}{} {} {}[ERROR]{}  {}  This library requires python3-scrollphat. To install:\n\tsudo apt-get install python3-scrollphat".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
+      sys.exit("\n{}{} {} {}[ERROR]{}  {}  Library scrollphat required. To install:\n\tsudo apt-get install python3-scrollphat".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
 except IOError :
-      sys.exit("\n{}{} {} {}[ERROR]{}  {}  No such file or directory . is the hat not installed on raspberry pi . . not sure what this is. . . missing the scrollphat hardware ? ? ?".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
+      sys.exit("\n{}{} {} {}[ERROR]{}  {}  No such file or directory.  Is scrollphat installed on raspberry pi?".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
+
 # >>>	CUT line ---
 
 ###
