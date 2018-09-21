@@ -1,10 +1,10 @@
 #!/bin/bash
+# 	template.sh  3.36.75  2018-09-21_11:06:51_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.35  
+# 	   change design of DEBUG statement to include date 
 # 	template.sh  2.05.39  2018-09-01_23:42:46_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.04  
 # 	   display-help, comments, setup example with correct date-stamp 
-# 	template.sh  2.01.33  2018-08-29_15:02:34_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 1.8-3-gf319f0f  
-# 	   first pass at sh template 
 ###
-DEBUG=0                 # 0 = debug off, 1 = debug on
+DEBUG=1                 # 0 = debug off, 1 = debug on
 #	set -x
 #	set -v
 BOLD=$(tput bold)
@@ -19,6 +19,7 @@ echo    "   ${0} [--version | -version | -v]"
 echo -e "\nDESCRIPTION\nxxx xxx xxx ..."
 echo    "xxx xxxxxxx xxx xxxxxxx"
 echo -e "\nParagraph two xxx xxx xxxxxxx"
+echo    "\nEnvironment Variables\n   <<your variables go here>>"
 echo -e "\nOPTIONS\n   -f, --file\n      path and file on system '<path>/<file_name>'"
 echo -e "\nOPTIONS\n   Option one - description"
 echo    "   XX       xxx xxxxxxx xxx"
@@ -26,11 +27,22 @@ echo    "   YY       xxx xxxxx xxx "
 echo    "   zz       xx xxxxxxx xx"
 echo -e "\nDOCUMENTATION\n   https://github.com/BradleyA/REPOSITORY"
 echo -e "\nEXAMPLES\n   <<your code examples description goes here>>\n\n${0} <<code example goes here>>\n"
-#
+#	After displaying help in english check for other languages
 if ! [ "${LANG}" == "en_US.UTF-8" ] ; then
 	echo -e "${NORMAL}${0} ${LINENO} [${BOLD}WARNING${NORMAL}]:	Your language, ${LANG}, is not supported.\n\tWould you like to help?\n"	1>&2
+#	elif [ "${LANG}" == "fr_CA.UTF-8" ] ; then
+#		echo -e "${NORMAL}${0} ${LINENO} [${BOLD}WARNING${NORMAL}]:	Display help in ${LANG}"	1>&2
+#	else
+#		echo -e "${NORMAL}${0} ${LINENO} [${BOLD}WARNING${NORMAL}]:	Your language, ${LANG}, is not supported.\n\tWould you like to help?\n"	1>&2
 fi
 }
+
+#	Date and time function
+get_date_stamp() {
+DATE_STAMP=`date +%Y-%m-%d-%H-%M-%S-%Z`
+}
+
+#	Default help and version arguments
 if [ "$1" == "--help" ] || [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ] || [ "$1" == "h" ] || [ "$1" == "-?" ] || [ "$1" == "?" ] ; then
 	display_help
 	exit 0
@@ -39,12 +51,14 @@ if [ "$1" == "--version" ] || [ "$1" == "-version" ] || [ "$1" == "version" ] ||
 	head -2 ${0} | awk {'print$2"\t"$3'}
 	exit 0
 fi
+
 ###
 OPTION1=${1:-default_value1}
 OPTION2=${2:-default_value2}
-TIME_STAMP=`date +%Y-%m-%d-%H-%M-%S-%Z`
-###
-if [ "${DEBUG}" == "1" ] ; then echo -e "> DEBUG ${LINENO} Name_of_command >${0}< Name_of_arg1 >${1}<" 1>&2 ; fi
+
+#	DEBUG example
+if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "> ${BOLD}DEBUG${NORMAL} ${LINENO}  ${DATE_STAMP}  Name_of_command >${0}< Name_of_arg1 >${1}<" 1>&2 ; fi
+
 #
 ###	EXAMPLE ONE
 #	Example code is a template, it will not work until chnaged
