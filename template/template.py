@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
-# 	template.py  3.34.73  2018-09-20_22:09:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.33  
-# 	   rename get_date_stamp 
-# 	template.py  3.33.72  2018-09-20_21:47:55_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.32  
-# 	   update import scrollphat 
-# 	template.py  3.32.71  2018-09-20_21:18:35_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.31  
-# 	   remove linefeed in get_msg 
+# 	template.py  3.35.74  2018-09-20_22:47:07_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.34  
+# 	   cleanup 
 ###
 DEBUG = 1       # 0 = debug off, 1 = debug on
 #
@@ -158,10 +154,7 @@ print ("name = {}".format(__name__))
 from os import getcwd
 print ("pwd = {}".format(getcwd()))
 
-#  Example Done
-print ("\n{}{} {} {}[INFO]{}  {}  Done.\n".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
-
-#  import scrollphat and check if scrollphat installed 
+#  Example import scrollphat and check if scrollphat installed 
 try :
    import scrollphat
 except ImportError :
@@ -171,6 +164,9 @@ except ImportError :
       sys.exit("\n{}{} {} {}[ERROR]{}  {}  Library scrollphat required. To install:\n\tsudo apt-get install python3-scrollphat".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
 except IOError :
       sys.exit("\n{}{} {} {}[ERROR]{}  {}  No such file or directory.  Is scrollphat installed on raspberry pi?".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
+
+#  Example Done
+print ("\n{}{} {} {}[INFO]{}  {}  Done.\n".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
 
 # >>>	CUT line ---
 
