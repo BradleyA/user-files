@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
+# 	template.py  3.32.71  2018-09-20_21:18:35_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.31  
+# 	   remove linefeed in get_msg 
 # 	template.py  3.31.70  2018-09-20_17:06:19_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.30-1-gf938c9d  
 # 	   added to display_help Environment Variables 
-# 	template.py  3.30.69  2018-09-19_23:39:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.30  
-# 	   cleanup comments 
-# 	template.py  3.30.68  2018-09-19_16:36:53_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 2.29  
-# 	   updated get_msg 
 ###
-DEBUG = 0       # 0 = debug off, 1 = debug on
+DEBUG = 1       # 0 = debug off, 1 = debug on
 #
 import subprocess
 import sys
@@ -135,10 +133,10 @@ print ("command = {}".format(sys.argv[0]))
 def get_msg(TEMP_FILE) :
    if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Reading MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_time_stamp(), TEMP_FILE))
    file = open(TEMP_FILE,"r")
-   FILE_CONTENT = file.read()
+   CONTENT = file.read()
    file.close()
-   FILE_CONTENT = FILE_CONTENT + " ---> "
-   return FILE_CONTENT
+   CONTENT = CONTENT.rstrip('\n')
+   return CONTENT
 #
 lines = get_msg(MESSAGE)
 #
@@ -161,7 +159,7 @@ print ("pwd = {}".format(getcwd()))
 #  Example Done
 print ("\n{}{} {} {}[INFO]{}  {}  Done.\n".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_time_stamp()))
 
-# >>>	 This trying to complete the design and testing   
+# >>>	 Trying to complete the design and testing   
 # >>>   import scrollphat
 try :
    import scrollphat
