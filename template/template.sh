@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template.sh  3.39.78  2018-09-22_14:10:20_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.38  
+# 	   added examples for arguments and precedence with environment variables 
 # 	template.sh  3.38.77  2018-09-22_13:24:45_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.37  
 # 	   added -Txterm to tput lines, remove n to logging information 
 # 	template.sh  3.37.76  2018-09-21_11:43:32_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.36  
@@ -52,9 +54,16 @@ if [ "$1" == "--version" ] || [ "$1" == "-version" ] || [ "$1" == "version" ] ||
 	exit 0
 fi
 
-###
+#	Example arguments
 OPTION1=${1:-default_value1}
 OPTION2=${2:-default_value2}
+#       order of precedence: CLI argument, environment variable, default code
+if [ $# -ge  1 ]  ; then CLUSTER=${1} ; elif [ "${CLUSTER}" == "" ] ; then CLUSTER="us-tx-cluster-1/" ; fi
+#       order of precedence: CLI argument, default code
+ADMUSER=${2:-${USER}}
+#       order of precedence: CLI argument, environment variable, default code
+if [ $# -ge  3 ]  ; then DATA_DIR=${1} ; elif [ "${DATA_DIR}" == "" ] ; then DATA_DIR="/usr/local/data/" ; fi
+if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${0} ${LINENO} ${BOLD}[INFO]${NORMAL}  ${DATE_STAMP}  CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
 #	DEBUG example
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "> ${BOLD}DEBUG${NORMAL} ${LINENO}  ${DATE_STAMP}  Name_of_command >${0}< Name_of_arg1 >${1}<" 1>&2 ; fi
