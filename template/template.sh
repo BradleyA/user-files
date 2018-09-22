@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template.sh  3.40.79  2018-09-22_14:13:58_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.39  
+# 	   added comment for precedence 
 # 	template.sh  3.39.78  2018-09-22_14:10:20_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.38  
 # 	   added examples for arguments and precedence with environment variables 
 # 	template.sh  3.38.77  2018-09-22_13:24:45_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.37  
@@ -55,6 +57,7 @@ if [ "$1" == "--version" ] || [ "$1" == "-version" ] || [ "$1" == "version" ] ||
 fi
 
 #	Example arguments
+#       order of precedence: CLI argument, default code
 OPTION1=${1:-default_value1}
 OPTION2=${2:-default_value2}
 #       order of precedence: CLI argument, environment variable, default code
