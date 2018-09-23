@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.41.80  2018-09-23_11:49:25_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.40  
+# 	   added spaces to help cut and paste of cwd in previous prompts 
 # 	template.sh  3.40.79  2018-09-22_14:13:58_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.39  
 # 	   added comment for precedence 
 # 	template.sh  3.39.78  2018-09-22_14:10:20_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.38  
@@ -18,7 +20,7 @@ display_help() {
 echo -e "\n${NORMAL}${0} - brief description"
 echo -e "\nUSAGE\n   ${0} [XX | YY | ZZ]"
 echo    "   ${0} [--file <PATH>/<FILE_NAME> | -f <PATH>/<FILE_NAME>]"
-echo    "   ${0} [--help | -help | help | -h | h | -? | ?]"
+echo    "   ${0} [--help | -help | help | -h | h | -?]"
 echo    "   ${0} [--version | -version | -v]"
 echo -e "\nDESCRIPTION\nxxx xxx xxx ..."
 echo    "xxx xxxxxxx xxx xxxxxxx"
@@ -47,7 +49,7 @@ DATE_STAMP=`date +%Y-%m-%d-%H-%M-%S-%Z`
 }
 
 #	Default help and version arguments
-if [ "$1" == "--help" ] || [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ] || [ "$1" == "h" ] || [ "$1" == "-?" ] || [ "$1" == "?" ] ; then
+if [ "$1" == "--help" ] || [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ] || [ "$1" == "h" ] || [ "$1" == "-?" ] ; then
 	display_help
 	exit 0
 fi

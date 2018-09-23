@@ -1,8 +1,8 @@
-#
+#	.bashrc
+#	.bashrc  3.41.80  2018-09-23_11:49:25_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.40  
+#	   added spaces to help cut and paste of cwd in previous prompts 
 #	.bashrc  1.4.24  2018-07-25_20:24:59_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  three-rpi3b.cptx86.com 1.3  
 #	   add VISUAL=/usr/bin/vi to .bahrc to help with crontab editor for uadmin 
-#	.bashrc	1.0.8	2018-02-15_11:02:45_CST uadmin four-rpi3b.cptx86.com 1.0-2-g5586028 
-#	   Inital commit of basic .bashrc settings 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -77,9 +77,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;37m\]`date +%d%H%M` ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00;36m\]@\[\033[01;33m\]\h\[\033[01;37m\]:\[\033[01;34m\]\w\[\033[01;37m\]\n   \$ '
+    PS1='\[\033[01;37m\]`date +%d%H%M` ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00;36m\]@\[\033[01;33m\]\h\[\033[01;37m\]: \[\033[01;34m\]\w\[\033[01;37m\]\n     \$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h: \w     \$ '
 fi
 unset color_prompt force_color_prompt
 
