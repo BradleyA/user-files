@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.43.82  2018-09-23_21:07:32_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.42  
+# 	   change -h to -home 
 # 	template.py  3.42.81  2018-09-23_20:48:03_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.41  
 # 	   remove ? as an argument because the shell is using it as a wildcard 
 # 	template.py  3.35.74  2018-09-20_22:47:07_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.34  
@@ -109,10 +111,10 @@ if no_arguments == 3 :
 #     Set FILE_NAME to second argument
       FILE_NAME = sys.argv[2]
       if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Found -f FILE_NAME >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), FILE_NAME))
-   elif sys.argv[1] = "-h" :
+   elif sys.argv[1] = "-home" :
 #     Set USERHOME to second argument
       USERHOME = sys.argv[2]
-      if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Found -h USERHOME >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), USERHOME))
+      if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Found -home USERHOME >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), USERHOME))
    else :
 #     Unknow option print ERROR
       print ("\n{}{} {} {}[ERROR]{}  {}  Unsupported option >{}<".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp(), sys.argv[1]))
