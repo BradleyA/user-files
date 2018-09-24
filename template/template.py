@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.42.81  2018-09-23_20:48:03_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.41  
+# 	   remove ? as an argument because the shell is using it as a wildcard 
 # 	template.py  3.35.74  2018-09-20_22:47:07_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.34  
 # 	   cleanup 
 ###
@@ -47,7 +49,7 @@ def get_date_stamp() :
 no_arguments =  int(len(sys.argv))
 if no_arguments == 2 :
 #  Default help output  
-   if sys.argv[1] == '--help' or sys.argv[1] == '-help' or sys.argv[1] == 'help' or sys.argv[1] == '-h' or sys.argv[1] == 'h' or sys.argv[1] == '-?' or sys.argv[1] == '?' :
+   if sys.argv[1] == '--help' or sys.argv[1] == '-help' or sys.argv[1] == 'help' or sys.argv[1] == '-h' or sys.argv[1] == 'h' or sys.argv[1] == '-?' :
       display_help()
       sys.exit()
 #  Default version output  
