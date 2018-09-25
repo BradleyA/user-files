@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.47.85  2018-09-24_21:53:49_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.46  
+# 	   Example Return a fully qualified domain name 
 # 	template.py  3.46.84  2018-09-24_21:42:02_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.44  
 # 	   order of precedence: CLI argument, environment variable, default code 
 # 	template.py  3.43.82  2018-09-23_21:07:32_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.42  
@@ -188,6 +190,10 @@ print ("name = {}".format(__name__))
 #  Examples pwd - Print Working Directory
 from os import getcwd
 print ("pwd = {}".format(getcwd()))
+
+#  Example Return a fully qualified domain name
+import socket
+LOCALHOST = socket.getfqdn()
 
 #  Example import scrollphat and check if scrollphat installed 
 try :
