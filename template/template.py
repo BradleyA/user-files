@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-# 	template.py  3.44.83  2018-09-24_21:40:59_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.43  
-# 	   CLUSTER >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), CLUSTER)) 
+# 	template.py  3.46.84  2018-09-24_21:42:02_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.44  
+# 	   order of precedence: CLI argument, environment variable, default code 
 # 	template.py  3.43.82  2018-09-23_21:07:32_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.42  
 # 	   change -h to -home 
 # 	template.py  3.42.81  2018-09-23_20:48:03_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.41  
