@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.44.83  2018-09-24_21:40:59_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.43  
+# 	   CLUSTER >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), CLUSTER)) 
 # 	template.py  3.43.82  2018-09-23_21:07:32_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.42  
 # 	   change -h to -home 
 # 	template.py  3.42.81  2018-09-23_20:48:03_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.41  
@@ -69,6 +71,7 @@ if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Name of command >{}<  Version of pyt
 
 ###	#  Examples -->
 #  if argument; use argument -> do not use default or environment variables for MESSAGE
+#  # NOTE: MESSAGE is absolute path and filename else use environment variables or default to build absolute path and filename
 if no_arguments == 2 :
 #  Set non-default MESSAGE file including path
    MESSAGE = sys.argv[1]
@@ -103,6 +106,34 @@ else :
    MESSAGE = DATA_DIR + CLUSTER + MESSAGE_FILE
 if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), MESSAGE))
 ###
+
+#  if argument; use argument -> do not use environment variables or default for CLUSTER
+#  order of precedence: CLI argument, environment variable, default code
+if no_arguments >= 2 :
+   CLUSTER = sys.argv[1]
+   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using 1 argument CLUSTER >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), CLUSTER))
+elif "CLUSTER" in os.environ :
+   #  Check CLUSTER; set using os environment variable
+   CLUSTER = os.getenv("CLUSTER")
+   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using environment variable CLUSTER >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), CLUSTER))
+else :
+   #  Set CLUSTER with default
+   CLUSTER = "us-tx-cluster-1/"
+   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Environment variable CLUSTER NOT set, using default >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), CLUSTER))
+
+#  if argument; use argument -> do not use environment variables or default for DATA_DIR
+#  order of precedence: CLI argument, environment variable, default code
+if no_arguments == 3 :
+   DATA_DIR = sys.argv[2]
+   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using 2 argument DATA_DIR >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), DATA_DIR))
+elif "DATA_DIR" in os.environ :
+   #  Check DATA_DIR; set using os environment variable
+   DATA_DIR = os.getenv("DATA_DIR")
+   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using environment variable DATA_DIR >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), DATA_DIR))
+else :
+   #  Set DATA_DIR with default
+   DATA_DIR = "/usr/local/data/"
+   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Environment variable DATA_DIR NOT set, using default >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), DATA_DIR))
 
 #  Check if two arguments after command if TRUE save second argument 
 # >>>	needs testing
