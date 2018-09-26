@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.29.87  2018-09-26_14:12:27_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.48  
+# 	   update Example set fully qualified domain name 
 # 	template.py  3.48.86  2018-09-26_14:06:29_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.47  
 # 	   update import for DEBUG example 
 # 	template.py  3.47.85  2018-09-24_21:53:49_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.46  
@@ -194,9 +196,10 @@ print ("name = {}".format(__name__))
 from os import getcwd
 print ("pwd = {}".format(getcwd()))
 
-#  Example Return a fully qualified domain name
-import socket
-LOCALHOST = socket.getfqdn()
+#  Example set fully qualified domain name
+from socket import getfqdn
+#
+LOCALHOST = getfqdn()
 
 #  Example import scrollphat and check if scrollphat installed 
 try :
