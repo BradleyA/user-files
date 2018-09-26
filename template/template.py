@@ -1,18 +1,6 @@
 #!/usr/bin/env python3
-# 	template.py  3.29.87  2018-09-26_14:12:27_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.48  
-# 	   update Example set fully qualified domain name 
-# 	template.py  3.48.86  2018-09-26_14:06:29_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.47  
-# 	   update import for DEBUG example 
-# 	template.py  3.47.85  2018-09-24_21:53:49_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.46  
-# 	   Example Return a fully qualified domain name 
-# 	template.py  3.46.84  2018-09-24_21:42:02_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.44  
-# 	   order of precedence: CLI argument, environment variable, default code 
-# 	template.py  3.43.82  2018-09-23_21:07:32_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.42  
-# 	   change -h to -home 
-# 	template.py  3.42.81  2018-09-23_20:48:03_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.41  
-# 	   remove ? as an argument because the shell is using it as a wildcard 
-# 	template.py  3.35.74  2018-09-20_22:47:07_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.34  
-# 	   cleanup 
+# 	template.py  3.49.88  2018-09-26_14:15:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.29  
+# 	   entered correct version number 3.49 not 3.29 
 ###
 DEBUG = 1       # 0 = debug off, 1 = debug on
 #
