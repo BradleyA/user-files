@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.48.86  2018-09-26_14:06:29_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.47  
+# 	   update import for DEBUG example 
 # 	template.py  3.47.85  2018-09-24_21:53:49_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.46  
 # 	   Example Return a fully qualified domain name 
 # 	template.py  3.46.84  2018-09-24_21:42:02_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.44  
@@ -68,8 +70,9 @@ if no_arguments == 2 :
       sys.exit()
 
 #  DEBUG example
-import platform
-if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Name of command >{}<  Version of python >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), __file__, platform.python_version()))
+from platform import python_version
+#
+if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Name of command >{}<  Version of python >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), __file__, python_version()))
 
 ###	#  Examples -->
 #  if argument; use argument -> do not use default or environment variables for MESSAGE
