@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.50.89  2018-09-26_14:35:06_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.49  
+# 	   remove \n from DEBUG and ERROR INFO WARNING 
 # 	template.py  3.49.88  2018-09-26_14:15:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.29  
 # 	   entered correct version number 3.49 not 3.29 
 ###
@@ -143,7 +145,7 @@ if no_arguments == 3 :
       if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Found -home USERHOME >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), USERHOME))
    else :
 #     Unknow option print ERROR
-      print ("\n{}{} {} {}[ERROR]{}  {}  Unsupported option >{}<".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp(), sys.argv[1]))
+      print ("{}{} {} {}[ERROR]{}  {}  Unsupported option >{}<".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp(), sys.argv[1]))
       sys.exit()
 
 #  Check for argument 2 and save
@@ -153,7 +155,7 @@ if no_arguments == 3 :
    if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Using OPTION1 >{}<  OPTION2 >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), OPTION1, OPTION2))
 
 #  Examples
-print ("\nNumber of arguments: {} arguments.".format(len(sys.argv)))
+print ("Number of arguments: {} arguments.".format(len(sys.argv)))
 print ("Argument List: {}".format(str(sys.argv)))
 print ("command = {}".format(sys.argv[0]))
 
@@ -170,13 +172,13 @@ lines = get_msg(MESSAGE)
 #
 
 #  ERROR example		
-print ("\n{}{} {} {}[ERROR]{}  {}  USER don't do that!".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
+print ("{}{} {} {}[ERROR]{}  {}  USER don't do that!".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
 
 #  INFO example
-print ("\n{}{} {} {}[INFO]{}  {}  Using OPTION >{}<".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp(), OPTION3))
+print ("{}{} {} {}[INFO]{}  {}  Using OPTION >{}<".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp(), OPTION3))
 
 #  Examples	
-print ("\ncommand with path = {}".format(__file__))
+print ("command with path = {}".format(__file__))
 print ("module = {}".format(__name__))
 print ("name = {}".format(__name__))
 
@@ -194,14 +196,14 @@ try :
    import scrollphat
 except ImportError :
    if sys.version_info[0] < 3 :
-      sys.exit("\n{}{} {} {}[ERROR]{}  {}  Library scrollphat required. To install:\n\tsudo apt-get install python-scrollphat".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
+      sys.exit("{}{} {} {}[ERROR]{}  {}  Library scrollphat required. To install:\n\tsudo apt-get install python-scrollphat".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
    elif sys.version_info[0] == 3 :
-      sys.exit("\n{}{} {} {}[ERROR]{}  {}  Library scrollphat required. To install:\n\tsudo apt-get install python3-scrollphat".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
+      sys.exit("{}{} {} {}[ERROR]{}  {}  Library scrollphat required. To install:\n\tsudo apt-get install python3-scrollphat".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
 except IOError :
-      sys.exit("\n{}{} {} {}[ERROR]{}  {}  No such file or directory.  Is scrollphat installed on raspberry pi?".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
+      sys.exit("{}{} {} {}[ERROR]{}  {}  No such file or directory.  Is scrollphat installed on raspberry pi?".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
 
 #  Example Done
-print ("\n{}{} {} {}[INFO]{}  {}  Done.\n".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
+print ("{}{} {} {}[INFO]{}  {}  Done.".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
 
 # >>>	CUT line ---
 
