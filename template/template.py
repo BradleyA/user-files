@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.52.90  2018-09-29_12:42:42_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.50  
+# 	   need to understand which get_msg is better example 1 or example 2 #42 
 # 	template.py  3.50.89  2018-09-26_14:35:06_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.49  
 # 	   remove \n from DEBUG and ERROR INFO WARNING 
 # 	template.py  3.49.88  2018-09-26_14:15:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.29  
@@ -13,7 +15,7 @@ import os
 ###
 class color :
    BOLD = '\033[1m'
-   END = '\033[0m'
+   END  = '\033[0m'
 ###
 LANGUAGE = os.getenv("LANG")
 def display_help() :
@@ -159,7 +161,7 @@ print ("Number of arguments: {} arguments.".format(len(sys.argv)))
 print ("Argument List: {}".format(str(sys.argv)))
 print ("command = {}".format(sys.argv[0]))
 
-#  Read TEMP_FILE contents and return contents
+#  >>>	DOES NOT WORK IN display-message-hd.py BUT IS USED IN display-message.py  Example 1 Read TEMP_FILE contents and return contents 
 def get_msg(TEMP_FILE) :
    if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Reading MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), TEMP_FILE))
    file = open(TEMP_FILE,"r")
@@ -170,6 +172,14 @@ def get_msg(TEMP_FILE) :
 #
 lines = get_msg(MESSAGE)
 #
+
+#  Example 2: Read TEMP_FILE contents and return contents
+def get_msg(TEMP_FILE) :
+   if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Reading MESSAGE file >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), TEMP_FILE))
+   file = open(TEMP_FILE,"r")
+   CONTENT = file.read().splitlines()
+   file.close()
+   return CONTENT
 
 #  ERROR example		
 print ("{}{} {} {}[ERROR]{}  {}  USER don't do that!".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
