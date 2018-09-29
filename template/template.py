@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.54.94  2018-09-29_17:03:52_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.53  
+# 	   update LANGUAGE WARNING #6 
 # 	template.py  3.53.93  2018-09-29_14:41:18_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.52-2-gc62fddb  
 # 	   begin working #4 #5 
 # 	template.py  3.52.90  2018-09-29_12:42:42_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.50  
@@ -32,12 +34,14 @@ def display_help() :
    print ("\nEXAMPLES\n   <<your code examples description goes here>>")
    print ("   {} <<code example goes here>>\n".format(__file__))
 #  After displaying help in english check for other languages
-   if LANGUAGE != "en_US.UTF-8" :
-      print ("{}{} {} {}[WARNING]{}  {}  Your language, {} is not supported, Would you like to help?".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp(), LANGUAGE))
+   if os.getenv("LANGUAGE") != "en_US.UTF-8" :
+      print ("{}{} {} {} {} {}[WARNING]{}  {}  {}  {} {}  Your language, {} is not supported, Would you like to help translate?".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, os.getlogin(), os.getuid(), os.getgid(), os.getenv("LANGUAGE"))) 
+#     print ("{}{} {} {} {} {}[INFO   ]{}  {}  {}  {} {}  Begin"                                                                .format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, os.getlogin(), os.getuid(), os.getgid()))
 #  elif LANGUAGE != "fr_CA.UTF-8" :
 #     print display_help in french
 #  else :
    return
+
 
 #  Line number function
 from inspect import currentframe
@@ -49,10 +53,18 @@ def get_line_no() :
 def get_date_stamp() :
    return time.strftime("%Y-%m-%d-%H-%M-%S-%Z")
 
-#  Set fully qualified domain name
+#  Fully qualified domain name
 from socket import getfqdn
 #  FQDN hostname
 LOCALHOST = getfqdn()
+
+#  Version  
+with open(__file__) as f :
+   f.readline()
+   line2 = f.readline()
+   line2 = line2.split()
+   SCRIPT_NAME = line2[1]
+   SCRIPT_VERSION = line2[2]
 
 #  Default help and version arguments
 no_arguments =  int(len(sys.argv))
@@ -63,12 +75,11 @@ if no_arguments == 2 :
       sys.exit()
 #  Default version output  
    if sys.argv[1] == '--version' or sys.argv[1] == '-version' or sys.argv[1] == 'version' or sys.argv[1] == '-v' :
-      with open(__file__) as f :
-         f.readline()
-         line2 = f.readline()
-         line2 = line2.split()
-         print ("{} {}".format(line2[1], line2[2]))
+      print ("{} {}".format(SCRIPT_NAME, SCRIPT_VERSION))
       sys.exit()
+
+#  Begin script INFO
+print ("{}{} {} {} {} {}[INFO]{}  {}  {}  {} {}  Begin".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, os.getlogin(), os.getuid(), os.getgid()))
 
 #  DEBUG example
 from platform import python_version
@@ -144,11 +155,11 @@ else :
 #  Check if two arguments after command if TRUE save second argument 
 # >>>	needs testing
 if no_arguments == 3 :
-   if sys.argv[1] = "-f" :
+   if sys.argv[1] == "-f" :
 #     Set FILE_NAME to second argument
       FILE_NAME = sys.argv[2]
       if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Found -f FILE_NAME >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), FILE_NAME))
-   elif sys.argv[1] = "-home" :
+   elif sys.argv[1] == "-home" :
 #     Set USERHOME to second argument
       USERHOME = sys.argv[2]
       if DEBUG == 1 : print ("> {}DEBUG{} {}  {}  Found -home USERHOME >{}<".format(color.BOLD, color.END, get_line_no(), get_date_stamp(), USERHOME))
@@ -192,7 +203,7 @@ def get_msg(TEMP_FILE) :
 print ("{}{} {} {}[ERROR]{}  {}  USER don't do that!".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
 
 #  INFO example
-print ("{}{} {} {}[INFO]{}  {}  Using OPTION >{}<".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp(), OPTION3))
+print ("{}{} {} {}[INFO]{}  {}  Information for user ".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
 
 #  Examples	
 print ("command with path = {}".format(__file__))
