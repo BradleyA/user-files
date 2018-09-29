@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.53.93  2018-09-29_14:41:18_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.52-2-gc62fddb  
+# 	   begin working #4 #5 
 # 	template.py  3.52.90  2018-09-29_12:42:42_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.50  
 # 	   need to understand which get_msg is better example 1 or example 2 #42 
 # 	template.py  3.50.89  2018-09-26_14:35:06_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.49  
@@ -46,6 +48,11 @@ def get_line_no() :
 #  Date and time function
 def get_date_stamp() :
    return time.strftime("%Y-%m-%d-%H-%M-%S-%Z")
+
+#  Set fully qualified domain name
+from socket import getfqdn
+#  FQDN hostname
+LOCALHOST = getfqdn()
 
 #  Default help and version arguments
 no_arguments =  int(len(sys.argv))
@@ -196,11 +203,6 @@ print ("name = {}".format(__name__))
 from os import getcwd
 print ("pwd = {}".format(getcwd()))
 
-#  Example set fully qualified domain name
-from socket import getfqdn
-#
-LOCALHOST = getfqdn()
-
 #  Example import scrollphat and check if scrollphat installed 
 try :
    import scrollphat
@@ -214,6 +216,8 @@ except IOError :
 
 #  Example Done
 print ("{}{} {} {}[INFO]{}  {}  Done.".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
+#
+#	print ("{}{} {} version {} {}[INFO]{}  {}  {}  Done.".format(color.END, get_date_stamp(), __file__, get_line_no(), color.BOLD, color.END, LOCALHOST, os.getuid())) #4 #5
 
 # >>>	CUT line ---
 
