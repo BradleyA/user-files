@@ -1,14 +1,8 @@
 #!/usr/bin/env python3
-# 	template.py  3.54.94  2018-09-29_17:03:52_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.53  
-# 	   update LANGUAGE WARNING #6 
-# 	template.py  3.53.93  2018-09-29_14:41:18_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.52-2-gc62fddb  
-# 	   begin working #4 #5 
+# 	template.py  3.55.95  2018-09-29_17:13:22_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.54  
+# 	   template.py rewrite if LANGUAGE complete close #6 
 # 	template.py  3.52.90  2018-09-29_12:42:42_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.50  
 # 	   need to understand which get_msg is better example 1 or example 2 #42 
-# 	template.py  3.50.89  2018-09-26_14:35:06_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.49  
-# 	   remove \n from DEBUG and ERROR INFO WARNING 
-# 	template.py  3.49.88  2018-09-26_14:15:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.29  
-# 	   entered correct version number 3.49 not 3.29 
 ###
 DEBUG = 1       # 0 = debug off, 1 = debug on
 #
@@ -25,7 +19,7 @@ LANGUAGE = os.getenv("LANG")
 def display_help() :
    print ("\n{} - <one line description>".format( __file__))
    print ("\nUSAGE\n   {} [xxx | yyy | zzz]".format(__file__))
-   print ("   {} [--help | -help | help | -h | h | -? | ?]".format(__file__))
+   print ("   {} [--help | -help | help | -h | h | -?]".format(__file__))
    print ("   {} [--version | -version | -v]".format(__file__))
    print ("\nDESCRIPTION\n<<your help output goes here>>")
    print ("\nEnvironment Variables\n   <<your variables go here>>")
@@ -36,12 +30,10 @@ def display_help() :
 #  After displaying help in english check for other languages
    if os.getenv("LANGUAGE") != "en_US.UTF-8" :
       print ("{}{} {} {} {} {}[WARNING]{}  {}  {}  {} {}  Your language, {} is not supported, Would you like to help translate?".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, os.getlogin(), os.getuid(), os.getgid(), os.getenv("LANGUAGE"))) 
-#     print ("{}{} {} {} {} {}[INFO   ]{}  {}  {}  {} {}  Begin"                                                                .format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, os.getlogin(), os.getuid(), os.getgid()))
 #  elif LANGUAGE != "fr_CA.UTF-8" :
 #     print display_help in french
 #  else :
    return
-
 
 #  Line number function
 from inspect import currentframe
