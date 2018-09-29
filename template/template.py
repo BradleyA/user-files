@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.56.96  2018-09-29_17:55:11_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.55  
+# 	   template.py correc display_help after more testeding #6 
 # 	template.py  3.55.95  2018-09-29_17:13:22_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.54  
 # 	   template.py rewrite if LANGUAGE complete close #6 
 # 	template.py  3.52.90  2018-09-29_12:42:42_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.50  
@@ -28,9 +30,9 @@ def display_help() :
    print ("\nEXAMPLES\n   <<your code examples description goes here>>")
    print ("   {} <<code example goes here>>\n".format(__file__))
 #  After displaying help in english check for other languages
-   if os.getenv("LANGUAGE") != "en_US.UTF-8" :
-      print ("{}{} {} {} {} {}[WARNING]{}  {}  {}  {} {}  Your language, {} is not supported, Would you like to help translate?".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, os.getlogin(), os.getuid(), os.getgid(), os.getenv("LANGUAGE"))) 
-#  elif LANGUAGE != "fr_CA.UTF-8" :
+   if LANGUAGE != "en_US.UTF-8" :
+      print ("{}{} {} {} {} {}[INFO]{}  {}  {}  {} {}  Your language, {} is not supported, Would you like to help translate?".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, os.getlogin(), os.getuid(), os.getgid(), LANGUAGE)) 
+#  elif LANGUAGE == "fr_CA.UTF-8" :
 #     print display_help in french
 #  else :
    return
@@ -218,9 +220,7 @@ except IOError :
       sys.exit("{}{} {} {}[ERROR]{}  {}  No such file or directory.  Is scrollphat installed on raspberry pi?".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
 
 #  Example Done
-print ("{}{} {} {}[INFO]{}  {}  Done.".format(color.END, __file__, get_line_no(), color.BOLD, color.END, get_date_stamp()))
-#
-#	print ("{}{} {} version {} {}[INFO]{}  {}  {}  Done.".format(color.END, get_date_stamp(), __file__, get_line_no(), color.BOLD, color.END, LOCALHOST, os.getuid())) #4 #5
+print ("{}{} {} {} {} {}[INFO]{}  {}  {}  {} {}  Done.".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, os.getlogin(), os.getuid(), os.getgid()))
 
 # >>>	CUT line ---
 
