@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template.sh  3.61.101  2018-09-29_21:15:50_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.60  
-# 	   update echo #4 #5 
-# 	template.sh  3.60.100  2018-09-29_20:42:25_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.59  
-# 	   fixed \n when using awk change print to printf #4 #5 
+# 	template.sh  3.62.102  2018-09-29_21:22:35_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.61  
+# 	   close #4 #5 
 ###
 DEBUG=1                 # 0 = debug off, 1 = debug on
 #	set -x
@@ -106,6 +104,7 @@ else
                 exit 0
         fi
 fi
+
 #
 ###	EXAMPLE TWO
 #	Check arguement 1 xxx
@@ -114,6 +113,7 @@ if [ "$1" != "no" ] && [ "$1" != "normal" ] && [ "$1" != "all" ] && [ "$1" != ""
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0} ${SCRIPT_VERSION} ${LINENO} ${BOLD}[ERROR]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  First arguement, ${1}, is NOT no, normal, all." 1>&2
 	exit 0
 fi
-###
+
+#
 get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0} ${SCRIPT_VERSION} ${LINENO} ${BOLD}[WARN]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  Done." 1>&2
 ###
