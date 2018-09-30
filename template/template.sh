@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template.sh  3.59.99  2018-09-29_20:29:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.58  
+# 	   begin work on #4 #5 
 # 	template.sh  3.58.98  2018-09-29_19:46:06_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.57  
 # 	   cleanup version comments 
 ###
@@ -27,7 +29,7 @@ echo -e "\nDOCUMENTATION\n   https://github.com/BradleyA/REPOSITORY"
 echo -e "\nEXAMPLES\n   <<your code examples description goes here>>\n\n${0} <<code example goes here>>\n"
 #	After displaying help in english check for other languages
 if ! [ "${LANG}" == "en_US.UTF-8" ] ; then
-	get_date_stamp ; echo -e "${NORMAL}${0} ${LINENO} ${BOLD}[WARNING]${NORMAL}  ${DATE_STAMP}  Your language, ${LANG}, is not supported.\tWould you like to help?"	1>&2
+	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0} ${SCRIPT_VERSION} ${LINENO} ${BOLD}[WARN]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  Your language, ${LANG}, is not supported, Would you like to help translate?" 1>&2
 #       elif [ "${LANG}" == "fr_CA.UTF-8" ] ; then
 #               get_date_stamp ; echo -e "${NORMAL}${0} ${LINENO} ${BOLD}[WARNING]${NORMAL}  ${DATE_STAMP}  Display help in ${LANG}"        1>&2
 #       else
@@ -40,13 +42,24 @@ get_date_stamp() {
 DATE_STAMP=`date +%Y-%m-%d-%H-%M-%S-%Z`
 }
 
+#  Fully qualified domain name FQDN hostname
+LOCALHOST=`hostname -f`
+
+#  Version
+SCRIPT_NAME=`head -2 ${0} | awk {'print$2'}`
+SCRIPT_VERSION=`head -2 ${0} | awk {'print$3'}`
+
+#	UID and GID
+USER_ID=`id -u`
+GROUP_ID=`id -g`
+
 #	Default help and version arguments
 if [ "$1" == "--help" ] || [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ] || [ "$1" == "h" ] || [ "$1" == "-?" ] ; then
 	display_help
 	exit 0
 fi
 if [ "$1" == "--version" ] || [ "$1" == "-version" ] || [ "$1" == "version" ] || [ "$1" == "-v" ] ; then
-	head -2 ${0} | awk {'print$2"\t"$3'}
+	echo "${0} ${SCRIPT_VERSION}"
 	exit 0
 fi
 
