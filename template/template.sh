@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template.sh  3.62.102  2018-09-29_21:22:35_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.61  
-# 	   close #4 #5 
+# 	template.sh  3.63.103  2018-09-29_21:23:29_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.62  
+# 	   close #4 close #5 
 ###
 DEBUG=1                 # 0 = debug off, 1 = debug on
 #	set -x
