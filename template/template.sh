@@ -1,14 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.41.80  2018-09-23_11:49:25_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.40  
-# 	   added spaces to help cut and paste of cwd in previous prompts 
-# 	template.sh  3.40.79  2018-09-22_14:13:58_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.39  
-# 	   added comment for precedence 
-# 	template.sh  3.39.78  2018-09-22_14:10:20_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.38  
-# 	   added examples for arguments and precedence with environment variables 
-# 	template.sh  3.38.77  2018-09-22_13:24:45_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.37  
-# 	   added -Txterm to tput lines, remove n to logging information 
-# 	template.sh  3.37.76  2018-09-21_11:43:32_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.36  
-# 	   complete DEBUG & ERROR etc with get_date_stamp 
+# 	template.sh  3.58.98  2018-09-29_19:46:06_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.57  
+# 	   cleanup version comments 
 ###
 DEBUG=1                 # 0 = debug off, 1 = debug on
 #	set -x
@@ -110,3 +102,4 @@ if [ "$1" != "no" ] && [ "$1" != "normal" ] && [ "$1" != "all" ] && [ "$1" != ""
 	exit 0
 fi
 ###
+echo -e "${NORMAL}\n${0} ${LINENO} [${BOLD}INFO${NORMAL}]:	Done.\n"	1>&2

@@ -1,12 +1,8 @@
 #!/usr/bin/env python3
+# 	template.py  3.58.98  2018-09-29_19:46:06_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.57  
+# 	   cleanup version comments 
 # 	template.py  3.57.97  2018-09-29_18:35:40_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.56  
 # 	   updated print and sys,exit #4 #5 for template.py 
-# 	template.py  3.56.96  2018-09-29_17:55:11_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.55  
-# 	   template.py correc display_help after more testeding #6 
-# 	template.py  3.55.95  2018-09-29_17:13:22_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.54  
-# 	   template.py rewrite if LANGUAGE complete close #6 
-# 	template.py  3.52.90  2018-09-29_12:42:42_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.50  
-# 	   need to understand which get_msg is better example 1 or example 2 #42 
 ###
 DEBUG = 1       # 0 = debug off, 1 = debug on
 #
