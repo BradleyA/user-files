@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template.sh  3.60.100  2018-09-29_20:42:25_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.59  
+# 	   fixed \n when using awk change print to printf #4 #5 
 # 	template.sh  3.59.99  2018-09-29_20:29:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.58  
 # 	   begin work on #4 #5 
 # 	template.sh  3.58.98  2018-09-29_19:46:06_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.57  
@@ -46,8 +48,8 @@ DATE_STAMP=`date +%Y-%m-%d-%H-%M-%S-%Z`
 LOCALHOST=`hostname -f`
 
 #  Version
-SCRIPT_NAME=`head -2 ${0} | awk {'print$2'}`
-SCRIPT_VERSION=`head -2 ${0} | awk {'print$3'}`
+SCRIPT_NAME=`head -2 ${0} | awk {'printf$2'}`
+SCRIPT_VERSION=`head -2 ${0} | awk {'printf$3'}`
 
 #	UID and GID
 USER_ID=`id -u`
