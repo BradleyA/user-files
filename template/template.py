@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.66.106  2018-10-01_22:15:19_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.65  
+# 	   added close #44 
 # 	template.py  3.58.98  2018-09-29_19:46:06_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.57  
 # 	   cleanup version comments 
 # 	template.py  3.57.97  2018-09-29_18:35:40_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.56  
@@ -57,6 +59,7 @@ with open(__file__) as f :
    line2 = line2.split()
    SCRIPT_NAME = line2[1]
    SCRIPT_VERSION = line2[2]
+   f.close()
 
 #  Default help and version arguments
 no_arguments =  int(len(sys.argv))
