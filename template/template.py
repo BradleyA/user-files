@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
-# 	template.py  3.67.107  2018-10-03_14:53:15_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.66  
-# 	   change INFO DEBUG . . . standard for USER, UID, GID close #8 
-# 	template.py  3.66.106  2018-10-01_22:15:19_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.65  
-# 	   added close #44 
-# 	template.py  3.58.98  2018-09-29_19:46:06_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.57  
-# 	   cleanup version comments 
-# 	template.py  3.57.97  2018-09-29_18:35:40_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.56  
-# 	   updated print and sys,exit #4 #5 for template.py 
+# 	template.py  3.68.108  2018-10-03_15:11:48_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.67  
+# 	   cleanup for #8 
 #
 ###	template.py - examples of default code standards for my scripts
 DEBUG = 1       # 0 = debug off, 1 = debug on
