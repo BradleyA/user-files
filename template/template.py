@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.69.109  2018-10-03_16:51:44_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.68  
+# 	   correct MESSAGE to include / 
 # 	template.py  3.68.108  2018-10-03_15:11:48_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.67  
 # 	   cleanup for #8 
 #
@@ -121,7 +123,7 @@ else :
       MESSAGE_FILE = "MESSAGE"
       if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Environment variable MESSAGE_FILE NOT set, using default >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, MESSAGE_FILE))
    #  Set MESSAGE with absolute path
-   MESSAGE = DATA_DIR + CLUSTER + MESSAGE_FILE
+   MESSAGE = DATA_DIR + "/" + CLUSTER + "/" + MESSAGE_FILE
 if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Using MESSAGE file >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, MESSAGE))
 ###
 
@@ -180,7 +182,8 @@ print ("Number of arguments: {} arguments.".format(len(sys.argv)))
 print ("Argument List: {}".format(str(sys.argv)))
 print ("command = {}".format(sys.argv[0]))
 
-#  >>>	DOES NOT WORK IN display-message-hd.py BUT IS USED IN display-message.py  Example 1 Read TEMP_FILE contents and return contents 
+#  >>>	DOES NOT WORK IN display-message-hd.py BUT IS USED IN display-message.py
+#	Example 1 Read TEMP_FILE contents and return contents 
 def get_msg(TEMP_FILE) :
    if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Reading MESSAGE file >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, TEMP_FILE))
    file = open(TEMP_FILE,"r")
@@ -192,6 +195,7 @@ def get_msg(TEMP_FILE) :
 lines = get_msg(MESSAGE)
 #
 
+#  >>>	DOES NOT WORK IN display-message.py BUT IS USED IN display-message-hd.py
 #  Example 2: Read TEMP_FILE contents and return contents
 def get_msg(TEMP_FILE) :
    if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Reading MESSAGE file >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, TEMP_FILE))
