@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template.py  3.70.110  2018-10-03_20:44:17_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.69  
+# 	   comment change 
 # 	template.py  3.69.109  2018-10-03_16:51:44_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.68  
 # 	   correct MESSAGE to include / 
 # 	template.py  3.68.108  2018-10-03_15:11:48_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.67  
@@ -227,7 +229,7 @@ except ImportError :
 except IOError :
       sys.exit("{}{} {} {} {} {}[ERROR]{}  {}  {}  {} {}  No such file or directory.  Is scrollphat installed on raspberry pi?".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID))
 
-#  Example Done
+#  Done
 print ("{}{} {} {} {} {}[INFO]{}  {}  {}  {} {}  Done.".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID))
 
 # >>>	CUT line ---
