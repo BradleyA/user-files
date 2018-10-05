@@ -1,11 +1,14 @@
 #!/bin/bash
+# 	template.sh  3.71.111  2018-10-05_11:08:18_CDT  https://github.com/BradleyA/user-work-files.git  bradley  zero.cptx86.com 3.70  
+# 	   minor comment update 
 # 	template.sh  3.65.105  2018-09-30_19:30:57_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.64  
 # 	   add INFO Begin 
 # 	template.sh  3.64.104  2018-09-30_12:33:27_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.63  
 # 	   minor change in order 
 # 	template.sh  3.63.103  2018-09-29_21:23:29_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.62  
 # 	   close #4 close #5 
-###
+#
+###	template.sh
 DEBUG=1                 # 0 = debug off, 1 = debug on
 #	set -x
 #	set -v
