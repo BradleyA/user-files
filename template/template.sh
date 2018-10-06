@@ -1,10 +1,10 @@
 #!/bin/bash
+# 	template.sh  3.73.113  2018-10-05_20:33:13_CDT  https://github.com/BradleyA/user-work-files.git  bradley  zero.cptx86.com 3.72  
+# 	   minor comment change 
 # 	template.sh  3.72.112  2018-10-05_14:01:48_CDT  https://github.com/BradleyA/user-work-files.git  bradley  zero.cptx86.com 3.71  
 # 	   update DOne statement from WARN to INFO 
-# 	template.sh  3.71.111  2018-10-05_11:08:18_CDT  https://github.com/BradleyA/user-work-files.git  bradley  zero.cptx86.com 3.70  
-# 	   minor comment update 
 #
-###	template.sh
+###	template.sh - brief description
 DEBUG=1                 # 0 = debug off, 1 = debug on
 #	set -x
 #	set -v
