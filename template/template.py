@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# 	template.py  3.74.114  2018-10-06_19:06:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.73  
+# 	   template{.py .sh} add ISO 8601 for date close #9 
+# 	template.py  3.71.111  2018-10-06_18:58:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.70  
+# 	   template{.py .sh} add ISO 8601 for date close #9 
 # 	template.py  3.70.110  2018-10-03_20:44:17_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.69  
 # 	   comment change 
 # 	template.py  3.69.109  2018-10-03_16:51:44_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.68  
@@ -44,9 +48,10 @@ def get_line_no() :
    cf = currentframe()
    return cf.f_back.f_lineno
 
-#  Date and time function
+#  Date and time function ISO 8601
 def get_date_stamp() :
-   return time.strftime("%Y-%m-%d-%H-%M-%S-%Z")
+   ISO8601 = time.strftime("%Y-%m-%dT%H:%M:%S%z") + time.strftime(" (%Z)")
+   return ISO8601
 
 #  Fully qualified domain name
 from socket import getfqdn

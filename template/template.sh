@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template.sh  3.74.114  2018-10-06_19:06:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.73  
+# 	   template{.py .sh} add ISO 8601 for date close #9 
 # 	template.sh  3.73.113  2018-10-05_20:33:13_CDT  https://github.com/BradleyA/user-work-files.git  bradley  zero.cptx86.com 3.72  
 # 	   minor comment change 
 # 	template.sh  3.72.112  2018-10-05_14:01:48_CDT  https://github.com/BradleyA/user-work-files.git  bradley  zero.cptx86.com 3.71  
@@ -38,9 +40,11 @@ if ! [ "${LANG}" == "en_US.UTF-8" ] ; then
 fi
 }
 
-#	Date and time function
+#	Date and time function ISO 8601
 get_date_stamp() {
-DATE_STAMP=`date +%Y-%m-%d-%H-%M-%S-%Z`
+DATE_STAMP=`date +%Y-%m-%dT%H:%M:%S%:z`
+TEMP=`date +%Z`
+DATE_STAMP=`echo "${DATE_STAMP} (${TEMP})"`
 }
 
 #  Fully qualified domain name FQDN hostname
