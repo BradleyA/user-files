@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template.sh  3.75.115  2018-10-08T21:19:06-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.74  
+# 	   minor update to display_help 
 # 	template.sh  3.74.114  2018-10-06_19:06:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.73  
 # 	   template{.py .sh} add ISO 8601 for date close #9 
 # 	template.sh  3.73.113  2018-10-05_20:33:13_CDT  https://github.com/BradleyA/user-work-files.git  bradley  zero.cptx86.com 3.72  
@@ -20,7 +22,7 @@ echo    "   ${0} [--file <PATH>/<FILE_NAME> | -f <PATH>/<FILE_NAME>]"
 echo    "   ${0} [--help | -help | help | -h | h | -?]"
 echo    "   ${0} [--version | -version | -v]"
 echo -e "\nDESCRIPTION\nxxx xxx xxx ..."
-echo    "xxx xxxxxxx xxx xxxxxxx"
+echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<"
 echo -e "\nParagraph two xxx xxx xxxxxxx"
 echo    "\nEnvironment Variables\n   <<your variables go here>>"
 echo -e "\nOPTIONS\n   -f, --file\n      path and file on system '<path>/<file_name>'"
@@ -47,10 +49,10 @@ TEMP=`date +%Z`
 DATE_STAMP=`echo "${DATE_STAMP} (${TEMP})"`
 }
 
-#  Fully qualified domain name FQDN hostname
+#	Fully qualified domain name FQDN hostname
 LOCALHOST=`hostname -f`
 
-#  Version
+#	Version
 SCRIPT_NAME=`head -2 ${0} | awk {'printf$2'}`
 SCRIPT_VERSION=`head -2 ${0} | awk {'printf$3'}`
 
