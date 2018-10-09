@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template.sh  3.76.116  2018-10-08T21:39:39-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.75  
+# 	   minor comment change 
 # 	template.sh  3.75.115  2018-10-08T21:19:06-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.74  
 # 	   minor update to display_help 
 # 	template.sh  3.74.114  2018-10-06_19:06:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.73  
@@ -77,23 +79,24 @@ get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0} ${SCRIPT_VERSION} ${LINENO
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0} ${SCRIPT_VERSION} ${LINENO} ${BOLD}[DEBUG]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  Name_of_command >${0}< Name_of_arg1 >${1}<" 1>&2 ; fi
 
 ###
-
 #	Example arguments
+
 #       Order of precedence: CLI argument, default code
 OPTION1=${1:-default_value1}
 OPTION2=${2:-default_value2}
 
 #	Example arguments
-#       order of precedence: CLI argument, environment variable, default code
+#       Order of precedence: CLI argument, environment variable, default code
 if [ $# -ge  1 ]  ; then CLUSTER=${1} ; elif [ "${CLUSTER}" == "" ] ; then CLUSTER="us-tx-cluster-1/" ; fi
-#       order of precedence: CLI argument, default code
+#       Order of precedence: CLI argument, default code
 ADMUSER=${2:-${USER}}
-#       order of precedence: CLI argument, environment variable, default code
+#       Order of precedence: CLI argument, environment variable, default code
 if [ $# -ge  3 ]  ; then DATA_DIR=${1} ; elif [ "${DATA_DIR}" == "" ] ; then DATA_DIR="/usr/local/data/" ; fi
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0} ${SCRIPT_VERSION} ${LINENO} ${BOLD}[DEBUG]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
-#
 ###	EXAMPLE ONE
+#
+
 #	Example code is a template, it will not work until chnaged
 #
 #       Check if argument 1 is blank
