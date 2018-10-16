@@ -1,16 +1,8 @@
 #!/bin/bash
-# 	template/template.sh  3.77.117  2018-10-16T00:10:15-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.76  
-# 	   Added line because USER is not defined in crobtab jobs 
-# 	template.sh  3.76.116  2018-10-08T21:39:39-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.75  
-# 	   minor comment change 
-# 	template.sh  3.75.115  2018-10-08T21:19:06-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.74  
-# 	   minor update to display_help 
+# 	template.sh  3.78.118  2018-10-16T11:40:40-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.77  
+# 	   Added line because USER is not defined in crobtab jobs continue testing in crontab 
 # 	template.sh  3.74.114  2018-10-06_19:06:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.73  
 # 	   template{.py .sh} add ISO 8601 for date close #9 
-# 	template.sh  3.73.113  2018-10-05_20:33:13_CDT  https://github.com/BradleyA/user-work-files.git  bradley  zero.cptx86.com 3.72  
-# 	   minor comment change 
-# 	template.sh  3.72.112  2018-10-05_14:01:48_CDT  https://github.com/BradleyA/user-work-files.git  bradley  zero.cptx86.com 3.71  
-# 	   update DOne statement from WARN to INFO 
 #
 ###	template.sh - brief description
 DEBUG=1                 # 0 = debug off, 1 = debug on
