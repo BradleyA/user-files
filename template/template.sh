@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.77.117  2018-10-16T00:10:15-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.76  
+# 	   Added line because USER is not defined in crobtab jobs 
 # 	template.sh  3.76.116  2018-10-08T21:39:39-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.75  
 # 	   minor comment change 
 # 	template.sh  3.75.115  2018-10-08T21:19:06-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.74  
@@ -57,6 +59,10 @@ LOCALHOST=`hostname -f`
 #	Version
 SCRIPT_NAME=`head -2 ${0} | awk {'printf$2'}`
 SCRIPT_VERSION=`head -2 ${0} | awk {'printf$3'}`
+
+#       Added line because USER is not defined in crobtab jobs
+if ! [ "${USER}" == "${LOGNAME}" ] ; then  USER=${LOGNAME} ; fi
+if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0} ${SCRIPT_VERSION} ${LINENO} ${BOLD}[DEBUG]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  USER  >${USER}<  LOGNAME >${LOGNAME}<" 1>&2 ; fi
 
 #	UID and GID
 USER_ID=`id -u`
