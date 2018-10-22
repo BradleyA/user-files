@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.81.121  2018-10-21T21:09:56-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.80  
+# 	   nanoseconds to the 3 most significant digits 
 # 	template/template.sh  3.79.119  2018-10-21T20:58:18-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.78  
 # 	   added nano seconds to time 
 # 	template.sh  3.78.118  2018-10-16T11:40:40-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.77  
@@ -42,7 +44,7 @@ fi
 
 #	Date and time function ISO 8601
 get_date_stamp() {
-DATE_STAMP=`date +%Y-%m-%dT%H:%M:%S.%N%:z`
+DATE_STAMP=`date +%Y-%m-%dT%H:%M:%S.%3N%:z`
 TEMP=`date +%Z`
 DATE_STAMP=`echo "${DATE_STAMP} (${TEMP})"`
 }
