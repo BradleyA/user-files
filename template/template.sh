@@ -1,12 +1,8 @@
 #!/bin/bash
-# 	template/template.sh  3.81.121  2018-10-21T21:09:56-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.80  
-# 	   nanoseconds to the 3 most significant digits 
-# 	template/template.sh  3.79.119  2018-10-21T20:58:18-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.78  
-# 	   added nano seconds to time 
+# 	template/template.sh  3.82.122  2018-10-21T22:41:07-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.81  
+# 	   nanoseconds to the 6 most significant digits 
 # 	template.sh  3.78.118  2018-10-16T11:40:40-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.77  
 # 	   Added line because USER is not defined in crobtab jobs continue testing in crontab 
-# 	template.sh  3.74.114  2018-10-06_19:06:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.73  
-# 	   template{.py .sh} add ISO 8601 for date close #9 
 #
 ###	template.sh - brief description
 DEBUG=1                 # 0 = debug off, 1 = debug on
@@ -44,7 +40,7 @@ fi
 
 #	Date and time function ISO 8601
 get_date_stamp() {
-DATE_STAMP=`date +%Y-%m-%dT%H:%M:%S.%3N%:z`
+DATE_STAMP=`date +%Y-%m-%dT%H:%M:%S.%6N%:z`
 TEMP=`date +%Z`
 DATE_STAMP=`echo "${DATE_STAMP} (${TEMP})"`
 }
