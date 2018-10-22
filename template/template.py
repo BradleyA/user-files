@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template/template.py  3.80.120  2018-10-21T21:00:57-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.79  
+# 	   corrected nano second added import 
 # 	template/template.py  3.79.119  2018-10-21T20:58:18-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.78  
 # 	   added nano seconds to time 
 # 	template.py  3.74.114  2018-10-06_19:06:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.73  
@@ -17,7 +19,7 @@ DEBUG = 1       # 0 = debug off, 1 = debug on
 #
 import subprocess
 import sys
-import time
+import datetime, time
 import os
 ###
 class color :
