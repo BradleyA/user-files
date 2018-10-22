@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.79.119  2018-10-21T20:58:18-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.78  
+# 	   added nano seconds to time 
 # 	template.sh  3.78.118  2018-10-16T11:40:40-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.77  
 # 	   Added line because USER is not defined in crobtab jobs continue testing in crontab 
 # 	template.sh  3.74.114  2018-10-06_19:06:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.73  
@@ -40,7 +42,7 @@ fi
 
 #	Date and time function ISO 8601
 get_date_stamp() {
-DATE_STAMP=`date +%Y-%m-%dT%H:%M:%S%:z`
+DATE_STAMP=`date +%Y-%m-%dT%H:%M:%S.%N%:z`
 TEMP=`date +%Z`
 DATE_STAMP=`echo "${DATE_STAMP} (${TEMP})"`
 }

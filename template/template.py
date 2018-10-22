@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template/template.py  3.79.119  2018-10-21T20:58:18-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.78  
+# 	   added nano seconds to time 
 # 	template.py  3.74.114  2018-10-06_19:06:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.73  
 # 	   template{.py .sh} add ISO 8601 for date close #9 
 # 	template.py  3.71.111  2018-10-06_18:58:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.70  
@@ -50,7 +52,11 @@ def get_line_no() :
 
 #  Date and time function ISO 8601
 def get_date_stamp() :
-   ISO8601 = time.strftime("%Y-%m-%dT%H:%M:%S%z") + time.strftime(" (%Z)")
+   # calculate the offset taking into account daylight saving time
+   utc_offset_sec = time.altzone if time.localtime().tm_isdst else time.timezone
+   utc_offset = datetime.timedelta(seconds=-utc_offset_sec)
+   ISO8601 = datetime.datetime.now().replace(tzinfo=datetime.timezone(offset=utc_offset)).isoformat()  + time.strftime(" (%Z)")
+#      ISO8601 = time.strftime("%Y-%m-%dT%H:%M:%S%z") + time.strftime(" (%Z)")
    return ISO8601
 
 #  Fully qualified domain name
