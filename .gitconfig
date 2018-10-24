@@ -1,16 +1,12 @@
 #
-#	.gitconfig  3.83.123  2018-10-23T21:51:55.477061-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.82  
-#	   add what 'git what' to replace bash alias gitlog 
+#	.gitconfig  3.85.125  2018-10-23T22:39:18.725692-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.84  
+#	   added comment about repository name 
 #	.gitconfig  1.3.23  2018-07-24_21:24:30_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  three-rpi3b.cptx86.com 1.2  
 #	   added notes for GitLab and Bitbucket 
-#	.gitconfig  1.2.22  2018-06-26_20:15:55_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  five-rpi3b.cptx86.com 1.1-2-gf106a7b  
-#	   added username to .gitconfig 
-#	.gitconfig	1.0.13	2018-02-19_13:51:41_CST uadmin six-rpi3b.cptx86.com 1.0-7-g15108a2 
-#	   added .bash_aliases & .gitconfig 
 #
 [user]
-        name = Bradley Allen
-#	name = BradleyAxe
+        name = Bradley Allen	# GitHub
+#	name = BradleyAxe	# GitLab
 	email = allen.bradley@ymail.com
 [core]
         editor = vi
