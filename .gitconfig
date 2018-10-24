@@ -1,4 +1,6 @@
 #
+#	.gitconfig  3.83.123  2018-10-23T21:51:55.477061-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.82  
+#	   add what 'git what' to replace bash alias gitlog 
 #	.gitconfig  1.3.23  2018-07-24_21:24:30_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  three-rpi3b.cptx86.com 1.2  
 #	   added notes for GitLab and Bitbucket 
 #	.gitconfig  1.2.22  2018-06-26_20:15:55_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  five-rpi3b.cptx86.com 1.1-2-gf106a7b  
@@ -8,6 +10,7 @@
 #
 [user]
         name = Bradley Allen
+#	name = BradleyAxe
 	email = allen.bradley@ymail.com
 [core]
         editor = vi
@@ -17,16 +20,22 @@
 	helper = cache --timeout=1800
 #	GitHub
 #		Change your remote's URL to SSH with the git remote set-url command.
-#		git remote set-url origin git@github.com:BradleyA/REPOSITORY.git
+#		git remote origin https://github.com/BradleyA/markit 
+#		git remote set-url https://github.com/BradleyA/markit 
+#		git remote set-url https://github.com/BradleyA/<REPOSITORY> 
+#		git remote set-url origin git@github.com:BradleyA/<REPOSITORY>.git
         username = BradleyA
 #	username = cptx86
 #	GitLab
 #		git config --list
 #		git config --global user.name BradleyAxe
-#		git remote set-url origin git@gitlab.com:BradleyAxe/REPOSITORY.git
+#		git remote set-url origin https://gitlab.com/BradleyAxe/markit.git
+#		git remote set-url origin git@gitlab.com:BradleyAxe/<REPOSITORY>.git
+#		git remote set-url origin git@gitlab.com:BradleyAxe/markit.git
 #	username = BradleyAxe
 #	Bitbucket
-#		git remote set-url origin git@bitbucket.org:USERNAME/repository.git
+#		git remote set-url origin git@bitbucket.org:<USERNAME>/<repository>.git
 #	username = 
 [alias]
 	changed = show --pretty=\"format:\" --name-only
+	what = log --graph --decorate --oneline --color --stat
