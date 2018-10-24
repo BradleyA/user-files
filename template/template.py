@@ -1,18 +1,10 @@
 #!/usr/bin/env python3
-# 	template/template.py  3.80.120  2018-10-21T21:00:57-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.79  
-# 	   corrected nano second added import 
+# 	template/template.py  3.84.124  2018-10-23T22:14:46.798364-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.83  
+# 	   template.{py,sh} Think about using ISO 8601 for data format close #7 
 # 	template/template.py  3.79.119  2018-10-21T20:58:18-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.78  
 # 	   added nano seconds to time 
 # 	template.py  3.74.114  2018-10-06_19:06:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.73  
 # 	   template{.py .sh} add ISO 8601 for date close #9 
-# 	template.py  3.71.111  2018-10-06_18:58:10_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.70  
-# 	   template{.py .sh} add ISO 8601 for date close #9 
-# 	template.py  3.70.110  2018-10-03_20:44:17_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.69  
-# 	   comment change 
-# 	template.py  3.69.109  2018-10-03_16:51:44_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.68  
-# 	   correct MESSAGE to include / 
-# 	template.py  3.68.108  2018-10-03_15:11:48_CDT  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.67  
-# 	   cleanup for #8 
 #
 ###	template.py - examples of default code standards for my scripts
 DEBUG = 1       # 0 = debug off, 1 = debug on
@@ -58,7 +50,7 @@ def get_date_stamp() :
    utc_offset_sec = time.altzone if time.localtime().tm_isdst else time.timezone
    utc_offset = datetime.timedelta(seconds=-utc_offset_sec)
    ISO8601 = datetime.datetime.now().replace(tzinfo=datetime.timezone(offset=utc_offset)).isoformat()  + time.strftime(" (%Z)")
-#      ISO8601 = time.strftime("%Y-%m-%dT%H:%M:%S%z") + time.strftime(" (%Z)")
+#      ISO8601 = time.strftime("%Y-%m-%dT%H:%M:%S%z") + time.strftime(" (%Z)") # previous solution
    return ISO8601
 
 #  Fully qualified domain name

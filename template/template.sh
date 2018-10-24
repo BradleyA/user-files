@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.83.123  2018-10-23T21:51:55.555219-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.82  
-# 	   add what 'git what' to replace bash alias gitlog 
+# 	template/template.sh  3.84.124  2018-10-23T22:14:46.924648-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.83  
+# 	   template.{py,sh} Think about using ISO 8601 for data format close #7 
 # 	template/template.sh  3.82.122  2018-10-21T22:41:07-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.81  
 # 	   nanoseconds to the 6 most significant digits 
 # 	template.sh  3.78.118  2018-10-16T11:40:40-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.77  
