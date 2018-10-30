@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.88.128  2018-10-29T19:57:08.014150-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.87  
+# 	   remove code to support __gitdir 
 # 	template/template.sh  3.87.127  2018-10-29T19:32:55.500793-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.86  
 # 	   added example for bash-completion/completions/git 
 # 	template/template.sh  3.84.124  2018-10-23T22:14:46.924648-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.83  
@@ -133,14 +135,6 @@ if [ "$1" != "no" ] && [ "$1" != "normal" ] && [ "$1" != "all" ] && [ "$1" != ""
 	display_help
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0} ${SCRIPT_VERSION} ${LINENO} ${BOLD}[ERROR]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  First arguement, ${1}, is NOT no, normal, all." 1>&2
 	exit 0
-fi
-
-#	EXAMPLE
-#       Check if bash-completion/completions/git file on system
-if [ -e /usr/share/bash-completion/completions/git ] ; then
-	source /usr/share/bash-completion/completions/git
-else
-	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0} ${SCRIPT_VERSION} ${LINENO} ${BOLD}[INFO]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  /usr/share/bash-completion/completions/git NOT found" 1>&2
 fi
 
 #
