@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.89.129  2018-10-30T23:44:56.542957-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.88  
-# 	   add environment variable for DEBUG variable #10 
-# 	template/template.sh  3.88.128  2018-10-29T19:57:08.014150-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.87  
-# 	   remove code to support __gitdir 
+# 	template/template.sh  3.90.130  2018-10-30T23:48:56.734851-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.89  
+# 	   add environment variable for DEBUG variable close #10 
 #
 ###	template.sh - brief description
 #       Order of precedence: environment variable (export DEBUG=1), default code
