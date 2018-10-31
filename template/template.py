@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template/template.py  3.91.131  2018-10-31T00:08:46.469082-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.90  
+# 	   template.py add environment variable for DEBUG variable #11 more testing 
 # 	template/template.py  3.84.124  2018-10-23T22:14:46.798364-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.83  
 # 	   template.{py,sh} Think about using ISO 8601 for data format close #7 
 # 	template/template.py  3.79.119  2018-10-21T20:58:18-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.78  
@@ -7,12 +9,18 @@
 # 	   template{.py .sh} add ISO 8601 for date close #9 
 #
 ###	template.py - examples of default code standards for my scripts
-DEBUG = 1       # 0 = debug off, 1 = debug on
 #
 import subprocess
 import sys
 import datetime, time
 import os
+#       Order of precedence: environment variable (export DEBUG=1), default code
+#  Check DEBUG; set using os environment variable
+if "DEBUG" in os.environ :
+   DEBUG = os.getenv("DEBUG")
+else :
+   #  Set DEBUG with default,  0 = debug off, 1 = debug on, 'unset DEBUG' to unset environment variable (bash)
+   DEBUG = 0
 ###
 class color :
    BOLD = '\033[1m'
