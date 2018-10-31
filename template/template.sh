@@ -1,17 +1,12 @@
 #!/bin/bash
+# 	template/template.sh  3.89.129  2018-10-30T23:44:56.542957-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.88  
+# 	   add environment variable for DEBUG variable #10 
 # 	template/template.sh  3.88.128  2018-10-29T19:57:08.014150-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.87  
 # 	   remove code to support __gitdir 
-# 	template/template.sh  3.87.127  2018-10-29T19:32:55.500793-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  six-rpi3b.cptx86.com 3.86  
-# 	   added example for bash-completion/completions/git 
-# 	template/template.sh  3.84.124  2018-10-23T22:14:46.924648-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.83  
-# 	   template.{py,sh} Think about using ISO 8601 for data format close #7 
-# 	template/template.sh  3.82.122  2018-10-21T22:41:07-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.81  
-# 	   nanoseconds to the 6 most significant digits 
-# 	template.sh  3.78.118  2018-10-16T11:40:40-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.77  
-# 	   Added line because USER is not defined in crobtab jobs continue testing in crontab 
 #
 ###	template.sh - brief description
-DEBUG=1                 # 0 = debug off, 1 = debug on
+#       Order of precedence: environment variable (export DEBUG=1), default code
+if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi	# 0 = debug off, 1 = debug on, 'unset DEBUG' to unset environment variable (bash)
 #	set -x
 #	set -v
 BOLD=$(tput -Txterm bold)
@@ -26,7 +21,7 @@ echo    "   ${0} [--version | -version | -v]"
 echo -e "\nDESCRIPTION\nxxx xxx xxx ..."
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<"
 echo -e "\nParagraph two xxx xxx xxxxxxx"
-echo    "\nEnvironment Variables\n   <<your variables go here>>"
+echo -e "\nEnvironment Variables\n   <<your variables go here>>"
 echo -e "\nOPTIONS\n   -f, --file\n      path and file on system '<path>/<file_name>'"
 echo -e "\nOPTIONS\n   Option one - description"
 echo    "   XX       xxx xxxxxxx xxx"
