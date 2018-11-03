@@ -39,8 +39,6 @@ To download the latest commit of one of these files, for example .gitignore, cha
 
 ./template/template.sh
 
-
-
 #### System OS script tested
  * Ubuntu 14.04.3   LTS
  * Ubuntu 16.04.3-5 LTS (armv7l)
