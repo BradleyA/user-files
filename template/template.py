@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
-# 	template/template.py  3.96.138  2018-11-11T12:10:14.453796-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.95  
-# 	   template.py change log format and order #13 
-# 	template/template.py  3.95.137  2018-11-11T11:29:08.602114-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.94  
-# 	   template.py change log format and order #13 
+# 	template/template.py  3.97.139  2018-11-11T12:50:10.250633-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.96  
+# 	   template.py change log format and order close #13 
 # 	template/template.py  3.91.131  2018-10-31T00:08:46.469082-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.90  
 # 	   template.py add environment variable for DEBUG variable #11 more testing 
 # 	template/template.py  3.84.124  2018-10-23T22:14:46.798364-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.83  
@@ -150,29 +148,29 @@ if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using MESSAGE
 #  order of precedence: CLI argument, environment variable, default code
 if no_arguments >= 2 :
    CLUSTER = sys.argv[1]
-   if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Using 1 argument CLUSTER >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, CLUSTER))
+   if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using 1 argument CLUSTER >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, CLUSTER)) 
 elif "CLUSTER" in os.environ :
    #  Check CLUSTER; set using os environment variable
    CLUSTER = os.getenv("CLUSTER")
-   if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Using environment variable CLUSTER >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, CLUSTER))
+   if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using environment variable CLUSTER >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, CLUSTER)) 
 else :
    #  Set CLUSTER with default
    CLUSTER = "us-tx-cluster-1/"
-   if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Environment variable CLUSTER NOT set, using default >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, CLUSTER))
+   if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Environment variable CLUSTER NOT set, using default >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, CLUSTER)) 
 
 #  if argument; use argument -> do not use environment variables or default for DATA_DIR
 #  order of precedence: CLI argument, environment variable, default code
 if no_arguments == 3 :
    DATA_DIR = sys.argv[2]
-   if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Using 2 argument DATA_DIR >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, DATA_DIR))
+   if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using 2 argument DATA_DIR >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, DATA_DIR)) 
 elif "DATA_DIR" in os.environ :
    #  Check DATA_DIR; set using os environment variable
    DATA_DIR = os.getenv("DATA_DIR")
-   if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Using environment variable DATA_DIR >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, DATA_DIR))
+   if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using environment variable DATA_DIR >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, DATA_DIR)) 
 else :
    #  Set DATA_DIR with default
    DATA_DIR = "/usr/local/data/"
-   if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Environment variable DATA_DIR NOT set, using default >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, DATA_DIR))
+   if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Environment variable DATA_DIR NOT set, using default >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, DATA_DIR)) 
 
 #  Check if two arguments after command if TRUE save second argument 
 # >>>	needs testing
@@ -180,21 +178,21 @@ if no_arguments == 3 :
    if sys.argv[1] == "-f" :
 #     Set FILE_NAME to second argument
       FILE_NAME = sys.argv[2]
-      if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Found -f FILE_NAME >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, FILE_NAME))
+      if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Found -f FILE_NAME >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, FILE_NAME)) 
    elif sys.argv[1] == "-home" :
 #     Set USERHOME to second argument
       USERHOME = sys.argv[2]
-      if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Found -home USERHOME >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, USERHOME))
+      if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Found -home USERHOME >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, USERHOME)) 
    else :
 #     Unknow option print ERROR
-      print ("{}{} {} {} {} {}[ERROR]{}  {}  {}  {} {}  Unsupported option >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, sys.argv[1]))
+      print ("{}{} {} {}[{}] {} {} {} {}:{} {}[ERROR]{}  Unsupported option >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, sys.argv[1])) 
       sys.exit()
 
 #  Check for argument 2 and save
 if no_arguments == 3 :
    OPTION1 = sys.argv[1]
    OPTION2 = sys.argv[2]
-   if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Using OPTION1 >{}<  OPTION2 >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, OPTION1, OPTION2))
+   if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using OPTION1 >{}<  OPTION2 >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, OPTION1, OPTION2)) 
 
 #  Examples
 print ("Number of arguments: {} arguments.".format(len(sys.argv)))
@@ -204,7 +202,7 @@ print ("command = {}".format(sys.argv[0]))
 #  >>>	DOES NOT WORK IN display-message-hd.py BUT IS USED IN display-message.py
 #	Example 1 Read TEMP_FILE contents and return contents 
 def get_msg(TEMP_FILE) :
-   if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Reading MESSAGE file >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, TEMP_FILE))
+   if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Reading MESSAGE file >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, TEMP_FILE)) 
    file = open(TEMP_FILE,"r")
    CONTENT = file.read()
    file.close()
@@ -217,14 +215,14 @@ lines = get_msg(MESSAGE)
 #  >>>	DOES NOT WORK IN display-message.py BUT IS USED IN display-message-hd.py
 #  Example 2: Read TEMP_FILE contents and return contents
 def get_msg(TEMP_FILE) :
-   if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Reading MESSAGE file >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, TEMP_FILE))
+   if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Reading MESSAGE file >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, TEMP_FILE)) 
    file = open(TEMP_FILE,"r")
    CONTENT = file.read().splitlines()
    file.close()
    return CONTENT
 
 #  ERROR example		
-print ("{}{} {} {} {} {}[ERROR]{}  {}  {}  {} {}  USER don't do that!".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID))
+print ("{}{} {} {}[{}] {} {} {} {}:{} {}[ERROR]{}  USER don't do that!".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END)) 
 
 #  Examples	
 print ("command with path = {}".format(__file__))
@@ -240,14 +238,14 @@ try :
    import scrollphat
 except ImportError :
    if sys.version_info[0] < 3 :
-      sys.exit("{}{} {} {} {} {}[ERROR]{}  {}  {}  {} {}  Library scrollphat required. To install:\tsudo apt-get install python-scrollphat".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID))
+      sys.exit("{}{} {} {}[{}] {} {} {} {}:{} {}[ERROR]{}  Library scrollphat required. To install:\tsudo apt-get install python-scrollphat".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END)) 
    elif sys.version_info[0] == 3 :
-      sys.exit("{}{} {} {} {} {}[ERROR]{}  {}  {}  {} {}  Library scrollphat required. To install:\tsudo apt-get install python3-scrollphat".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID))
+      sys.exit("{}{} {} {}[{}] {} {} {} {}:{} {}[ERROR]{}  Library scrollphat required. To install:\tsudo apt-get install python3-scrollphat".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END)) 
 except IOError :
-      sys.exit("{}{} {} {} {} {}[ERROR]{}  {}  {}  {} {}  No such file or directory.  Is scrollphat installed on raspberry pi?".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID))
+      sys.exit("{}{} {} {}[{}] {} {} {} {}:{} {}[ERROR]{}  No such file or directory.  Is scrollphat installed on raspberry pi?".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END)) 
 
 #  Done
-print ("{}{} {} {} {} {}[INFO]{}  {}  {}  {} {}  Done.".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID))
+print ("{}{} {} {}[{}] {} {} {} {}:{} {}[INFO]{}  Operation finished.".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END)) 
 
 # >>>	CUT line ---
 
