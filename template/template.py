@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template/template.py  3.95.137  2018-11-11T11:29:08.602114-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.94  
+# 	   template.py change log format and order #13 
 # 	template/template.py  3.91.131  2018-10-31T00:08:46.469082-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.90  
 # 	   template.py add environment variable for DEBUG variable #11 more testing 
 # 	template/template.py  3.84.124  2018-10-23T22:14:46.798364-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.83  
@@ -40,7 +42,7 @@ def display_help() :
    print ("   {} <<code example goes here>>\n".format(__file__))
 #  After displaying help in english check for other languages
    if LANGUAGE != "en_US.UTF-8" :
-      print ("{}{} {} {} {} {}[INFO]{}  {}  {}  {} {}  Your language, {} is not supported, Would you like to help translate?".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, LANGUAGE)) 
+      print ("{}{} {} {}[{}] {} {} {} {}:{} {}[INFO]{}  {} is not supported, Would you like to help translate?".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, LANGUAGE)) 
 #  elif LANGUAGE == "fr_CA.UTF-8" :
 #     print display_help in french
 #  else :
@@ -82,7 +84,7 @@ else : USER = LOGNAME
 #
 UID = os.getuid()
 GID = os.getgid()
-if DEBUG == 1 : print ("{}{} {} {} {} {}[INFO]{}  {}  {}  {} {}  Set user variables".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID))
+if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Setting USER to support crobtab...".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END)) 
 
 #  Default help and version arguments
 no_arguments =  int(len(sys.argv))
@@ -97,7 +99,7 @@ if no_arguments == 2 :
       sys.exit()
 
 #  Begin script INFO
-print ("{}{} {} {} {} {}[INFO]{}  {}  {}  {} {}  Begin".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID))
+print ("{}{} {} {}[{}] {} {} {} {}:{} {}[INFO]{}  Started...".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END)) 
 
 #  DEBUG example
 from platform import python_version
