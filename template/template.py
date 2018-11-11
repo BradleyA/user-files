@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template/template.py  3.96.138  2018-11-11T12:10:14.453796-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.95  
+# 	   template.py change log format and order #13 
 # 	template/template.py  3.95.137  2018-11-11T11:29:08.602114-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.94  
 # 	   template.py change log format and order #13 
 # 	template/template.py  3.91.131  2018-10-31T00:08:46.469082-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.90  
@@ -104,7 +106,7 @@ print ("{}{} {} {}[{}] {} {} {} {}:{} {}[INFO]{}  Started...".format(color.END, 
 #  DEBUG example
 from platform import python_version
 #
-if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Version of python >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, python_version()))
+if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Version of python >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, python_version())) 
 
 ###	#  Examples -->
 #  if argument; use argument -> do not use default or environment variables for MESSAGE
@@ -112,36 +114,36 @@ if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Version of pyt
 if no_arguments == 2 :
 #  Set non-default MESSAGE file including path
    MESSAGE = sys.argv[1]
-   if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Using MESSAGE file >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, MESSAGE))
+   if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using MESSAGE file >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, MESSAGE)) 
 else :
 #  if no argument; -> use default if environment variables not defined
    #  Check DATA_DIR; set using os environment variable
    if "DATA_DIR" in os.environ :
       DATA_DIR = os.getenv("DATA_DIR")
-      if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Using environment variable DATA_DIR >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, DATA_DIR))
+      if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using environment variable DATA_DIR >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, DATA_DIR)) 
    else :
    #  Set DATA_DIR with default
       DATA_DIR = "/usr/local/data/"
-      if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Environment variable DATA_DIR NOT set, using default >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, DATA_DIR))
+      if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Environment variable DATA_DIR NOT set, using default >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, DATA_DIR)) 
    if "CLUSTER" in os.environ :
    #  Check CLUSTER; set using os environment variable
       CLUSTER = os.getenv("CLUSTER")
-      if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Using environment variable CLUSTER >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, CLUSTER))
+      if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using environment variable CLUSTER >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, CLUSTER)) 
    else :
    #  Set CLUSTER with default
       CLUSTER = "us-tx-cluster-1/"
-      if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Environment variable CLUSTER NOT set, using default >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, CLUSTER))
+      if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Environment variable CLUSTER NOT set, using default >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, CLUSTER)) 
    if "MESSAGE_FILE" in os.environ :
    #  Check MESSAGE_FILE; set using os environment variable
       MESSAGE_FILE = os.getenv("MESSAGE_FILE")
-      if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Using environment variable MESSAGE_FILE >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, MESSAGE_FILE))
+      if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using environment variable MESSAGE_FILE >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, MESSAGE_FILE)) 
    else :
    #  Set MESSAGE_FILE with default
       MESSAGE_FILE = "MESSAGE"
-      if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Environment variable MESSAGE_FILE NOT set, using default >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, MESSAGE_FILE))
+      if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Environment variable MESSAGE_FILE NOT set, using default >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, MESSAGE_FILE)) 
    #  Set MESSAGE with absolute path
    MESSAGE = DATA_DIR + "/" + CLUSTER + "/" + MESSAGE_FILE
-if DEBUG == 1 : print ("{}{} {} {} {} {}[DEBUG]{}  {}  {}  {} {}  Using MESSAGE file >{}<".format(color.END, get_date_stamp(), __file__, SCRIPT_VERSION, get_line_no(), color.BOLD, color.END, LOCALHOST, USER, UID, GID, MESSAGE))
+if DEBUG == 1 : print ("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using MESSAGE file >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, MESSAGE)) 
 ###
 
 #  if argument; use argument -> do not use environment variables or default for CLUSTER
