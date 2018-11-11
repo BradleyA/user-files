@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template/template.py  3.98.140  2018-11-11T13:27:50.913936-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.97  
+# 	   template.py add environment variable for DEBUG variable close #11 
 # 	template/template.py  3.97.139  2018-11-11T12:50:10.250633-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.96  
 # 	   template.py change log format and order close #13 
 # 	template/template.py  3.91.131  2018-10-31T00:08:46.469082-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.90  
@@ -11,18 +13,13 @@
 # 	   template{.py .sh} add ISO 8601 for date close #9 
 #
 ###	template.py - examples of default code standards for my scripts
-#
+#   production standard 2
 import subprocess
 import sys
 import datetime, time
 import os
 #       Order of precedence: environment variable (export DEBUG=1), default code
-#  Check DEBUG; set using os environment variable
-if "DEBUG" in os.environ :
-   DEBUG = os.getenv("DEBUG")
-else :
-   #  Set DEBUG with default,  0 = debug off, 1 = debug on, 'unset DEBUG' to unset environment variable (bash)
-   DEBUG = 0
+DEBUG = int(os.getenv("DEBUG", 0)) #  Set DEBUG,  0 = debug off, 1 = debug on, 'unset DEBUG' to unset environment variable (bash)
 ###
 class color :
    BOLD = '\033[1m'
