@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template/template.py  3.99.141  2018-11-11T21:26:42.320185-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.98  
+# 	   template.{sh,py} add more to display_help #14 
 # 	template/template.py  3.98.140  2018-11-11T13:27:50.913936-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.97  
 # 	   template.py add environment variable for DEBUG variable close #11 
 # 	template/template.py  3.97.139  2018-11-11T12:50:10.250633-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.96  
@@ -32,6 +34,7 @@ def display_help() :
    print ("   {} [--help | -help | help | -h | h | -?]".format(__file__))
    print ("   {} [--version | -version | -v]".format(__file__))
    print ("\nDESCRIPTION\n<<your help output goes here>>")
+   print ("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<<your help output goes here>>")
    print ("\nEnvironment Variables\n   <<your variables go here>>")
    print ("\nOPTIONS\n   <<your options go here>>")
    print ("\nDOCUMENTATION\n   <<URL to GITHUB README>>")
@@ -88,7 +91,7 @@ no_arguments =  int(len(sys.argv))
 if no_arguments == 2 :
 #  Default help output  
    if sys.argv[1] == '--help' or sys.argv[1] == '-help' or sys.argv[1] == 'help' or sys.argv[1] == '-h' or sys.argv[1] == 'h' or sys.argv[1] == '-?' :
-      display_help()
+      display_help( 
       sys.exit()
 #  Default version output  
    if sys.argv[1] == '--version' or sys.argv[1] == '-version' or sys.argv[1] == 'version' or sys.argv[1] == '-v' :
