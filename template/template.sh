@@ -1,12 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.99.141  2018-11-11T21:26:42.425341-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.98  
-# 	   template.{sh,py} add more to display_help #14 
-# 	template/template.sh  3.94.136  2018-11-11T10:20:19.464491-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.93  
-# 	   template.sh change log format and order close #12 
-# 	template/template.sh  3.93.135  2018-11-10T12:52:54.959314-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.92  
-# 	   template.sh change log format and order #12 
-# 	template/template.sh  3.92.134  2018-11-10T12:45:10.764559-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.91-2-ga5ceeeb  
-# 	   template.sh change log format and order #12 
+# 	template/template.sh  3.100.142  2018-11-12T21:50:46.483371-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.99  
+# 	   template.sh shellcheck template.sh close #15 
 # 	template/template.sh  3.90.130  2018-10-30T23:48:56.734851-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.89  
 # 	   add environment variable for DEBUG variable close #10 
 #
@@ -47,21 +41,21 @@ fi
 
 #	Date and time function ISO 8601
 get_date_stamp() {
-DATE_STAMP=`date +%Y-%m-%dT%H:%M:%S.%6N%:z`
-TEMP=`date +%Z`
-DATE_STAMP=`echo "${DATE_STAMP} (${TEMP})"`
+DATE_STAMP=$(date +%Y-%m-%dT%H:%M:%S.%6N%:z)
+TEMP=$(date +%Z)
+DATE_STAMP="${DATE_STAMP} (${TEMP})"
 }
 
 #	Fully qualified domain name FQDN hostname
-LOCALHOST=`hostname -f`
+LOCALHOST=$(hostname -f)
 
 #	Version
-SCRIPT_NAME=`head -2 ${0} | awk {'printf$2'}`
-SCRIPT_VERSION=`head -2 ${0} | awk {'printf$3'}`
+SCRIPT_NAME=$(head -2 "${0}" | awk {'printf $2'})
+SCRIPT_VERSION=$(head -2 "${0}" | awk {'printf $3'})
 
 #	UID and GID
-USER_ID=`id -u`
-GROUP_ID=`id -g`
+USER_ID=$(id -u)
+GROUP_ID=$(id -g)
 
 #       Added line because USER is not defined in crobtab jobs
 if ! [ "${USER}" == "${LOGNAME}" ] ; then  USER=${LOGNAME} ; fi
@@ -121,8 +115,8 @@ if [ "${1}" == "--file" ] || [ "${1}" == "-f" ] ; then
         OPTION2=${2}
 else
         #       Locate file in the PATH
-        TEMP=`whereis "${1}"`
-        MARKIT_FILE=$(echo ${TEMP} | awk {'print $2'} )
+        TEMP=$(whereis "${1}")
+        MARKIT_FILE=$(echo "${TEMP}" | awk {'print $2'} )
         if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Locate file in the PATH... MARKIT_FILE >${MARKIT_FILE}<" 1>&2 ; fi
         #       Check if MARKIT_FILE is blank
         if [ "${MARKIT_FILE}" == "" ] ; then
