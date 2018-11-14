@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.102.144  2018-11-14T17:00:55.595997-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uthree  three.cptx86.com 3.101  
+# 	template/template.sh  3.103.145  2018-11-14T17:05:20.852524-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uthree  three.cptx86.com 3.102  
 # 	   updated display_help with DEBUG environment variable information 
-# 	template/template.sh  3.101.143  2018-11-14T12:06:50.340879-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uthree  three.cptx86.com 3.100  
-# 	   update comments for DEBUG environment variable 
 #
 ### template.sh - brief description
 #       Order of precedence: environment variable, default code
@@ -27,7 +25,7 @@ echo    "the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  U
 echo    "command, 'unset DEBUG' to remove the exported information from the DEBUG"
 echo    "environment variable.  You are on your own defining environment variables if"
 echo    "you are using other shells."
-echo -e "   <<your variables go here>>"
+echo -e "\n   <<your environment variables information goes here>>"
 echo -e "\nOPTIONS\n   -f, --file\n      path and file on system '<path>/<file_name>'"
 echo -e "\nOPTIONS\n   Option one - description"
 echo    "   XX       xxx xxxxxxx xxx"
