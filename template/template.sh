@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.102.144  2018-11-14T17:00:55.595997-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uthree  three.cptx86.com 3.101  
+# 	   updated display_help with DEBUG environment variable information 
 # 	template/template.sh  3.101.143  2018-11-14T12:06:50.340879-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uthree  three.cptx86.com 3.100  
 # 	   update comments for DEBUG environment variable 
 #
@@ -19,7 +21,13 @@ echo    "   ${0} [--version | -version | -v]"
 echo -e "\nDESCRIPTION\nxxx xxx xxx ..."
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<"
 echo -e "\nParagraph two xxx xxx xxxxxxx"
-echo -e "\nEnvironment Variables\n   <<your variables go here>>"
+echo -e "\nEnvironment Variables"
+echo    "If using the bash shell, enter; 'export DEBUG=1' on the command line to set"
+echo    "the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  Use the"
+echo    "command, 'unset DEBUG' to remove the exported information from the DEBUG"
+echo    "environment variable.  You are on your own defining environment variables if"
+echo    "you are using other shells."
+echo -e "   <<your variables go here>>"
 echo -e "\nOPTIONS\n   -f, --file\n      path and file on system '<path>/<file_name>'"
 echo -e "\nOPTIONS\n   Option one - description"
 echo    "   XX       xxx xxxxxxx xxx"
