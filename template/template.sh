@@ -1,12 +1,10 @@
 #!/bin/bash
-# 	template/template.sh  3.100.142  2018-11-12T21:50:46.483371-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.99  
-# 	   template.sh shellcheck template.sh close #15 
-# 	template/template.sh  3.90.130  2018-10-30T23:48:56.734851-05:00 (CDT)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.89  
-# 	   add environment variable for DEBUG variable close #10 
+# 	template/template.sh  3.101.143  2018-11-14T12:06:50.340879-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uthree  three.cptx86.com 3.100  
+# 	   update comments for DEBUG environment variable 
 #
-###	template.sh - brief description
-#       Order of precedence: environment variable (export DEBUG=1), default code
-if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi	# 0 = debug off, 1 = debug on, 'unset DEBUG' to unset environment variable (bash)
+### template.sh - brief description
+#       Order of precedence: environment variable, default code
+if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 #	set -x
 #	set -v
 BOLD=$(tput -Txterm bold)
