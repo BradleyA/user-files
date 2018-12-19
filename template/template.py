@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template/template.py  3.107.149  2018-12-19T15:27:35.565113-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.106  
+# 	   correct typo 
 # 	template/template.py  3.99.141  2018-11-11T21:26:42.320185-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.98  
 # 	   template.{sh,py} add more to display_help #14 
 # 	template/template.py  3.98.140  2018-11-11T13:27:50.913936-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.97  
@@ -91,7 +93,7 @@ no_arguments =  int(len(sys.argv))
 if no_arguments == 2 :
 #  Default help output  
    if sys.argv[1] == '--help' or sys.argv[1] == '-help' or sys.argv[1] == 'help' or sys.argv[1] == '-h' or sys.argv[1] == 'h' or sys.argv[1] == '-?' :
-      display_help( 
+      display_help()
       sys.exit()
 #  Default version output  
    if sys.argv[1] == '--version' or sys.argv[1] == '-version' or sys.argv[1] == 'version' or sys.argv[1] == '-v' :
