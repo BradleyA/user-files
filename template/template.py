@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template/template.py  3.111.153  2018-12-20T12:00:03.674501-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.110  
+# 	   correct spacing 
 # 	template/template.py  3.110.152  2018-12-20T10:44:46.699281-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.109  
 # 	   template.{sh,py} add more to display_help close #14 
 #
@@ -111,60 +113,60 @@ if no_arguments == 2:
     if DEBUG == 1: print("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using MESSAGE file >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, MESSAGE))
 else:
 #   if no argument; -> use default if environment variables not defined
-    #  Check DATA_DIR; set using os environment variable
+    #   Check DATA_DIR; set using os environment variable
     if "DATA_DIR" in os.environ:
         DATA_DIR = os.getenv("DATA_DIR")
         if DEBUG == 1: print("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using environment variable DATA_DIR >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, DATA_DIR))
     else:
-    #  Set DATA_DIR with default
+    #   Set DATA_DIR with default
         DATA_DIR = "/usr/local/data/"
         if DEBUG == 1: print("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Environment variable DATA_DIR NOT set, using default >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, DATA_DIR))
     if "CLUSTER" in os.environ:
-    #  Check CLUSTER; set using os environment variable
+    #   Check CLUSTER; set using os environment variable
         CLUSTER = os.getenv("CLUSTER")
         if DEBUG == 1: print("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using environment variable CLUSTER >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, CLUSTER))
     else:
-    #  Set CLUSTER with default
+    #   Set CLUSTER with default
         CLUSTER = "us-tx-cluster-1/"
         if DEBUG == 1: print("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Environment variable CLUSTER NOT set, using default >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, CLUSTER))
     if "MESSAGE_FILE" in os.environ:
-    #  Check MESSAGE_FILE; set using os environment variable
+    #   Check MESSAGE_FILE; set using os environment variable
         MESSAGE_FILE = os.getenv("MESSAGE_FILE")
         if DEBUG == 1: print("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using environment variable MESSAGE_FILE >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, MESSAGE_FILE))
     else:
-    #  Set MESSAGE_FILE with default
+    #   Set MESSAGE_FILE with default
         MESSAGE_FILE = "MESSAGE"
         if DEBUG == 1: print("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Environment variable MESSAGE_FILE NOT set, using default >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, MESSAGE_FILE))
-    #  Set MESSAGE with absolute path
+    #   Set MESSAGE with absolute path
     MESSAGE = DATA_DIR + "/" + CLUSTER + "/" + MESSAGE_FILE
 if DEBUG == 1: print("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using MESSAGE file >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, MESSAGE))
 ###
 
-#  if argument; use argument -> do not use environment variables or default for CLUSTER
-#  order of precedence: CLI argument, environment variable, default code
+#   if argument; use argument -> do not use environment variables or default for CLUSTER
+#   order of precedence: CLI argument, environment variable, default code
 if no_arguments >= 2:
     CLUSTER = sys.argv[1]
     if DEBUG == 1: print("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using 1 argument CLUSTER >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, CLUSTER))
 elif "CLUSTER" in os.environ:
-    #  Check CLUSTER; set using os environment variable
+    #   Check CLUSTER; set using os environment variable
     CLUSTER = os.getenv("CLUSTER")
     if DEBUG == 1: print("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using environment variable CLUSTER >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, CLUSTER))
 else:
-    #  Set CLUSTER with default
+    #   Set CLUSTER with default
     CLUSTER = "us-tx-cluster-1/"
     if DEBUG == 1: print("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Environment variable CLUSTER NOT set, using default >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, CLUSTER))
 
-#  if argument; use argument -> do not use environment variables or default for DATA_DIR
-#  order of precedence: CLI argument, environment variable, default code
+#   if argument; use argument -> do not use environment variables or default for DATA_DIR
+#   order of precedence: CLI argument, environment variable, default code
 if no_arguments == 3:
     DATA_DIR = sys.argv[2]
     if DEBUG == 1: print("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using 2 argument DATA_DIR >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, DATA_DIR))
 elif "DATA_DIR" in os.environ:
-    #  Check DATA_DIR; set using os environment variable
+    #   Check DATA_DIR; set using os environment variable
     DATA_DIR = os.getenv("DATA_DIR")
     if DEBUG == 1: print("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Using environment variable DATA_DIR >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, DATA_DIR))
 else:
-    #  Set DATA_DIR with default
+    #   Set DATA_DIR with default
     DATA_DIR = "/usr/local/data/"
     if DEBUG == 1: print("{}{} {} {}[{}] {} {} {} {}:{} {}[DEBUG]{}  Environment variable DATA_DIR NOT set, using default >{}<".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, DATA_DIR))
 
