@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.109.151  2018-12-20T10:33:02.601693-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.108  
+# 	   template.{sh,py} add more to display_help #14 
 # 	template/template.sh  3.106.148  2018-12-11T16:27:08.509159-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.105  
 # 	   typo 
 # 	template/template.sh  3.104.146  2018-11-14T17:14:01.220084-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uthree  three.cptx86.com 3.103  
@@ -18,9 +20,9 @@ echo -e "\nUSAGE\n   ${0} [XX | YY | ZZ]"
 echo    "   ${0} [--file <PATH>/<FILE_NAME> | -f <PATH>/<FILE_NAME>]"
 echo    "   ${0} [--help | -help | help | -h | h | -?]"
 echo    "   ${0} [--version | -version | -v]"
-echo -e "\nDESCRIPTION\nxxx xxx xxx ..."
+echo -e "\nDESCRIPTION\n<your help goes here>>"
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<"
-echo -e "\nParagraph two xxx xxx xxxxxxx"
+echo -e "\n<<Paragraph two>>"
 echo -e "\nEnvironment Variables"
 echo    "If using the bash shell, enter; 'export DEBUG=1' on the command line to set"
 echo    "the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  Use the"

@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
+# 	template/template.py  3.109.151  2018-12-20T10:33:02.526254-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.108  
+# 	   template.{sh,py} add more to display_help #14 
 # 	template/template.py  3.108.150  2018-12-20T10:00:52.998012-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.107  
 # 	   running pylint3 
 # 	template/template.py  3.107.149  2018-12-19T15:27:35.565113-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.106
 # 	   correct typo
 #
 ###	template.py - examples of default code standards for my scripts
-#   production standard 2
+#   production standard 3
 import sys
 import datetime
 import time
@@ -19,13 +21,21 @@ class color:
 ###
 LANGUAGE = os.getenv("LANG")
 def display_help():
-    print("\n{} - <one line description>".format(__file__))
+    print("\n{} - brief description".format(__file__))
     print("\nUSAGE\n   {} [xxx | yyy | zzz]".format(__file__))
     print("   {} [--help | -help | help | -h | h | -?]".format(__file__))
     print("   {} [--version | -version | -v]".format(__file__))
-    print("\nDESCRIPTION\n<<your help output goes here>>")
-    print("\n\n\n\n<<your help output goes here>>")
-    print("\nEnvironment Variables\n   <<your variables go here>>")
+    print("\nDESCRIPTION\n<your help goes here>>")
+    print(">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<")
+    print("\n<<Paragraph two>>")
+    print("\nEnvironment Variables")
+    print("If using the bash shell, enter; 'export DEBUG=1' on the command line to set")
+    print("the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  Use the")
+    print("command, 'unset DEBUG' to remove the exported information from the DEBUG")
+    print("environment variable.  You are on your own defining environment variables if")
+    print("you are using other shells.")
+    print("   DEBUG       (default '0')")
+    print("\n   <<your environment variables information goes here>>")
     print("\nOPTIONS\n   <<your options go here>>")
     print("\nDOCUMENTATION\n   <<URL to GITHUB README>>")
     print("\nEXAMPLES\n   <<your code examples description goes here>>")
