@@ -1,10 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.109.151  2018-12-20T10:33:02.601693-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.108  
-# 	   template.{sh,py} add more to display_help #14 
-# 	template/template.sh  3.106.148  2018-12-11T16:27:08.509159-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.105  
-# 	   typo 
-# 	template/template.sh  3.104.146  2018-11-14T17:14:01.220084-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uthree  three.cptx86.com 3.103  
-# 	   updated display_help with DEBUG environment variable information 
+# 	template/template.sh  3.110.152  2018-12-20T10:44:46.764269-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.109  
+# 	   template.{sh,py} add more to display_help close #14 
 #
 ### template.sh - brief description
 #       Order of precedence: environment variable, default code

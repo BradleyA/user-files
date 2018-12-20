@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
-# 	template/template.py  3.109.151  2018-12-20T10:33:02.526254-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.108  
-# 	   template.{sh,py} add more to display_help #14 
-# 	template/template.py  3.108.150  2018-12-20T10:00:52.998012-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.107  
-# 	   running pylint3 
-# 	template/template.py  3.107.149  2018-12-19T15:27:35.565113-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.106
-# 	   correct typo
+# 	template/template.py  3.110.152  2018-12-20T10:44:46.699281-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.109  
+# 	   template.{sh,py} add more to display_help close #14 
 #
 ###	template.py - examples of default code standards for my scripts
 #   production standard 3
