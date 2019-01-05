@@ -1,8 +1,11 @@
 #!/bin/bash
+# 	template/template.sh  3.112.157  2019-01-05T08:04:52.016701-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.111-3-g85fafa8  
+# 	   add #   production standard 3 comment 
 # 	template/template.sh  3.110.152  2018-12-20T10:44:46.764269-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.109  
 # 	   template.{sh,py} add more to display_help close #14 
 #
 ### template.sh - brief description
+#   production standard 3
 #       Order of precedence: environment variable, default code
 if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 #	set -x
