@@ -1,6 +1,9 @@
 # user-work-files
 General user files when moving to a new system.
 
+#### If you like this repository, select in the upper-right corner, star, thank you.
+#### To watch future updates in this repository select in the upper-right corner, the "Watch" list, and select Watching.
+
 ## Clone
 
 To clone, change to the location you want to download. Use git to pull or clone these files into the directory. If you do not have Git then enter; "sudo apt-get install git". On the GitHub page of this script use the "HTTPS clone URL" with the 'git clone' command.
