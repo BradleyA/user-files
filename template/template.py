@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-# 	template/template.py  3.111.153  2018-12-20T12:00:03.674501-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.110  
-# 	   correct spacing 
+# 	template/template.py  3.114.161  2019-01-12T14:45:10.374582-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.113-2-ga23e101  
+# 	   template.[sh,py] production standard 4 change display_help of other LANG  close #16 
 # 	template/template.py  3.110.152  2018-12-20T10:44:46.699281-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.109  
 # 	   template.{sh,py} add more to display_help close #14 
 #
 ###	template.py - examples of default code standards for my scripts
-#   production standard 3
+#   production standard 4
 import sys
 import datetime
 import time
@@ -23,9 +23,17 @@ def display_help():
     print("\nUSAGE\n   {} [xxx | yyy | zzz]".format(__file__))
     print("   {} [--help | -help | help | -h | h | -?]".format(__file__))
     print("   {} [--version | -version | -v]".format(__file__))
-    print("\nDESCRIPTION\n<your help goes here>>")
+    print("\nDESCRIPTION")
+#   Displaying help DESCRIPTION in English en_US.UTF-8
+    print("<your help goes here>>")
     print(">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<")
     print("\n<<Paragraph two>>")
+#       Displaying help DESCRIPTION in French
+    if (LANGUAGE == "fr_CA.UTF-8") or (LANGUAGE == "fr_FR.UTF-8") or (LANGUAGE == "fr_CH.UTF-8"):
+        print("\n<votre aide va ici>")
+        print("Souhaitez-vous traduire la section description?")
+    elif (LANGUAGE != "en_US.UTF-8"):
+        print("{}{} {} {}[{}] {} {} {} {}:{} {}[INFO]{}  {} is not supported, Would you like to help translate the description section?".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, LANGUAGE))
     print("\nEnvironment Variables")
     print("If using the bash shell, enter; 'export DEBUG=1' on the command line to set")
     print("the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  Use the")
@@ -38,12 +46,6 @@ def display_help():
     print("\nDOCUMENTATION\n   <<URL to GITHUB README>>")
     print("\nEXAMPLES\n   <<your code examples description goes here>>")
     print("   {} <<code example goes here>>\n".format(__file__))
-#   After displaying help in english check for other languages
-    if LANGUAGE != "en_US.UTF-8":
-        print("{}{} {} {}[{}] {} {} {} {}:{} {}[INFO]{}  {} is not supported, Would you like to help translate?".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, LANGUAGE))
-#   elif LANGUAGE == "fr_CA.UTF-8":
-#       print display_help in french
-#   else:
     return
 
 #   Line number function
