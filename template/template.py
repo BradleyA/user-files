@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template/template.py  3.115.162  2019-01-12T15:13:00.936292-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.114  
+# 	   minor change template.[sh,py] production standard 4 change display_help of other LANG #16 
 # 	template/template.py  3.114.161  2019-01-12T14:45:10.374582-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.113-2-ga23e101  
 # 	   template.[sh,py] production standard 4 change display_help of other LANG  close #16 
 # 	template/template.py  3.110.152  2018-12-20T10:44:46.699281-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.109  
@@ -30,7 +32,8 @@ def display_help():
     print("\n<<Paragraph two>>")
 #       Displaying help DESCRIPTION in French
     if (LANGUAGE == "fr_CA.UTF-8") or (LANGUAGE == "fr_FR.UTF-8") or (LANGUAGE == "fr_CH.UTF-8"):
-        print("\n<votre aide va ici>")
+        print("\n--> {}".format(LANGUAGE))
+        print("<votre aide va ici>")
         print("Souhaitez-vous traduire la section description?")
     elif (LANGUAGE != "en_US.UTF-8"):
         print("{}{} {} {}[{}] {} {} {} {}:{} {}[INFO]{}  {} is not supported, Would you like to help translate the description section?".format(color.END, get_date_stamp(), LOCALHOST, __file__, os.getpid(), SCRIPT_VERSION, get_line_no(), USER, UID, GID, color.BOLD, color.END, LANGUAGE))

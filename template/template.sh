@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.115.162  2019-01-12T15:13:01.057817-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.114  
+# 	   minor change template.[sh,py] production standard 4 change display_help of other LANG #16 
 # 	template/template.sh  3.114.161  2019-01-12T14:45:10.474145-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.113-2-ga23e101  
 # 	   template.[sh,py] production standard 4 change display_help of other LANG  close #16 
 # 	template/template.sh  3.113.158  2019-01-12T13:47:47.476818-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.112  
@@ -30,6 +32,7 @@ echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-)
 echo -e "\n<<Paragraph two>>"
 #       Displaying help DESCRIPTION in French
 if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG}" == "fr_CH.UTF-8" ] ; then
+	echo -e "\n--> ${LANG}"
 	echo    "<votre aide va ici>"
 	echo    "Souhaitez-vous traduire la section description?"
 elif ! [ "${LANG}" == "en_US.UTF-8" ] ; then
