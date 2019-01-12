@@ -1,11 +1,13 @@
 #!/bin/bash
+# 	template/template.sh  3.113.158  2019-01-12T13:47:47.476818-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.112  
+# 	   template.[sh,py] production standard 4 change display_help of other LANG #16 
 # 	template/template.sh  3.112.157  2019-01-05T08:04:52.016701-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.111-3-g85fafa8  
 # 	   add #   production standard 3 comment 
 # 	template/template.sh  3.110.152  2018-12-20T10:44:46.764269-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.109  
 # 	   template.{sh,py} add more to display_help close #14 
 #
 ### template.sh - brief description
-#   production standard 3
+#   production standard 4
 #       Order of precedence: environment variable, default code
 if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 #	set -x
@@ -19,9 +21,19 @@ echo -e "\nUSAGE\n   ${0} [XX | YY | ZZ]"
 echo    "   ${0} [--file <PATH>/<FILE_NAME> | -f <PATH>/<FILE_NAME>]"
 echo    "   ${0} [--help | -help | help | -h | h | -?]"
 echo    "   ${0} [--version | -version | -v]"
-echo -e "\nDESCRIPTION\n<your help goes here>>"
-echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<"
-echo -e "\n<<Paragraph two>>"
+echo -e "\nDESCRIPTION"
+#       Displaying help DESCRIPTION in english
+if [ "${LANG}" == "en_US.UTF-8" ] ; then
+	echo    "<your help goes here>"
+	echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<"
+	echo -e "\n<<Paragraph two>>"
+#       Displaying help DESCRIPTION in French
+elif [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG}" == "fr_CH.UTF-8" ] ; then
+	echo    "<votre aide va ici>"
+	echo    "Souhaitez-vous traduire la section description?"
+else
+        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
+fi
 echo -e "\nEnvironment Variables"
 echo    "If using the bash shell, enter; 'export DEBUG=1' on the command line to set"
 echo    "the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  Use the"
@@ -37,14 +49,6 @@ echo    "   YY       xxx xxxxx xxx "
 echo    "   zz       xx xxxxxxx xx"
 echo -e "\nDOCUMENTATION\n   https://github.com/BradleyA/REPOSITORY"
 echo -e "\nEXAMPLES\n   <<your code examples description goes here>>\n\n${0} <<code example goes here>>\n"
-#	After displaying help in english check for other languages
-if ! [ "${LANG}" == "en_US.UTF-8" ] ; then
-	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  ${LANG}, is not supported, Would you like to help translate?" 1>&2
-#       elif [ "${LANG}" == "fr_CA.UTF-8" ] ; then
-#		get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Display help in ${LANG}" 1>&2
-#       else
-#		get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Your language, ${LANG}, is not supported.  Would you like to translate?" 1>&2
-fi
 }
 
 #	Date and time function ISO 8601
