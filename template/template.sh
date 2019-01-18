@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.116.163  2019-01-17T23:14:15.099047-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.115  
+# 	   added comments to french section 
 # 	template/template.sh  3.115.162  2019-01-12T15:13:01.057817-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.114  
 # 	   minor change template.[sh,py] production standard 4 change display_help of other LANG #16 
 # 	template/template.sh  3.114.161  2019-01-12T14:45:10.474145-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.113-2-ga23e101  
@@ -27,14 +29,14 @@ echo    "   ${0} [--help | -help | help | -h | h | -?]"
 echo    "   ${0} [--version | -version | -v]"
 echo -e "\nDESCRIPTION"
 #       Displaying help DESCRIPTION in English en_US.UTF-8
-echo    "<your help goes here>"
+echo    "<your help goes here>" 
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<"
 echo -e "\n<<Paragraph two>>"
 #       Displaying help DESCRIPTION in French
 if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG}" == "fr_CH.UTF-8" ] ; then
 	echo -e "\n--> ${LANG}"
-	echo    "<votre aide va ici>"
-	echo    "Souhaitez-vous traduire la section description?"
+	echo    "<votre aide va ici>" # your help goes here
+	echo    "Souhaitez-vous traduire la section description?" # Do you want to translate the description section?
 elif ! [ "${LANG}" == "en_US.UTF-8" ] ; then
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
 fi
