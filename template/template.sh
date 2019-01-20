@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.117.164  2019-01-19T23:34:09.613511-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.116  
+# 	   update comment for production standard 4 Internationalizing display-help 
 # 	template/template.sh  3.116.163  2019-01-17T23:14:15.099047-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.115  
 # 	   added comments to french section 
 # 	template/template.sh  3.115.162  2019-01-12T15:13:01.057817-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.114  
@@ -32,7 +34,7 @@ echo -e "\nDESCRIPTION"
 echo    "<your help goes here>" 
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<"
 echo -e "\n<<Paragraph two>>"
-#       Displaying help DESCRIPTION in French
+#       Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
 if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG}" == "fr_CH.UTF-8" ] ; then
 	echo -e "\n--> ${LANG}"
 	echo    "<votre aide va ici>" # your help goes here
