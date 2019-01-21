@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.118.165  2019-01-21T10:27:20.908345-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.117  
+# 	   production standard 5 include Copyright notice 
 # 	template/template.sh  3.117.164  2019-01-19T23:34:09.613511-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.116  
 # 	   update comment for production standard 4 Internationalizing display-help 
 # 	template/template.sh  3.116.163  2019-01-17T23:14:15.099047-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.115  
@@ -15,7 +17,10 @@
 # 	   template.{sh,py} add more to display_help close #14 
 #
 ### template.sh - brief description
-#   production standard 4
+#       Copyright (c) 2019 Bradley Allen
+#       License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
+###
+#   production standard 5
 #       Order of precedence: environment variable, default code
 if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 #	set -x
@@ -55,7 +60,7 @@ echo -e "\nOPTIONS\n   Option one - description"
 echo    "   XX       xxx xxxxxxx xxx"
 echo    "   YY       xxx xxxxx xxx "
 echo    "   zz       xx xxxxxxx xx"
-echo -e "\nDOCUMENTATION\n   https://github.com/BradleyA/REPOSITORY"
+echo -e "\nDOCUMENTATION\n   https://github.com/BradleyA/   <<URL to online repository README>>"
 echo -e "\nEXAMPLES\n   <<your code examples description goes here>>\n\n${0} <<code example goes here>>\n"
 }
 

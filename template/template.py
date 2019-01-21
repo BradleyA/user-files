@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 	template/template.py  3.118.165  2019-01-21T10:27:20.821550-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.117  
+# 	   production standard 5 include Copyright notice 
 # 	template/template.py  3.115.162  2019-01-12T15:13:00.936292-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.114  
 # 	   minor change template.[sh,py] production standard 4 change display_help of other LANG #16 
 # 	template/template.py  3.114.161  2019-01-12T14:45:10.374582-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.113-2-ga23e101  
@@ -7,7 +9,10 @@
 # 	   template.{sh,py} add more to display_help close #14 
 #
 ###	template.py - examples of default code standards for my scripts
-#   production standard 4
+#       Copyright (c) 2019 Bradley Allen
+#       License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
+###
+#   production standard 5
 import sys
 import datetime
 import time
@@ -46,7 +51,7 @@ def display_help():
     print("   DEBUG       (default '0')")
     print("\n   <<your environment variables information goes here>>")
     print("\nOPTIONS\n   <<your options go here>>")
-    print("\nDOCUMENTATION\n   <<URL to GITHUB README>>")
+    print("\nDOCUMENTATION\n    https://github.com/BradleyA/   <<URL to online repository README>>")
     print("\nEXAMPLES\n   <<your code examples description goes here>>")
     print("   {} <<code example goes here>>\n".format(__file__))
     return
