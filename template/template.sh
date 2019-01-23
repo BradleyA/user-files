@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.118.165  2019-01-21T10:27:20.908345-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.117  
-# 	   production standard 5 include Copyright notice 
+# 	template/template.sh  3.119.166  2019-01-23T13:53:45.458595-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
+# 	   template[sh-py] --> production standard 5 include Copyright notice close #17 
 # 	template/template.sh  3.117.164  2019-01-19T23:34:09.613511-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.116  
 # 	   update comment for production standard 4 Internationalizing display-help 
 # 	template/template.sh  3.116.163  2019-01-17T23:14:15.099047-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.115  

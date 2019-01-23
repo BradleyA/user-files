@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-# 	template/template.py  3.118.165  2019-01-21T10:27:20.821550-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.117  
-# 	   production standard 5 include Copyright notice 
+# 	template/template.py  3.119.166  2019-01-23T13:53:45.325511-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
+# 	   template[sh-py] --> production standard 5 include Copyright notice close #17 
 # 	template/template.py  3.115.162  2019-01-12T15:13:00.936292-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.114  
 # 	   minor change template.[sh,py] production standard 4 change display_help of other LANG #16 
 # 	template/template.py  3.114.161  2019-01-12T14:45:10.374582-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.113-2-ga23e101  
