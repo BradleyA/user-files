@@ -1,10 +1,9 @@
 ###
-#	.bash_aliases  3.120.167  2019-02-07T10:16:10.477261-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.119  
+#	.bash_aliases  3.121.168  2019-02-07T10:46:55.086485-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.120  
 #	   added gitlogl to search local repository to .bash_aliases 
-#	.bash_aliases	1.1.20	2018-02-20_19:45:09_CST uadmin six-rpi3b.cptx86.com 1.1 
-#	   typo 
 #	.bash_aliases	1.1.19	2018-02-20_19:42:38_CST uadmin six-rpi3b.cptx86.com 1.0-13-g6d5681d 
 #	   create gitlog alias in .bash_aliases 
+##
 #	git config --global --list
 # GitHub download examples:
 #	curl -L https://api.github.com/repos/BradleyA/markit/tarball | tar -xzf - --wildcards */markit ; mv BradleyA*/markit . ; rmdir BradleyA*/
