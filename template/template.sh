@@ -1,5 +1,5 @@
 #!/bin/bash
-# 	template/template.sh  3.122.171  2019-02-08T19:50:43.833798-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.121-2-gb14258b  
+# 	template/template.sh  3.123.172  2019-02-08T19:53:10.735174-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.122  
 # 	   Change order in examples section to BOLD command NORMAL description below 
 # 	template/template.sh  3.119.166  2019-01-23T13:53:45.458595-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
 # 	   template[sh-py] --> production standard 5 include Copyright notice close #17 
