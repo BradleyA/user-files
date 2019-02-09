@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.122.171  2019-02-08T19:50:43.833798-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.121-2-gb14258b  
+# 	   Change order in examples section to BOLD command NORMAL description below 
 # 	template/template.sh  3.119.166  2019-01-23T13:53:45.458595-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
 # 	   template[sh-py] --> production standard 5 include Copyright notice close #17 
 # 	template/template.sh  3.117.164  2019-01-19T23:34:09.613511-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.116  
@@ -61,7 +63,7 @@ echo    "   XX       xxx xxxxxxx xxx"
 echo    "   YY       xxx xxxxx xxx "
 echo    "   zz       xx xxxxxxx xx"
 echo -e "\nDOCUMENTATION\n   https://github.com/BradleyA/   <<URL to online repository README>>"
-echo -e "\nEXAMPLES\n   <<your code examples description goes here>>\n\n${0} <<code example goes here>>\n"
+echo -e "\nEXAMPLES\n   ${BOLD}${0} <<code example goes here>>${NORMAL}\n\n   <<your code examples description goes here>>\n"
 }
 
 #	Date and time function ISO 8601
