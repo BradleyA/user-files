@@ -33,7 +33,7 @@
 #	username = BradleyAxe
 #	Bitbucket
 #		git remote set-url origin git@bitbucket.org:<USERNAME>/<repository>.git
-#	username = 
+#	username = axebbq
 [alias]
 	# git changed
 	changed = show --pretty=\"format:\" --name-only
