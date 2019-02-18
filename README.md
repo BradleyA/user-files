@@ -1,6 +1,5 @@
 # user-work-files
 General user files when moving to a new system.
-[![Stable Release](https://img.shields.io/badge/Release-3.197-blue.svg)](https://github.com/BradleyA/user-work-files/releases/tag/3.197)    [![GitHub commits](https://img.shields.io/github/commits-since/BradleyA/user-work-files/3.197.svg)](https://github.com/BradleyA/markit/commits/)
 
 #### If you like this repository, select in the upper-right corner, star, thank you.
 #### To watch future updates in this repository select in the upper-right corner, the "Watch" list, and select Watching.
