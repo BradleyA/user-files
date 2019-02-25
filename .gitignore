@@ -1,7 +1,10 @@
 #	.gitignore (sudo apt-get install git-all)
+#	.gitignore  3.125.183  2019-02-25T15:53:36.640995-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.124-3-gdcc2c24  
+#	   add .env 
 #	.gitignore	1.0.6	2018-02-15_10:58:09_CST uadmin four-rpi3b.cptx86.com 1.0 
 #	   Inital commit of basic .gitignore settings
 # ignore
+.env
 chefignore
 .gitignore
 .dockerignore
