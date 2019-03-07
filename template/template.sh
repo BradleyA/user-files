@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.128.186  2019-03-06T23:17:24.408914-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.127  
+# 	   add ROOT access statement 
 # 	template/template.sh  3.127.185  2019-03-06T22:42:37.810816-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.126  
 # 	   add                                           <-- Absolute path 
 # 	template/template.sh  3.126.184  2019-03-06T22:25:42.521090-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.125  
@@ -133,6 +135,14 @@ ADMUSER=${2:-${USER}}
 #       Order of precedence: CLI argument, environment variable, default code
 if [ $# -ge  3 ]  ; then DATA_DIR=${3} ; elif [ "${DATA_DIR}" == "" ] ; then DATA_DIR="/usr/local/data/" ; fi
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
+
+#       Root is required to copy certs
+if ! [ $(id -u) = 0 -o ${USER} = ${TLSUSER} ] ; then
+        display_help | more
+        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Use sudo ${0}" 1>&2
+        echo -e "${BOLD}\n>>   SCRIPT MUST BE RUN AS ROOT TO COPY FILES. <<\n${NORMAL}"     1>&2
+        exit 1
+fi
 
 ###	EXAMPLE ONE
 #
