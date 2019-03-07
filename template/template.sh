@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.126.184  2019-03-06T22:25:42.521090-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.125  
+# 	   add nCONFIGURATION section for display_help 
 # 	template/template.sh  3.123.172  2019-02-08T19:53:10.735174-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.122  
 # 	   Change order in examples section to BOLD command NORMAL description below 
 # 	template/template.sh  3.119.166  2019-01-23T13:53:45.458595-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
@@ -49,7 +51,17 @@ if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG
 elif ! [ "${LANG}" == "en_US.UTF-8" ] ; then
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
 fi
-echo -e "\nEnvironment Variables"
+echo -e "\nCONFIGURATION"
+echo    "   /usr/local/"
+echo    "   └── docker-registry-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Container mount"
+echo    "      └── certs/                                        <-- Certificate directory"
+echo    "         ├── domain.crt                                 <-- Registry certificate"
+echo    "         └── domain.key                                 <-- Registry key"
+echo    "      └── docker/                                       <-- Storage directory"
+echo    "   /etc/docker/certs.d/"
+echo    "   └── <REGISTRY_HOST>:<REGISTRY_PORT>/                 <-- Host registry cert"
+echo    "      └── ca.crt                                        <-- Registry certificate"
+echo -e "\nENVIRONMENT VARIABLES"
 echo    "If using the bash shell, enter; 'export DEBUG=1' on the command line to set"
 echo    "the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  Use the"
 echo    "command, 'unset DEBUG' to remove the exported information from the DEBUG"
