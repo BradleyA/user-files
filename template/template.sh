@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.127.185  2019-03-06T22:42:37.810816-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.126  
+# 	   add                                           <-- Absolute path 
 # 	template/template.sh  3.126.184  2019-03-06T22:25:42.521090-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.125  
 # 	   add nCONFIGURATION section for display_help 
 # 	template/template.sh  3.123.172  2019-02-08T19:53:10.735174-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.122  
@@ -52,7 +54,7 @@ elif ! [ "${LANG}" == "en_US.UTF-8" ] ; then
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
 fi
 echo -e "\nCONFIGURATION"
-echo    "   /usr/local/"
+echo    "   /usr/local/                                          <-- Absolute path"
 echo    "   └── docker-registry-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Container mount"
 echo    "      └── certs/                                        <-- Certificate directory"
 echo    "         ├── domain.crt                                 <-- Registry certificate"
