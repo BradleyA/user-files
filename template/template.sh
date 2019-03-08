@@ -1,10 +1,12 @@
 #!/bin/bash
+# 	template/template.sh  3.129.187  2019-03-07T19:58:15.048520-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.128  
+# 	   update configuration section 
 # 	template/template.sh  3.128.186  2019-03-06T23:17:24.408914-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.127  
 # 	   add ROOT access statement 
 # 	template/template.sh  3.127.185  2019-03-06T22:42:37.810816-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.126  
 # 	   add                                           <-- Absolute path 
 # 	template/template.sh  3.126.184  2019-03-06T22:25:42.521090-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.125  
-# 	   add nCONFIGURATION section for display_help 
+# 	   add CONFIGURATION section for display_help 
 # 	template/template.sh  3.123.172  2019-02-08T19:53:10.735174-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.122  
 # 	   Change order in examples section to BOLD command NORMAL description below 
 # 	template/template.sh  3.119.166  2019-01-23T13:53:45.458595-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
@@ -56,15 +58,27 @@ elif ! [ "${LANG}" == "en_US.UTF-8" ] ; then
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
 fi
 echo -e "\nCONFIGURATION"
-echo    "   /usr/local/                                          <-- Absolute path"
-echo    "   └── docker-registry-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Container mount"
-echo    "      └── certs/                                        <-- Certificate directory"
-echo    "         ├── domain.crt                                 <-- Registry certificate"
-echo    "         └── domain.key                                 <-- Registry key"
-echo    "      └── docker/                                       <-- Storage directory"
-echo    "   /etc/docker/certs.d/"
-echo    "   └── <REGISTRY_HOST>:<REGISTRY_PORT>/                 <-- Host registry cert"
-echo    "      └── ca.crt                                        <-- Registry certificate"
+echo    "   /usr/local/                                           <-- <ABSOLUTE_PATH>"
+echo    "    └── docker-registry-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Container mount"
+echo    "      └── certs/                                         <-- Cert directory"
+echo    "        ├── domain.crt                                   <-- Registry cert"
+echo    "        └── domain.key                                   <-- Registry key"
+echo    "      └── docker/                                        <-- Registry storage"
+echo -e "                                                             directory\n"
+echo    "   \$HOME/.docker/                                       <-- Docker client cert"
+echo    "                                                            directory"
+echo    "    ├── docker-ca                                       <-- Working directory"
+echo    "                                                            to create certs"
+echo    "    └── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory"
+echo    "                                                            to create registory"
+echo -e "                                                            certs\n"
+echo    "   /etc/docker/certs.d/                   <-- Host docker cert directory"
+echo    "    ├── daemon                            <-- Daemon cert directory"
+echo    "      ├── ca.pem                          <-- tlscacert"
+echo    "      ├── cert.pem                        <-- tlscert"
+echo    "      └── key.pem                         <-- tlskey"
+echo    "    └── <REGISTRY_HOST>:<REGISTRY_PORT>/  <-- Registry cert directory"
+echo    "      └── ca.crt                          <-- Registry cert"
 echo -e "\nENVIRONMENT VARIABLES"
 echo    "If using the bash shell, enter; 'export DEBUG=1' on the command line to set"
 echo    "the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  Use the"
@@ -121,6 +135,14 @@ get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Name_of_command >${0}< Name_of_arg1 >${1}< Name_of_arg2 >${2}< Name_of_arg3 >${3}<  Version of bash ${BASH_VERSION}" 1>&2 ; fi
 
 ###
+#       Root is required to copy certs
+if ! [ $(id -u) = 0 -o ${USER} = ${TLSUSER} ] ; then
+        display_help | more
+        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Use sudo ${0}" 1>&2
+        echo -e "${BOLD}\n>>   SCRIPT MUST BE RUN AS ROOT TO COPY FILES. <<\n${NORMAL}"     1>&2
+        exit 1
+fi
+
 #	Example arguments
 
 #       Order of precedence: CLI argument, default code
@@ -136,17 +158,8 @@ ADMUSER=${2:-${USER}}
 if [ $# -ge  3 ]  ; then DATA_DIR=${3} ; elif [ "${DATA_DIR}" == "" ] ; then DATA_DIR="/usr/local/data/" ; fi
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
-#       Root is required to copy certs
-if ! [ $(id -u) = 0 -o ${USER} = ${TLSUSER} ] ; then
-        display_help | more
-        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Use sudo ${0}" 1>&2
-        echo -e "${BOLD}\n>>   SCRIPT MUST BE RUN AS ROOT TO COPY FILES. <<\n${NORMAL}"     1>&2
-        exit 1
-fi
-
 ###	EXAMPLE ONE
 #
-
 #	Example code is a template, it will not work until chnaged
 #
 #       Check if argument 1 is blank
