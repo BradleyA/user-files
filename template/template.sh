@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.130.188  2019-03-07T21:18:02.342786-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.129  
+# 	   update configuration and must be ROOT sections 
 # 	template/template.sh  3.129.187  2019-03-07T19:58:15.048520-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.128  
 # 	   update configuration section 
 # 	template/template.sh  3.128.186  2019-03-06T23:17:24.408914-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.127  
@@ -65,10 +67,13 @@ echo    "        ├── domain.crt                                   <-- Regi
 echo    "        └── domain.key                                   <-- Registry key"
 echo    "      └── docker/                                        <-- Registry storage"
 echo -e "                                                             directory\n"
-echo    "   \$HOME/.docker/                                       <-- Docker client cert"
+echo    "   \$HOME/.docker/                                       <-- Docker user cert"
 echo    "                                                            directory"
 echo    "    ├── docker-ca                                       <-- Working directory"
 echo    "                                                            to create certs"
+echo    "      ├── ca.pem                          <-- tlscacert"
+echo    "      ├── cert.pem                        <-- tlscert"
+echo    "      └── key.pem                         <-- tlskey"
 echo    "    └── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory"
 echo    "                                                            to create registory"
 echo -e "                                                            certs\n"
@@ -136,7 +141,7 @@ if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP}
 
 ###
 #       Root is required to copy certs
-if ! [ $(id -u) = 0 -o ${USER} = ${TLSUSER} ] ; then
+if ! [ $(id -u) = 0 ] ; then
         display_help | more
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Use sudo ${0}" 1>&2
         echo -e "${BOLD}\n>>   SCRIPT MUST BE RUN AS ROOT TO COPY FILES. <<\n${NORMAL}"     1>&2
