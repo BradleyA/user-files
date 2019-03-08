@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.132.190  2019-03-08T14:21:19.724691-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.131  
+# 	   update to SOFTWARE ARCHITECTURE section 
 # 	template/template.sh  3.131.189  2019-03-08T13:26:50.544423-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.130  
 # 	   replace SOFTWARE ARCHITECTURE section 
 # 	template/template.sh  3.119.166  2019-01-23T13:53:45.458595-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
@@ -50,10 +52,13 @@ elif ! [ "${LANG}" == "en_US.UTF-8" ] ; then
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
 fi
 echo -e "\nSOFTWARE ARCHITECTURE"
-echo    "/usr/local/data/<CLUSTER>/                  <-- <ABSOLUTE_PATH>"
+echo    "/usr/local/data/                            <-- <DATA_DIR>"
+echo    "   <CLUSTER>/                               <-- <CLUSTER>"
+echo    "   ├── docker                               <-- Docker image & working"
+echo    "   │                                            directory"
 echo    "   ├── SYSTEMS                              <-- List of hosts in cluster"
-echo    "   ├── <HOST>-log/                          <-- Host log directory"
-echo    "   ├── <HOST>-logrotate/                    <-- Host logrotate directory"
+echo    "   ├── log/                                 <-- Host log directory"
+echo    "   ├── logrotate/                           <-- Host logrotate directory"
 echo    "   ├── docker-accounts/                     <-- Docker TLS certs"
 echo    "   │   ├── <HOST-1>/                        <-- Host in cluster"
 echo    "   │   │   ├── <USER-1>                     <-- User TLS certs directory"
