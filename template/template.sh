@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.134.192  2019-03-08T20:48:51.117968-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.133  
+# 	   update STORAGE & CERTIFICATION ARCHITECTURE TREE 
 # 	template/template.sh  3.133.191  2019-03-08T20:10:38.587398-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.132  
 # 	   update STORAGE & CERTIFICATION ARCHITECTURE TREE 
 # 	template/template.sh  3.132.190  2019-03-08T14:21:19.724691-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.131  
@@ -91,8 +93,7 @@ echo    "   └── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Workin
 echo    "       │                                        to create registory certs"
 echo    "       ├── ca.crt                           <-- Daemon trust registry cert"
 echo    "       ├── domain.crt                       <-- Registry cert"
-echo    "       └── domain.key                       <-- Registry key"
-
+echo -e "       └── domain.key                       <-- Registry key\n"
 echo    "/etc/docker/certs.d/                        <-- Host docker cert directory"
 echo    "   ├── daemon                               <-- Daemon cert directory"
 echo    "   │   ├── ca.pem                           <-- Daemon tlscacert"
