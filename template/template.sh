@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.135.193  2019-03-09T08:03:35.625137-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.134  
+# 	   type in display_help 
 # 	template/template.sh  3.134.192  2019-03-08T20:48:51.117968-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.133  
 # 	   update STORAGE & CERTIFICATION ARCHITECTURE TREE 
 # 	template/template.sh  3.133.191  2019-03-08T20:10:38.587398-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.132  
@@ -75,7 +77,7 @@ echo    "   └── docker-registry/                     <-- Docker registry d
 echo    "       ├── <REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Registry container mount"
 echo    "       │   │── certs/                       <-- Registry cert directory"
 echo    "       │   │   ├── domain.crt               <-- Registry cert"
-echo    "       │   │   └── domain.key               <-- Registry key"
+echo    "       │   │   └── domain.key               <-- Registry private key"
 echo    "       │   └── docker/                      <-- Registry storage directory"
 echo -e "       └── <REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Registry container mount\n"
 echo    "~<USER-1>/.docker/                          <-- User docker cert directory"
@@ -93,7 +95,7 @@ echo    "   └── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Workin
 echo    "       │                                        to create registory certs"
 echo    "       ├── ca.crt                           <-- Daemon trust registry cert"
 echo    "       ├── domain.crt                       <-- Registry cert"
-echo -e "       └── domain.key                       <-- Registry key\n"
+echo -e "       └── domain.key                       <-- Registry private key\n"
 echo    "/etc/docker/certs.d/                        <-- Host docker cert directory"
 echo    "   ├── daemon                               <-- Daemon cert directory"
 echo    "   │   ├── ca.pem                           <-- Daemon tlscacert"
