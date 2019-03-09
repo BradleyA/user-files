@@ -1,8 +1,8 @@
 #!/bin/bash
+# 	template/template.sh  3.133.191  2019-03-08T20:10:38.587398-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.132  
+# 	   update STORAGE & CERTIFICATION ARCHITECTURE TREE 
 # 	template/template.sh  3.132.190  2019-03-08T14:21:19.724691-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.131  
 # 	   update to SOFTWARE ARCHITECTURE section 
-# 	template/template.sh  3.131.189  2019-03-08T13:26:50.544423-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.130  
-# 	   replace SOFTWARE ARCHITECTURE section 
 # 	template/template.sh  3.119.166  2019-01-23T13:53:45.458595-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
 # 	   template[sh-py] --> production standard 5 include Copyright notice close #17 
 # 	template/template.sh  3.117.164  2019-01-19T23:34:09.613511-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.116  
@@ -51,7 +51,7 @@ if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG
 elif ! [ "${LANG}" == "en_US.UTF-8" ] ; then
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
 fi
-echo -e "\nSOFTWARE ARCHITECTURE"
+echo -e "\nSTORAGE & CERTIFICATION ARCHITECTURE TREE"
 echo    "/usr/local/data/                            <-- <DATA_DIR>"
 echo    "   <CLUSTER>/                               <-- <CLUSTER>"
 echo    "   ├── docker                               <-- Docker image & working"
@@ -62,9 +62,9 @@ echo    "   ├── logrotate/                           <-- Host logrotate di
 echo    "   ├── docker-accounts/                     <-- Docker TLS certs"
 echo    "   │   ├── <HOST-1>/                        <-- Host in cluster"
 echo    "   │   │   ├── <USER-1>                     <-- User TLS certs directory"
-echo    "   │   │   │   ├── ca.pem                   <-- tlscacert"
-echo    "   │   │   │   ├── cert.pem                 <-- tlscert"
-echo    "   │   │   │   ├── key.pem                  <-- tlskey"
+echo    "   │   │   │   ├── ca.pem                   <-- User tlscacert"
+echo    "   │   │   │   ├── cert.pem                 <-- User tlscert"
+echo    "   │   │   │   ├── key.pem                  <-- User tlskey"
 echo    "   │   │   │   └── trust/                   <-- Backup of Docker Content"
 echo    "   │   │   │                                    Trust (DCT) keys"
 echo    "   │   │   └── <USER-2>                     <-- User TLS certs directory"
@@ -76,7 +76,7 @@ echo    "       │   │   ├── domain.crt               <-- Registry cert
 echo    "       │   │   └── domain.key               <-- Registry key"
 echo    "       │   └── docker/                      <-- Registry storage directory"
 echo -e "       └── <REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Registry container mount\n"
-echo    "\$HOME/.docker/                             <-- User docker cert directory"
+echo    "~<USER-1>/.docker/                          <-- User docker cert directory"
 echo    "   ├── ca.pem                               <-- Symbolic link to user tlscacert"
 echo    "   ├── cert.pem                             <-- Symbolic link to user tlscert"
 echo    "   ├── key.pem                              <-- Symbolic link to user tlskey"
@@ -88,17 +88,20 @@ echo    "   │   │                                        (DCT Root Key)"
 echo    "   │   ├── trusted_certificates/            <-- "
 echo    "   │   └── tuf/                             <-- "
 echo    "   └── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory"
-echo    "                                                           to create registory"
-echo -e "                                                           certs\n"
+echo    "       │                                        to create registory certs"
+echo    "       ├── ca.crt                           <-- Daemon trust registry cert"
+echo    "       ├── domain.crt                       <-- Registry cert"
+echo    "       └── domain.key                       <-- Registry key"
+
 echo    "/etc/docker/certs.d/                        <-- Host docker cert directory"
 echo    "   ├── daemon                               <-- Daemon cert directory"
-echo    "   │   ├── ca.pem                           <-- tlscacert"
-echo    "   │   ├── cert.pem                         <-- tlscert"
-echo    "   │   └── key.pem                          <-- tlskey"
+echo    "   │   ├── ca.pem                           <-- Daemon tlscacert"
+echo    "   │   ├── cert.pem                         <-- Daemon tlscert"
+echo    "   │   └── key.pem                          <-- Daemon tlskey"
 echo    "   ├── <REGISTRY_HOST>:<REGISTRY_PORT>/     <-- Registry cert directory"
-echo    "   │   └── ca.crt                           <-- Registry cert"
+echo    "   │   └── ca.crt                           <-- Daemon trust registry cert"
 echo    "   └── <REGISTRY_HOST>:<REGISTRY_PORT>/     <-- Registry cert directory"
-echo    "       └── ca.crt                           <-- Registry cert"
+echo    "       └── ca.crt                           <-- Daemon trust registry cert"
 echo -e "\nENVIRONMENT VARIABLES"
 echo    "If using the bash shell, enter; 'export DEBUG=1' on the command line to set"
 echo    "the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  Use the"
