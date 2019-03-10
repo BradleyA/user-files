@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.136.194  2019-03-10T18:55:05.521408-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.135  
+# 	   typo in Display_help 
 # 	template/template.sh  3.135.193  2019-03-09T08:03:35.625137-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.134  
 # 	   type in display_help 
 # 	template/template.sh  3.134.192  2019-03-08T20:48:51.117968-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.133  
@@ -75,7 +77,7 @@ echo    "   │   │   └── <USER-2>                     <-- User TLS cert
 echo    "   │   └── <HOST-2>/                        <-- Host in cluster"
 echo    "   └── docker-registry/                     <-- Docker registry directory"
 echo    "       ├── <REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Registry container mount"
-echo    "       │   │── certs/                       <-- Registry cert directory"
+echo    "       │   ├── certs/                       <-- Registry cert directory"
 echo    "       │   │   ├── domain.crt               <-- Registry cert"
 echo    "       │   │   └── domain.key               <-- Registry private key"
 echo    "       │   └── docker/                      <-- Registry storage directory"
