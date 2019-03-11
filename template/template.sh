@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.137.195  2019-03-11T11:54:17.252939-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.136  
+# 	   added more to display_help tree 
 # 	template/template.sh  3.136.194  2019-03-10T18:55:05.521408-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.135  
 # 	   typo in Display_help 
 # 	template/template.sh  3.135.193  2019-03-09T08:03:35.625137-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.134  
@@ -107,6 +109,9 @@ echo    "   ├── <REGISTRY_HOST>:<REGISTRY_PORT>/     <-- Registry cert dir
 echo    "   │   └── ca.crt                           <-- Daemon trust registry cert"
 echo    "   └── <REGISTRY_HOST>:<REGISTRY_PORT>/     <-- Registry cert directory"
 echo    "       └── ca.crt                           <-- Daemon trust registry cert"
+echo    "/usr/lib/docker/                            <-- Docker image default location"
+echo    "                                                change to symbolic link to"
+echo    "                                                /usr/local/docker"
 echo -e "\nENVIRONMENT VARIABLES"
 echo    "If using the bash shell, enter; 'export DEBUG=1' on the command line to set"
 echo    "the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  Use the"
