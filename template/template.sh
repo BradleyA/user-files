@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.139.197  2019-03-16T18:18:55.961990-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.138  
+# 	   added more to display_help tree 
 # 	template/template.sh  3.138.196  2019-03-16T12:37:46.749287-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.137  
 # 	   added more to display_help tree 
 # 	template/template.sh  3.137.195  2019-03-11T11:54:17.252939-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.136  
@@ -90,7 +92,7 @@ echo    "   ├── ca.pem                             <-- Symbolic link to us
 echo    "   ├── cert.pem                           <-- Symbolic link to user tlscert"
 echo    "   ├── key.pem                            <-- Symbolic link to user tlskey"
 echo    "   ├── docker-ca/                         <-- Working directory to create certs"
-echo    "   ├── trust/                             <-- ______ ___ ______ ____ ____"
+echo    "   ├── trust/                             <-- Docker Content Trust (DCT)"
 echo    "   │   ├── private/                       <-- Notary Canonical Root Key ID"
 echo    "   │   │                                      (DCT Root Key)"
 echo    "   │   ├── trusted_certificates/          <-- Docker Content Trust (DCT) keys"
@@ -102,7 +104,7 @@ echo    "       ├── domain.crt                     <-- Registry cert"
 echo -e "       └── domain.key                     <-- Registry private key\n"
 echo    "/etc/ "
 echo    "   docker/ "
-echo    "   ├── daemon.json                        <-- ______ ___ ______ ____ ____"
+echo    "   ├── daemon.json                        <-- JSON configuration"
 echo    "   ├── certs.d/                           <-- Host docker cert directory"
 echo    "   │   ├── daemon/                        <-- Daemon cert directory"
 echo    "   │   │   ├── ca.pem                     <-- Daemon tlscacert"
@@ -114,20 +116,20 @@ echo    "   │   └── <REGISTRY_HOST>:<REGISTRY_PORT>/ <-- Registry cert d
 echo    "   │       └── ca.crt                     <-- Daemon trust registry cert"
 echo    "   ├── 10-override.begin                  <-- docker.service.d default lines"
 echo    "   ├── dockerd-configuration-file         <-- Daemon configuration"
-echo    "   ├── dockerd-configuration-file.service <-- runs /etc/docker/start-dockerd-with-systemd.sh during boot"
-echo    "   ├── docker.org                         <-- "
+echo    "   ├── dockerd-configuration-file.service <-- runs start-dockerd-with-systemd.sh during boot"
+echo    "   ├── docker.org                         <-- Copy of /etc/default/docker"
 echo    "   ├── key.json                           <-- dockerd key for TLS connections to other TLS servers like registries"
 echo    "   ├── README.md"
 echo    "   ├── setup-dockerd.sh                   <-- moves and creates files"
 echo    "   ├── start-dockerd-with-systemd.begin   <-- Beginning default lines"
 echo    "   ├── start-dockerd-with-systemd.end     <-- Ending default lines"
 
-echo    "   ├── start-dockerd-with-systemd.sh      <-- _____ ___ ___ ___ ___"
+echo    "   ├── start-dockerd-with-systemd.sh"
 echo    "   └── uninstall-dockerd-scripts.sh       <-- Removes files and scripts"
-echo    "   systemd/system/                        <-- _____ _____ ___ ___ ___ _____"
-echo    "   ├── dockerd-configuration-file.service <-- _____ _____ ___ ___ ___ _____ "
-echo    "   ├── docker.service.d/10-override.conf file (Ubuntu 16.04, systemd) and the /etc/default/docker (Ubuntu 14.04, Upstart)"
-echo    "   └── docker.service.wants/              <-- _____ _____ ___ ___ ___ _____ "
+echo    "   systemd/system/                        <-- Local systemd configurations"
+echo    "   ├── dockerd-configuration-file.service <-- Runs start-dockerd-with-systemd.sh"
+echo    "   ├── docker.service.d/10-override.conf  <-- Override configutation file"
+echo    "   └── docker.service.wants/              <-- Dependencies"
 echo    "   default/"
 echo    "   └── docker                             <-- Docker daemon Upstart and"
 echo    "                                              SysVinit configuration file"
