@@ -1,20 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.139.197  2019-03-16T18:18:55.961990-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.138  
+# 	template/template.sh  3.140.198  2019-03-16T18:22:04.101779-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.139  
 # 	   added more to display_help tree 
-# 	template/template.sh  3.138.196  2019-03-16T12:37:46.749287-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.137  
-# 	   added more to display_help tree 
-# 	template/template.sh  3.137.195  2019-03-11T11:54:17.252939-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.136  
-# 	   added more to display_help tree 
-# 	template/template.sh  3.136.194  2019-03-10T18:55:05.521408-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.135  
-# 	   typo in Display_help 
-# 	template/template.sh  3.135.193  2019-03-09T08:03:35.625137-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.134  
-# 	   type in display_help 
-# 	template/template.sh  3.134.192  2019-03-08T20:48:51.117968-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.133  
-# 	   update STORAGE & CERTIFICATION ARCHITECTURE TREE 
-# 	template/template.sh  3.133.191  2019-03-08T20:10:38.587398-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.132  
-# 	   update STORAGE & CERTIFICATION ARCHITECTURE TREE 
-# 	template/template.sh  3.132.190  2019-03-08T14:21:19.724691-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.131  
-# 	   update to SOFTWARE ARCHITECTURE section 
 # 	template/template.sh  3.119.166  2019-01-23T13:53:45.458595-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
 # 	   template[sh-py] --> production standard 5 include Copyright notice close #17 
 # 	template/template.sh  3.117.164  2019-01-19T23:34:09.613511-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.116  
@@ -123,7 +109,6 @@ echo    "   ├── README.md"
 echo    "   ├── setup-dockerd.sh                   <-- moves and creates files"
 echo    "   ├── start-dockerd-with-systemd.begin   <-- Beginning default lines"
 echo    "   ├── start-dockerd-with-systemd.end     <-- Ending default lines"
-
 echo    "   ├── start-dockerd-with-systemd.sh"
 echo    "   └── uninstall-dockerd-scripts.sh       <-- Removes files and scripts"
 echo    "   systemd/system/                        <-- Local systemd configurations"
