@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.143.201  2019-03-18T23:10:45.796186-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.142  
+# 	   typo 
 # 	template/template.sh  3.142.200  2019-03-18T22:50:23.933589-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.141  
 # 	   update tree 
 # 	template/template.sh  3.141.199  2019-03-17T14:44:25.678225-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.140  
@@ -40,8 +42,8 @@ echo -e "\nUSAGE\n   ${0} [XX | YY | ZZ]"
 echo    "   ${0} [--file <PATH>/<FILE_NAME> | -f <PATH>/<FILE_NAME>]"
 echo    "   ${0} [--help | -help | help | -h | h | -?]"
 echo    "   ${0} [--version | -version | -v]"
-echo -e "\nDESCRIPTION"
 #       Displaying help DESCRIPTION in English en_US.UTF-8
+echo -e "\nDESCRIPTION"
 echo    "<your help goes here>" 
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<"
 echo -e "\n<<Paragraph two>>"
