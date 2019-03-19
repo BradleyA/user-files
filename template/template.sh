@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.142.200  2019-03-18T22:50:23.933589-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.141  
+# 	   update tree 
 # 	template/template.sh  3.141.199  2019-03-17T14:44:25.678225-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.140  
 # 	   change order for production standard 6 after environment variables 
 # 	template/template.sh  3.140.198  2019-03-16T18:22:04.101779-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.139  
@@ -93,7 +95,7 @@ echo    "   │   └── <REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Registry contai
 echo    "   <STANDALONE>/                          <-- <STANDALONE> Architecture tree"
 echo    "                                              is the same as <CLUSTER> TREE but"
 echo    "                                              the systems not in a cluster"
-echo    "~<USER-1>/.docker/                        <-- User docker cert directory"
+echo    "~<USER-1>/.docker/                        <-- user docker cert directory"
 echo    "   ├── ca.pem                             <-- Symbolic link to user tlscacert"
 echo    "   ├── cert.pem                           <-- Symbolic link to user tlscert"
 echo    "   ├── key.pem                            <-- Symbolic link to user tlskey"
@@ -103,11 +105,13 @@ echo    "   │   ├── private/                       <-- Notary Canonical 
 echo    "   │   │                                      (DCT Root Key)"
 echo    "   │   ├── trusted_certificates/          <-- Docker Content Trust (DCT) keys"
 echo    "   │   └── tuf/                           <-- Update Framework (TUF)"
+echo    "   ├── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory to"
+echo    "   │   │                                      create registory certs"
+echo    "   │   ├── ca.crt                         <-- Daemon registry domain cert"
+echo    "   │   ├── domain.crt                     <-- Registry cert"
+echo -e "   │   └── domain.key                     <-- Registry private key"
 echo    "   └── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory to"
-echo    "       │                                      create registory certs"
-echo    "       ├── ca.crt                         <-- Daemon registry domain cert"
-echo    "       ├── domain.crt                     <-- Registry cert"
-echo -e "       └── domain.key                     <-- Registry private key\n"
+echo -e "                                              create registory certs\n"
 echo    "/etc/ "
 echo    "   docker/ "
 echo    "   ├── daemon.json                        <-- JSON configuration"
