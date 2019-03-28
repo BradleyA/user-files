@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.145.203  2019-03-27T21:56:12.498257-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.144  
+# 	   typos in tree 
 # 	template/template.sh  3.144.202  2019-03-27T21:40:18.785120-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.143  
 # 	   update tree stnadalone 
 # 	template/template.sh  3.143.201  2019-03-18T23:10:45.796186-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.142  
@@ -95,10 +97,10 @@ echo    "   │   │   ├── certs/                     <-- Registry cert d
 echo    "   │   │   │   ├── domain.crt             <-- Registry cert"
 echo    "   │   │   │   └── domain.key             <-- Registry private key"
 echo    "   │   │   └── docker/                    <-- Registry storage directory"
-echo    "   │   └── <REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Registry container mount\n"
+echo    "   │   └── <REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Registry container mount"
 echo    "   <STANDALONE>/                          <-- <STANDALONE> Architecture tree"
 echo    "                                              is the same as <CLUSTER> TREE but"
-echo    "                                              the systems are not in a cluster"
+echo -e "                                              the systems are not in a cluster\n"
 echo    "~<USER-1>/.docker/                        <-- user docker cert directory"
 echo    "   ├── ca.pem                             <-- Symbolic link to user tlscacert"
 echo    "   ├── cert.pem                           <-- Symbolic link to user tlscert"
@@ -113,7 +115,7 @@ echo    "   ├── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Workin
 echo    "   │   │                                      create registory certs"
 echo    "   │   ├── ca.crt                         <-- Daemon registry domain cert"
 echo    "   │   ├── domain.crt                     <-- Registry cert"
-echo -e "   │   └── domain.key                     <-- Registry private key"
+echo    "   │   └── domain.key                     <-- Registry private key"
 echo    "   └── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory to"
 echo -e "                                              create registory certs\n"
 echo    "/etc/ "
