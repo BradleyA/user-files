@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.144.202  2019-03-27T21:40:18.785120-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.143  
+# 	   update tree stnadalone 
 # 	template/template.sh  3.143.201  2019-03-18T23:10:45.796186-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.142  
 # 	   typo 
 # 	template/template.sh  3.142.200  2019-03-18T22:50:23.933589-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.141  
@@ -96,7 +98,7 @@ echo    "   │   │   └── docker/                    <-- Registry storag
 echo    "   │   └── <REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Registry container mount\n"
 echo    "   <STANDALONE>/                          <-- <STANDALONE> Architecture tree"
 echo    "                                              is the same as <CLUSTER> TREE but"
-echo    "                                              the systems not in a cluster"
+echo    "                                              the systems are not in a cluster"
 echo    "~<USER-1>/.docker/                        <-- user docker cert directory"
 echo    "   ├── ca.pem                             <-- Symbolic link to user tlscacert"
 echo    "   ├── cert.pem                           <-- Symbolic link to user tlscert"
