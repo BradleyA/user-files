@@ -1,16 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.145.203  2019-03-27T21:56:12.498257-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.144  
-# 	   typos in tree 
-# 	template/template.sh  3.144.202  2019-03-27T21:40:18.785120-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.143  
-# 	   update tree stnadalone 
-# 	template/template.sh  3.143.201  2019-03-18T23:10:45.796186-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.142  
-# 	   typo 
-# 	template/template.sh  3.142.200  2019-03-18T22:50:23.933589-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.141  
-# 	   update tree 
-# 	template/template.sh  3.141.199  2019-03-17T14:44:25.678225-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.140  
-# 	   change order for production standard 6 after environment variables 
-# 	template/template.sh  3.140.198  2019-03-16T18:22:04.101779-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.139  
-# 	   added more to display_help tree 
+# 	template/template.sh  3.146.204  2019-03-28T10:35:56.533829-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.145  
+# 	   updates to production standard 5 and 6 
 # 	template/template.sh  3.119.166  2019-01-23T13:53:45.458595-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
 # 	   template[sh-py] --> production standard 5 include Copyright notice close #17 
 # 	template/template.sh  3.117.164  2019-01-19T23:34:09.613511-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.116  
@@ -29,10 +19,10 @@
 # 	   template.{sh,py} add more to display_help close #14 
 #
 ### template.sh - brief description
+#   production standard 5
 #       Copyright (c) 2019 Bradley Allen
 #       License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
 ###
-#   production standard 5
 #       Order of precedence: environment variable, default code
 if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 #	set -x
