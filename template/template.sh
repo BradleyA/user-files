@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.147.205  2019-03-29T22:22:20.964187-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.146  
+# 	   update tree 
 # 	template/template.sh  3.146.204  2019-03-28T10:35:56.533829-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.145  
 # 	   updates to production standard 5 and 6 
 # 	template/template.sh  3.119.166  2019-01-23T13:53:45.458595-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
@@ -122,9 +124,11 @@ echo    "   │   └── <REGISTRY_HOST>:<REGISTRY_PORT>/ <-- Registry cert d
 echo    "   │       └── ca.crt                     <-- Daemon registry domain cert"
 echo    "   ├── 10-override.begin                  <-- docker.service.d default lines"
 echo    "   ├── dockerd-configuration-file         <-- Daemon configuration"
-echo    "   ├── dockerd-configuration-file.service <-- runs start-dockerd-with-systemd.sh during boot"
+echo    "   ├── dockerd-configuration-file.service <-- runs start-dockerd-with-systemd.sh"
+echo    "   │                                          during boot"
 echo    "   ├── docker.org                         <-- Copy of /etc/default/docker"
-echo    "   ├── key.json                           <-- dockerd key for TLS connections to other TLS servers like registries"
+echo    "   ├── key.json                           <-- dockerd key for TLS connections"
+echo    "   │                                          to other TLS servers"
 echo    "   ├── README.md"
 echo    "   ├── setup-dockerd.sh                   <-- moves and creates files"
 echo    "   ├── start-dockerd-with-systemd.begin   <-- Beginning default lines"
@@ -138,9 +142,9 @@ echo    "   └── docker.service.wants/              <-- Dependencies"
 echo    "   default/"
 echo    "   └── docker                             <-- Docker daemon Upstart and"
 echo    "                                              SysVinit configuration file"
-echo    "/usr/lib/docker/                          <-- Docker image default location"
-echo    "                                              change to symbolic link to"
-echo    "                                              /usr/local/docker"
+echo    "/var/lib/docker/                          <-- Docker image & working default"
+echo    "                                              directory; changed to symbolic"
+echo    "                                              link ${DATA_DIR}/${CLUSTER}/docker"
 echo -e "\nDOCUMENTATION\n   https://github.com/BradleyA/   <<URL to online repository README>>"
 echo -e "\nEXAMPLES\n   ${BOLD}${0} <<code example goes here>>${NORMAL}\n\n   <<your code examples description goes here>>\n"
 }
