@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.147.205  2019-03-29T22:22:20.964187-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.146  
-# 	   update tree 
-# 	template/template.sh  3.146.204  2019-03-28T10:35:56.533829-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.145  
-# 	   updates to production standard 5 and 6 
+# 	template/template.sh  3.148.206  2019-04-01T12:32:26.250999-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.147  
+# 	   updates to production standard 6 
 # 	template/template.sh  3.119.166  2019-01-23T13:53:45.458595-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
 # 	   template[sh-py] --> production standard 5 include Copyright notice close #17 
 # 	template/template.sh  3.117.164  2019-01-19T23:34:09.613511-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.116  
@@ -93,7 +91,7 @@ echo    "   │   └── <REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Registry contai
 echo    "   <STANDALONE>/                          <-- <STANDALONE> Architecture tree"
 echo    "                                              is the same as <CLUSTER> TREE but"
 echo -e "                                              the systems are not in a cluster\n"
-echo    "~<USER-1>/.docker/                        <-- user docker cert directory"
+echo    "~<USER-1>/.docker/                        <-- User docker cert directory"
 echo    "   ├── ca.pem                             <-- Symbolic link to user tlscacert"
 echo    "   ├── cert.pem                           <-- Symbolic link to user tlscert"
 echo    "   ├── key.pem                            <-- Symbolic link to user tlskey"
