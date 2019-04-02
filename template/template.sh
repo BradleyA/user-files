@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.150.208  2019-04-02T15:12:21.888109-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.149  
+# 	   template[sh-py] --> production standard 7 Default variable value 
 # 	template/template.sh  3.149.207  2019-04-02T13:42:09.027916-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.148  
 # 	   template[sh-py] --> production standard 6 Architecture tree 
 # 	template/template.sh  3.119.166  2019-01-23T13:53:45.458595-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
@@ -18,7 +20,7 @@
 # 	template/template.sh  3.110.152  2018-12-20T10:44:46.764269-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.109  
 # 	   template.{sh,py} add more to display_help close #14 
 #
-### production standard 5 Copyright
+### production standard 5.0 Copyright
 #       Copyright (c) 2019 Bradley Allen
 #       License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
 ###
@@ -28,8 +30,10 @@ if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, '
 #	set -v
 BOLD=$(tput -Txterm bold)
 NORMAL=$(tput -Txterm sgr0)
-###
-
+### production standard 7.0 Default variable value
+DEFAULT_CLUSTER="us-tx-cluster-1/"
+DEFAULT_USER=${USER}
+DEFAULT_DATA_DIR="/usr/local/data/"
 ###
 display_help() {
 echo -e "\n${NORMAL}${0} - brief description"
@@ -42,7 +46,7 @@ echo -e "\nDESCRIPTION"
 echo    "<your help goes here>" 
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<"
 echo -e "\n<<Paragraph two>>"
-### production standard 4 Documentation Language
+### production standard 4.0 Documentation Language
 #       Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
 if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG}" == "fr_CH.UTF-8" ] ; then
 	echo -e "\n--> ${LANG}"
@@ -57,15 +61,18 @@ echo    "the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  U
 echo    "command, 'unset DEBUG' to remove the exported information from the DEBUG"
 echo    "environment variable.  You are on your own defining environment variables if"
 echo    "you are using other shells."
-echo    "   DEBUG       (default '0')"
+echo    "   DEBUG           (default '0')"
+echo    "   CLUSTER         (default '${DEFAULT_CLUSTER}')"
+echo    "   DATA_DIR        (default '${DEFAULT_DATA_DIR}')"
+echo    "   SYSTEMS_FILE    (default '${DEFAULT_SYSTEMS_FILE}')"
 echo -e "\n   <<your environment variables information goes here>>"
 echo -e "\nOPTIONS\n   -f, --file\n      path and file on system '<path>/<file_name>'"
 echo -e "\nOPTIONS\n   Option one - description"
 echo    "Order of precedence: CLI options, environment variable, default code."
-echo    "   XX       xxx xxxxxxx xxx"
-echo    "   YY       xxx xxxxx xxx "
-echo    "   zz       xx xxxxxxx xx"
-### production standard 6 Architecture tree
+echo    "   CLUSTER         (default '${DEFAULT_CLUSTER}')"
+echo    "   DATA_DIR        (default '${DEFAULT_DATA_DIR}')"
+echo    "   SYSTEMS_FILE    (default '${DEFAULT_SYSTEMS_FILE}')"
+### production standard 6.0 Architecture tree
 echo -e "\nSTORAGE & CERTIFICATION ARCHITECTURE TREE"
 echo    "/usr/local/data/                          <-- <DATA_DIR>"
 echo    "   <CLUSTER>/                             <-- <CLUSTER>"
@@ -144,7 +151,7 @@ echo    "   └── docker                             <-- Docker daemon Upsta
 echo    "                                              SysVinit configuration file"
 echo    "/var/lib/docker/                          <-- Docker image & working default"
 echo    "                                              directory; changed to symbolic"
-echo    "                                              link ${DATA_DIR}/${CLUSTER}/docker"
+echo    "                                              link <DATA_DIR>/<CLUSTER>/docker"
 echo -e "\nDOCUMENTATION\n   https://github.com/BradleyA/   <<URL to online repository README>>"
 echo -e "\nEXAMPLES\n   ${BOLD}${0} <<code example goes here>>${NORMAL}\n\n   <<your code examples description goes here>>\n"
 }
@@ -200,15 +207,15 @@ fi
 
 #       Order of precedence: CLI argument, default code
 OPTION1=${1:-default_value1}
-OPTION2=${2:-default_value2}
+OPTION2=${2:-${DEFAULT_VALUE2}}
 
 #	Example arguments
 #       Order of precedence: CLI argument, environment variable, default code
-if [ $# -ge  1 ]  ; then CLUSTER=${1} ; elif [ "${CLUSTER}" == "" ] ; then CLUSTER="us-tx-cluster-1/" ; fi
+if [ $# -ge  1 ]  ; then CLUSTER=${1} ; elif [ "${CLUSTER}" == "" ] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
 #       Order of precedence: CLI argument, default code
-ADMUSER=${2:-${USER}}
+ADMUSER=${2:-${DEFAULT_USER}}
 #       Order of precedence: CLI argument, environment variable, default code
-if [ $# -ge  3 ]  ; then DATA_DIR=${3} ; elif [ "${DATA_DIR}" == "" ] ; then DATA_DIR="/usr/local/data/" ; fi
+if [ $# -ge  3 ]  ; then DATA_DIR=${3} ; elif [ "${DATA_DIR}" == "" ] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
 ###	EXAMPLE ONE
