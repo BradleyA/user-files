@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.148.206  2019-04-01T12:32:26.250999-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.147  
-# 	   updates to production standard 6 
+# 	template/template.sh  3.149.207  2019-04-02T13:42:09.027916-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.148  
+# 	   template[sh-py] --> production standard 6 Architecture tree 
 # 	template/template.sh  3.119.166  2019-01-23T13:53:45.458595-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
 # 	   template[sh-py] --> production standard 5 include Copyright notice close #17 
 # 	template/template.sh  3.117.164  2019-01-19T23:34:09.613511-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.116  
@@ -18,8 +18,7 @@
 # 	template/template.sh  3.110.152  2018-12-20T10:44:46.764269-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.109  
 # 	   template.{sh,py} add more to display_help close #14 
 #
-### template.sh - brief description
-#   production standard 5
+### production standard 5 Copyright
 #       Copyright (c) 2019 Bradley Allen
 #       License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
 ###
@@ -29,6 +28,8 @@ if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, '
 #	set -v
 BOLD=$(tput -Txterm bold)
 NORMAL=$(tput -Txterm sgr0)
+###
+
 ###
 display_help() {
 echo -e "\n${NORMAL}${0} - brief description"
@@ -41,7 +42,7 @@ echo -e "\nDESCRIPTION"
 echo    "<your help goes here>" 
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<"
 echo -e "\n<<Paragraph two>>"
-#   production standard 4
+### production standard 4 Documentation Language
 #       Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
 if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG}" == "fr_CH.UTF-8" ] ; then
 	echo -e "\n--> ${LANG}"
@@ -60,10 +61,11 @@ echo    "   DEBUG       (default '0')"
 echo -e "\n   <<your environment variables information goes here>>"
 echo -e "\nOPTIONS\n   -f, --file\n      path and file on system '<path>/<file_name>'"
 echo -e "\nOPTIONS\n   Option one - description"
+echo    "Order of precedence: CLI options, environment variable, default code."
 echo    "   XX       xxx xxxxxxx xxx"
 echo    "   YY       xxx xxxxx xxx "
 echo    "   zz       xx xxxxxxx xx"
-#   production standard 6
+### production standard 6 Architecture tree
 echo -e "\nSTORAGE & CERTIFICATION ARCHITECTURE TREE"
 echo    "/usr/local/data/                          <-- <DATA_DIR>"
 echo    "   <CLUSTER>/                             <-- <CLUSTER>"
