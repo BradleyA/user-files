@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.154.212  2019-04-05T14:54:37.166670-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.153  
+# 	   update options 
 # 	template/template.sh  3.153.211  2019-04-05T14:18:48.619610-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.152  
 # 	   update comments 
 ### production standard 3.0 shellcheck
@@ -21,6 +23,11 @@ display_help() {
 echo -e "\n${NORMAL}${0} - brief description"
 echo -e "\nUSAGE\n   ${0} [XX | YY | ZZ]"
 echo    "   ${0} [--file <PATH>/<FILE_NAME> | -f <PATH>/<FILE_NAME>]"
+echo -e "   ${0} [<REGISTRY_HOST>]" 
+echo    "   ${0}  <REGISTRY_HOST> [<REGISTRY_PORT>]" 
+echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT> [<CLUSTER>]" 
+echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER> [<DATA_DIR>]" 
+echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER>  <DATA_DIR> [<SYSTEMS_FILE>]"
 echo    "   ${0} [--help | -help | help | -h | h | -?]"
 echo    "   ${0} [--version | -version | -v]"
 #       Displaying help DESCRIPTION in English en_US.UTF-8
