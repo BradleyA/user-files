@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.155.213  2019-04-05T15:14:30.335268-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.154  
+# 	   update echo statement 
 # 	template/template.sh  3.154.212  2019-04-05T14:54:37.166670-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.153  
 # 	   update options 
 # 	template/template.sh  3.153.211  2019-04-05T14:18:48.619610-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.152  
@@ -198,7 +200,7 @@ if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP}
 if ! [ $(id -u) = 0 ] ; then
         display_help | more
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Use sudo ${0}" 1>&2
-        echo -e "${BOLD}\n>>   SCRIPT MUST BE RUN AS ROOT TO COPY FILES. <<\n${NORMAL}"     1>&2
+        echo -e "${BOLD}\n>>   SCRIPT MUST BE RUN AS ROOT TO _____ _____ _____ ______. <<\n${NORMAL}"     1>&2
         exit 1
 fi
 
