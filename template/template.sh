@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.151.209  2019-04-02T22:38:18.547970-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.150  
-# 	   comment cleanup 
+# 	template/template.sh  3.152.210  2019-04-04T22:37:53.997459-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.151  
+# 	   update comments and display_help 
 # 	template/template.sh  3.150.208  2019-04-02T15:12:21.888109-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.149  
 # 	   template[sh-py] --> production standard 7 Default variable value 
 # 	template/template.sh  3.149.207  2019-04-02T13:42:09.027916-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.148  
@@ -33,6 +33,14 @@ echo -e "\nDESCRIPTION"
 echo    "<your help goes here>" 
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<"
 echo -e "\n<<Paragraph two>>"
+
+echo -e "\nThe <DATA_DIR>/<CLUSTER>/<SYSTEMS_FILE> includes one FQDN or IP address per"
+echo    "line for all hosts in the cluster.  Lines in <SYSTEMS_FILE> that begin with a"
+echo    "'#' are comments.  The <SYSTEMS_FILE> is used by markit/find-code.sh,"
+echo    "Linux-admin/cluster-command/cluster-command.sh, docker-TLS/copy-registry-tls.sh," 
+echo    "pi-display/create-message/create-display-message.sh, and other scripts.  A"
+echo    "different <SYSTEMS_FILE> can be entered on the command line or environment"
+echo    "variable."
 ### production standard 4.0 Documentation Language
 #       Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
 if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG}" == "fr_CH.UTF-8" ] ; then
@@ -54,7 +62,7 @@ echo    "   DATA_DIR        (default '${DEFAULT_DATA_DIR}')"
 echo    "   SYSTEMS_FILE    (default '${DEFAULT_SYSTEMS_FILE}')"
 echo -e "\n   <<your environment variables information goes here>>"
 echo -e "\nOPTIONS\n   -f, --file\n      path and file on system '<path>/<file_name>'"
-echo -e "\nOPTIONS\n   Option one - description"
+echo -e "\nOPTIONS"
 echo    "Order of precedence: CLI options, environment variable, default code."
 echo    "   CLUSTER         (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        (default '${DEFAULT_DATA_DIR}')"
@@ -140,7 +148,8 @@ echo    "/var/lib/docker/                          <-- Docker image & working de
 echo    "                                              directory; changed to symbolic"
 echo    "                                              link <DATA_DIR>/<CLUSTER>/docker"
 echo -e "\nDOCUMENTATION\n   https://github.com/BradleyA/   <<URL to online repository README>>"
-echo -e "\nEXAMPLES\n   ${BOLD}${0} <<code example goes here>>${NORMAL}\n\n   <<your code examples description goes here>>\n"
+echo -e "\nEXAMPLES\n    <<your code examples description goes here>>\n	${BOLD}${0} <<code example goes here>>${NORMAL}"
+echo -e "\n   <<your code examples description goes here>>\n	${BOLD}${0}${NORMAL}"
 }
 
 #	Date and time function ISO 8601
@@ -196,7 +205,7 @@ fi
 OPTION1=${1:-default_value1}
 OPTION2=${2:-${DEFAULT_VALUE2}}
 
-#	Example arguments
+### production standard 7.0 Default variable value
 #       Order of precedence: CLI argument, environment variable, default code
 if [ $# -ge  1 ]  ; then CLUSTER=${1} ; elif [ "${CLUSTER}" == "" ] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
 #       Order of precedence: CLI argument, default code
