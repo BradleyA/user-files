@@ -1,16 +1,11 @@
 #!/bin/bash
-# 	template/template.sh  3.152.210  2019-04-04T22:37:53.997459-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.151  
-# 	   update comments and display_help 
-# 	template/template.sh  3.150.208  2019-04-02T15:12:21.888109-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.149  
-# 	   template[sh-py] --> production standard 7 Default variable value 
-# 	template/template.sh  3.149.207  2019-04-02T13:42:09.027916-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.148  
-# 	   template[sh-py] --> production standard 6 Architecture tree 
-# 	template/template.sh  3.119.166  2019-01-23T13:53:45.458595-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.118  
-# 	   template[sh-py] --> production standard 5 include Copyright notice close #17 
+# 	template/template.sh  3.153.211  2019-04-05T14:18:48.619610-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.152  
+# 	   update comments 
+### production standard 3.0 shellcheck
 ### production standard 5.0 Copyright
 #       Copyright (c) 2019 Bradley Allen
 #       License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
-###
+### production standard 1.0 DEBUG variable
 #       Order of precedence: environment variable, default code
 if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 #	set -x
@@ -21,7 +16,7 @@ NORMAL=$(tput -Txterm sgr0)
 DEFAULT_CLUSTER="us-tx-cluster-1/"
 DEFAULT_USER=${USER}
 DEFAULT_DATA_DIR="/usr/local/data/"
-###
+### production standard 0.0 --help
 display_help() {
 echo -e "\n${NORMAL}${0} - brief description"
 echo -e "\nUSAGE\n   ${0} [XX | YY | ZZ]"
@@ -184,6 +179,7 @@ if [ "$1" == "--version" ] || [ "$1" == "-version" ] || [ "$1" == "version" ] ||
 	exit 0
 fi
 
+### production standard 2.0 log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
 #	INFO
 get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[INFO]${NORMAL}  Started..." 1>&2
 
