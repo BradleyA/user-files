@@ -1,10 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.155.213  2019-04-05T15:14:30.335268-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.154  
-# 	   update echo statement 
-# 	template/template.sh  3.154.212  2019-04-05T14:54:37.166670-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.153  
-# 	   update options 
-# 	template/template.sh  3.153.211  2019-04-05T14:18:48.619610-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.152  
-# 	   update comments 
+# 	template/template.sh  3.156.214  2019-04-06T12:55:13.857253-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.155  
+# 	   update display_help with end of line mark 80 characters 
 ### production standard 3.0 shellcheck
 ### production standard 5.0 Copyright
 #       Copyright (c) 2019 Bradley Allen
@@ -35,8 +31,8 @@ echo    "   ${0} [--version | -version | -v]"
 #       Displaying help DESCRIPTION in English en_US.UTF-8
 echo -e "\nDESCRIPTION"
 echo    "<your help goes here>" 
-echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<"
-echo -e "\n<<Paragraph two>>"
+echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
+echo -e "\n<<Paragraph two>>                                                            |"
 
 echo -e "\nThe <DATA_DIR>/<CLUSTER>/<SYSTEMS_FILE> includes one FQDN or IP address per"
 echo    "line for all hosts in the cluster.  Lines in <SYSTEMS_FILE> that begin with a"
