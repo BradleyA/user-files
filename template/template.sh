@@ -1,10 +1,12 @@
 #!/bin/bash
-# 	template/template.sh  3.156.214  2019-04-06T12:55:13.857253-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.155  
-# 	   update display_help with end of line mark 80 characters 
+# 	template/template.sh  3.157.215  2019-04-06T19:55:34.950449-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.156  
+# 	   change spaces to tabs 
+# 	template/template.sh  3.156.214  2019-04-06T12:55:13.857253-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.155
+# 	   update display_help with end of line mark 80 characters
 ### production standard 3.0 shellcheck
 ### production standard 5.0 Copyright
-#       Copyright (c) 2019 Bradley Allen
-#       License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
+#	Copyright (c) 2019 Bradley Allen
+#	License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
 ### production standard 1.0 DEBUG variable
 #       Order of precedence: environment variable, default code
 if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
@@ -21,28 +23,28 @@ display_help() {
 echo -e "\n${NORMAL}${0} - brief description"
 echo -e "\nUSAGE\n   ${0} [XX | YY | ZZ]"
 echo    "   ${0} [--file <PATH>/<FILE_NAME> | -f <PATH>/<FILE_NAME>]"
-echo -e "   ${0} [<REGISTRY_HOST>]" 
-echo    "   ${0}  <REGISTRY_HOST> [<REGISTRY_PORT>]" 
-echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT> [<CLUSTER>]" 
-echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER> [<DATA_DIR>]" 
+echo -e "   ${0} [<REGISTRY_HOST>]"
+echo    "   ${0}  <REGISTRY_HOST> [<REGISTRY_PORT>]"
+echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT> [<CLUSTER>]"
+echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER> [<DATA_DIR>]"
 echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER>  <DATA_DIR> [<SYSTEMS_FILE>]"
 echo    "   ${0} [--help | -help | help | -h | h | -?]"
 echo    "   ${0} [--version | -version | -v]"
-#       Displaying help DESCRIPTION in English en_US.UTF-8
+#	Displaying help DESCRIPTION in English en_US.UTF-8
 echo -e "\nDESCRIPTION"
-echo    "<your help goes here>" 
+echo    "<your help goes here>"
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
 echo -e "\n<<Paragraph two>>                                                            |"
 
 echo -e "\nThe <DATA_DIR>/<CLUSTER>/<SYSTEMS_FILE> includes one FQDN or IP address per"
 echo    "line for all hosts in the cluster.  Lines in <SYSTEMS_FILE> that begin with a"
 echo    "'#' are comments.  The <SYSTEMS_FILE> is used by markit/find-code.sh,"
-echo    "Linux-admin/cluster-command/cluster-command.sh, docker-TLS/copy-registry-tls.sh," 
+echo    "Linux-admin/cluster-command/cluster-command.sh, docker-TLS/copy-registry-tls.sh,"
 echo    "pi-display/create-message/create-display-message.sh, and other scripts.  A"
 echo    "different <SYSTEMS_FILE> can be entered on the command line or environment"
 echo    "variable."
 ### production standard 4.0 Documentation Language
-#       Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
+#	Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
 if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG}" == "fr_CH.UTF-8" ] ; then
 	echo -e "\n--> ${LANG}"
 	echo    "<votre aide va ici>" # your help goes here
@@ -192,26 +194,26 @@ get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Name_of_command >${0}< Name_of_arg1 >${1}< Name_of_arg2 >${2}< Name_of_arg3 >${3}<  Version of bash ${BASH_VERSION}" 1>&2 ; fi
 
 ###
-#       Root is required to copy certs
+#	Root is required to copy certs
 if ! [ $(id -u) = 0 ] ; then
-        display_help | more
-        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Use sudo ${0}" 1>&2
-        echo -e "${BOLD}\n>>   SCRIPT MUST BE RUN AS ROOT TO _____ _____ _____ ______. <<\n${NORMAL}"     1>&2
-        exit 1
+	display_help | more
+	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Use sudo ${0}" 1>&2
+	echo -e "${BOLD}\n>>   SCRIPT MUST BE RUN AS ROOT TO _____ _____ _____ ______. <<\n${NORMAL}"     1>&2
+	exit 1
 fi
 
 #	Example arguments
 
-#       Order of precedence: CLI argument, default code
+#	Order of precedence: CLI argument, default code
 OPTION1=${1:-default_value1}
 OPTION2=${2:-${DEFAULT_VALUE2}}
 
 ### production standard 7.0 Default variable value
-#       Order of precedence: CLI argument, environment variable, default code
+#	Order of precedence: CLI argument, environment variable, default code
 if [ $# -ge  1 ]  ; then CLUSTER=${1} ; elif [ "${CLUSTER}" == "" ] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
-#       Order of precedence: CLI argument, default code
+#	Order of precedence: CLI argument, default code
 ADMUSER=${2:-${DEFAULT_USER}}
-#       Order of precedence: CLI argument, environment variable, default code
+#	Order of precedence: CLI argument, environment variable, default code
 if [ $# -ge  3 ]  ; then DATA_DIR=${3} ; elif [ "${DATA_DIR}" == "" ] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
@@ -219,32 +221,32 @@ if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP}
 #
 #	Example code is a template, it will not work until chnaged
 #
-#       Check if argument 1 is blank
+#	Check if argument 1 is blank
 if [ "${1}" == "" ] ; then
-        display_help | more
+	display_help | more
 	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  File not found on command line" 1>&2
-        exit 0
+	exit 0
 fi
-#       Check if argument 1 is -f or --file
+#	Check if argument 1 is -f or --file
 if [ "${1}" == "--file" ] || [ "${1}" == "-f" ] ; then
-        #       Check if argument 2 is blank
-        if [ "${2}" == "" ] ; then
-                display_help | more
+	#	Check if argument 2 is blank
+	if [ "${2}" == "" ] ; then
+		display_help | more
 		get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  File name not found; --file <path>/<file_name> or -f <path>/<file_name> option" 1>&2
-                exit 0
-        fi
-        OPTION2=${2}
+		exit 0
+	fi
+	OPTION2=${2}
 else
-        #       Locate file in the PATH
-        TEMP=$(whereis "${1}")
-        MARKIT_FILE=$(echo "${TEMP}" | awk {'print $2'} )
-        if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Locate file in the PATH... MARKIT_FILE >${MARKIT_FILE}<" 1>&2 ; fi
-        #       Check if MARKIT_FILE is blank
-        if [ "${MARKIT_FILE}" == "" ] ; then
-                display_help | more
-                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  ${1} not found; use --file <path>/<file_name> or -f <path>/<file_name> option" 1>&2
-                exit 0
-        fi
+	#	Locate file in the PATH
+	TEMP=$(whereis "${1}")
+	MARKIT_FILE=$(echo "${TEMP}" | awk {'print $2'} )
+	if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Locate file in the PATH... MARKIT_FILE >${MARKIT_FILE}<" 1>&2 ; fi
+	#	Check if MARKIT_FILE is blank
+	if [ "${MARKIT_FILE}" == "" ] ; then
+		display_help | more
+		get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  ${1} not found; use --file <path>/<file_name> or -f <path>/<file_name> option" 1>&2
+		exit 0
+	fi
 fi
 
 #
@@ -252,7 +254,7 @@ fi
 #	Check arguement 1 xxx
 if [ "$1" != "no" ] && [ "$1" != "normal" ] && [ "$1" != "all" ] && [ "$1" != "" ] ; then
 	display_help | more
-        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${BOLD}[ERROR]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  First arguement, ${1}, is NOT no, normal, all." 1>&2
+	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${BOLD}[ERROR]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  First arguement, ${1}, is NOT no, normal, all." 1>&2
 	exit 0
 fi
 
