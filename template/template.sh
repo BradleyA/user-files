@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.158.216  2019-04-07T14:15:51.836207-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.157  
+# 	   update display_help 
 # 	template/template.sh  3.157.215  2019-04-06T19:55:34.950449-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.156  
 # 	   change spaces to tabs 
 # 	template/template.sh  3.156.214  2019-04-06T12:55:13.857253-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.155
@@ -18,12 +20,12 @@ NORMAL=$(tput -Txterm sgr0)
 DEFAULT_CLUSTER="us-tx-cluster-1/"
 DEFAULT_USER=${USER}
 DEFAULT_DATA_DIR="/usr/local/data/"
-### production standard 0.0 --help
+### production standard 0.3.158 --help
 display_help() {
 echo -e "\n${NORMAL}${0} - brief description"
 echo -e "\nUSAGE\n   ${0} [XX | YY | ZZ]"
 echo    "   ${0} [--file <PATH>/<FILE_NAME> | -f <PATH>/<FILE_NAME>]"
-echo -e "   ${0} [<REGISTRY_HOST>]"
+echo    "   ${0} [<REGISTRY_HOST>]"
 echo    "   ${0}  <REGISTRY_HOST> [<REGISTRY_PORT>]"
 echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT> [<CLUSTER>]"
 echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER> [<DATA_DIR>]"
@@ -34,7 +36,7 @@ echo    "   ${0} [--version | -version | -v]"
 echo -e "\nDESCRIPTION"
 echo    "<your help goes here>"
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
-echo -e "\n<<Paragraph two>>                                                            |"
+echo -e "\n<<Paragraph two>>"
 
 echo -e "\nThe <DATA_DIR>/<CLUSTER>/<SYSTEMS_FILE> includes one FQDN or IP address per"
 echo    "line for all hosts in the cluster.  Lines in <SYSTEMS_FILE> that begin with a"
@@ -50,7 +52,7 @@ if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG
 	echo    "<votre aide va ici>" # your help goes here
 	echo    "Souhaitez-vous traduire la section description?" # Do you want to translate the description section?
 elif ! [ "${LANG}" == "en_US.UTF-8" ] ; then
-        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
+	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
 fi
 echo -e "\nENVIRONMENT VARIABLES"
 echo    "If using the bash shell, enter; 'export DEBUG=1' on the command line to set"
@@ -58,17 +60,17 @@ echo    "the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  U
 echo    "command, 'unset DEBUG' to remove the exported information from the DEBUG"
 echo    "environment variable.  You are on your own defining environment variables if"
 echo    "you are using other shells."
-echo    "   DEBUG           (default '0')"
-echo    "   CLUSTER         (default '${DEFAULT_CLUSTER}')"
-echo    "   DATA_DIR        (default '${DEFAULT_DATA_DIR}')"
-echo    "   SYSTEMS_FILE    (default '${DEFAULT_SYSTEMS_FILE}')"
+echo    "   DEBUG           (default off '0')"
+echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
+echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
+echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
 echo -e "\n   <<your environment variables information goes here>>"
 echo -e "\nOPTIONS\n   -f, --file\n      path and file on system '<path>/<file_name>'"
 echo -e "\nOPTIONS"
 echo    "Order of precedence: CLI options, environment variable, default code."
-echo    "   CLUSTER         (default '${DEFAULT_CLUSTER}')"
-echo    "   DATA_DIR        (default '${DEFAULT_DATA_DIR}')"
-echo    "   SYSTEMS_FILE    (default '${DEFAULT_SYSTEMS_FILE}')"
+echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
+echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
+echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
 ### production standard 6.0 Architecture tree
 echo -e "\nSTORAGE & CERTIFICATION ARCHITECTURE TREE"
 echo    "/usr/local/data/                          <-- <DATA_DIR>"
