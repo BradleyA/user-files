@@ -1,14 +1,16 @@
 #!/bin/bash
+# 	template/template.sh  3.159.217  2019-04-07T19:14:41.607638-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.158  
+# 	   added MIT License 
 # 	template/template.sh  3.158.216  2019-04-07T14:15:51.836207-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.157  
 # 	   update display_help 
 # 	template/template.sh  3.157.215  2019-04-06T19:55:34.950449-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.156  
 # 	   change spaces to tabs 
 # 	template/template.sh  3.156.214  2019-04-06T12:55:13.857253-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.155
 # 	   update display_help with end of line mark 80 characters
-### production standard 3.0 shellcheck
+### production standard 3.3.159 shellcheck
 ### production standard 5.0 Copyright
 #	Copyright (c) 2019 Bradley Allen
-#	License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
+#	MIT License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
 ### production standard 1.0 DEBUG variable
 #       Order of precedence: environment variable, default code
 if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
