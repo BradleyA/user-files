@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.165.223  2019-04-08T14:20:13.091985-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.164  
+# 	   add Help hint comments 
 # 	template/template.sh  3.164.222  2019-04-08T14:16:56.767743-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.163  
 # 	   updated ROOT message 
 # 	template/template.sh  3.163.221  2019-04-08T14:06:32.914119-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.162  
@@ -199,6 +201,7 @@ if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP}
 if ! [ $(id -u) = 0 ] ; then
 	display_help | more
 	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Use sudo ${0}" 1>&2
+#       Help hint
 	echo -e "\n\t${BOLD}>>   SCRIPT MUST BE RUN AS ROOT   <<\n${NORMAL}"	1>&2
 	exit 1
 fi
@@ -225,6 +228,7 @@ if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP}
 #	Check if argument 1 is blank
 if [ "${1}" == "" ] ; then
 	display_help | more
+#       Help hint
 	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  File not found on command line" 1>&2
 	exit 0
 fi
@@ -233,6 +237,7 @@ if [ "${1}" == "--file" ] || [ "${1}" == "-f" ] ; then
 	#	Check if argument 2 is blank
 	if [ "${2}" == "" ] ; then
 		display_help | more
+#       	Help hint
 		get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  File name not found; --file <path>/<file_name> or -f <path>/<file_name> option" 1>&2
 		exit 0
 	fi
@@ -245,6 +250,7 @@ else
 	#	Check if MARKIT_FILE is blank
 	if [ "${MARKIT_FILE}" == "" ] ; then
 		display_help | more
+#       	Help hint
 		get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  ${1} not found; use --file <path>/<file_name> or -f <path>/<file_name> option" 1>&2
 		exit 0
 	fi
