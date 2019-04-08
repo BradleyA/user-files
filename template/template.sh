@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.164.222  2019-04-08T14:16:56.767743-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.163  
+# 	   updated ROOT message 
 # 	template/template.sh  3.163.221  2019-04-08T14:06:32.914119-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.162  
 # 	   updated ARCHITECTURE TREE 
 ### production standard 3.0 shellcheck
@@ -197,7 +199,7 @@ if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP}
 if ! [ $(id -u) = 0 ] ; then
 	display_help | more
 	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Use sudo ${0}" 1>&2
-	echo -e "${BOLD}\n>>   SCRIPT MUST BE RUN AS ROOT TO _____ _____ _____ ______. <<\n${NORMAL}"     1>&2
+	echo -e "\n\t${BOLD}>>   SCRIPT MUST BE RUN AS ROOT   <<\n${NORMAL}"	1>&2
 	exit 1
 fi
 
