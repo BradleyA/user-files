@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.161.219  2019-04-07T19:50:34.877253-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.160  
+# 	   update example tabs to t 
 # 	template/template.sh  3.160.218  2019-04-07T19:17:44.851140-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.159  
 # 	   changed License to MIT License 
 ### production standard 3.0 shellcheck
@@ -148,8 +150,8 @@ echo    "/var/lib/docker/                          <-- Docker image & working de
 echo    "                                              directory; changed to symbolic"
 echo    "                                              link <DATA_DIR>/<CLUSTER>/docker"
 echo -e "\nDOCUMENTATION\n   https://github.com/BradleyA/   <<URL to online repository README>>"
-echo -e "\nEXAMPLES\n    <<your code examples description goes here>>\n	${BOLD}${0} <<code example goes here>>${NORMAL}"
-echo -e "\n   <<your code examples description goes here>>\n	${BOLD}${0}${NORMAL}"
+echo -e "\nEXAMPLES\n    <<your code examples description goes here>>\n\t${BOLD}${0} <<code example goes here>>${NORMAL}"
+echo -e "\n   <<your code examples description goes here>>\n\t${BOLD}${0}${NORMAL}"
 }
 
 #	Date and time function ISO 8601
