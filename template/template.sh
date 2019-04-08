@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.162.220  2019-04-08T11:26:48.967693-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.161  
-# 	   update display_help 
+# 	template/template.sh  3.163.221  2019-04-08T14:06:32.914119-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.162  
+# 	   updated ARCHITECTURE TREE 
 ### production standard 3.0 shellcheck
 ### production standard 5.3.160 Copyright
 #	Copyright (c) 2019 Bradley Allen
@@ -68,8 +68,8 @@ echo    "Order of precedence: CLI options, environment variable, default code."
 echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
 echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
-### production standard 6.0 Architecture tree
-echo -e "\nSTORAGE & CERTIFICATION ARCHITECTURE TREE"
+### production standard 6.3.163 Architecture tree
+echo -e "\nARCHITECTURE TREE"	# STORAGE & CERTIFICATION
 echo    "/usr/local/data/                          <-- <DATA_DIR>"
 echo    "   <CLUSTER>/                             <-- <CLUSTER>"
 echo    "   ├── docker/                            <-- Docker image & working directory |"
