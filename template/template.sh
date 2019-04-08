@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.161.219  2019-04-07T19:50:34.877253-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.160  
-# 	   update example tabs to t 
-# 	template/template.sh  3.160.218  2019-04-07T19:17:44.851140-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.159  
-# 	   changed License to MIT License 
+# 	template/template.sh  3.162.220  2019-04-08T11:26:48.967693-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.161  
+# 	   update display_help 
 ### production standard 3.0 shellcheck
 ### production standard 5.3.160 Copyright
 #	Copyright (c) 2019 Bradley Allen
@@ -21,7 +19,8 @@ DEFAULT_DATA_DIR="/usr/local/data/"
 ### production standard 0.3.158 --help
 display_help() {
 echo -e "\n${NORMAL}${0} - brief description"
-echo -e "\nUSAGE\n   ${0} [XX | YY | ZZ]"
+echo -e "\nUSAGE"
+echo    "   ${0} [XX | YY | ZZ]"
 echo    "   ${0} [--file <PATH>/<FILE_NAME> | -f <PATH>/<FILE_NAME>]"
 echo    "   ${0} [<REGISTRY_HOST>]"
 echo    "   ${0}  <REGISTRY_HOST> [<REGISTRY_PORT>]"
