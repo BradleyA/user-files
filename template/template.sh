@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  1.169.227  2019-04-09T12:18:56.896056-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.168  
-# 	   formating changes to display_help EXAMPLES and DOCUMENTATION 
-# 	template/template.sh  1.168.226  2019-04-09T12:14:36.863756-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.167  
-# 	   add a few additional examples 
+# 	template/template.sh  1.170.228  2019-04-09T15:15:24.355559-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.169  
+# 	   updated 6.3.170 Architecture tree 
 ### production standard 3.0 shellcheck
 ### production standard 5.3.160 Copyright
 #	Copyright (c) 2019 Bradley Allen
@@ -86,16 +84,20 @@ echo -e "   <<your environment variables information goes here>>"
 echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
 echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
-### production standard 6.3.167 Architecture tree
+### production standard 6.3.170 Architecture tree
 echo -e "\nARCHITECTURE TREE"	# STORAGE & CERTIFICATION
 echo    "/usr/local/data/                          <-- <DATA_DIR>"
 echo    "   <CLUSTER>/                             <-- <CLUSTER>"
-echo    "   ├── docker/                            <-- Docker image & working directory |"
+echo    "   ├── docker/                            <-- Root directory of persistent"		# production standard 6.3.170
+echo    "   │   │                                      Docker state files; (images)"		# production standard 6.3.170
+echo    "   │   └── ######.######/                 <-- Root directory of persistent"		# production standard 6.3.170
+echo    "   │                                          Docker state files; (images)"		# production standard 6.3.170
+echo    "   │                                          when using user namespace"		# production standard 6.3.170
 echo    "   ├── SYSTEMS                            <-- List of hosts in cluster"
 echo    "   ├── log/                               <-- Host log directory"
 echo    "   ├── logrotate/                         <-- Host logrotate directory"
 echo    "   ├── docker-accounts/                   <-- Docker TLS certs"
-echo    "   │   ├── <HOST-1>/                      <-- Host in cluster"
+echo    "   │   ├ ─ <HOST-1>/                      <-- Host in cluster"
 echo    "   │   │   ├── <USER-1>/                  <-- User TLS certs directory"
 echo    "   │   │   │   ├── ca.pem                 <-- User tlscacert"
 echo    "   │   │   │   ├── cert.pem               <-- User tlscert"
@@ -114,7 +116,7 @@ echo    "   │   └── <REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Registry contai
 echo    "   <STANDALONE>/                          <-- <STANDALONE> Architecture tree"
 echo    "                                              is the same as <CLUSTER> TREE but"
 echo -e "                                              the systems are not in a cluster\n"
-echo    "<<USER_HOME>/                             <-- Location of user home directory"	#	### production standard 6.3.167
+echo    "<<USER_HOME>/                             <-- Location of user home directory"		# production standard 6.3.167
 echo    "   <USER-1>/.docker/                      <-- User docker cert directory"
 echo    "      ├── ca.pem                          <-- Symbolic link to user tlscacert"
 echo    "      ├── cert.pem                        <-- Symbolic link to user tlscert"
@@ -125,16 +127,18 @@ echo    "      │   ├── private/                    <-- Notary Canonical 
 echo    "      │   │                                   (DCT Root Key)"
 echo    "      │   ├── trusted_certificates/       <-- Docker Content Trust (DCT) keys"
 echo    "      │   └── tuf/                        <-- Update Framework (TUF)"
-echo    "      ├── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory to"
-echo    "      │   │                                   create registory certs"
+echo    "      ├── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory"	# production standard 6.3.170
+echo    "      │   │                                   to create registory certs"		# production standard 6.3.170
 echo    "      │   ├── ca.crt                      <-- Daemon registry domain cert"
 echo    "      │   ├── domain.crt                  <-- Registry cert"
 echo    "      │   └── domain.key                  <-- Registry private key"
-echo    "      └── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory to"
-echo -e "                                              create registory certs\n"
+echo    "      └── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory"	# production standard 6.3.170
+echo -e "                                              to create registory certs\n"		# production standard 6.3.170
 echo    "/etc/ "
 echo    "   docker/ "
-echo    "   ├── daemon.json                        <-- JSON configuration"
+echo    "   ├── daemon.json                        <-- Daemon configuration file"		# production standard 6.3.170
+echo    "   ├── key.json                           <-- Automatically generated dockerd"		# production standard 6.3.170
+echo    "   │                                          key for TLS connections"			# production standard 6.3.170
 echo    "   ├── certs.d/                           <-- Host docker cert directory"
 echo    "   │   ├── daemon/                        <-- Daemon cert directory"
 echo    "   │   │   ├── ca.pem                     <-- Daemon tlscacert"
@@ -164,9 +168,17 @@ echo    "   └── docker.service.wants/              <-- Dependencies"
 echo    "   default/"
 echo    "   └── docker                             <-- Docker daemon Upstart and"
 echo    "                                              SysVinit configuration file"
-echo    "/var/lib/docker/                          <-- Docker image & working default"
-echo    "                                              directory; changed to symbolic"
-echo    "                                              link <DATA_DIR>/<CLUSTER>/docker"
+echo    "/var/lib/docker/                          <-- Root directory of persistent"		# production standard 6.3.170
+echo    "                                              Docker state files; (images)"		# production standard 6.3.170
+echo    "                                              changed to symbolic link pointing"	# production standard 6.3.170
+echo    "                                              to <DATA_DIR>/<CLUSTER>/docker"		# production standard 6.3.170
+echo    "/var/run/docker.pid                       <-- Docker daemon PID file"			# production standard 6.3.170
+echo    "/var/run/docker/                          <-- Root directory for Docker"		# production standard 6.3.170
+echo    "                                              execution state files"			# production standard 6.3.170
+echo    "/var/run/docker.######.######/            <-- Root directory for Docker"		# production standard 6.3.170
+echo    "                                              execution state files using"		# production standard 6.3.170
+echo    "                                              user namespace"				# production standard 6.3.170
+echo    "/var/run/docker.pid                       <-- Docker daemon PID file"			# production standard 6.3.170
 echo -e "\nDOCUMENTATION"
 echo    "   https://github.com/BradleyA/   <<URL to online repository README>>"
 echo -e "\nEXAMPLES"
