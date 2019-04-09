@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  1.171.229  2019-04-09T15:53:06.402793-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.170  
+# 	   one character typo 
 # 	template/template.sh  1.170.228  2019-04-09T15:15:24.355559-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.169  
 # 	   updated 6.3.170 Architecture tree 
 ### production standard 3.0 shellcheck
@@ -97,7 +99,7 @@ echo    "   ├── SYSTEMS                            <-- List of hosts in cl
 echo    "   ├── log/                               <-- Host log directory"
 echo    "   ├── logrotate/                         <-- Host logrotate directory"
 echo    "   ├── docker-accounts/                   <-- Docker TLS certs"
-echo    "   │   ├ ─ <HOST-1>/                      <-- Host in cluster"
+echo    "   │   ├── <HOST-1>/                      <-- Host in cluster"
 echo    "   │   │   ├── <USER-1>/                  <-- User TLS certs directory"
 echo    "   │   │   │   ├── ca.pem                 <-- User tlscacert"
 echo    "   │   │   │   ├── cert.pem               <-- User tlscert"
