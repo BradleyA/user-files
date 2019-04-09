@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  1.169.227  2019-04-09T12:18:56.896056-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.168  
+# 	   formating changes to display_help EXAMPLES and DOCUMENTATION 
 # 	template/template.sh  1.168.226  2019-04-09T12:14:36.863756-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.167  
 # 	   add a few additional examples 
 ### production standard 3.0 shellcheck
@@ -165,9 +167,11 @@ echo    "                                              SysVinit configuration fi
 echo    "/var/lib/docker/                          <-- Docker image & working default"
 echo    "                                              directory; changed to symbolic"
 echo    "                                              link <DATA_DIR>/<CLUSTER>/docker"
-echo -e "\nDOCUMENTATION\n   https://github.com/BradleyA/   <<URL to online repository README>>"
-echo -e "\nEXAMPLES\n    <<your code examples description goes here>>\n\t${BOLD}${0} <<code example goes here>>${NORMAL}"
-echo -e "\n   <<your code examples description goes here>>\n\t${BOLD}${0}${NORMAL}"
+echo -e "\nDOCUMENTATION"
+echo    "   https://github.com/BradleyA/   <<URL to online repository README>>"
+echo -e "\nEXAMPLES"
+echo -e "   <<your code examples description goes here>>\n\t${BOLD}${0} <<code example goes here>>${NORMAL}"
+echo -e "   <<your code examples description goes here>>\n\t${BOLD}${0}${NORMAL}"
 }
 
 #	Date and time function ISO 8601
