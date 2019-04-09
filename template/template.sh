@@ -1,14 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  1.167.225  2019-04-09T00:27:08.464749-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.166  
-# 	   update Architecture tree 
-# 	template/template.sh  3.166.224  2019-04-09T00:08:00.067922-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.165  
-# 	   add example stand for adding a comand line example in displat_help 
-# 	template/template.sh  3.165.223  2019-04-08T14:20:13.091985-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.164  
-# 	   add Help hint comments 
-# 	template/template.sh  3.164.222  2019-04-08T14:16:56.767743-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.163  
-# 	   updated ROOT message 
-# 	template/template.sh  3.163.221  2019-04-08T14:06:32.914119-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.162  
-# 	   updated ARCHITECTURE TREE 
+# 	template/template.sh  1.168.226  2019-04-09T12:14:36.863756-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.167  
+# 	   add a few additional examples 
 ### production standard 3.0 shellcheck
 ### production standard 5.3.160 Copyright
 #	Copyright (c) 2019 Bradley Allen
@@ -50,12 +42,21 @@ echo    "Linux-admin/cluster-command/cluster-command.sh, docker-TLS/copy-registr
 echo    "pi-display/create-message/create-display-message.sh, and other scripts.  A"
 echo    "different <SYSTEMS_FILE> can be entered on the command line or environment"
 echo    "variable."
+
 echo -e "\nThis script works for the local host only.  To use check-host-tls.sh on a"
 echo    "remote hosts (one-rpi3b.cptx86.com) with ssh port of 12323 as uadmin user;"
 echo -e "\t${BOLD}ssh -tp 12323 uadmin@one-rpi3b.cptx86.com 'sudo check-host-tls.sh'${NORMAL}"
+
 echo    "To loop through a list of hosts in the cluster use,"
 echo    "https://github.com/BradleyA/Linux-admin/tree/master/cluster-command"
 echo -e "\t${BOLD}cluster-command.sh special 'sudo check-host-tls.sh'${NORMAL}"
+
+echo -e "\nThe administration user may receive password and/or passphrase prompts from a"
+echo    "remote systen; running the following may stop the prompts in your cluster."
+echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<REMOTE_HOST>${NORMAL}"
+echo    "or"
+echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<192.168.x.x>${NORMAL}"
+
 ### production standard 4.0 Documentation Language
 #	Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
 if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG}" == "fr_CH.UTF-8" ] ; then
@@ -75,10 +76,11 @@ echo    "   DEBUG           (default off '0')"
 echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
 echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
-echo -e "\n   <<your environment variables information goes here>>"
-echo -e "\nOPTIONS\n   -f, --file\n      path and file on system '<path>/<file_name>'"
+echo -e "\nOPTIONS"
+echo    "   -f, --file      path and file on system '<path>/<file_name>'"
 echo -e "\nOPTIONS"
 echo    "Order of precedence: CLI options, environment variable, default code."
+echo -e "   <<your environment variables information goes here>>"
 echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
 echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
