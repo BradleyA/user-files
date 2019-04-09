@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.166.224  2019-04-09T00:08:00.067922-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.165  
+# 	   add example stand for adding a comand line example in displat_help 
 # 	template/template.sh  3.165.223  2019-04-08T14:20:13.091985-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.164  
 # 	   add Help hint comments 
 # 	template/template.sh  3.164.222  2019-04-08T14:16:56.767743-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.163  
@@ -20,7 +22,7 @@ NORMAL=$(tput -Txterm sgr0)
 DEFAULT_CLUSTER="us-tx-cluster-1/"
 DEFAULT_USER=${USER}
 DEFAULT_DATA_DIR="/usr/local/data/"
-### production standard 0.3.158 --help
+### production standard 0.3.166 --help
 display_help() {
 echo -e "\n${NORMAL}${0} - brief description"
 echo -e "\nUSAGE"
@@ -46,6 +48,12 @@ echo    "Linux-admin/cluster-command/cluster-command.sh, docker-TLS/copy-registr
 echo    "pi-display/create-message/create-display-message.sh, and other scripts.  A"
 echo    "different <SYSTEMS_FILE> can be entered on the command line or environment"
 echo    "variable."
+echo -e "\nThis script works for the local host only.  To use check-host-tls.sh on a"
+echo    "remote hosts (one-rpi3b.cptx86.com) with ssh port of 12323 as uadmin user;"
+echo -e "\t${BOLD}ssh -tp 12323 uadmin@one-rpi3b.cptx86.com 'sudo check-host-tls.sh'${NORMAL}"
+echo    "To loop through a list of hosts in the cluster use,"
+echo    "https://github.com/BradleyA/Linux-admin/tree/master/cluster-command"
+echo -e "\t${BOLD}cluster-command.sh special 'sudo check-host-tls.sh'${NORMAL}"
 ### production standard 4.0 Documentation Language
 #	Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
 if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG}" == "fr_CH.UTF-8" ] ; then
