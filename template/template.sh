@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  1.173.231  2019-04-10T13:33:44.310803-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.172  
+# 	   typo production standard 6.3.173 Architecture tree 
 # 	template/template.sh  1.172.230  2019-04-10T13:22:41.572723-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.171  
 # 	   production standard 6.3.172 
 # 	template/template.sh  1.171.229  2019-04-09T15:53:06.402793-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.170  
@@ -88,7 +90,7 @@ echo -e "   <<your environment variables information goes here>>"
 echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
 echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
-### production standard 6.3.172 Architecture tree
+### production standard 6.3.173 Architecture tree
 echo -e "\nARCHITECTURE TREE"	# STORAGE & CERTIFICATION
 echo    "/usr/local/data/                          <-- <DATA_DIR>"
 echo    "   <CLUSTER>/                             <-- <CLUSTER>"
@@ -172,7 +174,7 @@ echo    "   └── docker.service.wants/              <-- Dependencies"
 echo    "   default/"
 echo    "   ├── docker                             <-- Docker daemon Upstart and"
 echo    "   │                                          SysVinit configuration file"
-echo    "   └── ssl/openssl.cnf                    <-- OpenSSL configuration file"		# production standard 6.3.172
+echo    "   ssl/openssl.cnf                        <-- OpenSSL configuration file"		# production standard 6.3.173
 echo    "/var/lib/docker/                          <-- Root directory of persistent"		# production standard 6.3.170
 echo    "                                              Docker state files; (images)"		# production standard 6.3.170
 echo    "                                              changed to symbolic link pointing"	# production standard 6.3.170
