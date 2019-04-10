@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  1.172.230  2019-04-10T13:22:41.572723-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.171  
+# 	   production standard 6.3.172 
 # 	template/template.sh  1.171.229  2019-04-09T15:53:06.402793-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.170  
 # 	   one character typo 
 # 	template/template.sh  1.170.228  2019-04-09T15:15:24.355559-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.169  
@@ -86,7 +88,7 @@ echo -e "   <<your environment variables information goes here>>"
 echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
 echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
-### production standard 6.3.170 Architecture tree
+### production standard 6.3.172 Architecture tree
 echo -e "\nARCHITECTURE TREE"	# STORAGE & CERTIFICATION
 echo    "/usr/local/data/                          <-- <DATA_DIR>"
 echo    "   <CLUSTER>/                             <-- <CLUSTER>"
@@ -101,9 +103,9 @@ echo    "   ├── logrotate/                         <-- Host logrotate dire
 echo    "   ├── docker-accounts/                   <-- Docker TLS certs"
 echo    "   │   ├── <HOST-1>/                      <-- Host in cluster"
 echo    "   │   │   ├── <USER-1>/                  <-- User TLS certs directory"
-echo    "   │   │   │   ├── ca.pem                 <-- User tlscacert"
-echo    "   │   │   │   ├── cert.pem               <-- User tlscert"
-echo    "   │   │   │   ├── key.pem                <-- User tlskey"
+echo    "   │   │   │   ├── ca.pem       FUTURE    <-- User tlscacert"
+echo    "   │   │   │   ├── cert.pem     FUTURE    <-- User tlscert"
+echo    "   │   │   │   ├── key.pem      FUTURE    <-- User tlskey"
 echo    "   │   │   │   └── trust/                 <-- Backup of Docker Content Trust"
 echo    "   │   │   │                                  (DCT) keys"
 echo    "   │   │   └── <USER-2>/                  <-- User TLS certs directory"
@@ -118,7 +120,7 @@ echo    "   │   └── <REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Registry contai
 echo    "   <STANDALONE>/                          <-- <STANDALONE> Architecture tree"
 echo    "                                              is the same as <CLUSTER> TREE but"
 echo -e "                                              the systems are not in a cluster\n"
-echo    "<<USER_HOME>/                             <-- Location of user home directory"		# production standard 6.3.167
+echo    "<USER_HOME>/                              <-- Location of user home directory"		# production standard 6.3.167
 echo    "   <USER-1>/.docker/                      <-- User docker cert directory"
 echo    "      ├── ca.pem                          <-- Symbolic link to user tlscacert"
 echo    "      ├── cert.pem                        <-- Symbolic link to user tlscert"
@@ -168,8 +170,9 @@ echo    "   ├── dockerd-configuration-file.service <-- Runs start-dockerd-
 echo    "   ├── docker.service.d/10-override.conf  <-- Override configutation file"
 echo    "   └── docker.service.wants/              <-- Dependencies"
 echo    "   default/"
-echo    "   └── docker                             <-- Docker daemon Upstart and"
-echo    "                                              SysVinit configuration file"
+echo    "   ├── docker                             <-- Docker daemon Upstart and"
+echo    "   │                                          SysVinit configuration file"
+echo    "   └── ssl/openssl.cnf                    <-- OpenSSL configuration file"		# production standard 6.3.172
 echo    "/var/lib/docker/                          <-- Root directory of persistent"		# production standard 6.3.170
 echo    "                                              Docker state files; (images)"		# production standard 6.3.170
 echo    "                                              changed to symbolic link pointing"	# production standard 6.3.170
