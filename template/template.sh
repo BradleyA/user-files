@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  1.175.233  2019-04-10T16:37:31.312658-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.174  
+# 	   corrected new examples so it will work :-)  which is always good 
 # 	template/template.sh  1.174.232  2019-04-10T16:25:32.414927-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.173  
 # 	   added new example Test <REGISTRY_PORT> for integer 
 # 	template/template.sh  1.173.231  2019-04-10T13:33:44.310803-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.172  
@@ -260,7 +262,7 @@ if [ $# -ge  3 ]  ; then DATA_DIR=${3} ; elif [ "${DATA_DIR}" == "" ] ; then DAT
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
 #       Test <REGISTRY_PORT> for integer
-if ! [ "${REGISTRY_PORT}" =~ ^[0-9]+$ ] ; then
+if ! [[ "${REGISTRY_PORT}" =~ ^[0-9]+$ ]] ; then	# requires [[   ]] or  [: =~: binary operator expected
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  <REGISTRY_PORT> is not an interger.  <REGISTRY_PORT> is set to '${REGISTRY_PORT}'" 1>&2
         exit 1
 fi
