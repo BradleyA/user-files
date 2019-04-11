@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  1.177.235  2019-04-10T22:57:40.542789-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.176  
+# 	   1.177  Architecture tree  1.177 
 # 	template/template.sh  1.176.234  2019-04-10T22:28:34.484729-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.175  
 # 	   1.176  major review and rewrite for Architecture tree  1.176 
 ### production standard 3.0 shellcheck
@@ -84,7 +86,7 @@ echo -e "   <<your environment variables information goes here>>"
 echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
 echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
-### production standard 6.1.176 Architecture tree
+### production standard 6.1.177 Architecture tree
 echo -e "\nARCHITECTURE TREE"	# STORAGE & CERTIFICATION
 echo    "/usr/local/data/                           <-- <DATA_DIR>"
 echo    "├── <CLUSTER>/                             <-- <CLUSTER>"
@@ -141,9 +143,9 @@ echo    "/etc/ "
 echo    "├── docker/ "
 echo    "│   ├── certs.d/                           <-- Host docker cert directory"
 echo    "│   │   ├── daemon/                        <-- Daemon cert directory"
-echo    "│   │   │       ├── ca.pem                 <-- Daemon tlscacert"
-echo    "│   │   │       ├── cert.pem               <-- Daemon tlscert"
-echo    "│   │   │       └── key.pem                <-- Daemon tlskey"
+echo    "│   │   │   ├── ca.pem                     <-- Daemon tlscacert"
+echo    "│   │   │   ├── cert.pem                   <-- Daemon tlscert"
+echo    "│   │   │   └── key.pem                    <-- Daemon tlskey"
 echo    "│   │   ├── <REGISTRY_HOST>:<REGISTRY_PORT>/ < Registry cert directory"
 echo    "│   │   │   └── ca.crt                     <-- Daemon registry domain cert"
 echo    "│   │   ├── <REGISTRY_HOST>:<REGISTRY_PORT>/ < Registry cert directory"
