@@ -1,18 +1,8 @@
 #!/bin/bash
-# 	template/template.sh  1.175.233  2019-04-10T16:37:31.312658-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.174  
-# 	   corrected new examples so it will work :-)  which is always good 
-# 	template/template.sh  1.174.232  2019-04-10T16:25:32.414927-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.173  
-# 	   added new example Test <REGISTRY_PORT> for integer 
-# 	template/template.sh  1.173.231  2019-04-10T13:33:44.310803-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.172  
-# 	   typo production standard 6.3.173 Architecture tree 
-# 	template/template.sh  1.172.230  2019-04-10T13:22:41.572723-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.171  
-# 	   production standard 6.3.172 
-# 	template/template.sh  1.171.229  2019-04-09T15:53:06.402793-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.170  
-# 	   one character typo 
-# 	template/template.sh  1.170.228  2019-04-09T15:15:24.355559-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.169  
-# 	   updated 6.3.170 Architecture tree 
+# 	template/template.sh  1.176.234  2019-04-10T22:28:34.484729-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.175  
+# 	   1.176  major review and rewrite for Architecture tree  1.176 
 ### production standard 3.0 shellcheck
-### production standard 5.3.160 Copyright
+### production standard 5.1.160 Copyright
 #	Copyright (c) 2019 Bradley Allen
 #	MIT License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
 ### production standard 1.0 DEBUG variable
@@ -26,7 +16,7 @@ NORMAL=$(tput -Txterm sgr0)
 DEFAULT_CLUSTER="us-tx-cluster-1/"
 DEFAULT_USER=${USER}
 DEFAULT_DATA_DIR="/usr/local/data/"
-### production standard 0.3.166 --help
+### production standard 0.1.166 --help
 display_help() {
 echo -e "\n${NORMAL}${0} - brief description"
 echo -e "\nUSAGE"
@@ -94,102 +84,106 @@ echo -e "   <<your environment variables information goes here>>"
 echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
 echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
-### production standard 6.3.173 Architecture tree
+### production standard 6.1.176 Architecture tree
 echo -e "\nARCHITECTURE TREE"	# STORAGE & CERTIFICATION
-echo    "/usr/local/data/                          <-- <DATA_DIR>"
-echo    "   <CLUSTER>/                             <-- <CLUSTER>"
-echo    "   ├── docker/                            <-- Root directory of persistent"		# production standard 6.3.170
-echo    "   │   │                                      Docker state files; (images)"		# production standard 6.3.170
-echo    "   │   └── ######.######/                 <-- Root directory of persistent"		# production standard 6.3.170
-echo    "   │                                          Docker state files; (images)"		# production standard 6.3.170
-echo    "   │                                          when using user namespace"		# production standard 6.3.170
-echo    "   ├── SYSTEMS                            <-- List of hosts in cluster"
-echo    "   ├── log/                               <-- Host log directory"
-echo    "   ├── logrotate/                         <-- Host logrotate directory"
-echo    "   ├── docker-accounts/                   <-- Docker TLS certs"
-echo    "   │   ├── <HOST-1>/                      <-- Host in cluster"
-echo    "   │   │   ├── <USER-1>/                  <-- User TLS certs directory"
-echo    "   │   │   │   ├── ca.pem       FUTURE    <-- User tlscacert"
-echo    "   │   │   │   ├── cert.pem     FUTURE    <-- User tlscert"
-echo    "   │   │   │   ├── key.pem      FUTURE    <-- User tlskey"
-echo    "   │   │   │   └── trust/                 <-- Backup of Docker Content Trust"
-echo    "   │   │   │                                  (DCT) keys"
-echo    "   │   │   └── <USER-2>/                  <-- User TLS certs directory"
-echo    "   │   └── <HOST-2>/                      <-- Host in cluster"
-echo    "   ├── docker-registry/                   <-- Docker registry directory"
-echo    "   │   ├── <REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Registry container mount"
-echo    "   │   │   ├── certs/                     <-- Registry cert directory"
-echo    "   │   │   │   ├── domain.crt             <-- Registry cert"
-echo    "   │   │   │   └── domain.key             <-- Registry private key"
-echo    "   │   │   └── docker/                    <-- Registry storage directory"
-echo    "   │   └── <REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Registry container mount"
-echo    "   <STANDALONE>/                          <-- <STANDALONE> Architecture tree"
-echo    "                                              is the same as <CLUSTER> TREE but"
-echo -e "                                              the systems are not in a cluster\n"
-echo    "<USER_HOME>/                              <-- Location of user home directory"		# production standard 6.3.167
-echo    "   <USER-1>/.docker/                      <-- User docker cert directory"
-echo    "      ├── ca.pem                          <-- Symbolic link to user tlscacert"
-echo    "      ├── cert.pem                        <-- Symbolic link to user tlscert"
-echo    "      ├── key.pem                         <-- Symbolic link to user tlskey"
-echo    "      ├── docker-ca/                      <-- Working directory to create certs"
-echo    "      ├── trust/                          <-- Docker Content Trust (DCT)"
-echo    "      │   ├── private/                    <-- Notary Canonical Root Key ID"
-echo    "      │   │                                   (DCT Root Key)"
-echo    "      │   ├── trusted_certificates/       <-- Docker Content Trust (DCT) keys"
-echo    "      │   └── tuf/                        <-- Update Framework (TUF)"
-echo    "      ├── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory"	# production standard 6.3.170
-echo    "      │   │                                   to create registory certs"		# production standard 6.3.170
-echo    "      │   ├── ca.crt                      <-- Daemon registry domain cert"
-echo    "      │   ├── domain.crt                  <-- Registry cert"
-echo    "      │   └── domain.key                  <-- Registry private key"
-echo    "      └── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory"	# production standard 6.3.170
-echo -e "                                              to create registory certs\n"		# production standard 6.3.170
+echo    "/usr/local/data/                           <-- <DATA_DIR>"
+echo    "├── <CLUSTER>/                             <-- <CLUSTER>"
+echo    "│   ├── docker/                            <-- Root directory of persistent"
+echo    "│   │   │                                      Docker state files; (images)"
+echo    "│   │   └── ######.######/                 <-- Root directory of persistent"
+echo    "│   │                                          Docker state files; (images)"
+echo    "│   │                                          when using user namespace"
+echo    "│   ├── SYSTEMS                            <-- List of hosts in cluster"
+echo    "│   ├── log/                               <-- Host log directory"
+echo    "│   ├── logrotate/                         <-- Host logrotate directory"
+echo    "│   ├── docker-accounts/                   <-- Docker TLS certs"
+echo    "│   │   ├── <HOST-1>/                      <-- Host in cluster"
+echo    "│   │   │   ├── <USER-1>/                  <-- User TLS certs directory"
+echo    "│   │   │   │   ├── ca.pem       FUTURE    <-- User tlscacert"
+echo    "│   │   │   │   ├── cert.pem     FUTURE    <-- User tlscert"
+echo    "│   │   │   │   ├── key.pem      FUTURE    <-- User tlskey"
+echo    "│   │   │   │   └── trust/                 <-- Backup of Docker Content Trust"
+echo    "│   │   │   │                                  (DCT) keys"
+echo    "│   │   │   └── <USER-2>/                  <-- User TLS certs directory"
+echo    "│   │   └── <HOST-2>/                      <-- Host in cluster"
+echo    "│   └── docker-registry/                   <-- Docker registry directory"
+echo    "│       ├── <REGISTRY_HOST>-<REGISTRY_PORT>/ < Registry container mount"
+echo    "│       │   ├── certs/                     <-- Registry cert directory"
+echo    "│       │   │   ├── domain.crt             <-- Registry cert"
+echo    "│       │   │   └── domain.key             <-- Registry private key"
+echo    "│       │   └── docker/                    <-- Registry storage directory"
+echo    "│       ├── <REGISTRY_HOST>-<REGISTRY_PORT>/ < Registry container mount"
+echo    "│       └── <REGISTRY_HOST>-<REGISTRY_PORT>/ < Registry container mount"
+echo    "└── <STANDALONE>/                          <-- <STANDALONE> Architecture tree"
+echo    "                                               is the same as <CLUSTER> TREE but"
+echo -e "                                               the systems are not in a cluster\n"
+echo    "<USER_HOME>/                               <-- Location of user home directory"
+echo    "└── <USER-1>/.docker/                      <-- User docker cert directory"
+echo    "    ├── ca.pem                             <-- Symbolic link to user tlscacert"
+echo    "    ├── cert.pem                           <-- Symbolic link to user tlscert"
+echo    "    ├── key.pem                            <-- Symbolic link to user tlskey"
+echo    "    ├── docker-ca/                         <-- Working directory to create certs"
+echo    "    ├── trust/                             <-- Docker Content Trust (DCT)"
+echo    "    │   ├── private/                       <-- Notary Canonical Root Key ID"
+echo    "    │   │                                      (DCT Root Key)"
+echo    "    │   ├── trusted_certificates/          <-- Docker Content Trust (DCT) keys"
+echo    "    │   └── tuf/                           <-- Update Framework (TUF)"
+echo    "    ├── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory"
+echo    "    │   │                                      to create registory certs"
+echo    "    │   ├── ca.crt                         <-- Daemon registry domain cert"
+echo    "    │   ├── domain.crt                     <-- Registry cert"
+echo    "    │   └── domain.key                     <-- Registry private key"
+echo    "    ├── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory"
+echo    "    │                                          to create registory certs"
+echo    "    └── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory"
+echo -e "                                               to create registory certs\n"
 echo    "/etc/ "
-echo    "   docker/ "
-echo    "   ├── daemon.json                        <-- Daemon configuration file"		# production standard 6.3.170
-echo    "   ├── key.json                           <-- Automatically generated dockerd"		# production standard 6.3.170
-echo    "   │                                          key for TLS connections"			# production standard 6.3.170
-echo    "   ├── certs.d/                           <-- Host docker cert directory"
-echo    "   │   ├── daemon/                        <-- Daemon cert directory"
-echo    "   │   │   ├── ca.pem                     <-- Daemon tlscacert"
-echo    "   │   │   ├── cert.pem                   <-- Daemon tlscert"
-echo    "   │   │   └── key.pem                    <-- Daemon tlskey"
-echo    "   │   ├── <REGISTRY_HOST>:<REGISTRY_PORT>/ <-- Registry cert directory"
-echo    "   │   │   └── ca.crt                     <-- Daemon registry domain cert"
-echo    "   │   └── <REGISTRY_HOST>:<REGISTRY_PORT>/ <-- Registry cert directory"
-echo    "   │       └── ca.crt                     <-- Daemon registry domain cert"
-echo    "   ├── 10-override.begin                  <-- docker.service.d default lines"
-echo    "   ├── dockerd-configuration-file         <-- Daemon configuration"
-echo    "   ├── dockerd-configuration-file.service <-- runs start-dockerd-with-systemd.sh"
-echo    "   │                                          during boot"
-echo    "   ├── docker.org                         <-- Copy of /etc/default/docker"
-echo    "   ├── key.json                           <-- dockerd key for TLS connections"
-echo    "   │                                          to other TLS servers"
-echo    "   ├── README.md"
-echo    "   ├── setup-dockerd.sh                   <-- moves and creates files"
-echo    "   ├── start-dockerd-with-systemd.begin   <-- Beginning default lines"
-echo    "   ├── start-dockerd-with-systemd.end     <-- Ending default lines"
-echo    "   ├── start-dockerd-with-systemd.sh"
-echo    "   └── uninstall-dockerd-scripts.sh       <-- Removes files and scripts"
-echo    "   systemd/system/                        <-- Local systemd configurations"
-echo    "   ├── dockerd-configuration-file.service <-- Runs start-dockerd-with-systemd.sh"
-echo    "   ├── docker.service.d/10-override.conf  <-- Override configutation file"
-echo    "   └── docker.service.wants/              <-- Dependencies"
-echo    "   default/"
-echo    "   ├── docker                             <-- Docker daemon Upstart and"
-echo    "   │                                          SysVinit configuration file"
-echo    "   ssl/openssl.cnf                        <-- OpenSSL configuration file"		# production standard 6.3.173
-echo    "/var/lib/docker/                          <-- Root directory of persistent"		# production standard 6.3.170
-echo    "                                              Docker state files; (images)"		# production standard 6.3.170
-echo    "                                              changed to symbolic link pointing"	# production standard 6.3.170
-echo    "                                              to <DATA_DIR>/<CLUSTER>/docker"		# production standard 6.3.170
-echo    "/var/run/docker.pid                       <-- Docker daemon PID file"			# production standard 6.3.170
-echo    "/var/run/docker/                          <-- Root directory for Docker"		# production standard 6.3.170
-echo    "                                              execution state files"			# production standard 6.3.170
-echo    "/var/run/docker.######.######/            <-- Root directory for Docker"		# production standard 6.3.170
-echo    "                                              execution state files using"		# production standard 6.3.170
-echo    "                                              user namespace"				# production standard 6.3.170
-echo    "/var/run/docker.pid                       <-- Docker daemon PID file"			# production standard 6.3.170
+echo    "├── docker/ "
+echo    "│   ├── certs.d/                           <-- Host docker cert directory"
+echo    "│   │   ├── daemon/                        <-- Daemon cert directory"
+echo    "│   │   │       ├── ca.pem                 <-- Daemon tlscacert"
+echo    "│   │   │       ├── cert.pem               <-- Daemon tlscert"
+echo    "│   │   │       └── key.pem                <-- Daemon tlskey"
+echo    "│   │   ├── <REGISTRY_HOST>:<REGISTRY_PORT>/ < Registry cert directory"
+echo    "│   │   │   └── ca.crt                     <-- Daemon registry domain cert"
+echo    "│   │   ├── <REGISTRY_HOST>:<REGISTRY_PORT>/ < Registry cert directory"
+echo    "│   │   └── <REGISTRY_HOST>:<REGISTRY_PORT>/ < Registry cert directory"
+echo    "│   ├── daemon.json                        <-- Daemon configuration file"
+echo    "│   ├── key.json                           <-- Automatically generated dockerd"
+echo    "│   │                                          key for TLS connections"
+echo    "│   ├── 10-override.begin                  <-- docker.service.d default lines"
+echo    "│   ├── dockerd-configuration-file         <-- Daemon configuration"
+echo    "│   ├── dockerd-configuration-file.service <- runs start-dockerd-with-systemd.sh"
+echo    "│   │                                          during boot"
+echo    "│   ├── docker.org                         <-- Copy of /etc/default/docker"
+echo    "│   ├── key.json                           <-- dockerd key for TLS connections"
+echo    "│   │                                          to other TLS servers"
+echo    "│   ├── README.md"
+echo    "│   ├── setup-dockerd.sh                   <-- moves and creates files"
+echo    "│   ├── start-dockerd-with-systemd.begin   <-- Beginning default lines"
+echo    "│   ├── start-dockerd-with-systemd.end     <-- Ending default lines"
+echo    "│   ├── start-dockerd-with-systemd.sh"
+echo    "│   └── uninstall-dockerd-scripts.sh       <-- Removes files and scripts"
+echo    "├── systemd/system/                        <-- Local systemd configurations"
+echo    "│   ├── dockerd-configuration-file.service <-- Runs start-dockerd-with-systemd.sh"
+echo    "│   ├── docker.service.d/10-override.conf  <-- Override configutation file"
+echo    "│   └── docker.service.wants/              <-- Dependencies"
+echo    "├── default/"
+echo    "│   └── docker                             <-- Docker daemon Upstart and"
+echo    "│                                              SysVinit configuration file"
+echo -e "└── ssl/openssl.cnf                        <-- OpenSSL configuration file\n"
+echo    "/var/"
+echo    "├── lib/docker/                            <-- Root directory of persistent"
+echo    "│                                              Docker state files; (images)"
+echo    "│                                              changed to symbolic link pointing"
+echo    "│                                              to <DATA_DIR>/<CLUSTER>/docker"
+echo    "└── run/"
+echo    "    ├── docker/                            <-- Root directory for Docker"
+echo    "    │                                          execution state files"
+echo    "    ├── docker.pid                         <-- Docker daemon PID file"
+echo    "    └── docker.######.######/              <-- Root directory for Docker"
+echo    "                                               execution state files using"
+echo    "                                               user namespace"
 echo -e "\nDOCUMENTATION"
 echo    "   https://github.com/BradleyA/   <<URL to online repository README>>"
 echo -e "\nEXAMPLES"
