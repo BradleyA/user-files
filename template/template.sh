@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  1.178.236  2019-04-11T23:00:27.404201-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.177  
+# 	   production standard 6.1.177 Architecture tree event thou this is 1.178 added line to dockerd-configuration-options/setup-dockerd.sh which is only used in this file 
 # 	template/template.sh  1.177.235  2019-04-10T22:57:40.542789-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.176  
 # 	   1.177  Architecture tree  1.177 
 # 	template/template.sh  1.176.234  2019-04-10T22:28:34.484729-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.175  
@@ -152,14 +154,13 @@ echo    "│   │   ├── <REGISTRY_HOST>:<REGISTRY_PORT>/ < Registry cert 
 echo    "│   │   └── <REGISTRY_HOST>:<REGISTRY_PORT>/ < Registry cert directory"
 echo    "│   ├── daemon.json                        <-- Daemon configuration file"
 echo    "│   ├── key.json                           <-- Automatically generated dockerd"
-echo    "│   │                                          key for TLS connections"
+echo    "│   │                                          key for TLS connections to other"
+echo    "│   │                                          TLS servers"
 echo    "│   ├── 10-override.begin                  <-- docker.service.d default lines"
 echo    "│   ├── dockerd-configuration-file         <-- Daemon configuration"
 echo    "│   ├── dockerd-configuration-file.service <- runs start-dockerd-with-systemd.sh"
 echo    "│   │                                          during boot"
 echo    "│   ├── docker.org                         <-- Copy of /etc/default/docker"
-echo    "│   ├── key.json                           <-- dockerd key for TLS connections"
-echo    "│   │                                          to other TLS servers"
 echo    "│   ├── README.md"
 echo    "│   ├── setup-dockerd.sh                   <-- moves and creates files"
 echo    "│   ├── start-dockerd-with-systemd.begin   <-- Beginning default lines"
@@ -168,7 +169,8 @@ echo    "│   ├── start-dockerd-with-systemd.sh"
 echo    "│   └── uninstall-dockerd-scripts.sh       <-- Removes files and scripts"
 echo    "├── systemd/system/                        <-- Local systemd configurations"
 echo    "│   ├── dockerd-configuration-file.service <-- Runs start-dockerd-with-systemd.sh"
-echo    "│   ├── docker.service.d/10-override.conf  <-- Override configutation file"
+echo    "│   ├── docker.service.d/"
+echo    "│   │   └── 10-override.conf               <-- Override configutation file"
 echo    "│   └── docker.service.wants/              <-- Dependencies"
 echo    "├── default/"
 echo    "│   └── docker                             <-- Docker daemon Upstart and"
