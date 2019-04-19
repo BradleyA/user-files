@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  1.180.238  2019-04-18T21:57:44.463732-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.179  
+# 	   update 
 # 	template/template.sh  1.179.237  2019-04-15T12:08:34.094106-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.178  
 # 	   minor update with no impact to production standard 6.1.177 Architecture tree 
 # 	template/template.sh  1.178.236  2019-04-11T23:00:27.404201-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.177  
@@ -320,3 +322,68 @@ fi
 #
 get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[INFO]${NORMAL}  Operation finished." 1>&2
 ###
+# >>>	FUTURE updates for example code 
+# >>>	Need to determine if I want to again make a design change for string input
+# >>>	# FIXME: this shouldn't be ordered
+# >>>	rootdir=
+# >>>	if [ "$1" = "--rootdir" ] && [ -s "$2" ]; then
+# >>>	    rootdir="$2/" # ensure trailing slash
+# >>>	    shift 2
+# >>>	fi
+# >>>	datadir=
+# >>>	if [ "$1" = "--datadir" ] && [ -s "$2" ]; then
+# >>>	    datadir="$2/" # ensure trailing slash
+# >>>	    shift 2
+# >>>	fi
+# >>>	export DATA_DIR="$datadir"
+# >>>	# >>>	then this 
+# >>>	case "$1" in
+# >>>	start)
+# >>>	    # process multiple error strings
+# >>>	    ret=0
+# >>>	    output=`ufw_start` || ret="$?"
+# >>>	    test -n "$output" && echo "$output" | while read line ; do
+# >>>	        if [ "$2" = "quiet" ] || [ "$QUIET" = "yes" ]; then
+# >>>	            echo "$line" | grep -q "Skip starting" && continue
+# >>>	        fi
+# >>>	        echo "$line"
+# >>>	    done
+# >>>	    exit "$ret"
+# >>>	    ;;
+# >>>	stop)
+# >>>	    ufw_stop || exit "$?"
+# >>>	    ;;
+# >>>	force-stop)
+# >>>	    ufw_stop --force || exit "$?"
+# >>>	    ;;
+# >>>	restart|force-reload)
+# >>>	    ufw_reload || exit "$?"
+# >>>	    ;;
+# >>>	status)
+# >>>	    ufw_status || exit "$?"
+# >>>	    # If before.init and after.init support 'status', just display them after
+# >>>	    # ufw_status() so it is prettier
+# >>>	    if [ -x "$RULES_PATH/before.init" ]; then
+# >>>	        "$RULES_PATH/before.init" status || exit "$?"
+# >>>	    fi
+# >>>	    if [ -x "$RULES_PATH/after.init" ]; then
+# >>>	        "$RULES_PATH/after.init" status || exit "$?"
+# >>>	    fi
+# >>>	    ;;
+# >>>	flush-all)
+# >>>	    # Use sparingly. It flushes the built-in chains, deletes all non-builtin
+# >>>	    # chains and resets the policy to ACCEPT
+# >>>	    if [ -x "$RULES_PATH/before.init" ]; then
+# >>>	        "$RULES_PATH/before.init" flush-all || exit "$?"
+# >>>	    fi
+# >>>	    flush_builtins || exit "$?"
+# >>>	    if [ -x "$RULES_PATH/after.init" ]; then
+# >>>	        "$RULES_PATH/after.init" flush-all || exit "$?"
+# >>>	    fi
+# >>>	    ;;
+# >>>	*)
+# >>>	    echo "Usage: /lib/ufw/ufw-init {start|stop|restart|force-reload|force-stop|flush-all|status}"
+# >>>	    exit 1
+# >>>	    ;;
+# >>>	esac
+# >>>	# >>>	
