@@ -1,14 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  1.180.238  2019-04-18T21:57:44.463732-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.179  
-# 	   update 
-# 	template/template.sh  1.179.237  2019-04-15T12:08:34.094106-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.178  
-# 	   minor update with no impact to production standard 6.1.177 Architecture tree 
-# 	template/template.sh  1.178.236  2019-04-11T23:00:27.404201-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.177  
-# 	   production standard 6.1.177 Architecture tree event thou this is 1.178 added line to dockerd-configuration-options/setup-dockerd.sh which is only used in this file 
-# 	template/template.sh  1.177.235  2019-04-10T22:57:40.542789-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.176  
-# 	   1.177  Architecture tree  1.177 
-# 	template/template.sh  1.176.234  2019-04-10T22:28:34.484729-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.175  
-# 	   1.176  major review and rewrite for Architecture tree  1.176 
+# 	template/template.sh  1.181.239  2019-04-26T13:17:50.628642-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.180  
+# 	   update display_help ssh prompting section 
 ### production standard 3.0 shellcheck
 ### production standard 5.1.160 Copyright
 #	Copyright (c) 2019 Bradley Allen
@@ -64,6 +56,10 @@ echo    "remote systen; running the following may stop the prompts in your clust
 echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<REMOTE_HOST>${NORMAL}"
 echo    "or"
 echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<192.168.x.x>${NORMAL}"
+echo    "If that does not resolve the prompting challenge then review the man pages for"
+echo    "ssh-agent and ssh-add before entering the following in a terminal window."
+echo -e "\t${BOLD}eval \$(ssh-agent)${NORMAL}"
+echo -e "\t${BOLD}ssh-add${NORMAL}"
 
 ### production standard 4.0 Documentation Language
 #	Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
