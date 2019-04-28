@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  1.181.239  2019-04-26T13:17:50.628642-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.180  
-# 	   update display_help ssh prompting section 
+# 	template/template.sh  1.182.240  2019-04-27T23:31:27.008294-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.181  
+# 	   added ssh/sshd_config to ARCHITECTURE TREE 
 ### production standard 3.0 shellcheck
 ### production standard 5.1.160 Copyright
 #	Copyright (c) 2019 Bradley Allen
@@ -181,7 +181,11 @@ echo    "│   └── docker.service.wants/              <-- Dependencies"
 echo    "├── default/"
 echo    "│   └── docker                             <-- Docker daemon Upstart and"
 echo    "│                                              SysVinit configuration file"
-echo -e "└── ssl/openssl.cnf                        <-- OpenSSL configuration file\n"
+echo    "├── ssl/"
+echo    "│    └── openssl.cnf                       <-- OpenSSL configuration file"
+echo    "└── ssh/"
+echo -e "    └── sshd_config                        <-- OpenSSH configuration file\n"
+
 echo    "/var/"
 echo    "├── lib/docker/                            <-- Root directory of persistent"
 echo    "│                                              Docker state files; (images)"
