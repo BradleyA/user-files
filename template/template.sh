@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  1.183.241  2019-04-28T18:35:25.573376-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.182  
+# 	   add Host two 
 # 	template/template.sh  1.182.240  2019-04-27T23:31:27.008294-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.181  
 # 	   added ssh/sshd_config to ARCHITECTURE TREE 
 ### production standard 3.0 shellcheck
@@ -184,6 +186,8 @@ echo    "│                                              SysVinit configuration
 echo    "├── ssl/"
 echo    "│    └── openssl.cnf                       <-- OpenSSL configuration file"
 echo    "└── ssh/"
+echo    "    ├── ssh_known_hosts                    <-- man ssh"
+echo    "    ├── shosts.equiv                       <-- man ssh"
 echo -e "    └── sshd_config                        <-- OpenSSH configuration file\n"
 
 echo    "/var/"
