@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.185.243  2019-04-28T20:13:55.699864-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.184  
+# 	   add ssh to ARCHITECTURE TREE no existing use 
 # 	template/template.sh  1.183.241  2019-04-28T18:35:25.573376-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.182  
 # 	   add Host two 
 # 	template/template.sh  1.182.240  2019-04-27T23:31:27.008294-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.181  
@@ -35,6 +37,7 @@ echo    "   ${0} [--version | -version | -v]"
 echo -e "\nDESCRIPTION"
 echo    "<your help goes here>"
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
+
 echo -e "\n<<Paragraph two>>"
 
 echo -e "\nThe <DATA_DIR>/<CLUSTER>/<SYSTEMS_FILE> includes one FQDN or IP address per"
@@ -185,11 +188,15 @@ echo    "│   └── docker                             <-- Docker daemon Up
 echo    "│                                              SysVinit configuration file"
 echo    "├── ssl/"
 echo    "│    └── openssl.cnf                       <-- OpenSSL configuration file"
-echo    "└── ssh/"
-echo    "    ├── ssh_known_hosts                    <-- man ssh"
-echo    "    ├── shosts.equiv                       <-- man ssh"
-echo -e "    └── sshd_config                        <-- OpenSSH configuration file\n"
-
+echo    "├── ssh/"
+echo    "│   ├── ssh_known_hosts                    <-- List of host keys for hosts user"
+echo    "│   │                                          logged into not in systemwide file"
+echo    "│   ├── shosts.equiv                       <-- man ssh"
+echo    "│   ├── ssh_host_rsa_key                   <-- host private key"
+echo    "│   ├── ssh_host_rsa_key.pub               <-- host public key"
+echo    "│   ├── shosts.equiv                       <-- host-based authentication"
+echo    "│   └── sshd_config                        <-- OpenSSH configuration file"
+echo -e "└── hosts.equiv                            <-- host-based authentication\n"
 echo    "/var/"
 echo    "├── lib/docker/                            <-- Root directory of persistent"
 echo    "│                                              Docker state files; (images)"
