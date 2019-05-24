@@ -1,12 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.188.246  2019-05-12T19:42:02.715276-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.187  
+# 	template/template.sh  3.189.247  2019-05-24T15:32:21.526122-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.188  
 # 	   update ssh to Architecture tree #21 
-# 	template/template.sh  3.185.243  2019-04-28T20:13:55.699864-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.184  
-# 	   add ssh to ARCHITECTURE TREE no existing use 
-# 	template/template.sh  1.183.241  2019-04-28T18:35:25.573376-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.182  
-# 	   add Host two 
-# 	template/template.sh  1.182.240  2019-04-27T23:31:27.008294-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 1.181  
-# 	   added ssh/sshd_config to ARCHITECTURE TREE 
 ### production standard 3.0 shellcheck
 ### production standard 5.1.160 Copyright
 #	Copyright (c) 2019 Bradley Allen
@@ -109,13 +103,24 @@ echo    "│   ├── log/                               <-- Host log directo
 echo    "│   ├── logrotate/                         <-- Host logrotate directory"
 echo    "│   ├── docker-accounts/                   <-- Docker TLS certs"
 echo    "│   │   ├── <HOST-1>/                      <-- Host in cluster"
+echo    "│   │   │   ├── ssh/"
+echo    "│   │   │   │   ├── AllowUsers             <-- User name patterns allowed"
+echo    "│   │   │   │   ├── ssh_host_ed25519_fingerprint <-- XXXX think about only having one finger print file for all called fingerprint keytype"
+echo    "│   │   │   │   ├── ssh_host_rsa_fingerprint <-- "
+echo    "│   │   │   │   ├── ssh_known_hosts        <-- Host public keys for all"
+echo    "│   │   │   │   │                          <-- known hosts in cluster"
+echo    "│   │   │   │   ├── shosts.equiv           <-- "
+echo    "│   │   │   │   ├── ssh_host_rsa_key       <-- OpenSSH host private key"
+echo    "│   │   │   │   ├── ssh_host_rsa_key.pub   <-- OpenSSH host public key"
+echo    "│   │   │   │   ├── ssh_host_ed25519_key   <-- OpenSSH host private key"
+echo    "│   │   │   │   └── ssh_host_ed25519_key.pub <-- OpenSSH host public key"
 echo    "│   │   │   ├── <USER-1>/                  <-- User TLS certs directory"
-echo    "│   │   │   │   ├── ca.pem       FUTURE    <-- User tlscacert"
-echo    "│   │   │   │   ├── cert.pem     FUTURE    <-- User tlscert"
-echo    "│   │   │   │   ├── key.pem      FUTURE    <-- User tlskey"
+echo    "│   │   │   │   ├── ca.pem         FUTURE  <-- User tlscacert"
+echo    "│   │   │   │   ├── cert.pem       FUTURE  <-- User tlscert"
+echo    "│   │   │   │   ├── key.pem        FUTURE  <-- User tlskey"
 echo    "│   │   │   │   ├── trust/                 <-- Backup of Docker Content Trust"
 echo    "│   │   │   │   │                              (DCT) keys"
-echo    "│   │   │   │   └── ssh/        FUTURE     <-- SSH user inventory"
+echo    "│   │   │   │   └── ssh/"
 echo    "│   │   │   │       └── inventory/ FUTURE  <-- SSH user inventory"
 echo    "│   │   │   └── <USER-2>/                  <-- User TLS certs directory"
 echo    "│   │   └── <HOST-2>/                      <-- Host in cluster"
@@ -191,7 +196,7 @@ echo    "├── default/"
 echo    "│   └── docker                             <-- Docker daemon Upstart and"
 echo    "│                                              SysVinit configuration file"
 echo    "├── ssl/"
-echo    "│   └── openssl.cnf                       <-- OpenSSL configuration file"
+echo    "│   └── openssl.cnf                        <-- OpenSSL configuration file"
 echo    "├── ssh/"
 echo    "│   ├── moduli                             <-- Diffie-Hellman moduli"
 echo    "│   ├── shosts.equiv                       <-- host-based authentication"
@@ -203,8 +208,14 @@ echo    "│   ├── ssh_host_rsa_key                   <-- OpenSSH host pri
 echo    "│   ├── ssh_host_rsa_key.pub               <-- OpenSSH host public key"
 echo    "│   ├── ssh_host_ed25519_key               <-- OpenSSH host private key"
 echo    "│   ├── ssh_host_ed25519_key.pub           <-- OpenSSH host public key"
-echo    "│   └── ssh_known_hosts                    <-- OpenSSH systemwide list of known"
-echo    "│                                              public host keys"
+echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
+echo    "│   ├── ssh_known_hosts                    <-- OpenSSH systemwide list of known"
+echo    "│   │                                          public host keys"
+echo    "│   └── keys                               <-- Support SSH remote login when"
+echo    "│       │                                      user home directory encrypted"
+echo    "│       ├── <USER-1>/.ssh                  <-- User SSH authorized_keys directory"
+echo    "│       │   └── authorized_keys            <-- SSH user public keys for login"
+echo    "│       └── <USER-2>/.ssh                  <-- User systemwide SSH directory"
 echo -e "└── hosts.equiv                            <-- host-based authentication\n"
 echo    "/var/"
 echo    "├── lib/docker/                            <-- Root directory of persistent"
