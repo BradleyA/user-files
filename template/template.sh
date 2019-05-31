@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.189.247  2019-05-24T15:32:21.526122-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.188  
-# 	   update ssh to Architecture tree #21 
+# 	template/template.sh  3.193.251  2019-05-31T11:03:32.153161-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.192  
+# 	   template[sh-py] --> production standard 8 --usage close #22 
 ### production standard 3.0 shellcheck
 ### production standard 5.1.160 Copyright
 #	Copyright (c) 2019 Bradley Allen
@@ -16,8 +16,8 @@ NORMAL=$(tput -Txterm sgr0)
 DEFAULT_CLUSTER="us-tx-cluster-1/"
 DEFAULT_USER=${USER}
 DEFAULT_DATA_DIR="/usr/local/data/"
-### production standard 0.1.166 --help
-display_help() {
+### production standard 8.0 --usage
+display_usage() {
 echo -e "\n${NORMAL}${0} - brief description"
 echo -e "\nUSAGE"
 echo    "   ${0} [XX | YY | ZZ]"
@@ -26,9 +26,14 @@ echo    "   ${0} [<REGISTRY_HOST>]"
 echo    "   ${0}  <REGISTRY_HOST> [<REGISTRY_PORT>]"
 echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT> [<CLUSTER>]"
 echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER> [<DATA_DIR>]"
-echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER>  <DATA_DIR> [<SYSTEMS_FILE>]"
+echo -e "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER>  <DATA_DIR> [<SYSTEMS_FILE>]\n"
 echo    "   ${0} [--help | -help | help | -h | h | -?]"
+echo    "   ${0} [--usage | -usage | -u]"
 echo    "   ${0} [--version | -version | -v]"
+}
+### production standard 0.1.166 --help
+display_help() {
+display_usage
 #	Displaying help DESCRIPTION in English en_US.UTF-8
 echo -e "\nDESCRIPTION"
 echo    "<your help goes here>"
@@ -258,13 +263,17 @@ GROUP_ID=$(id -g)
 if ! [ "${USER}" == "${LOGNAME}" ] ; then  USER=${LOGNAME} ; fi
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Setting USER to support crobtab...  USER >${USER}<  LOGNAME >${LOGNAME}<" 1>&2 ; fi
 
-#	Default help and version arguments
+#	Default help, usage, and version arguments
 if [ "$1" == "--help" ] || [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ] || [ "$1" == "h" ] || [ "$1" == "-?" ] ; then
 	display_help | more
 	exit 0
 fi
 if [ "$1" == "--version" ] || [ "$1" == "-version" ] || [ "$1" == "version" ] || [ "$1" == "-v" ] ; then
 	echo "${SCRIPT_NAME} ${SCRIPT_VERSION}"
+	exit 0
+fi
+if [ "$1" == "--usage" ] || [ "$1" == "-usage" ] || [ "$1" == "usage" ] || [ "$1" == "-u" ] ; then
+	display_usage | more
 	exit 0
 fi
 
