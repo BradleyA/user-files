@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.194.252  2019-06-07T22:26:55.250843-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.193  
+# 	   minor updates, update ARCHITECTURE TREE with ssh design 
 # 	template/template.sh  3.193.251  2019-05-31T11:03:32.153161-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.192  
 # 	   template[sh-py] --> production standard 8 --usage close #22 
 ### production standard 3.0 shellcheck
@@ -113,19 +115,25 @@ echo    "│   │   │   │   ├── AllowUsers             <-- User name 
 echo    "│   │   │   │   ├── ssh_host_ed25519_fingerprint <-- XXXX think about only having one finger print file for all called fingerprint keytype"
 echo    "│   │   │   │   ├── ssh_host_rsa_fingerprint <-- "
 echo    "│   │   │   │   ├── ssh_known_hosts        <-- Host public keys for all"
-echo    "│   │   │   │   │                          <-- known hosts in cluster"
+echo    "│   │   │   │   │                              known hosts in cluster"
 echo    "│   │   │   │   ├── shosts.equiv           <-- "
 echo    "│   │   │   │   ├── ssh_host_rsa_key       <-- OpenSSH host private key"
 echo    "│   │   │   │   ├── ssh_host_rsa_key.pub   <-- OpenSSH host public key"
 echo    "│   │   │   │   ├── ssh_host_ed25519_key   <-- OpenSSH host private key"
-echo    "│   │   │   │   └── ssh_host_ed25519_key.pub <-- OpenSSH host public key"
+echo    "│   │   │   │   ├── ssh_host_ed25519_key.pub <-- OpenSSH host public key"
+echo    "│   │   │   │   └── keys/"
+echo    "│   │   │   │       ├── <USER-1>/"
+echo    "│   │   │   │       │   └── authorized_keys"
+echo    "│   │   │   │       └── <USER-2>/"
 echo    "│   │   │   ├── <USER-1>/                  <-- User TLS certs directory"
-echo    "│   │   │   │   ├── ca.pem         FUTURE  <-- User tlscacert"
-echo    "│   │   │   │   ├── cert.pem       FUTURE  <-- User tlscert"
-echo    "│   │   │   │   ├── key.pem        FUTURE  <-- User tlskey"
-echo    "│   │   │   │   ├── trust/                 <-- Backup of Docker Content Trust"
+echo    "│   │   │   │   ├── docker         FUTURE  <-- User tlscacert"
+echo    "│   │   │   │   │   ├── ca.pem     FUTURE  <-- User tlscacert"
+echo    "│   │   │   │   │   ├── cert.pem   FUTURE  <-- User tlscert"
+echo    "│   │   │   │   │   ├── key.pem    FUTURE  <-- User tlskey"
+echo    "│   │   │   │   │   └── trust/             <-- Backup of Docker Content Trust"
 echo    "│   │   │   │   │                              (DCT) keys"
 echo    "│   │   │   │   └── ssh/"
+echo    "│   │   │   │       ├── authorized_keys    <-- SSH user public keys for login 644"
 echo    "│   │   │   │       └── inventory/ FUTURE  <-- SSH user inventory"
 echo    "│   │   │   └── <USER-2>/                  <-- User TLS certs directory"
 echo    "│   │   └── <HOST-2>/                      <-- Host in cluster"
@@ -218,9 +226,9 @@ echo    "│   ├── ssh_known_hosts                    <-- OpenSSH systemwi
 echo    "│   │                                          public host keys"
 echo    "│   └── keys                               <-- Support SSH remote login when"
 echo    "│       │                                      user home directory encrypted"
-echo    "│       ├── <USER-1>/.ssh                  <-- User SSH authorized_keys directory"
-echo    "│       │   └── authorized_keys            <-- SSH user public keys for login"
-echo    "│       └── <USER-2>/.ssh                  <-- User systemwide SSH directory"
+echo    "│       ├── <USER-1>/                      <-- User SSH authorized_keys directory 755"
+echo    "│       │   └── authorized_keys            <-- SSH user public keys for login 644"
+echo    "│       └── <USER-2>/                      <-- User systemwide SSH directory"
 echo -e "└── hosts.equiv                            <-- host-based authentication\n"
 echo    "/var/"
 echo    "├── lib/docker/                            <-- Root directory of persistent"
@@ -268,12 +276,12 @@ if [ "$1" == "--help" ] || [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" =
 	display_help | more
 	exit 0
 fi
+if [ "$1" == "--usage" ] || [ "$1" == "-usage" ] || [ "$1" == "usage" ] || [ "$1" == "-u" ] ; then
+        display_usage | more
+        exit 0
+fi
 if [ "$1" == "--version" ] || [ "$1" == "-version" ] || [ "$1" == "version" ] || [ "$1" == "-v" ] ; then
 	echo "${SCRIPT_NAME} ${SCRIPT_VERSION}"
-	exit 0
-fi
-if [ "$1" == "--usage" ] || [ "$1" == "-usage" ] || [ "$1" == "usage" ] || [ "$1" == "-u" ] ; then
-	display_usage | more
 	exit 0
 fi
 
