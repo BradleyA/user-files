@@ -1,0 +1,127 @@
+#	sshd_config-two-rpi3b
+#	etc/ssh/sshd_config-two-rpi3b  3.195.253  2019-06-07T22:29:27.513975-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.194  
+#	   upload latest changes for test 
+#	etc/ssh/sshd_config-two-rpi3b.cptx86.com  3.191.249  2019-05-30T12:19:03.332424-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.190  
+#	   first draft of sshd_config standards 
+###	
+#       Specifies the port number that sshd(8) listens on
+Port 12323
+# Use these options to restrict which interfaces/protocols sshd will bind to
+#ListenAddress ::
+#ListenAddress 0.0.0.0
+# %	 Security vulnerabilities discovered with protocol 1
+Protocol 2
+# HostKeys for protocol version 2
+# %	Commented the following line because many agree it is to weak and can be mathematically broken
+#	HostKey /etc/ssh/ssh_host_dsa_key
+# %	Commented the following line because supports NIST curves and according to studies those curves are suspicious for NSA backdoors
+#	HostKey /etc/ssh/ssh_host_ecdsa_key
+# %	Added the following line because strongest mathematically (and also fastest), but not widely supported
+HostKey /etc/ssh/ssh_host_ed25519_key
+# %	Commented the following line because it is the best if you can't use Ed25519
+#	HostKey /etc/ssh/ssh_host_rsa_key
+
+#	Added the following line because it specifies the host key algorithms
+HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-ed25519
+
+# %	Privilege Separation splits up server processes to prevent privilege escalation
+UsePrivilegeSeparation yes
+
+# Lifetime and size of ephemeral version 1 server key
+KeyRegenerationInterval 3600
+ServerKeyBits 1024
+
+# Logging
+SyslogFacility AUTH
+LogLevel INFO
+
+# Authentication:
+# %	Changed from 120 to 60
+LoginGraceTime 40
+# %	Changed from prohibit-password to forced-commands-only
+# >>>	need to understand this more because this supports remote backups but adds security risk
+PermitRootLogin forced-commands-only
+
+# %s	This with PasswordAuthentication 'no' are the most important security enhancements
+PubkeyAuthentication yes
+
+RSAAuthentication yes
+StrictModes yes
+
+# %	Multiple files are support with space between each;  Additional locations will support users with encrypted home directories because ssh is unable to read  user encrypted home directory until after user logged in
+AuthorizedKeysFile %h/.ssh/authorized_keys /etc/ssh/keys/%u/.ssh/authorized_keys
+
+# Don't read the user's ~/.rhosts and ~/.shosts files
+IgnoreRhosts yes
+# For this to work you will also need host keys in /etc/ssh_known_hosts
+RhostsRSAAuthentication no
+# similar for protocol version 2
+HostbasedAuthentication no
+# Uncomment if you don't trust ~/.ssh/known_hosts for RhostsRSAAuthentication
+#IgnoreUserKnownHosts yes
+
+# To enable empty passwords, change to yes (NOT RECOMMENDED)
+PermitEmptyPasswords no
+
+# Change to yes to enable challenge-response passwords (beware issues with
+# some PAM modules and threads)
+ChallengeResponseAuthentication no
+
+# Change to no to disable tunnelled clear text passwords
+#PasswordAuthentication yes
+
+# Kerberos options
+#KerberosAuthentication no
+#KerberosGetAFSToken no
+#KerberosOrLocalPasswd yes
+#KerberosTicketCleanup yes
+
+# GSSAPI options
+#GSSAPIAuthentication no
+#GSSAPICleanupCredentials yes
+
+# %   Change the following line from yes to no
+X11Forwarding no
+X11DisplayOffset 10
+# %   Change the following line from no back to yes (default yes other than ubuntu)
+PrintMotd yes
+PrintLastLog yes
+
+# %   Changed the following line from yes to no because messages are unencrypted and spoofable
+TCPKeepAlive no
+#UseLogin no
+
+#MaxStartups 10:30:60
+Banner /etc/issue.net
+
+# Allow client to pass locale environment variables
+AcceptEnv LANG LC_*
+
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+# Set this to 'yes' to enable PAM authentication, account processing,
+# and session processing. If this is enabled, PAM authentication will
+# be allowed through the ChallengeResponseAuthentication and
+# PasswordAuthentication.  Depending on your PAM configuration,
+# PAM authentication via ChallengeResponseAuthentication may bypass
+# the setting of "PermitRootLogin without-password".
+# If you just want the PAM account and session checks to run without
+# PAM authentication, then enable this but set PasswordAuthentication
+# and ChallengeResponseAuthentication to 'no'.
+UsePAM yes
+#
+###
+# %	Added the following lineS     <<<
+#	After 15 seconds sshd will send a message to the client expecting a response (ClientAliveInterval * ClientAliveCountMax)
+ClientAliveInterval 15
+ClientAliveCountMax 3
+
+#       “no” to prevent all TCP forwarding
+AllowTcpForwarding no
+
+#       login is allowed only for user names that match one of the patterns (examples: user user@host1 *@host1)
+AllowUsers uone utwo uthree ufour ufive usix uadmin
+AllowUsers back@192.168.1.0/24
+#       Login allowed only for users whose primary or supplementary group list matches one of the patterns
+#	AllowGroups sudo
+
