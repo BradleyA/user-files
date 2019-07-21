@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.198.256  2019-07-21T10:19:15.281274-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.197  
+# 	   update ARCHITECTURE TREE ~user/.docker/ca.pem 
 # 	template/template.sh  3.197.255  2019-06-23T10:07:19.772959-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.196  
 # 	   remove more from display_usage 
 # 	template/template.sh  3.194.252  2019-06-07T22:26:55.250843-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.193  
@@ -152,7 +154,7 @@ echo    "                                               is the same as <CLUSTER>
 echo -e "                                               the systems are not in a cluster\n"
 echo    "<USER_HOME>/                               <-- Location of user home directory"
 echo    "├── <USER-1>/.docker/                      <-- User docker cert directory"
-echo    "│   ├── ca.pem                             <-- Symbolic link to user tlscacert"
+echo    "│   ├── ca.pem                             <-- User tlscacert or symbolic link"
 echo    "│   ├── cert.pem                           <-- Symbolic link to user tlscert"
 echo    "│   ├── key.pem                            <-- Symbolic link to user tlskey"
 echo    "│   ├── docker-ca/                         <-- Working directory to create certs"
