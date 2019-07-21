@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.198.256  2019-07-21T10:19:15.281274-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.197  
+# 	template/template.sh  3.199.257  2019-07-21T10:20:31.711059-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.198  
 # 	   update ARCHITECTURE TREE ~user/.docker/ca.pem 
-# 	template/template.sh  3.197.255  2019-06-23T10:07:19.772959-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.196  
-# 	   remove more from display_usage 
 # 	template/template.sh  3.194.252  2019-06-07T22:26:55.250843-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.193  
 # 	   minor updates, update ARCHITECTURE TREE with ssh design 
 # 	template/template.sh  3.193.251  2019-05-31T11:03:32.153161-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.192  
