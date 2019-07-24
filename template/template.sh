@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.200.258  2019-07-24T16:54:35.376680-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.199  
+# 	   change production standard 8.3.200 --usage 
 # 	template/template.sh  3.199.257  2019-07-21T10:20:31.711059-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.198  
 # 	   update ARCHITECTURE TREE ~user/.docker/ca.pem 
 # 	template/template.sh  3.194.252  2019-06-07T22:26:55.250843-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.193  
@@ -20,20 +22,21 @@ NORMAL=$(tput -Txterm sgr0)
 DEFAULT_CLUSTER="us-tx-cluster-1/"
 DEFAULT_USER=${USER}
 DEFAULT_DATA_DIR="/usr/local/data/"
-### production standard 8.0 --usage
+### production standard 8.3.200 --usage
 display_usage() {
-echo -e "\n${NORMAL}${0} - brief description"
+COMMAND_NAME=$(echo $0 | sed 's/^.*\///')
+echo -e "\n${NORMAL}${0}\n   brief description"
 echo -e "\nUSAGE"
-echo    "   ${0} [XX | YY | ZZ]"
-echo    "   ${0} [--file <PATH>/<FILE_NAME> | -f <PATH>/<FILE_NAME>]"
-echo    "   ${0} [<REGISTRY_HOST>]"
-echo    "   ${0}  <REGISTRY_HOST> [<REGISTRY_PORT>]"
-echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT> [<CLUSTER>]"
-echo    "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER> [<DATA_DIR>]"
-echo -e "   ${0}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER>  <DATA_DIR> [<SYSTEMS_FILE>]\n"
-echo    "   ${0} [--help | -help | help | -h | h | -?]"
-echo    "   ${0} [--usage | -usage | -u]"
-echo    "   ${0} [--version | -version | -v]"
+echo    "   ${COMMAND_NAME} [XX | YY | ZZ]"
+echo    "   ${COMMAND_NAME} [--file <PATH>/<FILE_NAME> | -f <PATH>/<FILE_NAME>]"
+echo    "   ${COMMAND_NAME} [<REGISTRY_HOST>]"
+echo    "   ${COMMAND_NAME}  <REGISTRY_HOST> [<REGISTRY_PORT>]"
+echo    "   ${COMMAND_NAME}  <REGISTRY_HOST>  <REGISTRY_PORT> [<CLUSTER>]"
+echo    "   ${COMMAND_NAME}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER> [<DATA_DIR>]"
+echo -e "   ${COMMAND_NAME}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER>  <DATA_DIR> [<SYSTEMS_FILE>]\n"
+echo    "   ${COMMAND_NAME} [--help | -help | help | -h | h | -?]"
+echo    "   ${COMMAND_NAME} [--usage | -usage | -u]"
+echo    "   ${COMMAND_NAME} [--version | -version | -v]"
 }
 ### production standard 0.1.166 --help
 display_help() {
