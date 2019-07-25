@@ -1,6 +1,8 @@
 #!/bin/bash
+# 	template/template.sh  3.201.259  2019-07-24T22:19:53.914311-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.201  
+# 	   production standard 8.3.201 --usage close #23 
 # 	template/template.sh  3.201.258  2019-07-24T22:00:25.682838-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.199  
-# 	   change production standard 8.3.200 --usage close #23 
+# 	   change production standard 8.3.201 --usage close #23 
 # 	template/template.sh  3.193.251  2019-05-31T11:03:32.153161-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.192  
 # 	   template[sh-py] --> production standard 8 --usage close #22 
 ### production standard 3.0 shellcheck
