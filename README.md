@@ -8,15 +8,15 @@ General user files when moving to a new system.
 
 To clone, change to the location you want to download. Use git to pull or clone these files into the directory. If you do not have Git then enter; "sudo apt-get install git". On the GitHub page of this script use the "HTTPS clone URL" with the 'git clone' command.
 
-    git clone https://github.com/BradleyA/user-work-files.git
-    cd user-work-files
+    git clone https://github.com/BradleyA/user-files.git
+    cd user-files
 
 ## Install a File
 
 To download the latest commit of one of these files, for example .gitignore, change to the location you want to download.  If in sub-directory on Github include the directory; example   FILEX=bin/term-layout.sh
 
     FILEX=.gitignore
-    curl -L https://api.github.com/repos/BradleyA/user-work-files/tarball | tar -xzf - --wildcards BradleyA-user-work-files-*/$FILEX ; mv BradleyA-user-work-files-*/$FILEX . ; rm -r BradleyA-user-work-files-*/
+    curl -L https://api.github.com/repos/BradleyA/user-files/tarball | tar -xzf - --wildcards BradleyA-user-files-*/$FILEX ; mv BradleyA-user-files-*/$FILEX . ; rm -r BradleyA-user-files-*/
 
 ## Files
 
