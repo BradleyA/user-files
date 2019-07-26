@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.210.266  2019-07-25T22:16:09.842180-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.209  
+# 	   updated Example arguments (2) 
 # 	template/template.sh  3.209.265  2019-07-25T22:13:51.941873-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.208  
 # 	   add Example arguments (1) #24 
 # 	template/template.sh  3.208.264  2019-07-25T22:11:03.789319-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.207  
@@ -328,11 +330,14 @@ ADMUSER=${DEFAULT_USER}
 if [ "${DATA_DIR}" == "" ] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
-#	Example arguments
 
-#	Order of precedence: CLI argument, default code
+
+###     Example arguments (2)
+#       Order of precedence: CLI argument, default code
 OPTION1=${1:-default_value1}
 OPTION2=${2:-${DEFAULT_VALUE2}}
+if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... OPTION1 >${OPTION1}< OPTION2 >${OPTION2}<" 1>&2 ; fi
+#	Example arguments
 
 ###	EXAMPLE ONE
 #
