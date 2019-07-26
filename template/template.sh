@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.204.260  2019-07-25T21:54:56.954042-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.203  
-# 	   template.sh remove $0 from display_help sections to ${COMMAND_NAME} to help with CI/CD & CT #23 
-# 	template/template.sh  3.200.258  2019-07-24T16:54:35.376680-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.199  
-# 	   change production standard 8.3.200 --usage 
+# 	template/template.sh  3.205.261  2019-07-25T22:01:19.915446-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.204  
+# 	   template.sh remove $0 from display_help sections to ${COMMAND_NAME} to help with CI/CD & CT #22 #23 
 # 	template/template.sh  3.199.257  2019-07-21T10:20:31.711059-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.198  
 # 	   update ARCHITECTURE TREE ~user/.docker/ca.pem 
 # 	template/template.sh  3.194.252  2019-06-07T22:26:55.250843-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.193  
