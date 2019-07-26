@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.207.263  2019-07-25T22:09:10.164673-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.206  
+# 	   move function  Test <REGISTRY_PORT> for integer 
 # 	template/template.sh  3.206.262  2019-07-25T22:06:17.399950-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.205  
 # 	   update display_help OPTIONS section to match USAGE section 
 # 	template/template.sh  3.205.261  2019-07-25T22:01:19.915446-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.204  
@@ -305,6 +307,13 @@ if ! [ $(id -u) = 0 ] ; then
 	exit 1
 fi
 
+###
+#       Test <REGISTRY_PORT> for integer
+if ! [[ "${REGISTRY_PORT}" =~ ^[0-9]+$ ]] ; then        # requires [[   ]] or  [: =~: binary operator expected
+        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  <REGISTRY_PORT> is not an interger.  <REGISTRY_PORT> is set to '${REGISTRY_PORT}'" 1>&2
+        exit 1
+fi
+
 #	Example arguments
 
 #	Order of precedence: CLI argument, default code
@@ -319,12 +328,6 @@ ADMUSER=${2:-${DEFAULT_USER}}
 #	Order of precedence: CLI argument, environment variable, default code
 if [ $# -ge  3 ]  ; then DATA_DIR=${3} ; elif [ "${DATA_DIR}" == "" ] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
-
-#       Test <REGISTRY_PORT> for integer
-if ! [[ "${REGISTRY_PORT}" =~ ^[0-9]+$ ]] ; then	# requires [[   ]] or  [: =~: binary operator expected
-        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  <REGISTRY_PORT> is not an interger.  <REGISTRY_PORT> is set to '${REGISTRY_PORT}'" 1>&2
-        exit 1
-fi
 
 ###	EXAMPLE ONE
 #
