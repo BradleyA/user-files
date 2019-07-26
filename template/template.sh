@@ -1,7 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.203.259  2019-07-25T21:49:56.098233-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.200  
-# 	   test git push 
-
+# 	template/template.sh  3.204.260  2019-07-25T21:54:56.954042-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.203  
+# 	   template.sh remove $0 from display_help sections to ${COMMAND_NAME} to help with CI/CD & CT #23 
 # 	template/template.sh  3.200.258  2019-07-24T16:54:35.376680-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.199  
 # 	   change production standard 8.3.200 --usage 
 # 	template/template.sh  3.199.257  2019-07-21T10:20:31.711059-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.198  
@@ -25,18 +24,12 @@ NORMAL=$(tput -Txterm sgr0)
 DEFAULT_CLUSTER="us-tx-cluster-1/"
 DEFAULT_USER=${USER}
 DEFAULT_DATA_DIR="/usr/local/data/"
-### production standard 8.3.200 --usage
+### production standard 8.3.204 --usage
 display_usage() {
 COMMAND_NAME=$(echo $0 | sed 's/^.*\///')
-echo -e "\n${NORMAL}${0}\n   brief description"
+echo -e "\n${NORMAL}${0}\n   brief description . . ."
 echo -e "\nUSAGE"
-echo    "   ${COMMAND_NAME} [XX | YY | ZZ]"
-echo    "   ${COMMAND_NAME} [--file <PATH>/<FILE_NAME> | -f <PATH>/<FILE_NAME>]"
-echo    "   ${COMMAND_NAME} [<REGISTRY_HOST>]"
-echo    "   ${COMMAND_NAME}  <REGISTRY_HOST> [<REGISTRY_PORT>]"
-echo    "   ${COMMAND_NAME}  <REGISTRY_HOST>  <REGISTRY_PORT> [<CLUSTER>]"
-echo    "   ${COMMAND_NAME}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER> [<DATA_DIR>]"
-echo -e "   ${COMMAND_NAME}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER>  <DATA_DIR> [<SYSTEMS_FILE>]\n"
+echo -e "   ${COMMAND_NAME} [-c <CLUSTER>] [-d <DATA_DIR>] [-a <ADMUSER>] [-f <PATH>/<FILE_NAME>]\n"
 echo    "   ${COMMAND_NAME} [--help | -help | help | -h | h | -?]"
 echo    "   ${COMMAND_NAME} [--usage | -usage | -u]"
 echo    "   ${COMMAND_NAME} [--version | -version | -v]"
