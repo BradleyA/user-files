@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.209.265  2019-07-25T22:13:51.941873-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.208  
+# 	   add Example arguments (1) #24 
 # 	template/template.sh  3.208.264  2019-07-25T22:11:03.789319-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.207  
 # 	   remove example code 
 # 	template/template.sh  3.207.263  2019-07-25T22:09:10.164673-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.206  
@@ -316,20 +318,21 @@ if ! [[ "${REGISTRY_PORT}" =~ ^[0-9]+$ ]] ; then        # requires [[   ]] or  [
         exit 1
 fi
 
+###     Example arguments (1)
+### production standard 7.0 Default variable value
+#       Order of precedence: CLI argument, environment variable, default code
+if [ "${CLUSTER}" == "" ] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
+#       Order of precedence: CLI argument, default code
+ADMUSER=${DEFAULT_USER}
+#       Order of precedence: CLI argument, environment variable, default code
+if [ "${DATA_DIR}" == "" ] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
+if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
+
 #	Example arguments
 
 #	Order of precedence: CLI argument, default code
 OPTION1=${1:-default_value1}
 OPTION2=${2:-${DEFAULT_VALUE2}}
-
-### production standard 7.0 Default variable value
-#	Order of precedence: CLI argument, environment variable, default code
-if [ $# -ge  1 ]  ; then CLUSTER=${1} ; elif [ "${CLUSTER}" == "" ] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
-#	Order of precedence: CLI argument, default code
-ADMUSER=${2:-${DEFAULT_USER}}
-#	Order of precedence: CLI argument, environment variable, default code
-if [ $# -ge  3 ]  ; then DATA_DIR=${3} ; elif [ "${DATA_DIR}" == "" ] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
-if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
 ###	EXAMPLE ONE
 #
