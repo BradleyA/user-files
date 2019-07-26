@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.202.260  2019-07-25T21:07:14.636589-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.201-1-g4af1f91  
+# 	   template.sh--> production standard 8.3.202 --usage #22 : remove $0 from display_help sections to ${COMMAND_NAME} to help with CI/CD & CT close #23 
 # 	template/template.sh  3.201.259  2019-07-24T22:19:53.914311-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.201  
 # 	   production standard 8.3.201 --usage close #23 
 # 	template/template.sh  3.201.258  2019-07-24T22:00:25.682838-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.199  
@@ -20,18 +22,12 @@ NORMAL=$(tput -Txterm sgr0)
 DEFAULT_CLUSTER="us-tx-cluster-1/"
 DEFAULT_USER=${USER}
 DEFAULT_DATA_DIR="/usr/local/data/"
-### production standard 8.3.201 --usage
+### production standard 8.3.202 --usage
 display_usage() {
-COMMAND_NAME=$(echo $0 | sed 's/^.*\///')
-echo -e "\n${NORMAL}${0}\n   brief description"
+COMMAND_NAME=$(echo $0 | sed 's/^.*\///') 
+echo -e "\n${NORMAL}${0}\n   brief description . . ."
 echo -e "\nUSAGE"
-echo    "   ${COMMAND_NAME} [XX | YY | ZZ]"
-echo    "   ${COMMAND_NAME} [--file <PATH>/<FILE_NAME> | -f <PATH>/<FILE_NAME>]"
-echo    "   ${COMMAND_NAME} [<REGISTRY_HOST>]"
-echo    "   ${COMMAND_NAME}  <REGISTRY_HOST> [<REGISTRY_PORT>]"
-echo    "   ${COMMAND_NAME}  <REGISTRY_HOST>  <REGISTRY_PORT> [<CLUSTER>]"
-echo    "   ${COMMAND_NAME}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER> [<DATA_DIR>]"
-echo -e "   ${COMMAND_NAME}  <REGISTRY_HOST>  <REGISTRY_PORT>  <CLUSTER>  <DATA_DIR> [<SYSTEMS_FILE>]\n"
+echo -e "   ${COMMAND_NAME} [-c <CLUSTER>] [-d <DATA_DIR>] [-a <ADMUSER>] [-f <PATH>/<FILE_NAME>]\n"
 echo    "   ${COMMAND_NAME} [--help | -help | help | -h | h | -?]"
 echo    "   ${COMMAND_NAME} [--usage | -usage | -u]"
 echo    "   ${COMMAND_NAME} [--version | -version | -v]"
@@ -90,15 +86,16 @@ echo    "you are using other shells."
 echo    "   DEBUG           (default off '0')"
 echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
-echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
 echo -e "\nOPTIONS"
-echo    "   -f, --file      path and file on system '<path>/<file_name>'"
-echo -e "\nOPTIONS"
-echo    "Order of precedence: CLI options, environment variable, default code."
-echo -e "   <<your environment variables information goes here>>"
-echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
-echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
-echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
+echo -e "Order of precedence: CLI options, environment variable, default code.\n"
+echo    "   -c, --cluster, -c=, --cluster=<CLUSTER>"
+echo -e "\tCluster name (default '${DEFAULT_CLUSTER}')\n"
+echo    "   -d, --datadir, -d=, --datadir=<DATA_DIR>"
+echo -e "\tData directory (default '${DEFAULT_DATA_DIR}')\n"
+echo    "   -a, --admuser, -a=, --admuser=<ADMUSER>"
+echo -e "\tSite SRE administrator, default is user running script\n"
+echo    "   -f, --file, -f=, --filename=<FILENAME>"
+echo -e "\tPath and file on system '<path>/<file_name>'"
 ### production standard 6.1.177 Architecture tree
 echo -e "\nARCHITECTURE TREE"	# STORAGE & CERTIFICATION
 echo    "/usr/local/data/                           <-- <DATA_DIR>"
@@ -305,136 +302,112 @@ if ! [ $(id -u) = 0 ] ; then
 	exit 1
 fi
 
-#	Example arguments
-
-#	Order of precedence: CLI argument, default code
-OPTION1=${1:-default_value1}
-OPTION2=${2:-${DEFAULT_VALUE2}}
-
-### production standard 7.0 Default variable value
-#	Order of precedence: CLI argument, environment variable, default code
-if [ $# -ge  1 ]  ; then CLUSTER=${1} ; elif [ "${CLUSTER}" == "" ] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
-#	Order of precedence: CLI argument, default code
-ADMUSER=${2:-${DEFAULT_USER}}
-#	Order of precedence: CLI argument, environment variable, default code
-if [ $# -ge  3 ]  ; then DATA_DIR=${3} ; elif [ "${DATA_DIR}" == "" ] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
-if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
-
+###
 #       Test <REGISTRY_PORT> for integer
-if ! [[ "${REGISTRY_PORT}" =~ ^[0-9]+$ ]] ; then	# requires [[   ]] or  [: =~: binary operator expected
+if ! [[ "${REGISTRY_PORT}" =~ ^[0-9]+$ ]] ; then        # requires [[   ]] or  [: =~: binary operator expected
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  <REGISTRY_PORT> is not an interger.  <REGISTRY_PORT> is set to '${REGISTRY_PORT}'" 1>&2
         exit 1
 fi
 
-###	EXAMPLE ONE
+###     Example arguments (1)
+### production standard 7.0 Default variable value
+#       Order of precedence: CLI argument, environment variable, default code
+if [ "${CLUSTER}" == "" ] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
+#       Order of precedence: CLI argument, default code
+ADMUSER=${DEFAULT_USER}
+#       Order of precedence: CLI argument, environment variable, default code
+if [ "${DATA_DIR}" == "" ] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
 #
-#	Example code is a template, it will not work until chnaged
-#
-#	Check if argument 1 is blank
-if [ "${1}" == "" ] ; then
-	display_help | more
-#       Help hint
-	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  File not found on command line" 1>&2
-	exit 0
-fi
-#	Check if argument 1 is -f or --file
-if [ "${1}" == "--file" ] || [ "${1}" == "-f" ] ; then
-	#	Check if argument 2 is blank
-	if [ "${2}" == "" ] ; then
-		display_help | more
-#       	Help hint
-		get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  File name not found; --file <path>/<file_name> or -f <path>/<file_name> option" 1>&2
-		exit 0
-	fi
-	OPTION2=${2}
-else
-	#	Locate file in the PATH
-	TEMP=$(whereis "${1}")
-	MARKIT_FILE=$(echo "${TEMP}" | awk {'print $2'} )
-	if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Locate file in the PATH... MARKIT_FILE >${MARKIT_FILE}<" 1>&2 ; fi
-	#	Check if MARKIT_FILE is blank
-	if [ "${MARKIT_FILE}" == "" ] ; then
-		display_help | more
-#       	Help hint
-		get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  ${1} not found; use --file <path>/<file_name> or -f <path>/<file_name> option" 1>&2
-		exit 0
-	fi
-fi
+if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
-#
-###	EXAMPLE TWO
-#	Check arguement 1 xxx
+### production standard 9.0 Parse CLI options and arguments
+while [[ "${#}" -gt 0 ]] ; do
+        case "${1}" in
+                -a|--admuser)
+                        if [ "${2}" == "" ] ; then      # Check if argument is blank
+                                display_usage
+                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+                                exit 1
+                        fi
+                        ADMUSER=${2}
+                        shift 2 # shift past argument and value
+                        ;;
+                -a=*|--admuser=*)
+                        ADMUSER=$(echo ${1} | cut -d '=' -f 2)
+                        shift # shift past argument=value
+                        ;;
+                -c|--cluster)
+                        if [ "${2}" == "" ] ; then      # Check if argument is blank
+                                display_usage
+                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+                                exit 1
+                        fi
+                        CLUSTER=${2}
+                        shift 2 # shift past argument and value
+                        ;;
+                -c=*|--cluster=*)
+                        CLUSTER=$(echo ${1} | cut -d '=' -f 2)
+                        shift # shift past argument=value
+                        ;;
+                -d|--datadir)
+                        if [ "${2}" == "" ] ; then      # Check if argument is blank
+                                display_usage
+                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+                                exit 1
+                        fi
+                        DATA_DIR=${2}
+                        shift 2 # shift past argument and value
+                        ;;
+                -d=*|--datadir=*)
+                        DATA_DIR=$(echo ${1} | cut -d '=' -f 2)
+                        shift # shift past argument=value
+                        ;;
+                -f|--filename)
+                        if [ "${2}" == "" ] ; then      # Check if argument is blank
+                                display_usage
+                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+                                exit 1
+                        fi
+                        FILE_NAME=${2}
+                        shift 2 # shift past argument and value
+                        ;;
+                -f=*|--filename=*)
+                        FILE_NAME=$(echo ${1} | cut -d '=' -f 2)
+                        shift # shift past argument=value
+                        ;;
+                *)
+                        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Option, ${1}, entered on the command line is not supported." 1>&2
+                        display_usage
+                        exit 1
+                        ;;
+        esac
+done
+if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}< FILE_NAME >${FILE_NAME}<" 1>&2 ; fi
+
+###     Example arguments (2)
+#       Order of precedence: CLI argument, default code
+OPTION1=${1:-default_value1}
+OPTION2=${2:-${DEFAULT_VALUE2}}
+if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... OPTION1 >${OPTION1}< OPTION2 >${OPTION2}<" 1>&2 ; fi
+
+###     Example arguments (3)
+### production standard 7.0 Default variable value
+#       Order of precedence: CLI argument, environment variable, default code
+if [ $# -ge  1 ]  ; then CLUSTER=${1} ; elif [ "${CLUSTER}" == "" ] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
+#       Order of precedence: CLI argument, default code
+ADMUSER=${2:-${DEFAULT_USER}}
+#       Order of precedence: CLI argument, environment variable, default code
+if [ $# -ge  3 ]  ; then DATA_DIR=${3} ; elif [ "${DATA_DIR}" == "" ] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
+if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
+
+###     Example arguments (4)
+#       Check arguement 1 xxx
 if [ "$1" != "no" ] && [ "$1" != "normal" ] && [ "$1" != "all" ] && [ "$1" != "" ] ; then
-	display_help | more
-	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${BOLD}[ERROR]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  First arguement, ${1}, is NOT no, normal, all." 1>&2
-	exit 0
+        display_help | more
+        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${BOLD}[ERROR]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  First arguement, ${1}, is NOT no, normal, all." 1>&2
+        exit 0
 fi
 
 #
 get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[INFO]${NORMAL}  Operation finished." 1>&2
 ###
-# >>>	FUTURE updates for example code 
-# >>>	Need to determine if I want to again make a design change for string input
-# >>>	# FIXME: this shouldn't be ordered
-# >>>	rootdir=
-# >>>	if [ "$1" = "--rootdir" ] && [ -s "$2" ]; then
-# >>>	    rootdir="$2/" # ensure trailing slash
-# >>>	    shift 2
-# >>>	fi
-# >>>	datadir=
-# >>>	if [ "$1" = "--datadir" ] && [ -s "$2" ]; then
-# >>>	    datadir="$2/" # ensure trailing slash
-# >>>	    shift 2
-# >>>	fi
-# >>>	export DATA_DIR="$datadir"
-# >>>	# >>>	then this 
-# >>>	case "$1" in
-# >>>	start)
-# >>>	    # process multiple error strings
-# >>>	    ret=0
-# >>>	    output=`ufw_start` || ret="$?"
-# >>>	    test -n "$output" && echo "$output" | while read line ; do
-# >>>	        if [ "$2" = "quiet" ] || [ "$QUIET" = "yes" ]; then
-# >>>	            echo "$line" | grep -q "Skip starting" && continue
-# >>>	        fi
-# >>>	        echo "$line"
-# >>>	    done
-# >>>	    exit "$ret"
-# >>>	    ;;
-# >>>	stop)
-# >>>	    ufw_stop || exit "$?"
-# >>>	    ;;
-# >>>	force-stop)
-# >>>	    ufw_stop --force || exit "$?"
-# >>>	    ;;
-# >>>	restart|force-reload)
-# >>>	    ufw_reload || exit "$?"
-# >>>	    ;;
-# >>>	status)
-# >>>	    ufw_status || exit "$?"
-# >>>	    # If before.init and after.init support 'status', just display them after
-# >>>	    # ufw_status() so it is prettier
-# >>>	    if [ -x "$RULES_PATH/before.init" ]; then
-# >>>	        "$RULES_PATH/before.init" status || exit "$?"
-# >>>	    fi
-# >>>	    if [ -x "$RULES_PATH/after.init" ]; then
-# >>>	        "$RULES_PATH/after.init" status || exit "$?"
-# >>>	    fi
-# >>>	    ;;
-# >>>	flush-all)
-# >>>	    # Use sparingly. It flushes the built-in chains, deletes all non-builtin
-# >>>	    # chains and resets the policy to ACCEPT
-# >>>	    if [ -x "$RULES_PATH/before.init" ]; then
-# >>>	        "$RULES_PATH/before.init" flush-all || exit "$?"
-# >>>	    fi
-# >>>	    flush_builtins || exit "$?"
-# >>>	    if [ -x "$RULES_PATH/after.init" ]; then
-# >>>	        "$RULES_PATH/after.init" flush-all || exit "$?"
-# >>>	    fi
-# >>>	    ;;
-# >>>	*)
-# >>>	    echo "Usage: /lib/ufw/ufw-init {start|stop|restart|force-reload|force-stop|flush-all|status}"
-# >>>	    exit 1
-# >>>	    ;;
-# >>>	esac
-# >>>	# >>>	
