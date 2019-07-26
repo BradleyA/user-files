@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.212.268  2019-07-25T22:25:38.198238-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.211  
+# 	   added production standard 9.0 Parse CLI options and arguments #24 
 # 	template/template.sh  3.211.267  2019-07-25T22:20:58.812750-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.210  
 # 	   update Example arguments (3-4) 
 # 	template/template.sh  3.210.266  2019-07-25T22:16:09.842180-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.209  
@@ -332,7 +334,69 @@ ADMUSER=${DEFAULT_USER}
 if [ "${DATA_DIR}" == "" ] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
-
+### production standard 9.0 Parse CLI options and arguments
+while [[ "${#}" -gt 0 ]] ; do
+        case "${1}" in
+                -a|--admuser)
+                        if [ "${2}" == "" ] ; then      # Check if argument is blank
+                                display_usage
+                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+                                exit 1
+                        fi
+                        ADMUSER=${2}
+                        shift 2 # shift past argument and value
+                        ;;
+                -a=*|--admuser=*)
+                        ADMUSER=$(echo ${1} | cut -d '=' -f 2)
+                        shift # shift past argument=value
+                        ;;
+                -c|--cluster)
+                        if [ "${2}" == "" ] ; then      # Check if argument is blank
+                                display_usage
+                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+                                exit 1
+                        fi
+                        CLUSTER=${2}
+                        shift 2 # shift past argument and value
+                        ;;
+                -c=*|--cluster=*)
+                        CLUSTER=$(echo ${1} | cut -d '=' -f 2)
+                        shift # shift past argument=value
+                        ;;
+                -d|--datadir)
+                        if [ "${2}" == "" ] ; then      # Check if argument is blank
+                                display_usage
+                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+                                exit 1
+                        fi
+                        DATA_DIR=${2}
+                        shift 2 # shift past argument and value
+                        ;;
+                -d=*|--datadir=*)
+                        DATA_DIR=$(echo ${1} | cut -d '=' -f 2)
+                        shift # shift past argument=value
+                        ;;
+                -f|--filename)
+                        if [ "${2}" == "" ] ; then      # Check if argument is blank
+                                display_usage
+                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+                                exit 1
+                        fi
+                        FILE_NAME=${2}
+                        shift 2 # shift past argument and value
+                        ;;
+                -f=*|--filename=*)
+                        FILE_NAME=$(echo ${1} | cut -d '=' -f 2)
+                        shift # shift past argument=value
+                        ;;
+                *)
+                        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Option, ${1}, entered on the command line is not supported." 1>&2
+                        display_usage
+                        exit 1
+                        ;;
+        esac
+done
+if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}< FILE_NAME >${FILE_NAME}<" 1>&2 ; fi
 
 ###     Example arguments (2)
 #       Order of precedence: CLI argument, default code
