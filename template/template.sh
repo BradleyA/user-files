@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.213.270  2019-07-26T12:48:08.005074-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.212-1-g56f79c1  
+# 	   update production standard 9.0 Parse CLI options and arguments with USER_HOME SSH_USER #24 
 # 	template/template.sh  3.212.268  2019-07-25T22:25:38.198238-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.211  
 # 	   added production standard 9.0 Parse CLI options and arguments #24 
 # 	template/template.sh  3.211.267  2019-07-25T22:20:58.812750-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.210  
@@ -387,6 +389,32 @@ while [[ "${#}" -gt 0 ]] ; do
                         ;;
                 -f=*|--filename=*)
                         FILE_NAME=$(echo ${1} | cut -d '=' -f 2)
+                        shift # shift past argument=value
+                        ;;
+                -S|--ssh_user)
+                        if [ "${2}" == "" ] ; then      # Check if argument is blank
+                                display_usage
+                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+                                exit 1
+                        fi
+                        SSH_USER=${2}
+                        shift 2 # shift past argument and value
+                        ;;
+                -S=*|--ssh_user=*)
+                        SSH_USER=$(echo ${1} | cut -d '=' -f 2)
+                        shift # shift past argument=value
+                        ;;
+                -U|--user_home)
+                        if [ "${2}" == "" ] ; then      # Check if argument is blank
+                                display_usage
+                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+                                exit 1
+                        fi
+                        USER_HOME=${2}
+                        shift 2 # shift past argument and value
+                        ;;
+                -U=*|--user_home=*)
+                        USER_HOME=$(echo ${1} | cut -d '=' -f 2)
                         shift # shift past argument=value
                         ;;
                 *)
