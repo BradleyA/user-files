@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.211.267  2019-07-25T22:20:58.812750-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.210  
+# 	   update Example arguments (3-4) 
 # 	template/template.sh  3.210.266  2019-07-25T22:16:09.842180-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.209  
 # 	   updated Example arguments (2) 
 # 	template/template.sh  3.209.265  2019-07-25T22:13:51.941873-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.208  
@@ -339,48 +341,22 @@ OPTION2=${2:-${DEFAULT_VALUE2}}
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... OPTION1 >${OPTION1}< OPTION2 >${OPTION2}<" 1>&2 ; fi
 #	Example arguments
 
-###	EXAMPLE ONE
-#
-#	Example code is a template, it will not work until chnaged
-#
-#	Check if argument 1 is blank
-if [ "${1}" == "" ] ; then
-	display_help | more
-#       Help hint
-	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  File not found on command line" 1>&2
-	exit 0
-fi
-#	Check if argument 1 is -f or --file
-if [ "${1}" == "--file" ] || [ "${1}" == "-f" ] ; then
-	#	Check if argument 2 is blank
-	if [ "${2}" == "" ] ; then
-		display_help | more
-#       	Help hint
-		get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  File name not found; --file <path>/<file_name> or -f <path>/<file_name> option" 1>&2
-		exit 0
-	fi
-	OPTION2=${2}
-else
-	#	Locate file in the PATH
-	TEMP=$(whereis "${1}")
-	MARKIT_FILE=$(echo "${TEMP}" | awk {'print $2'} )
-	if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Locate file in the PATH... MARKIT_FILE >${MARKIT_FILE}<" 1>&2 ; fi
-	#	Check if MARKIT_FILE is blank
-	if [ "${MARKIT_FILE}" == "" ] ; then
-		display_help | more
-#       	Help hint
-		get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  ${1} not found; use --file <path>/<file_name> or -f <path>/<file_name> option" 1>&2
-		exit 0
-	fi
-fi
+###     Example arguments (3)
+### production standard 7.0 Default variable value
+#       Order of precedence: CLI argument, environment variable, default code
+if [ $# -ge  1 ]  ; then CLUSTER=${1} ; elif [ "${CLUSTER}" == "" ] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
+#       Order of precedence: CLI argument, default code
+ADMUSER=${2:-${DEFAULT_USER}}
+#       Order of precedence: CLI argument, environment variable, default code
+if [ $# -ge  3 ]  ; then DATA_DIR=${3} ; elif [ "${DATA_DIR}" == "" ] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
+if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
-#
-###	EXAMPLE TWO
-#	Check arguement 1 xxx
+###     Example arguments (4)
+#       Check arguement 1 xxx
 if [ "$1" != "no" ] && [ "$1" != "normal" ] && [ "$1" != "all" ] && [ "$1" != "" ] ; then
-	display_help | more
-	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${BOLD}[ERROR]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  First arguement, ${1}, is NOT no, normal, all." 1>&2
-	exit 0
+        display_help | more
+        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${BOLD}[ERROR]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  First arguement, ${1}, is NOT no, normal, all." 1>&2
+        exit 0
 fi
 
 #
