@@ -1,4 +1,7 @@
 #!/bin/bash
+# 	template/template.sh  3.203.259  2019-07-25T21:49:56.098233-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.200  
+# 	   test git push 
+
 # 	template/template.sh  3.200.258  2019-07-24T16:54:35.376680-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.199  
 # 	   change production standard 8.3.200 --usage 
 # 	template/template.sh  3.199.257  2019-07-21T10:20:31.711059-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.198  
