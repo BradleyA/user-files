@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.206.262  2019-07-25T22:06:17.399950-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.205  
+# 	   update display_help OPTIONS section to match USAGE section 
 # 	template/template.sh  3.205.261  2019-07-25T22:01:19.915446-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.204  
 # 	   template.sh remove $0 from display_help sections to ${COMMAND_NAME} to help with CI/CD & CT #22 #23 
 # 	template/template.sh  3.199.257  2019-07-21T10:20:31.711059-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.198  
@@ -88,13 +90,15 @@ echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
 echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
 echo -e "\nOPTIONS"
-echo    "   -f, --file      path and file on system '<path>/<file_name>'"
-echo -e "\nOPTIONS"
-echo    "Order of precedence: CLI options, environment variable, default code."
-echo -e "   <<your environment variables information goes here>>"
-echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
-echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
-echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
+echo -e "Order of precedence: CLI options, environment variable, default code.\n"
+echo    "   -c, --cluster, -c=, --cluster=<CLUSTER>"
+echo -e "\tCluster name (default '${DEFAULT_CLUSTER}')\n"
+echo    "   -d, --datadir, -d=, --datadir=<DATA_DIR>"
+echo -e "\tData directory (default '${DEFAULT_DATA_DIR}')\n"
+echo    "   -a, --admuser, -a=, --admuser=<ADMUSER>"
+echo -e "\tSite SRE administrator, default is user running script\n"
+echo    "   -f, --file, -f=, --filename=<FILENAME>"
+echo -e "\tPath and file on system '<path>/<file_name>'"
 ### production standard 6.1.177 Architecture tree
 echo -e "\nARCHITECTURE TREE"	# STORAGE & CERTIFICATION
 echo    "/usr/local/data/                           <-- <DATA_DIR>"
