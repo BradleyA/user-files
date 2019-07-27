@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.214.271  2019-07-27T10:36:44.430652-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.213  
+# 	   template.sh BOLD display_help section titles 
 # 	template/template.sh  3.213.270  2019-07-26T12:48:08.005074-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.212-1-g56f79c1  
 # 	   update production standard 9.0 Parse CLI options and arguments with USER_HOME SSH_USER #24 
 # 	template/template.sh  3.212.268  2019-07-25T22:25:38.198238-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.211  
@@ -38,21 +40,21 @@ NORMAL=$(tput -Txterm sgr0)
 DEFAULT_CLUSTER="us-tx-cluster-1/"
 DEFAULT_USER=${USER}
 DEFAULT_DATA_DIR="/usr/local/data/"
-### production standard 8.3.204 --usage
+### production standard 8.3.214 --usage
 display_usage() {
 COMMAND_NAME=$(echo $0 | sed 's/^.*\///')
 echo -e "\n${NORMAL}${0}\n   brief description . . ."
-echo -e "\nUSAGE"
+echo -e "\n${BOLD}USAGE${NORMAL}"
 echo -e "   ${COMMAND_NAME} [-c <CLUSTER>] [-d <DATA_DIR>] [-a <ADMUSER>] [-f <PATH>/<FILE_NAME>]\n"
 echo    "   ${COMMAND_NAME} [--help | -help | help | -h | h | -?]"
 echo    "   ${COMMAND_NAME} [--usage | -usage | -u]"
 echo    "   ${COMMAND_NAME} [--version | -version | -v]"
 }
-### production standard 0.1.166 --help
+### production standard 0.3.214 --help
 display_help() {
 display_usage
 #	Displaying help DESCRIPTION in English en_US.UTF-8
-echo -e "\nDESCRIPTION"
+echo -e "\n${BOLD}DESCRIPTION${NORMAL}"
 echo    "<your help goes here>"
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
 
@@ -93,7 +95,7 @@ if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG
 elif ! [ "${LANG}" == "en_US.UTF-8" ] ; then
 	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
 fi
-echo -e "\nENVIRONMENT VARIABLES"
+echo -e "\n${BOLD}ENVIRONMENT VARIABLES${NORMAL}"
 echo    "If using the bash shell, enter; 'export DEBUG=1' on the command line to set"
 echo    "the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  Use the"
 echo    "command, 'unset DEBUG' to remove the exported information from the DEBUG"
@@ -103,7 +105,7 @@ echo    "   DEBUG           (default off '0')"
 echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
 echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
-echo -e "\nOPTIONS"
+echo -e "\n${BOLD}OPTIONS${NORMAL}"
 echo -e "Order of precedence: CLI options, environment variable, default code.\n"
 echo    "   -c, --cluster, -c=, --cluster=<CLUSTER>"
 echo -e "\tCluster name (default '${DEFAULT_CLUSTER}')\n"
@@ -114,7 +116,7 @@ echo -e "\tSite SRE administrator, default is user running script\n"
 echo    "   -f, --file, -f=, --filename=<FILENAME>"
 echo -e "\tPath and file on system '<path>/<file_name>'"
 ### production standard 6.1.177 Architecture tree
-echo -e "\nARCHITECTURE TREE"	# STORAGE & CERTIFICATION
+echo -e "\n${BOLD}ARCHITECTURE TREE${NORMAL}"	# STORAGE & CERTIFICATION
 echo    "/usr/local/data/                           <-- <DATA_DIR>"
 echo    "├── <CLUSTER>/                             <-- <CLUSTER>"
 echo    "│   ├── docker/                            <-- Root directory of persistent"
@@ -259,9 +261,9 @@ echo    "    ├── docker.pid                         <-- Docker daemon PID 
 echo    "    └── docker.######.######/              <-- Root directory for Docker"
 echo    "                                               execution state files using"
 echo    "                                               user namespace"
-echo -e "\nDOCUMENTATION"
+echo -e "\n${BOLD}DOCUMENTATION${NORMAL}"
 echo    "   https://github.com/BradleyA/   <<URL to online repository README>>"
-echo -e "\nEXAMPLES"
+echo -e "\n${BOLD}EXAMPLES${NORMAL}"
 echo -e "   <<your code examples description goes here>>\n\t${BOLD}${0} <<code example goes here>>${NORMAL}"
 echo -e "   <<your code examples description goes here>>\n\t${BOLD}${0}${NORMAL}"
 }
