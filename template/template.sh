@@ -1,5 +1,7 @@
 #!/bin/bash
-# 	template/template.sh  3.217.275  2019-07-28T10:46:26.817945-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.216  
+# 	template/template.sh  3.219.277  2019-07-28T11:45:16.951656-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.218  
+# 	   template.sh  run first test for test cases 
+# 	template/template.sh  3.217.275  2019-07-28T10:46:26.817945-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.216
 # 	   add DEFAULT_ variables from other scripts and completed testing for production standard 9.0 Parse CLI options and arguments close #24 
 # 	template/template.sh  3.205.261  2019-07-25T22:01:19.915446-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.204  
 # 	   template.sh remove $0 from display_help sections to ${COMMAND_NAME} to help with CI/CD & CT #22 #23 
@@ -15,7 +17,7 @@ if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, '
 BOLD=$(tput -Txterm bold)
 NORMAL=$(tput -Txterm sgr0)
 ### production standard 7.0 Default variable value
-DEFAULT_USER=${USER}
+DEFAULT_USER="${USER}"
 DEFAULT_SSH_USER="${USER}"
 DEFAULT_TLS_USER="${USER}"
 DEFAULT_ADM_TLS_USER="${USER}"
@@ -31,9 +33,9 @@ DEFAULT_NUMBER_DAYS="730"
 DEFAULT_REMOTE_COMMAND=""
 DEFAULT_REMOTE_COMMAND_OPTION=""
 DEFAULT_WORKING_DIRECTORY="$(echo ~)/.docker"
-DEFAULT_FQDN=$(hostname -f)    		# local host
+DEFAULT_FQDN="$(hostname -f)"		# local host
 DEFAULT_REMOTE_HOST="$(hostname -f)"    # local host
-DEFAULT_REGISTRY_HOST=$(hostname -f)    # local host
+DEFAULT_REGISTRY_HOST="$(hostname -f)"    # local host
 DEFAULT_REGISTRY_PORT="5000"
 ### production standard 8.3.214 --usage
 display_usage() {
