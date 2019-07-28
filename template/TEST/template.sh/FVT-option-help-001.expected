@@ -1,0 +1,231 @@
+
+(B[mtemplate.sh
+   brief description . . .
+
+[1mUSAGE(B[m
+   template.sh [-c <CLUSTER>] [-d <DATA_DIR>] [-a <ADMUSER>] [-f <PATH>/<FILE_NAME>]
+
+   template.sh [--help | -help | help | -h | h | -?]
+   template.sh [--usage | -usage | -u]
+   template.sh [--version | -version | -v]
+
+[1mDESCRIPTION(B[m
+<your help goes here>
+>>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |
+
+<<Paragraph two>>
+
+The <DATA_DIR>/<CLUSTER>/<SYSTEMS_FILE> includes one FQDN or IP address per
+line for all hosts in the cluster.  Lines in <SYSTEMS_FILE> that begin with a
+'#' are comments.  The <SYSTEMS_FILE> is used by markit/find-code.sh,
+Linux-admin/cluster-command/cluster-command.sh, docker-TLS/copy-registry-tls.sh,
+pi-display/create-message/create-display-message.sh, and other scripts.  A
+different <SYSTEMS_FILE> can be entered on the command line or environment
+variable.
+
+This script works for the local host only.  To use check-host-tls.sh on a
+remote hosts (one-rpi3b.cptx86.com) with ssh port of 12323 as uadmin user;
+	[1mssh -tp 12323 uadmin@one-rpi3b.cptx86.com 'sudo check-host-tls.sh'(B[m
+To loop through a list of hosts in the cluster use,
+https://github.com/BradleyA/Linux-admin/tree/master/cluster-command
+	[1mcluster-command.sh special 'sudo check-host-tls.sh'(B[m
+
+The administration user may receive password and/or passphrase prompts from a
+remote systen; running the following may stop the prompts in your cluster.
+	[1mssh-copy-id <TLS_USER>@<REMOTE_HOST>(B[m
+or
+	[1mssh-copy-id <TLS_USER>@<192.168.x.x>(B[m
+If that does not resolve the prompting challenge then review the man pages for
+ssh-agent and ssh-add before entering the following in a terminal window.
+	[1meval $(ssh-agent)(B[m
+	[1mssh-add(B[m
+
+[1mENVIRONMENT VARIABLES(B[m
+If using the bash shell, enter; 'export DEBUG=1' on the command line to set
+the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  Use the
+command, 'unset DEBUG' to remove the exported information from the DEBUG
+environment variable.  You are on your own defining environment variables if
+you are using other shells.
+   DEBUG           (default off '0')
+   CLUSTER         Cluster name (default 'us-tx-cluster-1/')
+   DATA_DIR        Data directory (default '/usr/local/data/')
+   SYSTEMS_FILE    Hosts in cluster (default 'SYSTEMS')
+
+[1mOPTIONS(B[m
+Order of precedence: CLI options, environment variable, default code.
+
+   -c, --cluster, -c=, --cluster=<CLUSTER>
+	Cluster name (default 'us-tx-cluster-1/')
+
+   -d, --datadir, -d=, --datadir=<DATA_DIR>
+	Data directory (default '/usr/local/data/')
+
+   -a, --admuser, -a=, --admuser=<ADMUSER>
+	Site SRE administrator, default is user running script
+
+   -f, --file, -f=, --filename=<FILENAME>
+	Path and file on system '<path>/<file_name>'
+
+   -S, --ssh_user, -S=, --ssh_user=<SSH_USER>
+	Location of user home directory (default /home/)
+
+   -U, --user_home, -U=, --user_home=<USER_HOME>
+   
+
+[1mARCHITECTURE TREE(B[m
+/usr/local/data/                           <-- <DATA_DIR>
+├── <CLUSTER>/                             <-- <CLUSTER>
+│   ├── docker/                            <-- Root directory of persistent
+│   │   │                                      Docker state files; (images)
+│   │   └── ######.######/                 <-- Root directory of persistent
+│   │                                          Docker state files; (images)
+│   │                                          when using user namespace
+│   ├── SYSTEMS                            <-- List of hosts in cluster
+│   ├── log/                               <-- Host log directory
+│   ├── logrotate/                         <-- Host logrotate directory
+│   ├── docker-accounts/                   <-- Docker TLS certs
+│   │   ├── <HOST-1>/                      <-- Host in cluster
+│   │   │   ├── ssh/
+│   │   │   │   ├── AllowUsers             <-- User name patterns allowed
+│   │   │   │   ├── ssh_host_ed25519_fingerprint <-- XXXX think about only having one finger print file for all called fingerprint keytype
+│   │   │   │   ├── ssh_host_rsa_fingerprint <-- 
+│   │   │   │   ├── ssh_known_hosts        <-- Host public keys for all
+│   │   │   │   │                              known hosts in cluster
+│   │   │   │   ├── shosts.equiv           <-- 
+│   │   │   │   ├── ssh_host_rsa_key       <-- OpenSSH host private key
+│   │   │   │   ├── ssh_host_rsa_key.pub   <-- OpenSSH host public key
+│   │   │   │   ├── ssh_host_ed25519_key   <-- OpenSSH host private key
+│   │   │   │   ├── ssh_host_ed25519_key.pub <-- OpenSSH host public key
+│   │   │   │   └── keys/
+│   │   │   │       ├── <USER-1>/
+│   │   │   │       │   └── authorized_keys
+│   │   │   │       └── <USER-2>/
+│   │   │   ├── <USER-1>/                  <-- User TLS certs directory
+│   │   │   │   ├── docker         FUTURE  <-- User tlscacert
+│   │   │   │   │   ├── ca.pem     FUTURE  <-- User tlscacert
+│   │   │   │   │   ├── cert.pem   FUTURE  <-- User tlscert
+│   │   │   │   │   ├── key.pem    FUTURE  <-- User tlskey
+│   │   │   │   │   └── trust/             <-- Backup of Docker Content Trust
+│   │   │   │   │                              (DCT) keys
+│   │   │   │   └── ssh/
+│   │   │   │       ├── authorized_keys    <-- SSH user public keys for login 644
+│   │   │   │       └── inventory/ FUTURE  <-- SSH user inventory
+│   │   │   └── <USER-2>/                  <-- User TLS certs directory
+│   │   └── <HOST-2>/                      <-- Host in cluster
+│   └── docker-registry/                   <-- Docker registry directory
+│       ├── <REGISTRY_HOST>-<REGISTRY_PORT>/ < Registry container mount
+│       │   ├── certs/                     <-- Registry cert directory
+│       │   │   ├── domain.crt             <-- Registry cert
+│       │   │   └── domain.key             <-- Registry private key
+│       │   └── docker/                    <-- Registry storage directory
+│       ├── <REGISTRY_HOST>-<REGISTRY_PORT>/ < Registry container mount
+│       └── <REGISTRY_HOST>-<REGISTRY_PORT>/ < Registry container mount
+└── <STANDALONE>/                          <-- <STANDALONE> Architecture tree
+                                               is the same as <CLUSTER> TREE but
+                                               the systems are not in a cluster
+
+<USER_HOME>/                               <-- Location of user home directory
+├── <USER-1>/.docker/                      <-- User docker cert directory
+│   ├── ca.pem                             <-- User tlscacert or symbolic link
+│   ├── cert.pem                           <-- Symbolic link to user tlscert
+│   ├── key.pem                            <-- Symbolic link to user tlskey
+│   ├── docker-ca/                         <-- Working directory to create certs
+│   ├── trust/                             <-- Docker Content Trust (DCT)
+│   │   ├── private/                       <-- Notary Canonical Root Key ID
+│   │   │                                      (DCT Root Key)
+│   │   ├── trusted_certificates/          <-- Docker Content Trust (DCT) keys
+│   │   └── tuf/                           <-- Update Framework (TUF)
+│   ├── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory
+│   │   │                                      to create registory certs
+│   │   ├── ca.crt                         <-- Daemon registry domain cert
+│   │   ├── domain.crt                     <-- Registry cert
+│   │   └── domain.key                     <-- Registry private key
+│   ├── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory
+│   │                                          to create registory certs
+│   └── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory
+│                                              to create registory certs
+└── <USER-1>/.ssh/                         <-- Secure Socket Shell directory
+    ├── authorized_keys                    <-- SSH keys for logging into account
+    ├── config                             <-- SSH user configuration file
+    ├── id_rsa                             <-- SSH private key
+    ├── id_rsa.pub                         <-- SSH public key
+    └── known_hosts                        <-- Systems previously connected to
+
+/etc/ 
+├── docker/ 
+│   ├── certs.d/                           <-- Host docker cert directory
+│   │   ├── daemon/                        <-- Daemon cert directory
+│   │   │   ├── ca.pem                     <-- Daemon tlscacert
+│   │   │   ├── cert.pem                   <-- Daemon tlscert
+│   │   │   └── key.pem                    <-- Daemon tlskey
+│   │   ├── <REGISTRY_HOST>:<REGISTRY_PORT>/ < Registry cert directory
+│   │   │   └── ca.crt                     <-- Daemon registry domain cert
+│   │   ├── <REGISTRY_HOST>:<REGISTRY_PORT>/ < Registry cert directory
+│   │   └── <REGISTRY_HOST>:<REGISTRY_PORT>/ < Registry cert directory
+│   ├── daemon.json                        <-- Daemon configuration file
+│   ├── key.json                           <-- Automatically generated dockerd
+│   │                                          key for TLS connections to other
+│   │                                          TLS servers
+│   ├── 10-override.begin                  <-- docker.service.d default lines
+│   ├── dockerd-configuration-file         <-- Daemon configuration
+│   ├── dockerd-configuration-file.service <- runs start-dockerd-with-systemd.sh
+│   │                                          during boot
+│   ├── docker.org                         <-- Copy of /etc/default/docker
+│   ├── README.md
+│   ├── setup-dockerd.sh                   <-- moves and creates files
+│   ├── start-dockerd-with-systemd.begin   <-- Beginning default lines
+│   ├── start-dockerd-with-systemd.end     <-- Ending default lines
+│   ├── start-dockerd-with-systemd.sh
+│   └── uninstall-dockerd-scripts.sh       <-- Removes files and scripts
+├── systemd/system/                        <-- Local systemd configurations
+│   ├── dockerd-configuration-file.service <-- Runs start-dockerd-with-systemd.sh
+│   ├── docker.service.d/
+│   │   └── 10-override.conf               <-- Override configutation file
+│   └── docker.service.wants/              <-- Dependencies
+├── default/
+│   └── docker                             <-- Docker daemon Upstart and
+│                                              SysVinit configuration file
+├── ssl/
+│   └── openssl.cnf                        <-- OpenSSL configuration file
+├── ssh/
+│   ├── moduli                             <-- Diffie-Hellman moduli
+│   ├── shosts.equiv                       <-- host-based authentication
+│   ├── ssh_config                         <-- OpenSSH systemwide configuration
+│   │                                          file
+│   ├── sshd_config                        <-- OpenSSH daemon configuration
+│   │                                          file
+│   ├── ssh_host_rsa_key                   <-- OpenSSH host private key
+│   ├── ssh_host_rsa_key.pub               <-- OpenSSH host public key
+│   ├── ssh_host_ed25519_key               <-- OpenSSH host private key
+│   ├── ssh_host_ed25519_key.pub           <-- OpenSSH host public key
+>>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |
+│   ├── ssh_known_hosts                    <-- OpenSSH systemwide list of known
+│   │                                          public host keys
+│   └── keys                               <-- Support SSH remote login when
+│       │                                      user home directory encrypted
+│       ├── <USER-1>/                      <-- User SSH authorized_keys directory 755
+│       │   └── authorized_keys            <-- SSH user public keys for login 644
+│       └── <USER-2>/                      <-- User systemwide SSH directory
+└── hosts.equiv                            <-- host-based authentication
+
+/var/
+├── lib/docker/                            <-- Root directory of persistent
+│                                              Docker state files; (images)
+│                                              changed to symbolic link pointing
+│                                              to <DATA_DIR>/<CLUSTER>/docker
+└── run/
+    ├── docker/                            <-- Root directory for Docker
+    │                                          execution state files
+    ├── docker.pid                         <-- Docker daemon PID file
+    └── docker.######.######/              <-- Root directory for Docker
+                                               execution state files using
+                                               user namespace
+
+[1mDOCUMENTATION(B[m
+   https://github.com/BradleyA/   <<URL to online repository README>>
+
+[1mEXAMPLES(B[m
+   <<your code examples description goes here>>
+	[1mtemplate.sh <<code example goes here>>(B[m
+   <<your code examples description goes here>>
+	[1mtemplate.sh(B[m
