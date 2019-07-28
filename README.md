@@ -1,8 +1,7 @@
 # user-files  [![Stable Release](https://img.shields.io/badge/Release-3.124-blue.svg)](https://github.com/BradleyA/user-files/releases/tag/3.124)    [![GitHub commits](https://img.shields.io/github/commits-since/BradleyA/user-files/3.124.svg)](https://github.com/BradleyA/user-files/commits/)
-General user files when moving to a new system.
+General user files, dot files, with a few special tweeks to make my system time better.  When setting up a new system I pull these files to update my user profiles.  In the template directory, there are a few template files (sh,py) that include production standards that I designed as best practices when creating new scripts.  When creating a new script I merge sections of code needed from a template file.
 
 #### If you like this repository, select in the upper-right corner, star, thank you.
-#### To watch future updates in this repository select in the upper-right corner, the "Watch" list, and select Watching.
 
 ## Clone
 
@@ -41,6 +40,8 @@ To download the latest commit of one of these files, for example .gitignore, cha
 ./template/template.py
 
 ./template/template.sh
+
+#### To watch future updates in this repository select in the upper-right corner, the "Watch" list, and select Watching.
 
 #### Author
 [<img id="twitter" src="images/twitter.png" width="50" a="twitter.com/bradleyaustintx/">
