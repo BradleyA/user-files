@@ -1,30 +1,8 @@
 #!/bin/bash
-# 	template/template.sh  3.214.271  2019-07-27T10:36:44.430652-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.213  
-# 	   template.sh BOLD display_help section titles 
-# 	template/template.sh  3.213.270  2019-07-26T12:48:08.005074-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.212-1-g56f79c1  
-# 	   update production standard 9.0 Parse CLI options and arguments with USER_HOME SSH_USER #24 
-# 	template/template.sh  3.212.268  2019-07-25T22:25:38.198238-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.211  
-# 	   added production standard 9.0 Parse CLI options and arguments #24 
-# 	template/template.sh  3.211.267  2019-07-25T22:20:58.812750-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.210  
-# 	   update Example arguments (3-4) 
-# 	template/template.sh  3.210.266  2019-07-25T22:16:09.842180-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.209  
-# 	   updated Example arguments (2) 
-# 	template/template.sh  3.209.265  2019-07-25T22:13:51.941873-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.208  
-# 	   add Example arguments (1) #24 
-# 	template/template.sh  3.208.264  2019-07-25T22:11:03.789319-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.207  
-# 	   remove example code 
-# 	template/template.sh  3.207.263  2019-07-25T22:09:10.164673-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.206  
-# 	   move function  Test <REGISTRY_PORT> for integer 
-# 	template/template.sh  3.206.262  2019-07-25T22:06:17.399950-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.205  
-# 	   update display_help OPTIONS section to match USAGE section 
+# 	template/template.sh  3.217.275  2019-07-28T10:46:26.817945-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.216  
+# 	   add DEFAULT_ variables from other scripts and completed testing for production standard 9.0 Parse CLI options and arguments close #24 
 # 	template/template.sh  3.205.261  2019-07-25T22:01:19.915446-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.204  
 # 	   template.sh remove $0 from display_help sections to ${COMMAND_NAME} to help with CI/CD & CT #22 #23 
-# 	template/template.sh  3.199.257  2019-07-21T10:20:31.711059-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.198  
-# 	   update ARCHITECTURE TREE ~user/.docker/ca.pem 
-# 	template/template.sh  3.194.252  2019-06-07T22:26:55.250843-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.193  
-# 	   minor updates, update ARCHITECTURE TREE with ssh design 
-# 	template/template.sh  3.193.251  2019-05-31T11:03:32.153161-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.192  
-# 	   template[sh-py] --> production standard 8 --usage close #22 
 ### production standard 3.0 shellcheck
 ### production standard 5.1.160 Copyright
 #	Copyright (c) 2019 Bradley Allen
@@ -37,13 +15,30 @@ if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, '
 BOLD=$(tput -Txterm bold)
 NORMAL=$(tput -Txterm sgr0)
 ### production standard 7.0 Default variable value
-DEFAULT_CLUSTER="us-tx-cluster-1/"
 DEFAULT_USER=${USER}
+DEFAULT_SSH_USER="${USER}"
+DEFAULT_TLS_USER="${USER}"
+DEFAULT_ADM_TLS_USER="${USER}"
+DEFAULT_USER_HOME="/home/"
 DEFAULT_DATA_DIR="/usr/local/data/"
+DEFAULT_CLUSTER="us-tx-cluster-1/"
+DEFAULT_SYSTEMS_FILE="SYSTEMS"
+DEFAULT_CERT_DIR="${HOME}/.docker"
+DEFAULT_CERT_DAEMON_DIR="/etc/docker/certs.d/daemon/"
+DEFAULT_CA_CERT="ca.pem"
+DEFAULT_CA_PRIVATE_CERT="ca-priv-key.pem"
+DEFAULT_NUMBER_DAYS="730"
+DEFAULT_REMOTE_COMMAND=""
+DEFAULT_REMOTE_COMMAND_OPTION=""
+DEFAULT_WORKING_DIRECTORY="$(echo ~)/.docker"
+DEFAULT_FQDN=$(hostname -f)    		# local host
+DEFAULT_REMOTE_HOST="$(hostname -f)"    # local host
+DEFAULT_REGISTRY_HOST=$(hostname -f)    # local host
+DEFAULT_REGISTRY_PORT="5000"
 ### production standard 8.3.214 --usage
 display_usage() {
 COMMAND_NAME=$(echo $0 | sed 's/^.*\///')
-echo -e "\n${NORMAL}${0}\n   brief description . . ."
+echo -e "\n${NORMAL}${COMMAND_NAME}\n   brief description . . ."
 echo -e "\n${BOLD}USAGE${NORMAL}"
 echo -e "   ${COMMAND_NAME} [-c <CLUSTER>] [-d <DATA_DIR>] [-a <ADMUSER>] [-f <PATH>/<FILE_NAME>]\n"
 echo    "   ${COMMAND_NAME} [--help | -help | help | -h | h | -?]"
@@ -114,7 +109,11 @@ echo -e "\tData directory (default '${DEFAULT_DATA_DIR}')\n"
 echo    "   -a, --admuser, -a=, --admuser=<ADMUSER>"
 echo -e "\tSite SRE administrator, default is user running script\n"
 echo    "   -f, --file, -f=, --filename=<FILENAME>"
-echo -e "\tPath and file on system '<path>/<file_name>'"
+echo -e "\tPath and file on system '<path>/<file_name>'\n"
+echo    "   -S, --ssh_user, -S=, --ssh_user=<SSH_USER>"
+echo -e "\tLocation of user home directory (default ${DEFAULT_USER_HOME})\n"
+echo    "   -U, --user_home, -U=, --user_home=<USER_HOME>"
+echo -e "   "
 ### production standard 6.1.177 Architecture tree
 echo -e "\n${BOLD}ARCHITECTURE TREE${NORMAL}"	# STORAGE & CERTIFICATION
 echo    "/usr/local/data/                           <-- <DATA_DIR>"
@@ -406,7 +405,7 @@ while [[ "${#}" -gt 0 ]] ; do
                         SSH_USER=$(echo ${1} | cut -d '=' -f 2)
                         shift # shift past argument=value
                         ;;
-                -U|--user_home)
+                -U|--user_home)				# USER_HOME="/home/"
                         if [ "${2}" == "" ] ; then      # Check if argument is blank
                                 display_usage
                                 get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
@@ -415,7 +414,7 @@ while [[ "${#}" -gt 0 ]] ; do
                         USER_HOME=${2}
                         shift 2 # shift past argument and value
                         ;;
-                -U=*|--user_home=*)
+                -U=*|--user_home=*)			# USER_HOME="/home/"
                         USER_HOME=$(echo ${1} | cut -d '=' -f 2)
                         shift # shift past argument=value
                         ;;
