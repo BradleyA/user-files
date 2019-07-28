@@ -1,20 +1,2 @@
-#
-#	template/test-warn-file  3.196.254  2019-06-08T10:39:25.240981-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.195  
-#	   design large text for WARNING ERROR INFO 
-###
- __      ___   ___ _  _ ___ _  _  ___ 
- \ \    / /_\ | _ \ \| |_ _| \| |/ __|
-  \ \/\/ / _ \|   / .` || || .` | (_ |
-   \_/\_/_/ \_\_|_\_|\_|___|_|\_|\___|
-
- ___ ___ ___ ___ ___
-|  _| _ \ _ \   | _ \
-|  _|   /   / | |   /
-|___|_|_\_|_\___|_|_\
-
- ___ _  _ ___ ___
-|_ _| \| | __|   |
-|| || .  | _|| | |
-|___|_|\_|_| |___|
-
-###
+#	template/test-warn-file  3.215.273  2019-07-28T09:09:32.436077-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.214-1-g429ae4d  
+#	   added a few more text words 
