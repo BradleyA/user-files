@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.223.283  2019-07-28T12:29:06.680568-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  six-rpi3b.cptx86.com 3.222  
+# 	   template.sh  run test of test cases 
 # 	template/template.sh  3.222.282  2019-07-28T12:24:41.515082-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  six-rpi3b.cptx86.com 3.221  
 # 	   template.sh  run test of test cases 
 # 	template/template.sh  3.217.275  2019-07-28T10:46:26.817945-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.216
@@ -265,8 +267,8 @@ echo    "                                               user namespace"
 echo -e "\n${BOLD}DOCUMENTATION${NORMAL}"
 echo    "   https://github.com/BradleyA/   <<URL to online repository README>>"
 echo -e "\n${BOLD}EXAMPLES${NORMAL}"
-echo -e "   <<your code examples description goes here>>\n\t${BOLD}${0} <<code example goes here>>${NORMAL}"
-echo -e "   <<your code examples description goes here>>\n\t${BOLD}${0}${NORMAL}"
+echo -e "   <<your code examples description goes here>>\n\t${BOLD}${COMMAND_NAME} <<code example goes here>>${NORMAL}"
+echo -e "   <<your code examples description goes here>>\n\t${BOLD}${COMMAND_NAME}${NORMAL}"
 }
 
 #	Date and time function ISO 8601
