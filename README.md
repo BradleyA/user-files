@@ -39,9 +39,15 @@ To download the latest commit of one of these files, for example .gitignore, cha
 
 ./bin/find-code.sh
 
+./etc/ssh/(ssh_config-$HOSTNAME, sshd_config-$HOSTNAME)
+
+./hooks/(post-commit, pre-commit, README.md, var-git-test.examples)
+
 ./template/template.py
 
 ./template/template.sh
+
+./template/TEST/template.sh/(FVT-option-TEST_CASES , FVT-setup.sh)
 
 #### To watch future updates in this repository select in the upper-right corner, the "Watch" list, and select Watching.
 
