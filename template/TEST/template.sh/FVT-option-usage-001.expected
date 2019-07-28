@@ -1,0 +1,10 @@
+
+(B[mtemplate.sh
+   brief description . . .
+
+[1mUSAGE(B[m
+   template.sh [-c <CLUSTER>] [-d <DATA_DIR>] [-a <ADMUSER>] [-f <PATH>/<FILE_NAME>]
+
+   template.sh [--help | -help | help | -h | h | -?]
+   template.sh [--usage | -usage | -u]
+   template.sh [--version | -version | -v]
