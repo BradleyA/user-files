@@ -1,5 +1,5 @@
 #!/bin/bash
-# 	template/template.sh  3.226.295  2019-07-28T14:34:46.181319-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.225-3-g460b9ca  
+# 	template/template.sh  3.227.297  2019-07-28T14:44:17.104671-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.226-1-gc681885  
 # 	   template.sh  run test after clone to make sure README.md is correct READY for release 
 # 	template/template.sh  3.217.275  2019-07-28T10:46:26.817945-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.216
 # 	   add DEFAULT_ variables from other scripts and completed testing for production standard 9.0 Parse CLI options and arguments close #24 
