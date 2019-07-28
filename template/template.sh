@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.219.277  2019-07-28T11:45:16.951656-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.218  
-# 	   template.sh  run first test for test cases 
+# 	template/template.sh  3.222.282  2019-07-28T12:24:41.515082-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  six-rpi3b.cptx86.com 3.221  
+# 	   template.sh  run test of test cases 
 # 	template/template.sh  3.217.275  2019-07-28T10:46:26.817945-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.216
 # 	   add DEFAULT_ variables from other scripts and completed testing for production standard 9.0 Parse CLI options and arguments close #24 
 # 	template/template.sh  3.205.261  2019-07-25T22:01:19.915446-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.204  
