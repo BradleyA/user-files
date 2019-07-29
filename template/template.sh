@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.228.299  2019-07-29T13:09:46.206443-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.227-1-g90b4f0a  
+# 	   ran shellcheck just a few Double quote changes and changed DEFAULT_USER_HOME & DEFAULT_WORKING_DIRECTORY 
 # 	template/template.sh  3.227.297  2019-07-28T14:44:17.104671-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.226-1-gc681885  
 # 	   template.sh  run test after clone to make sure README.md is correct READY for release 
 # 	template/template.sh  3.217.275  2019-07-28T10:46:26.817945-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.216
@@ -21,7 +23,7 @@ DEFAULT_USER="${USER}"
 DEFAULT_SSH_USER="${USER}"
 DEFAULT_TLS_USER="${USER}"
 DEFAULT_ADM_TLS_USER="${USER}"
-DEFAULT_USER_HOME="/home/"
+DEFAULT_USER_HOME=$(echo ~ | sed s/"${USER}"//)
 DEFAULT_DATA_DIR="/usr/local/data/"
 DEFAULT_CLUSTER="us-tx-cluster-1/"
 DEFAULT_SYSTEMS_FILE="SYSTEMS"
@@ -32,14 +34,14 @@ DEFAULT_CA_PRIVATE_CERT="ca-priv-key.pem"
 DEFAULT_NUMBER_DAYS="730"
 DEFAULT_REMOTE_COMMAND=""
 DEFAULT_REMOTE_COMMAND_OPTION=""
-DEFAULT_WORKING_DIRECTORY="$(echo ~)/.docker"
+DEFAULT_WORKING_DIRECTORY="$(echo ~/.docker/docker-ca)"
 DEFAULT_FQDN="$(hostname -f)"		# local host
 DEFAULT_REMOTE_HOST="$(hostname -f)"    # local host
 DEFAULT_REGISTRY_HOST="$(hostname -f)"    # local host
 DEFAULT_REGISTRY_PORT="5000"
 ### production standard 8.3.214 --usage
 display_usage() {
-COMMAND_NAME=$(echo $0 | sed 's/^.*\///')
+COMMAND_NAME=$(echo "${0}" | sed 's/^.*\///')
 echo -e "\n${NORMAL}${COMMAND_NAME}\n   brief description . . ."
 echo -e "\n${BOLD}USAGE${NORMAL}"
 echo -e "   ${COMMAND_NAME} [-c <CLUSTER>] [-d <DATA_DIR>] [-a <ADMUSER>] [-f <PATH>/<FILE_NAME>]\n"
@@ -352,7 +354,7 @@ while [[ "${#}" -gt 0 ]] ; do
                         shift 2 # shift past argument and value
                         ;;
                 -a=*|--admuser=*)
-                        ADMUSER=$(echo ${1} | cut -d '=' -f 2)
+                        ADMUSER=$(echo "${1}" | cut -d '=' -f 2)
                         shift # shift past argument=value
                         ;;
                 -c|--cluster)
@@ -365,7 +367,7 @@ while [[ "${#}" -gt 0 ]] ; do
                         shift 2 # shift past argument and value
                         ;;
                 -c=*|--cluster=*)
-                        CLUSTER=$(echo ${1} | cut -d '=' -f 2)
+                        CLUSTER=$(echo "${1}" | cut -d '=' -f 2)
                         shift # shift past argument=value
                         ;;
                 -d|--datadir)
@@ -378,7 +380,7 @@ while [[ "${#}" -gt 0 ]] ; do
                         shift 2 # shift past argument and value
                         ;;
                 -d=*|--datadir=*)
-                        DATA_DIR=$(echo ${1} | cut -d '=' -f 2)
+                        DATA_DIR=$(echo "${1}" | cut -d '=' -f 2)
                         shift # shift past argument=value
                         ;;
                 -f|--filename)
@@ -391,7 +393,7 @@ while [[ "${#}" -gt 0 ]] ; do
                         shift 2 # shift past argument and value
                         ;;
                 -f=*|--filename=*)
-                        FILE_NAME=$(echo ${1} | cut -d '=' -f 2)
+                        FILE_NAME=$(echo "${1}" | cut -d '=' -f 2)
                         shift # shift past argument=value
                         ;;
                 -S|--ssh_user)
@@ -404,7 +406,7 @@ while [[ "${#}" -gt 0 ]] ; do
                         shift 2 # shift past argument and value
                         ;;
                 -S=*|--ssh_user=*)
-                        SSH_USER=$(echo ${1} | cut -d '=' -f 2)
+                        SSH_USER=$(echo "${1}" | cut -d '=' -f 2)
                         shift # shift past argument=value
                         ;;
                 -U|--user_home)				# USER_HOME="/home/"
@@ -417,7 +419,7 @@ while [[ "${#}" -gt 0 ]] ; do
                         shift 2 # shift past argument and value
                         ;;
                 -U=*|--user_home=*)			# USER_HOME="/home/"
-                        USER_HOME=$(echo ${1} | cut -d '=' -f 2)
+                        USER_HOME=$(echo "${1}" | cut -d '=' -f 2)
                         shift # shift past argument=value
                         ;;
                 *)
