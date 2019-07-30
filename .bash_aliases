@@ -1,4 +1,6 @@
 ###
+#	.bash_aliases  3.229.300  2019-07-30T13:00:45.455564-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.228  
+#	   uncomment gst, gsts, gd aliases in .bash_aliases 
 #	.bash_aliases  3.121.168  2019-02-07T10:46:55.086485-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.120  
 #	   added gitlogl to search local repository to .bash_aliases 
 #	.bash_aliases	1.1.19	2018-02-20_19:42:38_CST uadmin six-rpi3b.cptx86.com 1.0-13-g6d5681d 
@@ -18,8 +20,9 @@
 #	curl -L https://api.github.com/repos/BradleyA/markit/tarball/3.4 | tar -xzf - --wildcards */markit ; mv BradleyA*/markit . ; rmdir BradleyA*/
 # Git Aliases examples from https://coderwall.com/p/_-ypzq/git-bash-fixing-it-with-alias-and-functions
 #	alias g='git'
-#	alias gst='git status'
-#	alias gd='git diff'
+alias gst='git status'
+alias gsts='git status -s'
+alias gd='git diff'
 #	alias gdc='git diff --cached'
 #	alias gl='git pull'
 #	alias gup='git pull --rebase'
@@ -55,7 +58,6 @@ alias gitlog='git log --graph --decorate --oneline --color --stat'
 #	check local repository
 alias gitlogl='git log --graph --decorate --oneline --color --stat origin..HEAD'
 #
-#	alias gss='git status -s'
 #	alias ga='git add'
 #	alias gm='git merge'
 #	alias grh='git reset HEAD'
