@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.230.301  2019-07-31T21:42:05.134949-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.229  
+# 	   typo in comment 
 # 	template/template.sh  3.228.299  2019-07-29T13:09:46.206443-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.227-1-g90b4f0a  
 # 	   ran shellcheck just a few Double quote changes and changed DEFAULT_USER_HOME & DEFAULT_WORKING_DIRECTORY 
 # 	template/template.sh  3.227.297  2019-07-28T14:44:17.104671-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.226-1-gc681885  
@@ -289,7 +291,7 @@ SCRIPT_VERSION=$(head -2 "${0}" | awk {'printf $3'})
 USER_ID=$(id -u)
 GROUP_ID=$(id -g)
 
-#       Added line because USER is not defined in crobtab jobs
+#       Added following code because USER is not defined in crobtab jobs
 if ! [ "${USER}" == "${LOGNAME}" ] ; then  USER=${LOGNAME} ; fi
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Setting USER to support crobtab...  USER >${USER}<  LOGNAME >${LOGNAME}<" 1>&2 ; fi
 
