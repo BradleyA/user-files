@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.231.302  2019-08-01T23:40:00.333530-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.230  
+# 	   template/template.sh  updated commit > The order of argument options matters. 
 # 	template/template.sh  3.230.301  2019-07-31T21:42:05.134949-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.229  
 # 	   typo in comment 
 # 	template/template.sh  3.228.299  2019-07-29T13:09:46.206443-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.227-1-g90b4f0a  
@@ -442,6 +444,7 @@ if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP}
 
 ###     Example arguments (3)
 ### production standard 7.0 Default variable value
+#	The order of argument options matters.
 #       Order of precedence: CLI argument, environment variable, default code
 if [ $# -ge  1 ]  ; then CLUSTER=${1} ; elif [ "${CLUSTER}" == "" ] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
 #       Order of precedence: CLI argument, default code
