@@ -1,0 +1,5 @@
+#
+#	template/example.text/example-commit-test  3.233.307  2019-08-09T17:00:47.926606-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.232  
+#	   hooks/(pro,post)-commit Create FVT testing production standard using .git/hooks #26 
+
+git rm $0
