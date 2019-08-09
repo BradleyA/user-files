@@ -1,4 +1,6 @@
-#
+###
+#	template/example.text/example-test-warn-file  3.234.308  2019-08-09T17:22:26.892162-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.233  
+#	   hooks/pre-commit run shellcheck 
 #	template/example-test-warn-file  3.216.274  2019-07-28T09:15:42.526082-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.215  
 #	   added a few more text words 
 #	template/test-warn-file  3.196.254  2019-06-08T10:39:25.240981-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.195  
@@ -25,6 +27,7 @@
 |__  __|  _|/  _|__  __|_ _| \| |/ __|
   | |  |  _|_\ \  | |   | || .` | (_ |
   |_|  |___|____| |_|  |___|_|\_|\___|
+
 ###
  __          __     _____  _   _ _____ _   _  _____ 
  \ \        / /\   |  __ \| \ | |_   _| \ | |/ ____|
