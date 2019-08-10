@@ -63,7 +63,7 @@ To download the latest commit of one of these files, for example .gitignore, cha
     mkdir TEST/<FILE_TO_BE_TESTED>/
     cd TEST/<FILE_TO_BE_TESTED>/
 
-Create a test case in directory, TEST/<FILE_TO_BE_TESTED>/, and name the file 'FVT-<test-case-name-no-dot-001>' (example: FVT-option-help-001).  Place the expected results from the test case into a file with the same name but add '.expcted'.  In your test case, pipe the output into a file with the same name but add '.out'.  Append the following lines into your test case:
+Create a test case in directory, TEST/<file_to_be_tested>/, and name the file 'FVT-<test-case-name-no-dot-001>' (example: FVT-option-help-001).  Place the expected results from the test case into a file with the same name but add '.expcted' ('dot'expected).  In your test case, pipe the output into a file with the same name but add '.out'.  Append the following lines into your test case:
 
     #
     diff "${0}".expected "${0}".out >/dev/null 2>&1
