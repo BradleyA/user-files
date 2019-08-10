@@ -1,4 +1,6 @@
 #	.gitignore (sudo apt-get install git-all)
+#	.gitignore  3.240.461  2019-08-10T17:53:58.629805-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.239-1-g643d382  
+#	   .gitignore commented **/*.out becuase it is needed for TEST cases .out can be checked in 
 #	.gitignore  3.125.183  2019-02-25T15:53:36.640995-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.124-3-gdcc2c24  
 #	   add .env 
 #	.gitignore	1.0.6	2018-02-15_10:58:09_CST uadmin four-rpi3b.cptx86.com 1.0 
@@ -49,7 +51,7 @@ chefignore
 # Executables #
 **/*.exe
 **/*.exe~
-**/*.out
+#	**/*.out Needed for TEST to work
 **/*.app
 # Packages #
 **/*.7z
