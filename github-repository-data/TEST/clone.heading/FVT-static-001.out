@@ -1,4 +1,6 @@
-Date:
+Dates:
+#	github-repository-data/TEST/clone.heading/FVT-static-001.out  3.241.463  2019-08-10T18:57:20.836730-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.240-1-g4514dd3  #
+#	   hooks/post-commit remove FVT-*.out files run FVT-setup.sh if found in test case directory #
 |:---
 Clones:
 Unique clones:
