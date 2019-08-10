@@ -60,9 +60,10 @@ To download the latest commit of one of these files, for example .gitignore, cha
     ln -s ../../hooks/post-commit ../.git/hooks/post-commit
     ln -s ../../hooks/pre-commit ../.git/hooks/pre-commit
     cd ..
-    mkdir TEST/<FILE_TO_BE_TESTED>/FVT-<test-case-name-no-dot-001>
+    mkdir TEST/<FILE_TO_BE_TESTED>/
+    cd TEST/<FILE_TO_BE_TESTED>/
 
-Place the expected results from the test case into a file with the same name but add '.expcted'.  In your test case pipe the output into a file with the same name but add '.out'.  at the end of your test case include the following lines:
+Create a test case in directory, TEST/<FILE_TO_BE_TESTED>/, and name the file 'FVT-<test-case-name-no-dot-001>' (example: FVT-option-help-001).  Place the expected results from the test case into a file with the same name but add '.expcted'.  In your test case, pipe the output into a file with the same name but add '.out'.  Append the following lines into your test case:
 
     #
     diff "${0}".expected "${0}".out >/dev/null 2>&1
@@ -75,12 +76,6 @@ Place the expected results from the test case into a file with the same name but
     else
            echo "${BOLD}Test case --->${NORMAL} ${0} ${1} ${RETURN_CODE} - Test script ERROR - ${BOLD}FAIL - FAIL${NORMAL}"
     fi
-
-   
-
-
-    
-
 
 #### To watch future updates in this repository select in the upper-right corner, the "Watch" list, and select Watching.
 
