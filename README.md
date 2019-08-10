@@ -1,5 +1,5 @@
 # user-files  [![Stable Release](https://img.shields.io/badge/Release-3.227-blue.svg)](https://github.com/BradleyA/user-files/releases/tag/3.227)    [![GitHub commits](https://img.shields.io/github/commits-since/BradleyA/user-files/3.227.svg)](https://github.com/BradleyA/user-files/commits/)
-General user files, dot files, with a few special tweeks to make my system time better.  When setting up a new system I pull these files to update my user profiles.  
+General user files, dot files, with a few special tweeks to make my system time better.  When setting up a new system, I pull these files to update my user profiles.  
 In the **template directory**, there are a few template files (sh,py) that include production standards that I designed as best practices when creating new scripts.  When creating a new script I merge sections of code needed from a template file.  
 In the **hooks directory**, there are two github hooks.  The pre-commit github hook bash script creates a list of commited.  The post-commit github hook bash script runs found FVT test case for a commited file.
 
