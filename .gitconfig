@@ -1,4 +1,6 @@
-#
+###
+#	.gitconfig  3.249.479  2019-08-11T16:32:06.852588-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.248-2-gaf22544  
+#	   .gitconfig added [color "status"] for git status command 
 #	.gitconfig  3.124.179  2019-02-18T22:02:59.572482-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.123-6-g4e29bf8  
 #	   sync with tested version with bitbucket gitlab oush and pull 
 #	.gitconfig  3.105.147  2018-11-15T16:35:41.718465-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uthree  three.cptx86.com 3.104  
@@ -46,3 +48,12 @@
 	where = "!sh -c 'git log --graph --decorate --color --stat --grep=\"$1\"' -"
 [color]
         ui = true
+[color "status"]
+#	header = "yellow normal dim"
+#	added = magenta
+#	added = "green normal bold"
+	changed = "yellow normal bold"
+	untracked = cyan
+	branch = "red normal bold"
+	nobranch = "red white bold"
+###
