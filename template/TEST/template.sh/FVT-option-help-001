@@ -1,4 +1,6 @@
 #!/bin/bash
+#	template/TEST/template.sh/FVT-option-help-001  3.247.474  2019-08-11T07:52:11.692257-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.246-2-g0eac612  
+#	   change test case output extension from .out to .test-case-output #26 
 #	template/TEST/template.sh/FVT-option-help-001  3.218.276  2019-07-28T11:40:44.936821-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  six-rpi3b.cptx86.com 3.217  
 #	   template.sh  add TEST cases 
 ### production standard 3.0 shellcheck
@@ -9,15 +11,15 @@ BOLD=$(tput -Txterm bold)
 NORMAL=$(tput -Txterm sgr0)
 ###
 
-"${1}" --help > "${0}".out
+"${1}" --help > "${0}".test-case-output
 #
-diff "${0}".expected "${0}".out >/dev/null 2>&1
+diff "${0}".expected "${0}".test-case-output >/dev/null 2>&1
 RETURN_CODE=${?}
 if [ ${RETURN_CODE} -eq 0 ] ; then
 	echo "${BOLD}Test case --->${NORMAL} ${0} ${1} ${RETURN_CODE} - No difference with expected output - ${BOLD}PASS - PASS${NORMAL}"
 elif [ ${RETURN_CODE} -eq 1 ] ; then
 	echo "${BOLD}Test case --->${NORMAL} ${0} ${1} ${RETURN_CODE} - Differences with expected output - ${BOLD}FAIL - FAIL${NORMAL}"
-	diff -y "${0}".expected "${0}".out
+	diff -y "${0}".expected "${0}".test-case-output
 else 
 	echo "${BOLD}Test case --->${NORMAL} ${0} ${1} ${RETURN_CODE} - Test script ERROR - ${BOLD}FAIL - FAIL${NORMAL}"
 fi

@@ -1,8 +1,10 @@
 #!/bin/bash
+# 	template/TEST/template.sh/FVT-setup.sh  3.247.474  2019-08-11T07:53:05.648656-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.246-2-g0eac612  
+# 	   change test case output extension from .out to .test-case-output #26 
 # 	template/TEST/template.sh/FVT-setup.sh  3.245.469  2019-08-10T19:50:24.626724-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.244  
 # 	   template/TEST/template.sh/FVT-setup.sh update comments 
 # 	hooks/FVT-setup.sh  3.244.468  2019-08-10T19:47:00.778853-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.243  
-# 	   hooks/FVT-setup.sh hooks/post-commit move rm -f FVT-*.out from hooks/post-commit to hooks/FVT-setup.sh 
+# 	   hooks/FVT-setup.sh hooks/post-commit move rm -f FVT-*.test-case-output from hooks/post-commit to hooks/FVT-setup.sh 
 # 	hooks/FVT-setup.sh  3.243.467  2019-08-10T19:39:36.382334-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.242  
 # 	   hooks/FVT-setup.sh example FVT-setup.sh file to be placed in TEST/<file_name>/ directory with test cases 
 ###
@@ -14,7 +16,7 @@
 ##       MIT License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
 ###
 #       Remove output from previous run of test cases
-rm -f FVT-*.out
+rm -f FVT-*.test-case-output
 #	Create symbolic link for all test case expected output that matches another test case expected output 
 #	Expected output from FVT-option-help-001 matches output from FVT-option-help-00[2,3,4,5,6]
 ln -fs FVT-option-help-001.expected FVT-option-help-002.expected
