@@ -1,4 +1,6 @@
 ###
+#	.bash_aliases  3.242.466  2019-08-10T19:12:22.696021-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.241-2-g81f236e  
+#	   .bash_aliases uncommented gtop for cd to top of repository 
 #	.bash_aliases  3.229.300  2019-07-30T13:00:45.455564-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.228  
 #	   uncomment gst, gsts, gd aliases in .bash_aliases 
 #	.bash_aliases  3.121.168  2019-02-07T10:46:55.086485-06:00 (CST)  https://github.com/BradleyA/user-work-files.git  uadmin  one-rpi3b.cptx86.com 3.120  
@@ -79,7 +81,7 @@ alias gitlogl='git log --graph --decorate --oneline --color --stat origin..HEAD'
 #	
 #	# Will cd into the top of the current repository
 #	# or submodule.
-#	alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
+alias gtop='cd $(git rev-parse --show-toplevel || echo ".")'
 #	
 #	# Git and svn mix
 #	alias git-svn-dcommit-push='git svn dcommit && git push github master:svntrunk'
