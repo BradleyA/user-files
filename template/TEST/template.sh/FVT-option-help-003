@@ -1,18 +1,17 @@
 #!/bin/bash
-#	template/TEST/template.sh/FVT-option-help-003  3.247.474  2019-08-11T07:52:20.061723-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.246-2-g0eac612  
-#	   change test case output extension from .out to .test-case-output #26 
-#	template/TEST/template.sh/FVT-option-help-003  3.218.276  2019-07-28T11:40:53.641526-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  six-rpi3b.cptx86.com 3.217  
-#	   template.sh  add TEST cases 
+#	template/TEST/template.sh/FVT-option-help-003  3.248.476  2019-08-11T08:30:50.628555-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.247-1-gcfe2f59  
+#	   update example TEST cases with comment and formatting 
 ### production standard 3.0 shellcheck
 ### production standard 5.1.160 Copyright
 #       Copyright (c) 2019 Bradley Allen
 #       MIT License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
 BOLD=$(tput -Txterm bold)
 NORMAL=$(tput -Txterm sgr0)
-###
+###     Place test case here
 
 "${1}" help > "${0}".test-case-output
-#
+
+###
 diff "${0}".expected "${0}".test-case-output >/dev/null 2>&1
 RETURN_CODE=${?}
 if [ ${RETURN_CODE} -eq 0 ] ; then
