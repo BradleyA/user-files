@@ -1,16 +1,18 @@
 #!/bin/bash
+# 	template/template.sh  3.252.486  2019-08-11T23:03:50.345113-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.251  
+# 	   template/template.sh  test shellscript test case 
 # 	template/template.sh  3.231.302  2019-08-01T23:40:00.333530-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.230  
-# 	   template/template.sh  updated commit > The order of argument options matters. 
-# 	template/template.sh  3.230.301  2019-07-31T21:42:05.134949-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.229  
-# 	   typo in comment 
-# 	template/template.sh  3.228.299  2019-07-29T13:09:46.206443-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.227-1-g90b4f0a  
-# 	   ran shellcheck just a few Double quote changes and changed DEFAULT_USER_HOME & DEFAULT_WORKING_DIRECTORY 
-# 	template/template.sh  3.227.297  2019-07-28T14:44:17.104671-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.226-1-gc681885  
-# 	   template.sh  run test after clone to make sure README.md is correct READY for release 
+# 	   template/template.sh  updated commit > The order of argument options matters.
+# 	template/template.sh  3.230.301  2019-07-31T21:42:05.134949-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.229
+# 	   typo in comment
+# 	template/template.sh  3.228.299  2019-07-29T13:09:46.206443-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.227-1-g90b4f0a
+# 	   ran shellcheck just a few Double quote changes and changed DEFAULT_USER_HOME & DEFAULT_WORKING_DIRECTORY
+# 	template/template.sh  3.227.297  2019-07-28T14:44:17.104671-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.226-1-gc681885
+# 	   template.sh  run test after clone to make sure README.md is correct READY for release
 # 	template/template.sh  3.217.275  2019-07-28T10:46:26.817945-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.216
-# 	   add DEFAULT_ variables from other scripts and completed testing for production standard 9.0 Parse CLI options and arguments close #24 
-# 	template/template.sh  3.205.261  2019-07-25T22:01:19.915446-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.204  
-# 	   template.sh remove $0 from display_help sections to ${COMMAND_NAME} to help with CI/CD & CT #22 #23 
+# 	   add DEFAULT_ variables from other scripts and completed testing for production standard 9.0 Parse CLI options and arguments close #24
+# 	template/template.sh  3.205.261  2019-07-25T22:01:19.915446-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.204
+# 	   template.sh remove $0 from display_help sections to ${COMMAND_NAME} to help with CI/CD & CT #22 #23
 ### production standard 3.0 shellcheck
 ### production standard 5.1.160 Copyright
 #	Copyright (c) 2019 Bradley Allen
