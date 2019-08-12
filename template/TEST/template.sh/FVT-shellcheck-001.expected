@@ -1,0 +1,103 @@
+
+In ../../template.sh line 27:
+DEFAULT_SSH_USER="${USER}"
+^-- SC2034: DEFAULT_SSH_USER appears unused. Verify it or export it.
+
+
+In ../../template.sh line 28:
+DEFAULT_TLS_USER="${USER}"
+^-- SC2034: DEFAULT_TLS_USER appears unused. Verify it or export it.
+
+
+In ../../template.sh line 29:
+DEFAULT_ADM_TLS_USER="${USER}"
+^-- SC2034: DEFAULT_ADM_TLS_USER appears unused. Verify it or export it.
+
+
+In ../../template.sh line 34:
+DEFAULT_CERT_DIR="${HOME}/.docker"
+^-- SC2034: DEFAULT_CERT_DIR appears unused. Verify it or export it.
+
+
+In ../../template.sh line 35:
+DEFAULT_CERT_DAEMON_DIR="/etc/docker/certs.d/daemon/"
+^-- SC2034: DEFAULT_CERT_DAEMON_DIR appears unused. Verify it or export it.
+
+
+In ../../template.sh line 36:
+DEFAULT_CA_CERT="ca.pem"
+^-- SC2034: DEFAULT_CA_CERT appears unused. Verify it or export it.
+
+
+In ../../template.sh line 37:
+DEFAULT_CA_PRIVATE_CERT="ca-priv-key.pem"
+^-- SC2034: DEFAULT_CA_PRIVATE_CERT appears unused. Verify it or export it.
+
+
+In ../../template.sh line 38:
+DEFAULT_NUMBER_DAYS="730"
+^-- SC2034: DEFAULT_NUMBER_DAYS appears unused. Verify it or export it.
+
+
+In ../../template.sh line 39:
+DEFAULT_REMOTE_COMMAND=""
+^-- SC2034: DEFAULT_REMOTE_COMMAND appears unused. Verify it or export it.
+
+
+In ../../template.sh line 40:
+DEFAULT_REMOTE_COMMAND_OPTION=""
+^-- SC2034: DEFAULT_REMOTE_COMMAND_OPTION appears unused. Verify it or export it.
+
+
+In ../../template.sh line 41:
+DEFAULT_WORKING_DIRECTORY="$(echo ~/.docker/docker-ca)"
+^-- SC2034: DEFAULT_WORKING_DIRECTORY appears unused. Verify it or export it.
+                           ^-- SC2116: Useless echo? Instead of 'cmd $(echo foo)', just use 'cmd foo'.
+
+
+In ../../template.sh line 42:
+DEFAULT_FQDN="$(hostname -f)"		# local host
+^-- SC2034: DEFAULT_FQDN appears unused. Verify it or export it.
+
+
+In ../../template.sh line 43:
+DEFAULT_REMOTE_HOST="$(hostname -f)"    # local host
+^-- SC2034: DEFAULT_REMOTE_HOST appears unused. Verify it or export it.
+
+
+In ../../template.sh line 44:
+DEFAULT_REGISTRY_HOST="$(hostname -f)"    # local host
+^-- SC2034: DEFAULT_REGISTRY_HOST appears unused. Verify it or export it.
+
+
+In ../../template.sh line 45:
+DEFAULT_REGISTRY_PORT="5000"
+^-- SC2034: DEFAULT_REGISTRY_PORT appears unused. Verify it or export it.
+
+
+In ../../template.sh line 289:
+SCRIPT_NAME=$(head -2 "${0}" | awk {'printf $2'})
+                                   ^-- SC1083: This { is literal. Check expression (missing ;/\n?) or quote it.
+                                               ^-- SC1083: This } is literal. Check expression (missing ;/\n?) or quote it.
+
+
+In ../../template.sh line 290:
+SCRIPT_VERSION=$(head -2 "${0}" | awk {'printf $3'})
+                                      ^-- SC1083: This { is literal. Check expression (missing ;/\n?) or quote it.
+                                                  ^-- SC1083: This } is literal. Check expression (missing ;/\n?) or quote it.
+
+
+In ../../template.sh line 323:
+if ! [ $(id -u) = 0 ] ; then
+       ^-- SC2046: Quote this to prevent word splitting.
+
+
+In ../../template.sh line 413:
+                        SSH_USER=$(echo "${1}" | cut -d '=' -f 2)
+                        ^-- SC2034: SSH_USER appears unused. Verify it or export it.
+
+
+In ../../template.sh line 426:
+                        USER_HOME=$(echo "${1}" | cut -d '=' -f 2)
+                        ^-- SC2034: USER_HOME appears unused. Verify it or export it.
+
