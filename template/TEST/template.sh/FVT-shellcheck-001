@@ -1,4 +1,6 @@
 #!/bin/bash
+#	template/TEST/template.sh/FVT-shellcheck-001  3.260.500  2019-08-14T00:15:54.361251-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.259  
+#	   testing shellcheck 
 #	template/TEST/template.sh/FVT-shellcheck-001  3.251.485  2019-08-11T22:55:55.438285-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.250-4-geba20b1  
 #	   template/TEST/template.sh/FVT-shellcheck-001 added shellscript test case 
 ### production standard 3.0 shellcheck
@@ -20,6 +22,8 @@ if [ ${RETURN_CODE} -eq 0 ] ; then
 elif [ ${RETURN_CODE} -eq 1 ] ; then
 	echo "${BOLD}Test case --->${NORMAL} ${0} ${1} ${RETURN_CODE} - Differences with expected output - ${BOLD}FAIL - FAIL${NORMAL}"
 	diff -y "${0}".expected "${0}".test-case-output
+	exit 1
 else 
 	echo "${BOLD}Test case --->${NORMAL} ${0} ${1} ${RETURN_CODE} - Test script ERROR - ${BOLD}FAIL - FAIL${NORMAL}"
+	exit 2
 fi
