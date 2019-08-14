@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.254.494  2019-08-13T23:40:50.313540-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.253-6-g6435831  
-# 	   use template/template.sh to test shellcheck 
+# 	template/template.sh  3.255.495  2019-08-13T23:45:38.709827-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.254  
+# 	   testing shellcheck test case 
 # 	template/template.sh  3.231.302  2019-08-01T23:40:00.333530-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.230  
 # 	   template/template.sh  updated commit > The order of argument options matters.
 # 	template/template.sh  3.230.301  2019-07-31T21:42:05.134949-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.229
