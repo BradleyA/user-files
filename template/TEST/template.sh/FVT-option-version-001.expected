@@ -1,3 +1,3 @@
-template/template.sh 3.256.496
-#	template/TEST/template.sh/FVT-option-version-001.expected  3.257.497  2019-08-13T23:58:38.343761-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.256  
-#	   testing shellcheck 
+template/template.sh 3.257.497
+#	template/TEST/template.sh/FVT-option-version-001.expected  3.258.498  2019-08-14T00:04:48.920641-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.257  
+#	   testing FVT shellcheck 
