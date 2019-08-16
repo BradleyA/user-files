@@ -1,6 +1,6 @@
 #!/bin/bash
-#	template/TEST/template.sh/FVT-option-version-001  3.248.476  2019-08-11T08:31:06.503938-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.247-1-gcfe2f59  
-#	   update example TEST cases with comment and formatting 
+#	template/TEST/template.sh/FVT-option-version-001  3.262.504  2019-08-16T09:10:10.422990-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.261  
+#	   changed test cases from matching output to testing does the option function correctly 
 ### production standard 3.0 shellcheck
 ### production standard 5.1.160 Copyright
 #       Copyright (c) 2019 Bradley Allen

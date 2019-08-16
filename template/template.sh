@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.261.503  2019-08-14T16:59:03.722960-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.260-2-g077ccbd  
-# 	   testing shellcheck on template.sh 
+# 	template/template.sh  3.262.504  2019-08-16T09:10:10.568099-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.261  
+# 	   changed test cases from matching output to testing does the option function correctly 
 # 	template/template.sh  3.217.275  2019-07-28T10:46:26.817945-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.216
 # 	   add DEFAULT_ variables from other scripts and completed testing for production standard 9.0 Parse CLI options and arguments close #24
 ### production standard 3.0 shellcheck
@@ -30,7 +30,7 @@ DEFAULT_CA_PRIVATE_CERT="ca-priv-key.pem"
 DEFAULT_NUMBER_DAYS="730"
 DEFAULT_REMOTE_COMMAND=""
 DEFAULT_REMOTE_COMMAND_OPTION=""
-DEFAULT_WORKING_DIRECTORY="$(echo ~/.docker/docker-ca)"
+DEFAULT_WORKING_DIRECTORY=~/.docker/docker-ca
 DEFAULT_FQDN="$(hostname -f)"		# local host
 DEFAULT_REMOTE_HOST="$(hostname -f)"    # local host
 DEFAULT_REGISTRY_HOST="$(hostname -f)"    # local host
@@ -456,3 +456,20 @@ fi
 #
 get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[INFO]${NORMAL}  Operation finished." 1>&2
 ###
+#	DO NOT USE CODE BELOW THIS LINE:  This is here to stop shellcheck warnings: "appears unused. Verify it or export it."
+#	This is here to stop shellcheck warnings: 
+echo "${DEFAULT_SSH_USER}"
+echo "${DEFAULT_TLS_USER}"
+echo "${DEFAULT_ADM_TLS_USER}"
+echo "${DEFAULT_CERT_DIR}"
+echo "${DEFAULT_CERT_DAEMON_DIR}"
+echo "${DEFAULT_CA_CERT}"
+echo "${DEFAULT_CA_PRIVATE_CERT}"
+echo "${DEFAULT_NUMBER_DAYS}"
+echo "${DEFAULT_REMOTE_COMMAND}"
+echo "${DEFAULT_REMOTE_COMMAND_OPTION}"
+echo "${DEFAULT_WORKING_DIRECTORY}"
+echo "${DEFAULT_FQDN}"
+echo "${DEFAULT_REMOTE_HOST}"
+echo "${DEFAULT_REGISTRY_HOST}"
+echo "${DEFAULT_REGISTRY_PORT}"

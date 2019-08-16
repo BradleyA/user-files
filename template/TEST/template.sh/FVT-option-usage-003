@@ -1,6 +1,6 @@
 #!/bin/bash
-#	template/TEST/template.sh/FVT-option-usage-003  3.248.476  2019-08-11T08:31:04.326062-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.247-1-gcfe2f59  
-#	   update example TEST cases with comment and formatting 
+#	template/TEST/template.sh/FVT-option-usage-003  3.262.504  2019-08-16T09:10:05.557073-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.261  
+#	   changed test cases from matching output to testing does the option function correctly 
 ### production standard 3.0 shellcheck
 ### production standard 5.1.160 Copyright
 #       Copyright (c) 2019 Bradley Allen
@@ -11,14 +11,18 @@ NORMAL=$(tput -Txterm sgr0)
 
 "${1}" -u > "${0}".test-case-output
 
-###
-diff "${0}".expected "${0}".test-case-output >/dev/null 2>&1
-RETURN_CODE=${?}
-if [ ${RETURN_CODE} -eq 0 ] ; then
-        echo "${BOLD}Test case --->${NORMAL} ${0} ${1} ${RETURN_CODE} - No difference with expected output - ${BOLD}PASS - PASS${NORMAL}"
-elif [ ${RETURN_CODE} -eq 1 ] ; then
-        echo "${BOLD}Test case --->${NORMAL} ${0} ${1} ${RETURN_CODE} - Differences with expected output - ${BOLD}FAIL - FAIL${NORMAL}"
-        diff -y "${0}".expected "${0}".test-case-output
+#       The option is functioning correctly:  if USAGE && NOT DESCRIPTION && DOCUMENTATION appear in "${0}".test-case-output 
+if grep -q 'USAGE' "${0}".test-case-output ; then
+        if ! grep -q 'DESCRIPTION' "${0}".test-case-output  ; then
+                if ! grep -q 'DOCUMENTATION' "${0}".test-case-output  ; then
+                        echo "${BOLD}Test case --->${NORMAL} ${0} ${1} ${RETURN_CODE} - USAGE found in output ${BOLD}PASS - PASS${NORMAL}"
+                else
+                        echo "${BOLD}Test case --->${NORMAL} ${0} ${1} ${RETURN_CODE} - DOCUMENTATION found in output - ${BOLD}FAIL - FAIL${NORMAL}"
+                fi
+        else
+                echo "${BOLD}Test case --->${NORMAL} ${0} ${1} ${RETURN_CODE} - DESCRIPTION found in output - ${BOLD}FAIL - FAIL${NORMAL}"
+        fi
 else
-        echo "${BOLD}Test case --->${NORMAL} ${0} ${1} ${RETURN_CODE} - Test script ERROR - ${BOLD}FAIL - FAIL${NORMAL}"
+        echo "${BOLD}Test case --->${NORMAL} ${0} ${1} ${RETURN_CODE} - USAGE not found in output - ${BOLD}FAIL - FAIL${NORMAL}"
 fi
+###
