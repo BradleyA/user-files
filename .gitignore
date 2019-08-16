@@ -1,13 +1,11 @@
 #	.gitignore (sudo apt-get install git-all)
-#	.gitignore  3.250.480  2019-08-11T16:35:54.399511-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.249  
-#	   .gitignore uncommented **/*.out because TEST cases is not longer using .out it is using .output 
-#	.gitignore  3.240.461  2019-08-10T17:53:58.629805-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.239-1-g643d382  
-#	   .gitignore commented **/*.out becuase it is needed for TEST cases .out can be checked in 
-#	.gitignore  3.125.183  2019-02-25T15:53:36.640995-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.124-3-gdcc2c24  
-#	   add .env 
+#	.gitignore  3.306.535  2019-08-16T17:15:26.734333-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.305-2-g62999fe  
+#	   .gitignore add *.test-case-output .netrc 
 #	.gitignore	1.0.6	2018-02-15_10:58:09_CST uadmin four-rpi3b.cptx86.com 1.0 
 #	   Inital commit of basic .gitignore settings
 # ignore
+*.test-case-output
+.netrc
 .env
 chefignore
 .gitignore
