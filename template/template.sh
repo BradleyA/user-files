@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.262.504  2019-08-16T09:10:10.568099-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.261  
-# 	   changed test cases from matching output to testing does the option function correctly 
-# 	template/template.sh  3.217.275  2019-07-28T10:46:26.817945-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.216
-# 	   add DEFAULT_ variables from other scripts and completed testing for production standard 9.0 Parse CLI options and arguments close #24
+# 	template/template.sh  3.305.532  2019-08-16T16:56:57.450898-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.304  
+# 	   template/template.sh  correct shellcheck incidents 
 ### production standard 3.0 shellcheck
 ### production standard 5.1.160 Copyright
 #	Copyright (c) 2019 Bradley Allen
@@ -278,8 +276,8 @@ DATE_STAMP="${DATE_STAMP} (${TEMP})"
 LOCALHOST=$(hostname -f)
 
 #	Version
-SCRIPT_NAME=$(head -2 "${0}" | awk {'printf $2'})
-SCRIPT_VERSION=$(head -2 "${0}" | awk {'printf $3'})
+SCRIPT_NAME=$(head -2 "${0}" | awk '{printf $2}')
+SCRIPT_VERSION=$(head -2 "${0}" | awk '{printf $3}')
 
 #	UID and GID
 USER_ID=$(id -u)
@@ -312,7 +310,7 @@ if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP}
 
 ###
 #	Root is required to copy certs
-if ! [ $(id -u) = 0 ] ; then
+if ! [ "$(id -u)" = 0 ] ; then
 	display_help | more
 	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Use sudo ${0}" 1>&2
 #       Help hint
@@ -473,3 +471,5 @@ echo "${DEFAULT_FQDN}"
 echo "${DEFAULT_REMOTE_HOST}"
 echo "${DEFAULT_REGISTRY_HOST}"
 echo "${DEFAULT_REGISTRY_PORT}"
+echo "${SSH_USER}"
+echo "${USER_HOME}"
