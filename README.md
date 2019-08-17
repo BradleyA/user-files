@@ -12,7 +12,11 @@ General user files, dot files, with a few special tweeks to make my system time 
 To clone, change directory to the location you want to download the scripts (example: cd ~/github).  Use git to pull or clone these files into the directory. If you do not have Git then enter; "sudo apt-get install git". On the GitHub page of this script use the "HTTPS clone URL" with the 'git clone' command.
 
     git clone https://github.com/BradleyA/user-files.git
-    cd user-files/hooks
+    cd user-files
+
+To include test cases with this repository also enter the following commands to link the pre-commit and post-commit commands.
+    
+    cd hooks
     ln -s ../../hooks/post-commit ../.git/hooks/post-commit
     ln -s ../../hooks/pre-commit ../.git/hooks/pre-commit
 
