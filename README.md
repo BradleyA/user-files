@@ -14,7 +14,7 @@ To clone, change directory to the location you want to download the scripts (exa
     git clone https://github.com/BradleyA/user-files.git
     cd user-files
 
-To include test cases with this repository also enter the following commands to link the pre-commit and post-commit commands.
+To include test cases with this repository also enter the following commands to link the pre-commit and post-commit commands.  [To learn more about how to setup test cases.](hooks/README.md)
     
     cd hooks
     ln -s ../../hooks/post-commit ../.git/hooks/post-commit
