@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/TEST/template.sh/SAST-setup.sh  3.335.573  2019-08-18T21:26:02.683720-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.334-1-gb85dde4  
-# 	   hooks/EXAMPLES/FVT-setup.sh hooks/EXAMPLES/SAST-setup.sh add commond test cases with ln 
-# 	hooks/SAST-setup.sh  3.303.530  2019-08-16T16:41:54.923689-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.302-1-gf0d1209  
-# 	   hooks/SAST-setup.sh  initial commit after testing in post-commit 
+# 	template/TEST/template.sh/SAST-setup.sh  3.337.576  2019-08-18T21:31:48.836437-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.336  
+# 	   template/TEST/template.sh/SAST-setup.sh add new symbolic link to common test cases 
 ###
 #	SAST-setup.sh -  This script is optional.  It runs before test cases are run, if SAST-setup.sh is found in TEST/<file_name>/
 #	   Static Analysis Software Testing (SAST) - examination of the code prior to the program’s execution
