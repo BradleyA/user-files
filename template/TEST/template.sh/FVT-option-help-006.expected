@@ -1,2 +1,0 @@
-#	template/TEST/template.sh/FVT-option-help-006.expected  3.437.684  2019-08-22T23:14:41.558070-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.436  
-#	   hooks/bin/list-git-TEST-cases.sh  added to list-git-TEST-cases.sh clean rm -f FVT-*.test-case-output & rm -f SAST-*.test-case-output 
