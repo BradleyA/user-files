@@ -1,1 +1,2 @@
-FVT-option-version-001.expected
+#	template/TEST/template.sh/FVT-option-version-002.expected  3.435.682  2019-08-22T22:30:14.379296-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.434  
+#	   hooks/bin/list-git-TEST-cases.sh added options all (run FVT,SAST -setup.sh) , clean to remove symbolics 
