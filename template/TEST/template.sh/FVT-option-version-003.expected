@@ -1,2 +1,2 @@
-#	template/TEST/template.sh/FVT-option-version-003.expected  3.435.682  2019-08-22T22:30:16.945829-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.434  
-#	   hooks/bin/list-git-TEST-cases.sh added options all (run FVT,SAST -setup.sh) , clean to remove symbolics 
+#	template/TEST/template.sh/FVT-option-version-003.expected  3.436.683  2019-08-22T22:43:48.284847-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.435  
+#	   hooks/bin/list-git-TEST-cases.sh  changed print order so when using clean option it display the directory first 
