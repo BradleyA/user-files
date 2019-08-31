@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.473.727  2019-08-30T22:09:07.376345-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.472  
-# 	   template/template.sh remove a tabs for two spaces 
-#    template/template.sh  3.472.726  2019-08-30T21:14:04.518112-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.471-1-g337e183  
-#        template/template.sh remove a tabs for two spaces 
+# 	template/template.sh  3.474.728  2019-08-31T12:33:52.320644-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.473  
+# 	   template/template.sh  pgrade DEBUG add DEBUG=2 set -x and DEBUG=3 set -v  close #36 
 ###  template.sh - shell script template containing my collection of shorthand functions and pre-written code
 ###  Production standard 3.0 shellcheck
 ###  Production standard 5.1.160 Copyright
@@ -10,28 +8,9 @@
 #    MIT License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
 ###  Production standard 1.0 DEBUG variable
 #    Order of precedence: environment variable, default code
-if [[ "${DEBUG}" == "" ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
-if [[ "${DEBUG}" == "2" ]] ; then set -x ; fi  # Print trace of simple commands before they are executed
-if [[ "${DEBUG}" == "3" ]] ; then set -v ; fi   # Print shell input lines as they are read.
-# define the base AMI ID somehow from aaron maxwell   http://redsymbol.net/articles/bash-exit-traps/
-ami=$1
-#    Store the temporary instance ID here from aaron maxwell
-instance=''
-#    While we are at it, let me show you another use for a scratch directory. from aaron maxwell
-scratch=$(mktemp -d -t tmp.XXXXXXXXXX)
-cleanup_on_exit{
-     # >>> Your cleanup code goes here ( remove temporary (rm ) or scratch files (close ) & directories close files and databases )
-  if [ -n "$instance" ]; then
-    ec2-terminate-instances "$instance"
-  fi
-}
-trap cleanup_on_exit EXIT
-#    This line runs the instance, and stores the program output (which from aaron maxwell
-#    shows the instance ID) in a file in the scratch directory. from aaron maxwell
-ec2-run-instances "$ami" > "$scratch/run-instance"
-#    Now extract the instance ID. from aaron maxwell
-instance=$(grep '^INSTANCE' "$scratch/run-instance" | cut -f 2)
-
+if [[ "${DEBUG}" == ""  ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
+if [[ "${DEBUG}" == "2" ]] ; then set -x    ; fi   # Print trace of simple commands before they are executed
+if [[ "${DEBUG}" == "3" ]] ; then set -v    ; fi   # Print shell input lines as they are read
 #
 BOLD=$(tput -Txterm bold)
 NORMAL=$(tput -Txterm sgr0)
@@ -102,6 +81,13 @@ echo    "ssh-agent and ssh-add before entering the following in a terminal windo
 echo -e "\t${BOLD}eval \$(ssh-agent)${NORMAL}"
 echo -e "\t${BOLD}ssh-add${NORMAL}"
 
+echo -e "\nThe DEBUG environment variable can be set to '', '0', '1', '2', or '3'.  The"
+echo    "setting '' or '0' will turn off all DEBUG messages during execution of this"
+echo    "script.  The setting '1' will print all DEBUG messages during execution of this"
+echo    "script.  The setting '2' will print a trace of simple commands before they are"
+echo    "executed in this script.  The setting '3' will print shell input lines as they"
+echo    "are read."
+
 ###  Production standard 4.0 Documentation Language
 #    Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
 if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG}" == "fr_CH.UTF-8" ] ; then
@@ -113,14 +99,15 @@ elif ! [ "${LANG}" == "en_US.UTF-8" ] ; then
 fi
 echo -e "\n${BOLD}ENVIRONMENT VARIABLES${NORMAL}"
 echo    "If using the bash shell, enter; 'export DEBUG=1' on the command line to set"
-echo    "the DEBUG environment variable to '1' (0 = debug off, 1 = debug on).  Use the"
-echo    "command, 'unset DEBUG' to remove the exported information from the DEBUG"
-echo    "environment variable.  You are on your own defining environment variables if"
+echo    "the environment variable DEBUG to '1' (0 = debug off, 1 = debug on).  Use the"
+echo    "command, 'unset DEBUG' to remove the exported information from the environment"
+echo    "variable DEBUG.  You are on your own defining environment variables if"
 echo    "you are using other shells."
 echo    "   DEBUG           (default off '0')"
 echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
-echo    "   SYSTEMS_FILE    Hosts in cluster (default '${DEFAULT_SYSTEMS_FILE}')"
+echo    "   SYSTEMS_FILE    Name of file that includes hosts in cluster"
+echo    "                   (default '${DEFAULT_SYSTEMS_FILE}')"
 echo -e "\n${BOLD}OPTIONS${NORMAL}"
 echo -e "Order of precedence: CLI options, environment variable, default code.\n"
 echo    "   -c, --cluster, -c=, --cluster=<CLUSTER>"
