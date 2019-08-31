@@ -1,5 +1,7 @@
 #!/bin/bash
-# 	template/template.sh  3.475.729  2019-08-31T13:14:16.286336-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.474  
+# 	template/template.sh  3.478.732  2019-08-31T13:54:22.441487-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.477  
+# 	   testing FVT-option-version-001 3.477 
+# 	template/template.sh  3.475.729  2019-08-31T13:14:16.286336-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.474
 # 	   template/template.sh  upgrade DEBUG add DEBUG=2 set -x and DEBUG=3 set -v #36 Production standard 1.3.475 DEBUG variable 
 ###  template.sh - shell script template containing my collection of shorthand functions and pre-written code
 ###  Production standard 3.0 shellcheck
