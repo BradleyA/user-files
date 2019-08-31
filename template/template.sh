@@ -1,22 +1,24 @@
 #!/bin/bash
-# 	template/template.sh  3.340.687  2019-08-23T00:02:51.075442-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.439  
-# 	   hooks/EXAMPLES/FVT-option-version-001  testing 
-# 	template/template.sh  3.439.686  2019-08-22T23:48:20.175290-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.438 
-# 	   template/template.sh testing TEST cases #26 
-# 	template/template.sh  3.305.532  2019-08-16T16:56:57.450898-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.304 
-# 	   template/template.sh  correct shellcheck incidents 
-### production standard 3.0 shellcheck
-### production standard 5.1.160 Copyright
-#	Copyright (c) 2019 Bradley Allen
-#	MIT License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
-### production standard 1.0 DEBUG variable
-#       Order of precedence: environment variable, default code
-if [ "${DEBUG}" == "" ] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
-#	set -x
-#	set -v
+# 	template/template.sh  3.472.726  2019-08-30T21:14:04.518112-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.471-1-g337e183  
+# 	   template/template.sh remove a tabs for two spaces 
+###  template.sh - shell script template containing my collection of shorthand functions and pre-written code
+###  Production standard 3.0 shellcheck
+###  Production standard 5.1.160 Copyright
+#    Copyright (c) 2019 Bradley Allen
+#    MIT License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
+###  Production standard 1.0 DEBUG variable
+#    Order of precedence: environment variable, default code
+if [[ "${DEBUG}" == "" ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
+if [[ "${DEBUG}" == "2" ]] ; then set -x ; fi  # Print trace of simple commands before they are executed
+if [[ "${DEBUG}" == "3" ]] ; then set -v ; fi   # Print shell input lines as they are read.
+cleanup_on_exit{
+# >>> Your cleanup code goes here ( remove temporary or scratch files and directories close files and databases )
+}
+trap cleanup_on_exit EXIT
+#
 BOLD=$(tput -Txterm bold)
 NORMAL=$(tput -Txterm sgr0)
-### production standard 7.0 Default variable value
+###  Production standard 7.0 Default variable value
 DEFAULT_USER="${USER}"
 DEFAULT_SSH_USER="${USER}"
 DEFAULT_TLS_USER="${USER}"
@@ -33,11 +35,11 @@ DEFAULT_NUMBER_DAYS="730"
 DEFAULT_REMOTE_COMMAND=""
 DEFAULT_REMOTE_COMMAND_OPTION=""
 DEFAULT_WORKING_DIRECTORY=~/.docker/docker-ca
-DEFAULT_FQDN="$(hostname -f)"		# local host
+DEFAULT_FQDN="$(hostname -f)"  # local host
 DEFAULT_REMOTE_HOST="$(hostname -f)"    # local host
-DEFAULT_REGISTRY_HOST="$(hostname -f)"    # local host
+DEFAULT_REGISTRY_HOST="$(hostname -f)"  # local host
 DEFAULT_REGISTRY_PORT="5000"
-### production standard 8.3.214 --usage
+###  Production standard 8.3.214 --usage
 display_usage() {
 COMMAND_NAME=$(echo "${0}" | sed 's/^.*\///')
 echo -e "\n${NORMAL}${COMMAND_NAME}\n   brief description . . ."
@@ -47,10 +49,10 @@ echo    "   ${COMMAND_NAME} [--help | -help | help | -h | h | -?]"
 echo    "   ${COMMAND_NAME} [--usage | -usage | -u]"
 echo    "   ${COMMAND_NAME} [--version | -version | -v]"
 }
-### production standard 0.3.214 --help
+###  Production standard 0.3.214 --help
 display_help() {
 display_usage
-#	Displaying help DESCRIPTION in English en_US.UTF-8
+#    Displaying help DESCRIPTION in English en_US.UTF-8
 echo -e "\n${BOLD}DESCRIPTION${NORMAL}"
 echo    "<your help goes here>"
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
@@ -83,14 +85,14 @@ echo    "ssh-agent and ssh-add before entering the following in a terminal windo
 echo -e "\t${BOLD}eval \$(ssh-agent)${NORMAL}"
 echo -e "\t${BOLD}ssh-add${NORMAL}"
 
-### production standard 4.0 Documentation Language
-#	Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
+###  Production standard 4.0 Documentation Language
+#    Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
 if [ "${LANG}" == "fr_CA.UTF-8" ] || [ "${LANG}" == "fr_FR.UTF-8" ] || [ "${LANG}" == "fr_CH.UTF-8" ] ; then
-	echo -e "\n--> ${LANG}"
-	echo    "<votre aide va ici>" # your help goes here
-	echo    "Souhaitez-vous traduire la section description?" # Do you want to translate the description section?
+  echo -e "\n--> ${LANG}"
+  echo    "<votre aide va ici>" # your help goes here
+  echo    "Souhaitez-vous traduire la section description?" # Do you want to translate the description section?
 elif ! [ "${LANG}" == "en_US.UTF-8" ] ; then
-	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
+  get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
 fi
 echo -e "\n${BOLD}ENVIRONMENT VARIABLES${NORMAL}"
 echo    "If using the bash shell, enter; 'export DEBUG=1' on the command line to set"
@@ -116,8 +118,8 @@ echo    "   -S, --ssh_user, -S=, --ssh_user=<SSH_USER>"
 echo -e "\tLocation of user home directory (default ${DEFAULT_USER_HOME})\n"
 echo    "   -U, --user_home, -U=, --user_home=<USER_HOME>"
 echo -e "   "
-### production standard 6.1.177 Architecture tree
-echo -e "\n${BOLD}ARCHITECTURE TREE${NORMAL}"	# STORAGE & CERTIFICATION
+###  Production standard 6.1.177 Architecture tree
+echo -e "\n${BOLD}ARCHITECTURE TREE${NORMAL}"  # STORAGE & CERTIFICATION
 echo    "/usr/local/data/                           <-- <DATA_DIR>"
 echo    "├── <CLUSTER>/                             <-- <CLUSTER>"
 echo    "│   ├── docker/                            <-- Root directory of persistent"
@@ -133,6 +135,7 @@ echo    "│   │   ├── <HOST-1>/                      <-- Host in cluste
 echo    "│   │   │   ├── ssh/"
 echo    "│   │   │   │   ├── AllowUsers             <-- User name patterns allowed"
 echo    "│   │   │   │   ├── ssh_host_ed25519_fingerprint <-- XXXX think about only having one finger print file for all called fingerprint keytype"
+echo    "│   │   │   │   │                              "
 echo    "│   │   │   │   ├── ssh_host_rsa_fingerprint <-- "
 echo    "│   │   │   │   ├── ssh_known_hosts        <-- Host public keys for all"
 echo    "│   │   │   │   │                              known hosts in cluster"
@@ -241,18 +244,20 @@ echo    "│   ├── ssh_host_rsa_key                   <-- OpenSSH host pri
 echo    "│   ├── ssh_host_rsa_key.pub               <-- OpenSSH host public key"
 echo    "│   ├── ssh_host_ed25519_key               <-- OpenSSH host private key"
 echo    "│   ├── ssh_host_ed25519_key.pub           <-- OpenSSH host public key"
-echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
 echo    "│   ├── ssh_known_hosts                    <-- OpenSSH systemwide list of known"
 echo    "│   │                                          public host keys"
 echo    "│   └── keys                               <-- Support SSH remote login when"
 echo    "│       │                                      user home directory encrypted"
+echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
 echo    "│       ├── <USER-1>/                      <-- User SSH authorized_keys directory 755"
 echo    "│       │   └── authorized_keys            <-- SSH user public keys for login 644"
+echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
 echo    "│       └── <USER-2>/                      <-- User systemwide SSH directory"
 echo -e "└── hosts.equiv                            <-- host-based authentication\n"
 echo    "/var/"
 echo    "├── lib/docker/                            <-- Root directory of persistent"
 echo    "│                                              Docker state files; (images)"
+echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
 echo    "│                                              changed to symbolic link pointing"
 echo    "│                                              to <DATA_DIR>/<CLUSTER>/docker"
 echo    "└── run/"
@@ -269,197 +274,197 @@ echo -e "   <<your code examples description goes here>>\n\t${BOLD}${COMMAND_NAM
 echo -e "   <<your code examples description goes here>>\n\t${BOLD}${COMMAND_NAME}${NORMAL}"
 }
 
-#	Date and time function ISO 8601
+#    Date and time function ISO 8601
 get_date_stamp() {
-DATE_STAMP=$(date +%Y-%m-%dT%H:%M:%S.%6N%:z)
-TEMP=$(date +%Z)
-DATE_STAMP="${DATE_STAMP} (${TEMP})"
+  DATE_STAMP=$(date +%Y-%m-%dT%H:%M:%S.%6N%:z)
+  TEMP=$(date +%Z)
+  DATE_STAMP="${DATE_STAMP} (${TEMP})"
 }
 
-#	Fully qualified domain name FQDN hostname
+#    Fully qualified domain name FQDN hostname
 LOCALHOST=$(hostname -f)
 
-#	Version
+#    Version
 SCRIPT_NAME=$(head -2 "${0}" | awk '{printf $2}')
 SCRIPT_VERSION=$(head -2 "${0}" | awk '{printf $3}')
 
-#	UID and GID
+#    UID and GID
 USER_ID=$(id -u)
 GROUP_ID=$(id -g)
 
-#       Added following code because USER is not defined in crobtab jobs
+#    Added following code because USER is not defined in crobtab jobs
 if ! [ "${USER}" == "${LOGNAME}" ] ; then  USER=${LOGNAME} ; fi
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Setting USER to support crobtab...  USER >${USER}<  LOGNAME >${LOGNAME}<" 1>&2 ; fi
 
-#	Default help, usage, and version arguments
+#    Default help, usage, and version arguments
 if [ "$1" == "--help" ] || [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ] || [ "$1" == "h" ] || [ "$1" == "-?" ] ; then
-	display_help | more
-	exit 0
+  display_help | more
+  exit 0
 fi
 if [ "$1" == "--usage" ] || [ "$1" == "-usage" ] || [ "$1" == "usage" ] || [ "$1" == "-u" ] ; then
-        display_usage
-        exit 0
+  display_usage
+  exit 0
 fi
 if [ "$1" == "--version" ] || [ "$1" == "-version" ] || [ "$1" == "version" ] || [ "$1" == "-v" ] ; then
-	echo "${SCRIPT_NAME} ${SCRIPT_VERSION}"
-	exit 0
+  echo "${SCRIPT_NAME} ${SCRIPT_VERSION}"
+  exit 0
 fi
 
-### production standard 2.0 log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
-#	INFO
+###  Production standard 2.0 log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
+#    INFO
 get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[INFO]${NORMAL}  Started..." 1>&2
 
-#	DEBUG
+#    DEBUG
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Name_of_command >${0}< Name_of_arg1 >${1}< Name_of_arg2 >${2}< Name_of_arg3 >${3}<  Version of bash ${BASH_VERSION}" 1>&2 ; fi
 
 ###
-#	Root is required to copy certs
+#    Root is required to copy certs
 if ! [ "$(id -u)" = 0 ] ; then
-	display_help | more
-	get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Use sudo ${0}" 1>&2
-#       Help hint
-	echo -e "\n\t${BOLD}>>   SCRIPT MUST BE RUN AS ROOT   <<\n${NORMAL}"	1>&2
-	exit 1
+  display_help | more
+  get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Use sudo ${0}" 1>&2
+#    Help hint
+  echo -e "\n\t${BOLD}>>   SCRIPT MUST BE RUN AS ROOT   <<\n${NORMAL}"  1>&2
+  exit 1
 fi
 
 ###
-#       Test <REGISTRY_PORT> for integer
+#    Test <REGISTRY_PORT> for integer
 if ! [[ "${REGISTRY_PORT}" =~ ^[0-9]+$ ]] ; then        # requires [[   ]] or  [: =~: binary operator expected
-        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  <REGISTRY_PORT> is not an interger.  <REGISTRY_PORT> is set to '${REGISTRY_PORT}'" 1>&2
-        exit 1
+   get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  <REGISTRY_PORT> is not an interger.  <REGISTRY_PORT> is set to '${REGISTRY_PORT}'" 1>&2
+   exit 1
 fi
 
-###     Example arguments (1)
-### production standard 7.0 Default variable value
-#       Order of precedence: CLI argument, environment variable, default code
+###  Example arguments (1)
+###  Production standard 7.0 Default variable value
+#    Order of precedence: CLI argument, environment variable, default code
 if [ "${CLUSTER}" == "" ] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
-#       Order of precedence: CLI argument, default code
+#    Order of precedence: CLI argument, default code
 ADMUSER=${DEFAULT_USER}
-#       Order of precedence: CLI argument, environment variable, default code
+#    Order of precedence: CLI argument, environment variable, default code
 if [ "${DATA_DIR}" == "" ] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
-### production standard 9.0 Parse CLI options and arguments
+###  Production standard 9.0 Parse CLI options and arguments
 while [[ "${#}" -gt 0 ]] ; do
-        case "${1}" in
-                -a|--admuser)
-                        if [ "${2}" == "" ] ; then      # Check if argument is blank
-                                display_usage
-                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
-                                exit 1
-                        fi
-                        ADMUSER=${2}
-                        shift 2 # shift past argument and value
-                        ;;
-                -a=*|--admuser=*)
-                        ADMUSER=$(echo "${1}" | cut -d '=' -f 2)
-                        shift # shift past argument=value
-                        ;;
-                -c|--cluster)
-                        if [ "${2}" == "" ] ; then      # Check if argument is blank
-                                display_usage
-                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
-                                exit 1
-                        fi
-                        CLUSTER=${2}
-                        shift 2 # shift past argument and value
-                        ;;
-                -c=*|--cluster=*)
-                        CLUSTER=$(echo "${1}" | cut -d '=' -f 2)
-                        shift # shift past argument=value
-                        ;;
-                -d|--datadir)
-                        if [ "${2}" == "" ] ; then      # Check if argument is blank
-                                display_usage
-                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
-                                exit 1
-                        fi
-                        DATA_DIR=${2}
-                        shift 2 # shift past argument and value
-                        ;;
-                -d=*|--datadir=*)
-                        DATA_DIR=$(echo "${1}" | cut -d '=' -f 2)
-                        shift # shift past argument=value
-                        ;;
-                -f|--filename)
-                        if [ "${2}" == "" ] ; then      # Check if argument is blank
-                                display_usage
-                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
-                                exit 1
-                        fi
-                        FILE_NAME=${2}
-                        shift 2 # shift past argument and value
-                        ;;
-                -f=*|--filename=*)
-                        FILE_NAME=$(echo "${1}" | cut -d '=' -f 2)
-                        shift # shift past argument=value
-                        ;;
-                -S|--ssh_user)
-                        if [ "${2}" == "" ] ; then      # Check if argument is blank
-                                display_usage
-                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
-                                exit 1
-                        fi
-                        SSH_USER=${2}
-                        shift 2 # shift past argument and value
-                        ;;
-                -S=*|--ssh_user=*)
-                        SSH_USER=$(echo "${1}" | cut -d '=' -f 2)
-                        shift # shift past argument=value
-                        ;;
-                -U|--user_home)				# USER_HOME="/home/"
-                        if [ "${2}" == "" ] ; then      # Check if argument is blank
-                                display_usage
-                                get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
-                                exit 1
-                        fi
-                        USER_HOME=${2}
-                        shift 2 # shift past argument and value
-                        ;;
-                -U=*|--user_home=*)			# USER_HOME="/home/"
-                        USER_HOME=$(echo "${1}" | cut -d '=' -f 2)
-                        shift # shift past argument=value
-                        ;;
-                *)
-                        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Option, ${1}, entered on the command line is not supported." 1>&2
-                        display_usage
-                        exit 1
-                        ;;
-        esac
+  case "${1}" in
+    -a|--admuser)
+      if [ "${2}" == "" ] ; then   # Check if argument is blank
+        display_usage
+        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+        exit 1
+      fi
+      ADMUSER=${2}
+      shift 2                      # Shift past argument and value
+      ;;
+    -a=*|--admuser=*)
+      ADMUSER=$(echo "${1}" | cut -d '=' -f 2)
+      shift                        # Shift past argument=value
+      ;;
+    -c|--cluster)
+      if [ "${2}" == "" ] ; then   # Check if argument is blank
+        display_usage
+        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+        exit 1
+      fi
+      CLUSTER=${2}
+      shift 2                      # Shift past argument and value
+      ;;
+    -c=*|--cluster=*)
+      CLUSTER=$(echo "${1}" | cut -d '=' -f 2)
+      shift                        # Shift past argument=value
+      ;;
+    -d|--datadir)
+      if [ "${2}" == "" ] ; then   # Check if argument is blank
+        display_usage
+        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+        exit 1
+      fi
+      DATA_DIR=${2}
+      shift 2                      # Shift past argument and value
+      ;;
+    -d=*|--datadir=*)
+      DATA_DIR=$(echo "${1}" | cut -d '=' -f 2)
+      shift                        # Shift past argument=value
+      ;;
+    -f|--filename)
+      if [ "${2}" == "" ] ; then   # Check if argument is blank
+        display_usage
+        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+        exit 1
+      fi
+      FILE_NAME=${2}
+      shift 2                      # Shift past argument and value
+      ;;
+    -f=*|--filename=*)
+      FILE_NAME=$(echo "${1}" | cut -d '=' -f 2)
+      shift                        # Shift past argument=value
+      ;;
+    -S|--ssh_user)
+      if [ "${2}" == "" ] ; then   # Check if argument is blank
+        display_usage
+        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+        exit 1
+      fi
+      SSH_USER=${2}
+      shift 2                      # Shift past argument and value
+      ;;
+    -S=*|--ssh_user=*)
+      SSH_USER=$(echo "${1}" | cut -d '=' -f 2)
+      shift                        # Shift past argument=value
+      ;;
+    -U|--user_home)                # USER_HOME="/home/"
+      if [ "${2}" == "" ] ; then   # Check if argument is blank
+        display_usage
+        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
+        exit 1
+      fi
+      USER_HOME=${2}
+      shift 2                      # Shift past argument and value
+      ;;
+    -U=*|--user_home=*)            # USER_HOME="/home/"
+      USER_HOME=$(echo "${1}" | cut -d '=' -f 2)
+      shift                        # Shift past argument=value
+      ;;
+    *)
+      get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Option, ${1}, entered on the command line is not supported." 1>&2
+      display_usage
+      exit 1
+      ;;
+  esac
 done
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}< FILE_NAME >${FILE_NAME}<" 1>&2 ; fi
 
-###     Example arguments (2)
-#       Order of precedence: CLI argument, default code
+###  Example arguments (2)
+#    Order of precedence: CLI argument, default code
 OPTION1=${1:-default_value1}
 OPTION2=${2:-${DEFAULT_VALUE2}}
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... OPTION1 >${OPTION1}< OPTION2 >${OPTION2}<" 1>&2 ; fi
-#	Example arguments
+#    Example arguments
 
-###     Example arguments (3)
-### production standard 7.0 Default variable value
-#	The order of argument options matters.
-#       Order of precedence: CLI argument, environment variable, default code
+###  Example arguments (3)
+###  production standard 7.0 Default variable value
+#    The order of argument options matters.
+#    Order of precedence: CLI argument, environment variable, default code
 if [ $# -ge  1 ]  ; then CLUSTER=${1} ; elif [ "${CLUSTER}" == "" ] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
-#       Order of precedence: CLI argument, default code
+#    Order of precedence: CLI argument, default code
 ADMUSER=${2:-${DEFAULT_USER}}
-#       Order of precedence: CLI argument, environment variable, default code
+#    Order of precedence: CLI argument, environment variable, default code
 if [ $# -ge  3 ]  ; then DATA_DIR=${3} ; elif [ "${DATA_DIR}" == "" ] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
 if [ "${DEBUG}" == "1" ] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
-###     Example arguments (4)
-#       Check arguement 1 xxx
+###  Example arguments (4)
+#    Check arguement 1 xxx
 if [ "$1" != "no" ] && [ "$1" != "normal" ] && [ "$1" != "all" ] && [ "$1" != "" ] ; then
-        display_help | more
-        get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${BOLD}[ERROR]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  First arguement, ${1}, is NOT no, normal, all." 1>&2
-        exit 0
+  display_help | more
+  get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${BOLD}[ERROR]${NORMAL}  ${LOCALHOST}  ${USER}  ${USER_ID} ${GROUP_ID}  First arguement, ${1}, is NOT no, normal, all." 1>&2
+  exit 0
 fi
 
 #
 get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[INFO]${NORMAL}  Operation finished." 1>&2
 ###
-#	DO NOT USE CODE BELOW THIS LINE:  This is here to stop shellcheck warnings: "appears unused. Verify it or export it."
-#	This is here to stop shellcheck warnings: 
+#    DO NOT USE CODE BELOW THIS LINE:  This is here to stop shellcheck warnings: "appears unused. Verify it or export it."
+#    This is here to stop shellcheck warnings: 
 echo "${DEFAULT_SSH_USER}"
 echo "${DEFAULT_TLS_USER}"
 echo "${DEFAULT_ADM_TLS_USER}"
