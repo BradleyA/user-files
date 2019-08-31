@@ -1,12 +1,12 @@
 #!/bin/bash
-# 	template/template.sh  3.474.728  2019-08-31T12:33:52.320644-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.473  
-# 	   template/template.sh  pgrade DEBUG add DEBUG=2 set -x and DEBUG=3 set -v  close #36 
+# 	template/template.sh  3.475.729  2019-08-31T13:14:16.286336-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.474  
+# 	   template/template.sh  upgrade DEBUG add DEBUG=2 set -x and DEBUG=3 set -v #36 Production standard 1.3.475 DEBUG variable 
 ###  template.sh - shell script template containing my collection of shorthand functions and pre-written code
 ###  Production standard 3.0 shellcheck
 ###  Production standard 5.1.160 Copyright
 #    Copyright (c) 2019 Bradley Allen
 #    MIT License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
-###  Production standard 1.0 DEBUG variable
+###  Production standard 1.3.475 DEBUG variable
 #    Order of precedence: environment variable, default code
 if [[ "${DEBUG}" == ""  ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 if [[ "${DEBUG}" == "2" ]] ; then set -x    ; fi   # Print trace of simple commands before they are executed
@@ -81,6 +81,7 @@ echo    "ssh-agent and ssh-add before entering the following in a terminal windo
 echo -e "\t${BOLD}eval \$(ssh-agent)${NORMAL}"
 echo -e "\t${BOLD}ssh-add${NORMAL}"
 
+###  Production standard 1.3.475 DEBUG variable
 echo -e "\nThe DEBUG environment variable can be set to '', '0', '1', '2', or '3'.  The"
 echo    "setting '' or '0' will turn off all DEBUG messages during execution of this"
 echo    "script.  The setting '1' will print all DEBUG messages during execution of this"
