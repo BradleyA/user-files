@@ -1,6 +1,8 @@
 #!/bin/bash
-# 	template/template.sh  3.472.726  2019-08-30T21:14:04.518112-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.471-1-g337e183  
+# 	template/template.sh  3.473.727  2019-08-30T22:09:07.376345-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.472  
 # 	   template/template.sh remove a tabs for two spaces 
+#    template/template.sh  3.472.726  2019-08-30T21:14:04.518112-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.471-1-g337e183  
+#        template/template.sh remove a tabs for two spaces 
 ###  template.sh - shell script template containing my collection of shorthand functions and pre-written code
 ###  Production standard 3.0 shellcheck
 ###  Production standard 5.1.160 Copyright
@@ -11,10 +13,25 @@
 if [[ "${DEBUG}" == "" ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 if [[ "${DEBUG}" == "2" ]] ; then set -x ; fi  # Print trace of simple commands before they are executed
 if [[ "${DEBUG}" == "3" ]] ; then set -v ; fi   # Print shell input lines as they are read.
+# define the base AMI ID somehow from aaron maxwell   http://redsymbol.net/articles/bash-exit-traps/
+ami=$1
+#    Store the temporary instance ID here from aaron maxwell
+instance=''
+#    While we are at it, let me show you another use for a scratch directory. from aaron maxwell
+scratch=$(mktemp -d -t tmp.XXXXXXXXXX)
 cleanup_on_exit{
-# >>> Your cleanup code goes here ( remove temporary or scratch files and directories close files and databases )
+     # >>> Your cleanup code goes here ( remove temporary (rm ) or scratch files (close ) & directories close files and databases )
+  if [ -n "$instance" ]; then
+    ec2-terminate-instances "$instance"
+  fi
 }
 trap cleanup_on_exit EXIT
+#    This line runs the instance, and stores the program output (which from aaron maxwell
+#    shows the instance ID) in a file in the scratch directory. from aaron maxwell
+ec2-run-instances "$ami" > "$scratch/run-instance"
+#    Now extract the instance ID. from aaron maxwell
+instance=$(grep '^INSTANCE' "$scratch/run-instance" | cut -f 2)
+
 #
 BOLD=$(tput -Txterm bold)
 NORMAL=$(tput -Txterm sgr0)
