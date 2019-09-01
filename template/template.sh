@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.480.735  2019-08-31T15:43:55.930966-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.479-1-g9975d58  
-# 	   hooks/EXAMPLES/FVT-option-version-001 002 003  remove tabs use two spaces add additional tests in test cases 
-# 	template/template.sh  3.380.734  2019-08-31T14:01:50.295757-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.479
-# 	   testing FVT-option-version-002 and 003   3.479 
+# 	template/template.sh  3.483.738  2019-08-31T20:51:25.739037-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.482  
+# 	   hooks/EXAMPLES/FVT-exit-code-error-124-001 002 003   changes tabs to two spaces copy Production standard 1.3.475 DEBUG variable 
 ###  template.sh - shell script template containing my collection of shorthand functions and pre-written code
 ###  Production standard 3.0 shellcheck
 ###  Production standard 5.1.160 Copyright
