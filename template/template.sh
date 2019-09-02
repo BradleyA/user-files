@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.494.749  2019-09-02T06:14:32.594447-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.493  
+# 	   correct shellcheck incident SC2086: 
 # 	template/template.sh  3.493.748  2019-09-02T06:12:15.578587-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.492  
 # 	   template/template.sh  add DEBUG mode 4 
 ###  template.sh - shell script template containing my collection of shorthand functions and pre-written code
@@ -38,7 +40,7 @@ DEFAULT_REGISTRY_HOST="$(hostname -f)"  # local host
 DEFAULT_REGISTRY_PORT="5000"
 DEFAULT_TLS_USER="${USER}"
 DEFAULT_NUMBER_DAYS="90"
-DEFAULT_USER_HOME=$(dirname $HOME)
+DEFAULT_USER_HOME=$(dirname "${HOME}")
 DEFAULT_ADM_TLS_USER="${USER}"
 ###  Production standard 8.3.214 --usage
 display_usage() {
