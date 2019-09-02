@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.483.738  2019-08-31T20:51:25.739037-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.482  
-# 	   hooks/EXAMPLES/FVT-exit-code-error-124-001 002 003   changes tabs to two spaces copy Production standard 1.3.475 DEBUG variable 
+# 	template/template.sh  3.493.748  2019-09-02T06:12:15.578587-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.492  
+# 	   template/template.sh  add DEBUG mode 4 
 ###  template.sh - shell script template containing my collection of shorthand functions and pre-written code
 ###  Production standard 3.0 shellcheck
 ###  Production standard 5.1.160 Copyright
@@ -11,6 +11,7 @@
 if [[ "${DEBUG}" == ""  ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 if [[ "${DEBUG}" == "2" ]] ; then set -x    ; fi   # Print trace of simple commands before they are executed
 if [[ "${DEBUG}" == "3" ]] ; then set -v    ; fi   # Print shell input lines as they are read
+if [[ "${DEBUG}" == "4" ]] ; then set -e    ; fi   # Exit command has a non-zero exit status
 #
 BOLD=$(tput -Txterm bold)
 NORMAL=$(tput -Txterm sgr0)
@@ -35,6 +36,10 @@ DEFAULT_FQDN="$(hostname -f)"  # local host
 DEFAULT_REMOTE_HOST="$(hostname -f)"    # local host
 DEFAULT_REGISTRY_HOST="$(hostname -f)"  # local host
 DEFAULT_REGISTRY_PORT="5000"
+DEFAULT_TLS_USER="${USER}"
+DEFAULT_NUMBER_DAYS="90"
+DEFAULT_USER_HOME=$(dirname $HOME)
+DEFAULT_ADM_TLS_USER="${USER}"
 ###  Production standard 8.3.214 --usage
 display_usage() {
 COMMAND_NAME=$(echo "${0}" | sed 's/^.*\///')
