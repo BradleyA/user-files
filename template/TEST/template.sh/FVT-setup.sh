@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/TEST/template.sh/FVT-setup.sh  3.497.752  2019-09-05T11:28:35.141797-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.496  
-# 	   #38 template/template.sh  change USER_HOME ; add 86 
+# 	template/TEST/template.sh/FVT-setup.sh  3.498.753  2019-09-05T12:36:00.994505-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.497  
+# 	   template/TEST/template.sh/FVT-setup.sh  testing +REPOSITORY_DIR=$(git rev-parse --show-toplevel) 
 # 	hooks/EXAMPLES/FVT-setup.sh  3.488.743  2019-08-31T23:13:27.607919-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.487  
 # 	   SCRIPT_VERSION incident corrected and correct Test script logic ERROR message 
 # 	hooks/EXAMPLES/FVT-setup.sh  3.488.743  2019-08-31T23:11:17.014756-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.487  
@@ -45,7 +45,7 @@ if [[ "${DEBUG}" == "1" ]] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAM
 rm -f FVT-*.test-case-output
 
 REPOSITORY_DIR=$(git rev-parse --show-toplevel)
-
+echo    "   >>>   ${REPOSITORY_DIR} <<<< "
 
 #    Uncomment shared TEST cases for TESTing
 ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-help-001"          FVT-option-help-001
@@ -60,8 +60,6 @@ ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-usage-003"         FVT-optio
 ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-version-001"       FVT-option-version-001
 ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-version-002"       FVT-option-version-002
 ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-version-003"       FVT-option-version-003
-ln -fs FVT-option-version-001.expected                                 FVT-option-version-002.expected
-ln -fs FVT-option-version-001.expected                                 FVT-option-version-003.expected
 #
 #  ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-exit-code-error-124-001"  FVT-exit-code-error-124-001
 #  ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-exit-code-error-124-002"  FVT-exit-code-error-124-002

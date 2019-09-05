@@ -1,5 +1,7 @@
 #!/bin/bash
-# 	template/template.sh  3.497.752  2019-09-05T11:28:35.345635-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.496  
+# 	template/template.sh  3.498.753  2019-09-05T12:36:01.130822-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.497  
+# 	   template/TEST/template.sh/FVT-setup.sh  testing +REPOSITORY_DIR=$(git rev-parse --show-toplevel) 
+# 	template/template.sh  3.497.752  2019-09-05T11:28:35.345635-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.496 
 # 	   #38 template/template.sh  change USER_HOME ; add 86 
 # 	template/template.sh  3.496.751  2019-09-02T09:04:10.995399-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.495  
 # 	   template/template.sh  Production standard 1.3.496 DEBUG variable 
