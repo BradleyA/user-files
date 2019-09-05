@@ -1,26 +1,21 @@
 #!/bin/bash
-# 	template/TEST/template.sh/FVT-setup.sh  3.501.756  2019-09-05T12:53:52.263272-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.500  
-# 	   template/TEST/template.sh/FVT-setup.sh  testing +REPOSITORY_DIR 
-# 	hooks/EXAMPLES/FVT-setup.sh  3.488.743  2019-08-31T23:13:27.607919-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.487  
-# 	   SCRIPT_VERSION incident corrected and correct Test script logic ERROR message 
-# 	hooks/EXAMPLES/FVT-setup.sh  3.488.743  2019-08-31T23:11:17.014756-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.487  
-# 	   SCRIPT_VERSION incident corrected and correct Test script logic ERROR message 
-# 	hooks/EXAMPLES/FVT-setup.sh  3.485.740  2019-08-31T21:19:16.394013-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.484  
-# 	   hooks/EXAMPLES/FVT-setup.sh   few typos 
-###  hooks/EXAMPLES/FVT-setup.sh - This script is optional.  It runs before test cases
-#    are run, if FVT-setup.sh is found in TEST/<file_name>/
-#    Functional Verification Testing (FVT) - verify that the program logic conforms to
-#    design specification.  FVT attempts to answer the question "Does this program logic
-#    do what is intended?"
+# 	template/TEST/template.sh/FVT-setup.sh  3.503.758  2019-09-05T14:07:48.645178-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.502  
+# 	   testing FVT-setup.sh with and without post-commit 
+#86# hooks/EXAMPLES/FVT-setup.sh - This script is optional.  It is for setting up
+#    test cases and is located in the directory TEST/<file_name>/.
+#    Functional Verification Testing (FVT) - verify that the program logic conforms
+#    to design specification.  FVT attempts to answer the question:
+#      "Does this program logic do what is intended from design specification.?"
 ###  Production standard 3.0 shellcheck
 ###  Production standard 5.1.160 Copyright
 #    Copyright (c) 2019 Bradley Allen
 #    MIT License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
-###  Production standard 1.3.475 DEBUG variable
+###  Production standard 1.3.496 DEBUG variable
 #    Order of precedence: environment variable, default code
 if [[ "${DEBUG}" == ""  ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 if [[ "${DEBUG}" == "2" ]] ; then set -x    ; fi   # Print trace of simple commands before they are executed
 if [[ "${DEBUG}" == "3" ]] ; then set -v    ; fi   # Print shell input lines as they are read
+if [[ "${DEBUG}" == "4" ]] ; then set -e    ; fi   # Exit command has a non-zero exit status
 #
 BOLD=$(tput -Txterm bold)
 NORMAL=$(tput -Txterm sgr0)
@@ -48,7 +43,12 @@ set -x
 if [[ ! -z "${1}" ]] ; then  # post-commit must pass REPOSITORY_DIR because post-commit is executed in .git/hooks/ which is not in the repository
   REPOSITORY_DIR=${1}
 else
-  REPOSITORY_DIR=$(git rev-parse --show-toplevel)  #  not call by post-commit
+  REPOSITORY_DIR=$(git rev-parse --show-toplevel)  #  not called by post-commit
+  if [[ "${0}" != $(basename "${0}") ]] ; then
+    cd $(dirname "${0}")
+  else
+    echo ">>> shit don't do that  must be run by post-commit or from local direcotry to work"
+  fi
 fi
 set +x
 

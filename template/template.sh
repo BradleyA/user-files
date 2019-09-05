@@ -1,7 +1,7 @@
 #!/bin/bash
-# 	template/template.sh  3.502.757  2019-09-05T12:54:30.857929-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.501  
-# 	   template/TEST/template.sh/FVT-setup.sh  testing +REPOSITORY_DIR 
-# 	template/template.sh  3.496.751  2019-09-02T09:04:10.995399-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.495  
+# 	template/template.sh  3.503.758  2019-09-05T14:07:48.784163-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.502  
+# 	   testing FVT-setup.sh with and without post-commit 
+# 	template/template.sh  3.496.751  2019-09-02T09:04:10.995399-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.495 
 # 	   template/template.sh  Production standard 1.3.496 DEBUG variable 
 #86# template/template.sh - shell script template containing my collection of shorthand functions and pre-written code
 ###  Production standard 3.0 shellcheck
