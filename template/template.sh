@@ -1,10 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.499.754  2019-09-05T12:48:43.327463-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.498  
+# 	template/template.sh  3.500.755  2019-09-05T12:51:51.207883-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.499  
 # 	   template/TEST/template.sh/FVT-setup.sh  testing +REPOSITORY_DIR 
-# 	template/template.sh  3.498.753  2019-09-05T12:36:01.130822-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.497 
-# 	   template/TEST/template.sh/FVT-setup.sh  testing +REPOSITORY_DIR=$(git rev-parse --show-toplevel) 
-# 	template/template.sh  3.497.752  2019-09-05T11:28:35.345635-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.496 
-# 	   #38 template/template.sh  change USER_HOME ; add 86 
 # 	template/template.sh  3.496.751  2019-09-02T09:04:10.995399-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.495  
 # 	   template/template.sh  Production standard 1.3.496 DEBUG variable 
 #86# template/template.sh - shell script template containing my collection of shorthand functions and pre-written code
