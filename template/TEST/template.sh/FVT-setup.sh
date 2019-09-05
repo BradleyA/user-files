@@ -1,6 +1,12 @@
 #!/bin/bash
-# 	template/TEST/template.sh/FVT-setup.sh  3.492.747  2019-09-01T00:09:00.184786-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.491  
-# 	   copy latest SAST-setup.sh & #  ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-help-001"          FVT-option-help-001 
+# 	template/TEST/template.sh/FVT-setup.sh  3.497.752  2019-09-05T11:28:35.141797-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.496  
+# 	   #38 template/template.sh  change USER_HOME ; add 86 
+# 	hooks/EXAMPLES/FVT-setup.sh  3.488.743  2019-08-31T23:13:27.607919-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.487  
+# 	   SCRIPT_VERSION incident corrected and correct Test script logic ERROR message 
+# 	hooks/EXAMPLES/FVT-setup.sh  3.488.743  2019-08-31T23:11:17.014756-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.487  
+# 	   SCRIPT_VERSION incident corrected and correct Test script logic ERROR message 
+# 	hooks/EXAMPLES/FVT-setup.sh  3.485.740  2019-08-31T21:19:16.394013-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.484  
+# 	   hooks/EXAMPLES/FVT-setup.sh   few typos 
 ###  hooks/EXAMPLES/FVT-setup.sh - This script is optional.  It runs before test cases
 #    are run, if FVT-setup.sh is found in TEST/<file_name>/
 #    Functional Verification Testing (FVT) - verify that the program logic conforms to
@@ -38,7 +44,8 @@ if [[ "${DEBUG}" == "1" ]] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAM
 #    Remove output from previous run of test cases
 rm -f FVT-*.test-case-output
 
-REPOSITORY_DIR=${1}
+REPOSITORY_DIR=$(git rev-parse --show-toplevel)
+
 
 #    Uncomment shared TEST cases for TESTing
 ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-help-001"          FVT-option-help-001
@@ -53,6 +60,8 @@ ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-usage-003"         FVT-optio
 ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-version-001"       FVT-option-version-001
 ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-version-002"       FVT-option-version-002
 ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-version-003"       FVT-option-version-003
+ln -fs FVT-option-version-001.expected                                 FVT-option-version-002.expected
+ln -fs FVT-option-version-001.expected                                 FVT-option-version-003.expected
 #
 #  ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-exit-code-error-124-001"  FVT-exit-code-error-124-001
 #  ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-exit-code-error-124-002"  FVT-exit-code-error-124-002

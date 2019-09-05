@@ -1,7 +1,9 @@
 #!/bin/bash
+# 	template/template.sh  3.497.752  2019-09-05T11:28:35.345635-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.496  
+# 	   #38 template/template.sh  change USER_HOME ; add 86 
 # 	template/template.sh  3.496.751  2019-09-02T09:04:10.995399-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.495  
 # 	   template/template.sh  Production standard 1.3.496 DEBUG variable 
-###  template/template.sh - shell script template containing my collection of shorthand functions and pre-written code
+#86# template/template.sh - shell script template containing my collection of shorthand functions and pre-written code
 ###  Production standard 3.0 shellcheck
 ###  Production standard 5.1.160 Copyright
 #    Copyright (c) 2019 Bradley Allen
@@ -20,7 +22,7 @@ DEFAULT_USER="${USER}"
 DEFAULT_SSH_USER="${USER}"
 DEFAULT_TLS_USER="${USER}"
 DEFAULT_ADM_TLS_USER="${USER}"
-DEFAULT_USER_HOME=$(echo ~ | sed s/"${USER}"//)
+DEFAULT_USER_HOME=$(dirname "${HOME}")
 DEFAULT_DATA_DIR="/usr/local/data/"
 DEFAULT_CLUSTER="us-tx-cluster-1/"
 DEFAULT_SYSTEMS_FILE="SYSTEMS"
