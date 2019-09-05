@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/TEST/template.sh/SA-setup.sh  3.505.764  2019-09-05T17:08:26.964984-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.504-3-g5155f26  
-# 	   template/TEST/template.sh/SA-setup.sh testing 
-# 	hooks/EXAMPLES/SA-setup.sh  2.42.367  2019-09-05T16:46:57.526740-05:00 (CDT)  https://github.com/BradleyA/git-TEST-commit-automation.git  uadmin  five-rpi3b.cptx86.com 2.41  
-# 	   #13 hooks/EXAMPLES/SA-setup.sh  begin testing 
+# 	template/TEST/template.sh/SA-setup.sh  3.506.765  2019-09-05T17:10:36.126970-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.505  
+# 	   testing template/TEST/template.sh/SA-setup.sh 
 #86# hooks/EXAMPLES/SA-setup.sh - This script is optional.  It is for 
 #    'Production standard 10.0 TESTing' test cases.  Copy it to TEST/<file_name>/.
 #    If SA-setup.sh is found in TEST/<file_name>/ post-commit executes it.
@@ -54,7 +52,7 @@ fi
 #  ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/SA-permission-644-001"      SA-permission-644-001
 #  ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/SA-permission-664-001"      SA-permission-664-001
 #  ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/SA-permission-755-001"      SA-permission-755-001
-ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/SA-permission-775-001"      SA-permission-775-001
+ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/SA-permission-775-001"       SA-permission-775-001
 ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/SA-shellcheck-001"           SA-shellcheck-001
 #
 #  ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/SA-exit-code-error-124-001" SA-exit-code-error-124-001

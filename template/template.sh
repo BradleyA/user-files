@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.504.760  2019-09-05T15:35:58.486384-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.503-1-g4069bed  
-# 	   testing template/TEST/template.sh/FVT-setup.sh 
+# 	template/template.sh  3.506.765  2019-09-05T17:10:36.397753-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.505  
+# 	   testing template/TEST/template.sh/SA-setup.sh 
 # 	template/template.sh  3.496.751  2019-09-02T09:04:10.995399-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.495
 # 	   template/template.sh  Production standard 1.3.496 DEBUG variable 
 #86# template/template.sh - shell script template containing my collection of shorthand functions and pre-written code
