@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/TEST/template.sh/FVT-setup.sh  3.498.753  2019-09-05T12:36:00.994505-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.497  
-# 	   template/TEST/template.sh/FVT-setup.sh  testing +REPOSITORY_DIR=$(git rev-parse --show-toplevel) 
+# 	template/TEST/template.sh/FVT-setup.sh  3.499.754  2019-09-05T12:48:43.057511-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.498  
+# 	   template/TEST/template.sh/FVT-setup.sh  testing +REPOSITORY_DIR 
 # 	hooks/EXAMPLES/FVT-setup.sh  3.488.743  2019-08-31T23:13:27.607919-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.487  
 # 	   SCRIPT_VERSION incident corrected and correct Test script logic ERROR message 
 # 	hooks/EXAMPLES/FVT-setup.sh  3.488.743  2019-08-31T23:11:17.014756-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.487  
@@ -44,8 +44,11 @@ if [[ "${DEBUG}" == "1" ]] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAM
 #    Remove output from previous run of test cases
 rm -f FVT-*.test-case-output
 
-REPOSITORY_DIR=$(git rev-parse --show-toplevel)
-echo    "   >>>   ${REPOSITORY_DIR} <<<< "
+if [[ -z "${1}" ]] ; then  # post-commit must pass REPOSITORY_DIR because post-commit is executed in .git/hooks/ which is not in the repository
+  REPOSITORY_DIR=${1}
+else
+  REPOSITORY_DIR=$(git rev-parse --show-toplevel)  #  not call by post-commit
+fi
 
 #    Uncomment shared TEST cases for TESTing
 ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-help-001"          FVT-option-help-001
@@ -60,6 +63,8 @@ ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-usage-003"         FVT-optio
 ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-version-001"       FVT-option-version-001
 ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-version-002"       FVT-option-version-002
 ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-version-003"       FVT-option-version-003
+ln -fs FVT-option-version-001.expected                                 FVT-option-version-002.expected
+ln -fs FVT-option-version-001.expected                                 FVT-option-version-003.expected
 #
 #  ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-exit-code-error-124-001"  FVT-exit-code-error-124-001
 #  ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-exit-code-error-124-002"  FVT-exit-code-error-124-002
