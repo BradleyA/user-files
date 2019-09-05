@@ -1,11 +1,12 @@
 #!/bin/bash
-# 	template/TEST/template.sh/FVT-setup.sh  3.304.759  2019-09-05T14:48:31.382913-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.503  
+# 	template/TEST/template.sh/FVT-setup.sh  3.504.760  2019-09-05T15:35:58.164827-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.503-1-g4069bed  
 # 	   testing template/TEST/template.sh/FVT-setup.sh 
+# 	hooks/EXAMPLES/FVT-setup.sh  2.40.365  2019-09-05T15:10:32.849003-05:00 (CDT)  https://github.com/BradleyA/git-TEST-commit-automation.git  uadmin  five-rpi3b.cptx86.com 2.39-41-g76a187e  
+# 	   close #11 hooks/EXAMPLES/FVT-setup.sh  upgraded Production standard 1.3.496 DEBUG variable ; added REPOSITORY_DIR for #11 ; added more ln 
 #86# hooks/EXAMPLES/FVT-setup.sh - This script is optional.  It is for setting up
-#    test cases and is located in the directory TEST/<file_name>/.
+#    'Production standard 10.0 TESTing' test cases.  Copy it to TEST/<file_name>/.
 #    Functional Verification Testing (FVT) - verify that the program logic conforms
-#    to design specification.  FVT attempts to answer the question:
-#      "Does this program logic do what is intended from design specification.?"
+#    to design specification.
 ###  Production standard 3.0 shellcheck
 ###  Production standard 5.1.160 Copyright
 #    Copyright (c) 2019 Bradley Allen
@@ -39,16 +40,14 @@ if [[ "${DEBUG}" == "1" ]] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAM
 #    Remove output from previous run of test cases
 rm -f FVT-*.test-case-output
 
-set -x
 if [[ ! -z "${1}" ]] ; then  # post-commit must pass REPOSITORY_DIR because post-commit is executed in .git/hooks/ which is not in the repository
   REPOSITORY_DIR=${1}
 else
   REPOSITORY_DIR=$(git rev-parse --show-toplevel)  #  not called by post-commit
   if [[ "${0}" != $(basename "${0}") ]] ; then  #  is script executed in TEST/<COMMIT_FILE_NAME>/ directory
-    cd $(dirname "${0}")
+    cd "$(dirname "${0}")"
   fi
 fi
-set +x
 
 #    Uncomment shared TEST cases for TESTing
 ln -fs "${REPOSITORY_DIR}/hooks/EXAMPLES/FVT-option-help-001"          FVT-option-help-001
