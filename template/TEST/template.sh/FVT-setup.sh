@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/TEST/template.sh/FVT-setup.sh  3.503.758  2019-09-05T14:07:48.645178-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.502  
-# 	   testing FVT-setup.sh with and without post-commit 
+# 	template/TEST/template.sh/FVT-setup.sh  3.304.759  2019-09-05T14:48:31.382913-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.503  
+# 	   testing template/TEST/template.sh/FVT-setup.sh 
 #86# hooks/EXAMPLES/FVT-setup.sh - This script is optional.  It is for setting up
 #    test cases and is located in the directory TEST/<file_name>/.
 #    Functional Verification Testing (FVT) - verify that the program logic conforms
@@ -44,10 +44,8 @@ if [[ ! -z "${1}" ]] ; then  # post-commit must pass REPOSITORY_DIR because post
   REPOSITORY_DIR=${1}
 else
   REPOSITORY_DIR=$(git rev-parse --show-toplevel)  #  not called by post-commit
-  if [[ "${0}" != $(basename "${0}") ]] ; then
+  if [[ "${0}" != $(basename "${0}") ]] ; then  #  is script executed in TEST/<COMMIT_FILE_NAME>/ directory
     cd $(dirname "${0}")
-  else
-    echo ">>> shit don't do that  must be run by post-commit or from local direcotry to work"
   fi
 fi
 set +x
