@@ -1,5 +1,5 @@
 #!/bin/bash
-# 	template/template.sh  3.500.755  2019-09-05T12:51:51.207883-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.499  
+# 	template/template.sh  3.502.757  2019-09-05T12:54:30.857929-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.501  
 # 	   template/TEST/template.sh/FVT-setup.sh  testing +REPOSITORY_DIR 
 # 	template/template.sh  3.496.751  2019-09-02T09:04:10.995399-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.495  
 # 	   template/template.sh  Production standard 1.3.496 DEBUG variable 
