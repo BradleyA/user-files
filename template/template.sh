@@ -1,5 +1,5 @@
 #!/bin/bash
-# 	template/template.sh  3.506.765  2019-09-05T17:10:36.397753-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.505  
+# 	template/template.sh  3.507.768  2019-09-05T19:04:22.946830-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.506-2-gfc27f3e  
 # 	   testing template/TEST/template.sh/SA-setup.sh 
 # 	template/template.sh  3.496.751  2019-09-02T09:04:10.995399-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.495
 # 	   template/template.sh  Production standard 1.3.496 DEBUG variable 
