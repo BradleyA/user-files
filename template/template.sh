@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.509.771  2019-09-07T14:17:12.637068-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.508-1-g67a66f2  
+# 	   template/template.sh  remove dup line 
 # 	template/template.sh  3.508.769  2019-09-05T19:07:51.507580-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.507  
 # 	   testing template/TEST/template.sh/SA-setup.sh 
 # 	template/template.sh  3.496.751  2019-09-02T09:04:10.995399-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.495
@@ -40,7 +42,6 @@ DEFAULT_REGISTRY_HOST="$(hostname -f)"  # local host
 DEFAULT_REGISTRY_PORT="5000"
 DEFAULT_TLS_USER="${USER}"
 DEFAULT_NUMBER_DAYS="90"
-DEFAULT_USER_HOME=$(dirname "${HOME}")
 DEFAULT_ADM_TLS_USER="${USER}"
 ###  Production standard 8.3.214 --usage
 display_usage() {
