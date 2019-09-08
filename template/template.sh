@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.511.774  2019-09-08T12:44:49.927842-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.510  
+# 	   template/template.sh   begin rewriting Production standard 9.0 Parse CLI options and arguments #24 
 # 	template/template.sh  3.510.773  2019-09-08T10:22:17.766012-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.509-1-g0b5a2c7  
 # 	   template/template.sh  update [ to [[ 
 # 	template/template.sh  3.496.751  2019-09-02T09:04:10.995399-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.495
@@ -305,7 +307,7 @@ GROUP_ID=$(id -g)
 
 #    Added following code because USER is not defined in crobtab jobs
 if ! [[ "${USER}" == "${LOGNAME}" ]] ; then  USER=${LOGNAME} ; fi
-if [[ "${DEBUG}" == "1" ]] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[DEBUG]${NORMAL}  Setting USER to support crobtab...  USER >${USER}<  LOGNAME >${LOGNAME}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${SCRIPT_NAME}" "${LINENO}" "DEBUG" "  Setting USER to support crobtab...  USER >${USER}<  LOGNAME >${LOGNAME}<" 1>&2 ; fi
 
 #    Default help, usage, and version arguments
 if [[ "$1" == "--help" ]] || [[ "$1" == "-help" ]] || [[ "$1" == "help" ]] || [[ "$1" == "-h" ]] || [[ "$1" == "h" ]] || [[ "$1" == "-?" ]] ; then
@@ -321,7 +323,6 @@ if [[ "$1" == "--version" ]] || [[ "$1" == "-version" ]] || [[ "$1" == "version"
   exit 0
 fi
 
-###  Production standard 2.0 log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
 #    INFO
 get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[INFO]${NORMAL}  Started..." 1>&2
 
@@ -358,84 +359,83 @@ if [[ "${DEBUG}" == "1" ]] ; then get_date_stamp ; echo -e "${NORMAL}${DATE_STAM
 ###  Production standard 9.0 Parse CLI options and arguments
 while [[ "${#}" -gt 0 ]] ; do
   case "${1}" in
+    --help|-help|help|-h|h|-?)  display_help | more ; exit 0  ;;
+    --usage|-usage|usage|-u)  display_usage ; exit 0  ;;
+    --version|-version|version|-v)  echo "${SCRIPT_NAME} ${SCRIPT_VERSION}" ; exit 0  ;;
+
+#    --help|-help|help|-h|h|-?)
+#      display_help | more
+#      exit 0
+#      ;;
+#    --usage|-usage|usage|-u) 
+#      display_usage
+#      exit 0
+#      ;;
+#    --version|-version|version|"-v")
+#      echo "${SCRIPT_NAME} ${SCRIPT_VERSION}"
+#      exit 0
+#      ;;
+
     -a|--admuser)
-      if [[ "${2}" == "" ]] ; then   # Check if argument is blank
+      if [[ "${2}" == "" ]] ; then   #  Check if argument is blank
         display_usage
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
         exit 1
       fi
       ADMUSER=${2}
-      shift 2                      # Shift past argument and value
+      shift 2                      #  Shift past argument and value
       ;;
-    -a=*|--admuser=*)
-      ADMUSER=$(echo "${1}" | cut -d '=' -f 2)
-      shift                        # Shift past argument=value
-      ;;
+    -a=*|--admuser=*)  ADMUSER=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
     -c|--cluster)
-      if [[ "${2}" == "" ]] ; then   # Check if argument is blank
+      if [[ "${2}" == "" ]] ; then   #  Check if argument is blank
         display_usage
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
         exit 1
       fi
       CLUSTER=${2}
-      shift 2                      # Shift past argument and value
+      shift 2                      #  Shift past argument and value
       ;;
-    -c=*|--cluster=*)
-      CLUSTER=$(echo "${1}" | cut -d '=' -f 2)
-      shift                        # Shift past argument=value
-      ;;
+    -c=*|--cluster=*)  CLUSTER=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
     -d|--datadir)
-      if [[ "${2}" == "" ]] ; then   # Check if argument is blank
+      if [[ "${2}" == "" ]] ; then   #  Check if argument is blank
         display_usage
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
         exit 1
       fi
       DATA_DIR=${2}
-      shift 2                      # Shift past argument and value
+      shift 2                      #  Shift past argument and value
       ;;
-    -d=*|--datadir=*)
-      DATA_DIR=$(echo "${1}" | cut -d '=' -f 2)
-      shift                        # Shift past argument=value
-      ;;
+    -d=*|--datadir=*)  DATA_DIR=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
     -f|--filename)
-      if [[ "${2}" == "" ]] ; then   # Check if argument is blank
+      if [[ "${2}" == "" ]] ; then   #  Check if argument is blank
         display_usage
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
         exit 1
       fi
       FILE_NAME=${2}
-      shift 2                      # Shift past argument and value
+      shift 2                      #  Shift past argument and value
       ;;
-    -f=*|--filename=*)
-      FILE_NAME=$(echo "${1}" | cut -d '=' -f 2)
-      shift                        # Shift past argument=value
-      ;;
+    -f=*|--filename=*)  FILE_NAME=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
     -S|--ssh_user)
-      if [[ "${2}" == "" ]] ; then   # Check if argument is blank
+      if [[ "${2}" == "" ]] ; then   #  Check if argument is blank
         display_usage
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
         exit 1
       fi
       SSH_USER=${2}
-      shift 2                      # Shift past argument and value
+      shift 2                      #  Shift past argument and value
       ;;
-    -S=*|--ssh_user=*)
-      SSH_USER=$(echo "${1}" | cut -d '=' -f 2)
-      shift                        # Shift past argument=value
-      ;;
-    -U|--user_home)                # USER_HOME="/home/"
-      if [[ "${2}" == "" ]] ; then   # Check if argument is blank
+    -S=*|--ssh_user=*)  SSH_USER=$(echo "${1}" | cut -d '=' -f 2) ; shift   ;;
+    -U|--user_home)                #  USER_HOME="/home/"
+      if [[ "${2}" == "" ]] ; then   #  Check if argument is blank
         display_usage
         get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Argument for ${1} is not found on command line" 1>&2
         exit 1
       fi
       USER_HOME=${2}
-      shift 2                      # Shift past argument and value
+      shift 2                      #  Shift past argument and value
       ;;
-    -U=*|--user_home=*)            # USER_HOME="/home/"
-      USER_HOME=$(echo "${1}" | cut -d '=' -f 2)
-      shift                        # Shift past argument=value
-      ;;
+    -U=*|--user_home=*)   USER_HOME=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
     *) 
       get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[ERROR]${NORMAL}  Option, ${1}, entered on the command line is not supported." 1>&2
       display_usage
