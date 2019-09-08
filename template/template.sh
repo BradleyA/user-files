@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.512.775  2019-09-08T13:01:15.338262-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.511  
+# 	   close #12  template/template.sh   create function for Production standard 2.3.512 log format 
 # 	template/template.sh  3.511.774  2019-09-08T12:44:49.927842-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.510  
 # 	   template/template.sh   begin rewriting Production standard 9.0 Parse CLI options and arguments #24 
 # 	template/template.sh  3.510.773  2019-09-08T10:22:17.766012-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.509-1-g0b5a2c7  
@@ -304,6 +306,15 @@ SCRIPT_VERSION=$(head -2 "${0}" | awk '{printf $3}')
 #    UID and GID
 USER_ID=$(id -u)
 GROUP_ID=$(id -g)
+
+#    Name of script
+SCRIPT_NAME="${0}"
+
+###  Production standard 2.3.512 log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
+new_message() {  #  $1="${SCRIPT_NAME}"  $2="${LINENO}"  $3="DEBUG INFO ERROR WARN"  $4="message"
+  get_date_stamp
+  echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${1}[$$] ${SCRIPT_VERSION} ${2} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[${3}]${NORMAL}  ${4}"
+}
 
 #    Added following code because USER is not defined in crobtab jobs
 if ! [[ "${USER}" == "${LOGNAME}" ]] ; then  USER=${LOGNAME} ; fi
