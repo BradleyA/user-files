@@ -1,5 +1,7 @@
 #!/bin/bash
-# 	template/template.sh  3.513.777  2019-09-08T20:46:45.957771-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.513  
+# 	template/template.sh  3.514.778  2019-09-08T21:39:33.356034-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.513-1-gc612aa7  
+# 	   template/template.sh  testing hooks/EXAMPLES/FVT-option-help-001 
+# 	template/template.sh  3.513.777  2019-09-08T20:46:45.957771-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.513 
 # 	   template/template.sh  correct incident found by test case with version 
 # 	template/template.sh  3.513.776  2019-09-08T20:28:10.251481-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.512  
 # 	   close #24  template/template.sh  Production standard 9.3.513 Parse CLI options, arguments, and new_message 
