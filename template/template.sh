@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.513.777  2019-09-08T20:46:45.957771-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.513  
+# 	   template/template.sh  correct incident found by test case with version 
 # 	template/template.sh  3.513.776  2019-09-08T20:28:10.251481-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.512  
 # 	   close #24  template/template.sh  Production standard 9.3.513 Parse CLI options, arguments, and new_message 
 # 	template/template.sh  3.512.775  2019-09-08T13:01:15.338262-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.511  
@@ -304,9 +306,6 @@ SCRIPT_VERSION=$(head -2 "${0}" | awk '{printf $3}')
 #    UID and GID
 USER_ID=$(id -u)
 GROUP_ID=$(id -g)
-
-#    Name of script
-SCRIPT_NAME="${0}"
 
 ###  Production standard 2.3.512 log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
 new_message() {  #  $1="${SCRIPT_NAME}"  $2="${LINENO}"  $3="DEBUG INFO ERROR WARN"  $4="message"
