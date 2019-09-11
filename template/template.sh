@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.515.780  2019-09-10T21:49:01.952368-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.514-1-g7199f90  
+# 	   template/template.sh  update Started... and Operation finished... 
 # 	template/template.sh  3.514.778  2019-09-08T21:39:33.356034-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.513-1-gc612aa7  
 # 	   template/template.sh  testing hooks/EXAMPLES/FVT-option-help-001 
 # 	template/template.sh  3.513.777  2019-09-08T20:46:45.957771-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.513 
@@ -317,6 +319,8 @@ new_message() {  #  $1="${SCRIPT_NAME}"  $2="${LINENO}"  $3="DEBUG INFO ERROR WA
 
 #    INFO
 new_message "${SCRIPT_NAME}" "${LINENO}" "INFO" "  Started..." 1>&2
+#    Or
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${SCRIPT_NAME}" "${LINENO}" "INFO" "  Started..." 1>&2 ; fi
 
 #    Added following code because USER is not defined in crobtab jobs
 if ! [[ "${USER}" == "${LOGNAME}" ]] ; then  USER=${LOGNAME} ; fi
@@ -401,7 +405,9 @@ if [[ "$1" != "no" ]] && [[ "$1" != "normal" ]] && [[ "$1" != "all" ]] && [[ "$1
 fi
 
 #
-new_message "${SCRIPT_NAME}" "${LINENO}" "INFO" "  Operation finished." 1>&2
+new_message "${SCRIPT_NAME}" "${LINENO}" "INFO" "  Operation finished..." 1>&2
+#    Or
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${SCRIPT_NAME}" "${LINENO}" "INFO" "  Operation finished..." 1>&2 ; fi
 ###
 #    DO NOT USE CODE BELOW THIS LINE:  This is here to stop shellcheck warnings: "appears unused. Verify it or export it."
 #    This is here to stop shellcheck warnings: 
