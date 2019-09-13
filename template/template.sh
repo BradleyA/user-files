@@ -1,27 +1,21 @@
 #!/bin/bash
-# 	template/template.sh  3.515.780  2019-09-10T21:49:01.952368-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.514-1-g7199f90  
-# 	   template/template.sh  update Started... and Operation finished... 
-# 	template/template.sh  3.514.778  2019-09-08T21:39:33.356034-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.513-1-gc612aa7  
-# 	   template/template.sh  testing hooks/EXAMPLES/FVT-option-help-001 
-# 	template/template.sh  3.513.777  2019-09-08T20:46:45.957771-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.513 
-# 	   template/template.sh  correct incident found by test case with version 
+# 	template/template.sh  3.516.782  2019-09-13T15:04:26.465065-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.515-1-g0be16a1  
+# 	   template/template.sh   updated description of Production standard 1.3.516 DEBUG variable 
 # 	template/template.sh  3.513.776  2019-09-08T20:28:10.251481-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.512  
 # 	   close #24  template/template.sh  Production standard 9.3.513 Parse CLI options, arguments, and new_message 
 # 	template/template.sh  3.512.775  2019-09-08T13:01:15.338262-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.511  
 # 	   close #12  template/template.sh   create function for Production standard 2.3.512 log format 
-# 	template/template.sh  3.496.751  2019-09-02T09:04:10.995399-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.495
-# 	   template/template.sh  Production standard 1.3.496 DEBUG variable 
 #86# template/template.sh - shell script template containing my collection of shorthand functions and pre-written code
 ###  Production standard 3.0 shellcheck
 ###  Production standard 5.1.160 Copyright
 #    Copyright (c) 2019 Bradley Allen
 #    MIT License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
-###  Production standard 1.3.496 DEBUG variable
+###  Production standard 1.3.516 DEBUG variable
 #    Order of precedence: environment variable, default code
 if [[ "${DEBUG}" == ""  ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 if [[ "${DEBUG}" == "2" ]] ; then set -x    ; fi   # Print trace of simple commands before they are executed
 if [[ "${DEBUG}" == "3" ]] ; then set -v    ; fi   # Print shell input lines as they are read
-if [[ "${DEBUG}" == "4" ]] ; then set -e    ; fi   # Exit command has a non-zero exit status
+if [[ "${DEBUG}" == "4" ]] ; then set -e    ; fi   # Exit immediately if non-zero exit status
 #
 BOLD=$(tput -Txterm bold)
 NORMAL=$(tput -Txterm sgr0)
@@ -95,13 +89,15 @@ echo    "ssh-agent and ssh-add before entering the following in a terminal windo
 echo -e "\t${BOLD}eval \$(ssh-agent)${NORMAL}"
 echo -e "\t${BOLD}ssh-add${NORMAL}"
 
-###  Production standard 1.3.496 DEBUG variable
-echo -e "\nThe DEBUG environment variable can be set to '', '0', '1', '2', or '3'.  The"
-echo    "setting '' or '0' will turn off all DEBUG messages during execution of this"
+###  Production standard 1.3.516 DEBUG variable
+echo -e "\nThe DEBUG environment variable can be set to '', '0', '1', '2', '3', or '4'."
+echo    "The setting '' or '0' will turn off all DEBUG messages during execution of this"
 echo    "script.  The setting '1' will print all DEBUG messages during execution of this"
-echo    "script.  The setting '2' will print a trace of simple commands before they are"
-echo    "executed in this script.  The setting '3' will print shell input lines as they"
-echo    "are read."
+echo    "script.  The setting '2' (set -x) will print a trace of simple commands before"
+echo    "they are executed in this script.  The setting '3' (set -v) will print shell"
+echo    "input lines as they are read.  The setting '4' (set -e) will exit immediately"
+echo    "if non-zero exit status is recieved with some exceptions.  For more information"
+echo    "about any of the set options, see man bash."
 
 ###  Production standard 4.0 Documentation Language
 #    Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
