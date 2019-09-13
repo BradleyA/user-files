@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.517.783  2019-09-13T18:20:42.144356-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.516  
+# 	   template/template.sh   change "${LANG}" == "en_US.UTF-8" section to use new_message 
 # 	template/template.sh  3.516.782  2019-09-13T15:04:26.465065-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.515-1-g0be16a1  
 # 	   template/template.sh   updated description of Production standard 1.3.516 DEBUG variable 
 # 	template/template.sh  3.513.776  2019-09-08T20:28:10.251481-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.512  
@@ -106,7 +108,7 @@ if [[ "${LANG}" == "fr_CA.UTF-8" ]] || [[ "${LANG}" == "fr_FR.UTF-8" ]] || [[ "$
   echo    "<votre aide va ici>" # your help goes here
   echo    "Souhaitez-vous traduire la section description?" # Do you want to translate the description section?
 elif ! [[ "${LANG}" == "en_US.UTF-8" ]] ; then
-  get_date_stamp ; echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${0}[$$] ${SCRIPT_VERSION} ${LINENO} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[WARN]${NORMAL}  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
+  new_message "${SCRIPT_NAME}" "${LINENO}" "INFO" "  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
 fi
 echo -e "\n${BOLD}ENVIRONMENT VARIABLES${NORMAL}"
 echo    "If using the bash shell, enter; 'export DEBUG=1' on the command line to set"
