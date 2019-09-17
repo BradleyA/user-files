@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.519.785  2019-09-17T09:55:10.900662-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.518  
+# 	   template/template.sh   added more examples for Production standard 9.3.513 Parse CLI options and arguments 
 # 	template/template.sh  3.518.784  2019-09-17T09:15:36.302440-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.517  
 # 	   template/template.sh   comments added for assumptions required for Version to work 
 # 	template/template.sh  3.517.783  2019-09-13T18:20:42.144356-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.516  
@@ -338,8 +340,20 @@ while [[ "${#}" -gt 0 ]] ; do
     --help|-help|help|-h|h|-\?)  display_help | more ; exit 0 ;;
     --usage|-usage|usage|-u)  display_usage ; exit 0  ;;
     --version|-version|version|-v)  echo "${SCRIPT_NAME} ${SCRIPT_VERSION}" ; exit 0  ;;
-    -a|--admuser)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Argument for ${1} is not found on command line" 1>&2 ; exit 1 ; fi ; ADMUSER=${2} ; shift 2 ;;
-    -a=*|--admuser=*)  ADMUSER=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
+    -a|--all)   if [[ "${CLI_OPTION}" != "" ]] ; then
+        new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Only one of these option -a, --all, -c, --clean, --none, or -n can be selected." 1>&2 ; exit 1
+      else
+        CLI_OPTION="a" ; shift
+      fi ;;
+    -c|--clean) if [[ "${CLI_OPTION}" != "" ]] ; then
+        new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Only one of these option -a, --all, -c, --clean, --none, or -n can be selected." 1>&2 ; exit 1
+      else
+        CLI_OPTION="c" ; shift
+      fi ;;
+    -f|--filename) CLI_OPTION="f" ; if [[ "${2}" == "" ]] ; then
+        display_usage ; new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Argument for ${1} is not found on command line" 1>&2 ; exit 1
+      fi ; FILE_NAME=${2} ; shift 2 ;;
+    --hooks|-hooks) ALL_TEST_CASES="YES" ; shift ;;
     -c|--cluster)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Argument for ${1} is not found on command line" 1>&2 ; exit 1 ; fi ; CLUSTER=${2} ; shift 2 ;;
     -c=*|--cluster=*)  CLUSTER=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
     -d|--datadir)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Argument for ${1} is not found on command line" 1>&2 ; exit 1 ; fi ; DATA_DIR=${2} ; shift 2 ;;
