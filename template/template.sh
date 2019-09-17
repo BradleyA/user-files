@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.518.784  2019-09-17T09:15:36.302440-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.517  
+# 	   template/template.sh   comments added for assumptions required for Version to work 
 # 	template/template.sh  3.517.783  2019-09-13T18:20:42.144356-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.516  
 # 	   template/template.sh   change "${LANG}" == "en_US.UTF-8" section to use new_message 
 # 	template/template.sh  3.516.782  2019-09-13T15:04:26.465065-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.515-1-g0be16a1  
@@ -302,6 +304,9 @@ get_date_stamp() {
 LOCALHOST=$(hostname -f)
 
 #    Version
+#    Assumptions for the next two lines of code:  The second line in this script includes the script name as the second item and
+#    the script version as the third item separated with space(s).  The tool I use is called 'markit'. See example line below:
+# 	template/template.sh  3.517.783  2019-09-13T18:20:42.144356-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.516  
 SCRIPT_NAME=$(head -2 "${0}" | awk '{printf $2}')
 SCRIPT_VERSION=$(head -2 "${0}" | awk '{printf $3}')
 
