@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.520.787  2019-09-23T22:52:25.809838-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.519-1-gf1f923a  
+# 	   template/template.sh  updated SCRIPT_NAME SCRIPT_VERSION to support non-markit files 
 # 	template/template.sh  3.519.785  2019-09-17T09:55:10.900662-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.518  
 # 	   template/template.sh   added more examples for Production standard 9.3.513 Parse CLI options and arguments 
 # 	template/template.sh  3.518.784  2019-09-17T09:15:36.302440-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.517  
@@ -306,11 +308,13 @@ get_date_stamp() {
 LOCALHOST=$(hostname -f)
 
 #    Version
-#    Assumptions for the next two lines of code:  The second line in this script includes the script name as the second item and
+#    Assumptions for the next two lines of code:  The second line in this script includes the script path & name as the second item and
 #    the script version as the third item separated with space(s).  The tool I use is called 'markit'. See example line below:
 # 	template/template.sh  3.517.783  2019-09-13T18:20:42.144356-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.516  
 SCRIPT_NAME=$(head -2 "${0}" | awk '{printf $2}')
 SCRIPT_VERSION=$(head -2 "${0}" | awk '{printf $3}')
+if [[ "${SCRIPT_NAME}" == "" ]] ; then SCRIPT_NAME="${0}" ; fi
+if [[ "${SCRIPT_VERSION}" == "" ]] ; then SCRIPT_VERSION="v?.?" ; fi
 
 #    UID and GID
 USER_ID=$(id -u)
