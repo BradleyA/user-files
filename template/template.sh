@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.522.791  2019-09-30T17:32:56.452433-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.521-2-g1c16c99  
+# 	   template/template.sh   added color 
 # 	template/template.sh  3.521.788  2019-09-30T16:45:19.636158-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.520  
 # 	   template/template.sh   added DEFAULT_SCRIPT_PATH 
 # 	template/template.sh  3.520.787  2019-09-23T22:52:25.809838-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.519-1-gf1f923a  
@@ -29,6 +31,13 @@ if [[ "${DEBUG}" == "4" ]] ; then set -e    ; fi   # Exit immediately if non-zer
 #
 BOLD=$(tput -Txterm bold)
 NORMAL=$(tput -Txterm sgr0)
+RED=$(tput    setaf 1)
+GREEN=$(tput  setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput   setaf 4)
+PURPLE=$(tput setaf 5)
+CYAN=$(tput   setaf 6)
+WHITE=$(tput  setaf 7)
 ###  Production standard 7.0 Default variable value
 DEFAULT_USER="${USER}"
 DEFAULT_SSH_USER="${USER}"
