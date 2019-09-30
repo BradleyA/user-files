@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.521.788  2019-09-30T16:45:19.636158-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.520  
+# 	   template/template.sh   added DEFAULT_SCRIPT_PATH 
 # 	template/template.sh  3.520.787  2019-09-23T22:52:25.809838-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.519-1-gf1f923a  
 # 	   template/template.sh  updated SCRIPT_NAME SCRIPT_VERSION to support non-markit files 
 # 	template/template.sh  3.519.785  2019-09-17T09:55:10.900662-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.518  
@@ -35,6 +37,7 @@ DEFAULT_ADM_TLS_USER="${USER}"
 DEFAULT_USER_HOME=$(dirname "${HOME}")
 DEFAULT_DATA_DIR="/usr/local/data/"
 DEFAULT_CLUSTER="us-tx-cluster-1/"
+DEFAULT_SCRIPT_PATH="$( cd "$( dirname "${0}" )" && pwd )"
 DEFAULT_SYSTEMS_FILE="SYSTEMS"
 DEFAULT_CERT_DIR="${HOME}/.docker"
 DEFAULT_CERT_DAEMON_DIR="/etc/docker/certs.d/daemon/"
@@ -449,3 +452,5 @@ echo "${DEFAULT_REGISTRY_HOST}"
 echo "${DEFAULT_REGISTRY_PORT}"
 echo "${SSH_USER}"
 echo "${USER_HOME}"
+echo "${DEFAULT_SCRIPT_PATH}"
+echo "${ALL_TEST_CASES}"
