@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.525.794  2019-10-11T22:17:17.633842-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.524  
+# 	   template/template.sh    added colors to  This is here to stop shellcheck warnings: "appears unused. Verify it or export it. 
 # 	template/template.sh  3.524.793  2019-10-11T22:13:39.203210-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.523  
 # 	   template/template.sh   change Use sudo ${0}  to  Use sudo ${COMMAND_NAME} 
 # 	template/template.sh  3.523.792  2019-10-10T16:21:21.177816-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.522  
@@ -455,6 +457,12 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${SCRIPT_NAME}" "${LINENO}" "DEBU
 ###
 #    DO NOT USE CODE BELOW THIS LINE:
 #    This is here to stop shellcheck warnings: "appears unused. Verify it or export it."
+echo "${RED}"
+echo "${GREEN}"
+echo "${BLUE}"
+echo "${PURPLE}"
+echo "${CYAN}"
+echo "${WHITE}"
 echo "${DEFAULT_SSH_USER}"
 echo "${DEFAULT_TLS_USER}"
 echo "${DEFAULT_ADM_TLS_USER}"
