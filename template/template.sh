@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.527.796  2019-10-12T15:12:39.970385-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.526  
+# 	   template/template.sh   alphabetize Production standard 7.0 Default variable value 
 # 	template/template.sh  3.526.795  2019-10-11T23:38:07.489367-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.525  
 # 	   template/template.sh   change "$(id -u)"  to "${USER_ID}" in section  Root is required to copy certs 
 # 	template/template.sh  3.525.794  2019-10-11T22:17:17.633842-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.524  
@@ -48,30 +50,27 @@ CYAN=$(tput   setaf 6)
 WHITE=$(tput  setaf 7)
 
 ###  Production standard 7.0 Default variable value
-DEFAULT_USER="${USER}"
-DEFAULT_SSH_USER="${USER}"
-DEFAULT_TLS_USER="${USER}"
 DEFAULT_ADM_TLS_USER="${USER}"
-DEFAULT_USER_HOME=$(dirname "${HOME}")
-DEFAULT_DATA_DIR="/usr/local/data/"
 DEFAULT_CLUSTER="us-tx-cluster-1/"
-DEFAULT_SCRIPT_PATH="$( cd "$( dirname "${0}" )" && pwd )"
-DEFAULT_SYSTEMS_FILE="SYSTEMS"
-DEFAULT_CERT_DIR="${HOME}/.docker"
-DEFAULT_CERT_DAEMON_DIR="/etc/docker/certs.d/daemon/"
 DEFAULT_CA_CERT="ca.pem"
 DEFAULT_CA_PRIVATE_CERT="ca-priv-key.pem"
-DEFAULT_NUMBER_DAYS="730"
-DEFAULT_REMOTE_COMMAND=""
-DEFAULT_REMOTE_COMMAND_OPTION=""
-DEFAULT_WORKING_DIRECTORY=~/.docker/docker-ca
+DEFAULT_CERT_DIR="${HOME}/.docker"
+DEFAULT_CERT_DAEMON_DIR="/etc/docker/certs.d/daemon/"
+DEFAULT_DATA_DIR="/usr/local/data/"
 DEFAULT_FQDN="$(hostname -f)"  # local host
-DEFAULT_REMOTE_HOST="$(hostname -f)"    # local host
+DEFAULT_NUMBER_DAYS="730"
 DEFAULT_REGISTRY_HOST="$(hostname -f)"  # local host
 DEFAULT_REGISTRY_PORT="5000"
+DEFAULT_REMOTE_COMMAND=""
+DEFAULT_REMOTE_COMMAND_OPTION=""
+DEFAULT_REMOTE_HOST="$(hostname -f)"    # local host
+DEFAULT_SCRIPT_PATH="$( cd "$( dirname "${0}" )" && pwd )"
+DEFAULT_SSH_USER="${USER}"
+DEFAULT_SYSTEMS_FILE="SYSTEMS"
 DEFAULT_TLS_USER="${USER}"
-DEFAULT_NUMBER_DAYS="90"
-DEFAULT_ADM_TLS_USER="${USER}"
+DEFAULT_USER="${USER}"
+DEFAULT_USER_HOME=$(dirname "${HOME}")
+DEFAULT_WORKING_DIRECTORY=~/.docker/docker-ca
 
 ###  Production standard 8.3.214 --usage
 display_usage() {
