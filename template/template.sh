@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.526.795  2019-10-11T23:38:07.489367-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.525  
+# 	   template/template.sh   change "$(id -u)"  to "${USER_ID}" in section  Root is required to copy certs 
 # 	template/template.sh  3.525.794  2019-10-11T22:17:17.633842-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.524  
 # 	   template/template.sh    added colors to  This is here to stop shellcheck warnings: "appears unused. Verify it or export it. 
 # 	template/template.sh  3.524.793  2019-10-11T22:13:39.203210-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.523  
@@ -399,7 +401,7 @@ done
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${SCRIPT_NAME}" "${LINENO}" "DEBUG" "  Variable... ADMUSER >${ADMUSER}< CLUSTER >${CLUSTER}< DATA_DIR >${DATA_DIR}< FILE_NAME >${FILE_NAME}< SSH_USER >${SSH_USER}< USER_HOME >${USER_HOME}<" 1>&2 ; fi
 
 #    Root is required to copy certs
-if ! [[ "$(id -u)" = 0 ]] ; then
+if ! [[ "${USER_ID}"  = 0 ]] ; then
   display_help | more
   new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Use sudo ${COMMAND_NAME}" 1>&2
 #    Help hint
