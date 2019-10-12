@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.524.793  2019-10-11T22:13:39.203210-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.523  
+# 	   template/template.sh   change Use sudo ${0}  to  Use sudo ${COMMAND_NAME} 
 # 	template/template.sh  3.523.792  2019-10-10T16:21:21.177816-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.522  
 # 	   template/template.sh   changes with output format 
 # 	template/template.sh  3.522.791  2019-09-30T17:32:56.452433-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.521-2-g1c16c99  
@@ -397,7 +399,7 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${SCRIPT_NAME}" "${LINENO}" "DEBU
 #    Root is required to copy certs
 if ! [[ "$(id -u)" = 0 ]] ; then
   display_help | more
-  new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Use sudo ${0}" 1>&2
+  new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Use sudo ${COMMAND_NAME}" 1>&2
 #    Help hint
   echo -e "\n\t${BOLD}>>   SCRIPT MUST BE RUN AS ROOT   <<\n${NORMAL}"  1>&2
   exit 1
