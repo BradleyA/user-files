@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.528.797  2019-10-12T19:35:40.768796-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.527  
+# 	   added blank line 
 # 	template/template.sh  3.527.796  2019-10-12T15:12:39.970385-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.526  
 # 	   template/template.sh   alphabetize Production standard 7.0 Default variable value 
 # 	template/template.sh  3.526.795  2019-10-11T23:38:07.489367-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.525  
@@ -150,6 +152,7 @@ echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
 echo    "   SYSTEMS_FILE    Name of file that includes hosts in cluster"
 echo    "                   (default '${DEFAULT_SYSTEMS_FILE}')"
+
 echo -e "\n${BOLD}OPTIONS${NORMAL}"
 echo -e "Order of precedence: CLI options, environment variable, default code.\n"
 echo    "   -c, --cluster, -c=, --cluster=<CLUSTER>"
