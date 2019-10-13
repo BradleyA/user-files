@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.532.804  2019-10-13T14:43:50.439425-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.531-2-ge439603  
+# 	   template/template.sh #43   updated comment Production standard 8.3.530 --usage 
 # 	template/template.sh  3.531.803  2019-10-13T13:51:59.127731-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.531-1-g804e5be  
 # 	   remove comment in ###  Production standard 1.3.516 DEBUG variable 
 # 	template/template.sh  3.531.802  2019-10-13T13:50:27.400705-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.531  
@@ -59,7 +61,7 @@ DEFAULT_USER="${USER}"
 DEFAULT_USER_HOME=$(dirname "${HOME}")
 DEFAULT_WORKING_DIRECTORY=~/.docker/docker-ca
 
-###  Production standard 8.3.214 --usage
+###  Production standard 8.3.530 --usage
 display_usage() {
 COMMAND_NAME=$(echo "${0}" | sed 's/^.*\///')
 echo -e "\n${NORMAL}${COMMAND_NAME}\n   brief description . . ."
