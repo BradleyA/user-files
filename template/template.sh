@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.531.802  2019-10-13T13:50:27.400705-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.531  
+# 	   updated comment for Production standard 1.3.516 DEBUG variable 
 # 	template/template.sh  3.531.801  2019-10-13T13:47:51.235310-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.530  
 # 	   close #44   template/template.sh   Production standard 1.3.531 DEBUG variable 
 # 	template/template.sh  3.530.800  2019-10-13T13:03:18.271740-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.529-1-ga27cd5e  
@@ -107,7 +109,7 @@ echo    "ssh-agent and ssh-add before entering the following in a terminal windo
 echo -e "\t${BOLD}eval \$(ssh-agent)${NORMAL}"
 echo -e "\t${BOLD}ssh-add${NORMAL}"
 
-###  Production standard 1.3.516 DEBUG variable
+###  Production standard 1.3.531 DEBUG variable
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
 echo -e "\nThe DEBUG environment variable can be set to '', '0', '1', '2', '3', '4' or"
 echo    "'5'.  The setting '' or '0' will turn off all DEBUG messages during execution of"
