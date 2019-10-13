@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.531.801  2019-10-13T13:47:51.235310-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.530  
+# 	   close #44   template/template.sh   Production standard 1.3.531 DEBUG variable 
 # 	template/template.sh  3.530.800  2019-10-13T13:03:18.271740-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.529-1-ga27cd5e  
 # 	   close #43   template/template.sh   Production standard 8.3.530  --usage 
 # 	template/template.sh  3.529.799  2019-10-13T09:44:12.507351-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.529  
@@ -12,12 +14,13 @@
 ###  Production standard 5.1.160 Copyright
 #    Copyright (c) 2019 Bradley Allen
 #    MIT License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
-###  Production standard 1.3.516 DEBUG variable
+###  Production standard 1.3.531 DEBUG variable
 #    Order of precedence: environment variable, default code
 if [[ "${DEBUG}" == ""  ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 if [[ "${DEBUG}" == "2" ]] ; then set -x    ; fi   # Print trace of simple commands before they are executed
 if [[ "${DEBUG}" == "3" ]] ; then set -v    ; fi   # Print shell input lines as they are read
 if [[ "${DEBUG}" == "4" ]] ; then set -e    ; fi   # Exit immediately if non-zero exit status
+if [[ "${DEBUG}" == "5" ]] ; then set -e -o pipefail ; fi   # Exit immediately if non-zero exit status and exit if any command in a pipeline errors
 #
 BOLD=$(tput -Txterm bold)
 NORMAL=$(tput -Txterm sgr0)
@@ -105,14 +108,17 @@ echo -e "\t${BOLD}eval \$(ssh-agent)${NORMAL}"
 echo -e "\t${BOLD}ssh-add${NORMAL}"
 
 ###  Production standard 1.3.516 DEBUG variable
-echo -e "\nThe DEBUG environment variable can be set to '', '0', '1', '2', '3', or '4'."
-echo    "The setting '' or '0' will turn off all DEBUG messages during execution of this"
-echo    "script.  The setting '1' will print all DEBUG messages during execution of this"
-echo    "script.  The setting '2' (set -x) will print a trace of simple commands before"
-echo    "they are executed in this script.  The setting '3' (set -v) will print shell"
-echo    "input lines as they are read.  The setting '4' (set -e) will exit immediately"
-echo    "if non-zero exit status is recieved with some exceptions.  For more information"
-echo    "about any of the set options, see man bash."
+echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
+echo -e "\nThe DEBUG environment variable can be set to '', '0', '1', '2', '3', '4' or"
+echo    "'5'.  The setting '' or '0' will turn off all DEBUG messages during execution of"
+echo    "this script.  The setting '1' will print all DEBUG messages during execution of"
+echo    "this script.  The setting '2' (set -x) will print a trace of simple commands"
+echo    "before they are executed in this script.  The setting '3' (set -v) will print"
+echo    "shell input lines as they are read.  The setting '4' (set -e) will exit"
+echo    "immediately if non-zero exit status is recieved with some exceptions.  The"
+echo    "setting '5' (set -e -o pipefail) will do setting '4' and exit if any command in"
+echo    "a pipeline errors.  For more information about any of the set options, see"
+echo    "man bash."
 
 ###  Production standard 4.0 Documentation Language
 #    Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
