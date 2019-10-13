@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.529.798  2019-10-13T09:42:04.839535-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.528  
-# 	   close #43   template/template.sh   Production standard 2.3.529 log format 
+# 	template/template.sh  3.529.799  2019-10-13T09:44:12.507351-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.529  
+# 	   close #42   template/template.sh   Production standard 2.3.529 log format 
 # 	template/template.sh  3.513.776  2019-09-08T20:28:10.251481-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.512  
 # 	   close #24  template/template.sh  Production standard 9.3.513 Parse CLI options, arguments, and new_message 
 # 	template/template.sh  3.512.775  2019-09-08T13:01:15.338262-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.511  
