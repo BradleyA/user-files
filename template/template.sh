@@ -1,30 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.528.797  2019-10-12T19:35:40.768796-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.527  
-# 	   added blank line 
-# 	template/template.sh  3.527.796  2019-10-12T15:12:39.970385-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.526  
-# 	   template/template.sh   alphabetize Production standard 7.0 Default variable value 
-# 	template/template.sh  3.526.795  2019-10-11T23:38:07.489367-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.525  
-# 	   template/template.sh   change "$(id -u)"  to "${USER_ID}" in section  Root is required to copy certs 
-# 	template/template.sh  3.525.794  2019-10-11T22:17:17.633842-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.524  
-# 	   template/template.sh    added colors to  This is here to stop shellcheck warnings: "appears unused. Verify it or export it. 
-# 	template/template.sh  3.524.793  2019-10-11T22:13:39.203210-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.523  
-# 	   template/template.sh   change Use sudo ${0}  to  Use sudo ${COMMAND_NAME} 
-# 	template/template.sh  3.523.792  2019-10-10T16:21:21.177816-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.522  
-# 	   template/template.sh   changes with output format 
-# 	template/template.sh  3.522.791  2019-09-30T17:32:56.452433-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.521-2-g1c16c99  
-# 	   template/template.sh   added color 
-# 	template/template.sh  3.521.788  2019-09-30T16:45:19.636158-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.520  
-# 	   template/template.sh   added DEFAULT_SCRIPT_PATH 
-# 	template/template.sh  3.520.787  2019-09-23T22:52:25.809838-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.519-1-gf1f923a  
-# 	   template/template.sh  updated SCRIPT_NAME SCRIPT_VERSION to support non-markit files 
-# 	template/template.sh  3.519.785  2019-09-17T09:55:10.900662-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.518  
-# 	   template/template.sh   added more examples for Production standard 9.3.513 Parse CLI options and arguments 
-# 	template/template.sh  3.518.784  2019-09-17T09:15:36.302440-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.517  
-# 	   template/template.sh   comments added for assumptions required for Version to work 
-# 	template/template.sh  3.517.783  2019-09-13T18:20:42.144356-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.516  
-# 	   template/template.sh   change "${LANG}" == "en_US.UTF-8" section to use new_message 
-# 	template/template.sh  3.516.782  2019-09-13T15:04:26.465065-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.515-1-g0be16a1  
-# 	   template/template.sh   updated description of Production standard 1.3.516 DEBUG variable 
+# 	template/template.sh  3.529.798  2019-10-13T09:42:04.839535-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.528  
+# 	   close #43   template/template.sh   Production standard 2.3.529 log format 
 # 	template/template.sh  3.513.776  2019-09-08T20:28:10.251481-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.512  
 # 	   close #24  template/template.sh  Production standard 9.3.513 Parse CLI options, arguments, and new_message 
 # 	template/template.sh  3.512.775  2019-09-08T13:01:15.338262-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.511  
@@ -138,7 +114,7 @@ if [[ "${LANG}" == "fr_CA.UTF-8" ]] || [[ "${LANG}" == "fr_FR.UTF-8" ]] || [[ "$
   echo    "<votre aide va ici>" # your help goes here
   echo    "Souhaitez-vous traduire la section description?" # Do you want to translate the description section?
 elif ! [[ "${LANG}" == "en_US.UTF-8" ]] ; then
-  new_message "${SCRIPT_NAME}" "${LINENO}" "INFO" "  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
+  new_message "${LINENO}" "INFO" "  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
 fi
 
 echo -e "\n${BOLD}ENVIRONMENT VARIABLES${NORMAL}"
@@ -345,27 +321,26 @@ SCRIPT_VERSION=$(head -2 "${0}" | awk '{printf $3}')
 if [[ "${SCRIPT_NAME}" == "" ]] ; then SCRIPT_NAME="${0}" ; fi
 if [[ "${SCRIPT_VERSION}" == "" ]] ; then SCRIPT_VERSION="v?.?" ; fi
 
-#    UID and GID
-USER_ID=$(id -u)
+#    GID
 GROUP_ID=$(id -g)
 
-###  Production standard 2.3.512 log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
-new_message() {  #  $1="${SCRIPT_NAME}"  $2="${LINENO}"  $3="DEBUG INFO ERROR WARN"  $4="message"
+###  Production standard 2.3.529 log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
+new_message() {  #  $1="${LINENO}"  $2="DEBUG INFO ERROR WARN"  $3="message"
   get_date_stamp
-  echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${1}[$$] ${SCRIPT_VERSION} ${2} ${USER} ${USER_ID}:${GROUP_ID} ${BOLD}[${3}]${NORMAL}  ${4}"
+  echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${SCRIPT_NAME}[$$] ${SCRIPT_VERSION} ${2} ${USER} ${UID}:${GROUP_ID} ${BOLD}[${3}]${NORMAL}  ${4}"
 }
 
 #    INFO
-new_message "${SCRIPT_NAME}" "${LINENO}" "INFO" "  Started..." 1>&2
+new_message "${LINENO}" "INFO" "  Started..." 1>&2
 #    Or
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${SCRIPT_NAME}" "${LINENO}" "INFO" "  Started..." 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "INFO" "  Started..." 1>&2 ; fi
 
 #    Added following code because USER is not defined in crobtab jobs
 if ! [[ "${USER}" == "${LOGNAME}" ]] ; then  USER=${LOGNAME} ; fi
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${SCRIPT_NAME}" "${LINENO}" "DEBUG" "  Setting USER to support crobtab...  USER >${USER}<  LOGNAME >${LOGNAME}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Setting USER to support crobtab...  USER >${USER}<  LOGNAME >${LOGNAME}<" 1>&2 ; fi
 
 #    DEBUG
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${SCRIPT_NAME}" "${LINENO}" "DEBUG" "  Name_of_command >${SCRIPT_NAME}< Name_of_arg1 >${1}< Name_of_arg2 >${2}< Name_of_arg3 >${3}<  Version of bash ${BASH_VERSION}" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Name_of_command >${SCRIPT_NAME}< Name_of_arg1 >${1}< Name_of_arg2 >${2}< Name_of_arg3 >${3}<  Version of bash ${BASH_VERSION}" 1>&2 ; fi
 
 ###  Production standard 9.3.513 Parse CLI options and arguments
 while [[ "${#}" -gt 0 ]] ; do
@@ -374,38 +349,38 @@ while [[ "${#}" -gt 0 ]] ; do
     --usage|-usage|usage|-u)  display_usage ; exit 0  ;;
     --version|-version|version|-v)  echo "${SCRIPT_NAME} ${SCRIPT_VERSION}" ; exit 0  ;;
     -a|--all)   if [[ "${CLI_OPTION}" != "" ]] ; then
-        new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Only one of these option -a, --all, -c, --clean, --none, or -n can be selected." 1>&2 ; exit 1
+        new_message "${LINENO}" "ERROR" "  Only one of these option -a, --all, -c, --clean, --none, or -n can be selected." 1>&2 ; exit 1
       else
         CLI_OPTION="a" ; shift
       fi ;;
     -c|--clean) if [[ "${CLI_OPTION}" != "" ]] ; then
-        new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Only one of these option -a, --all, -c, --clean, --none, or -n can be selected." 1>&2 ; exit 1
+        new_message "${LINENO}" "ERROR" "  Only one of these option -a, --all, -c, --clean, --none, or -n can be selected." 1>&2 ; exit 1
       else
         CLI_OPTION="c" ; shift
       fi ;;
     -f|--filename) CLI_OPTION="f" ; if [[ "${2}" == "" ]] ; then
-        display_usage ; new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1
+        display_usage ; new_message "${LINENO}" "ERROR" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1
       fi ; FILE_NAME=${2} ; shift 2 ;;
     --hooks|-hooks) ALL_TEST_CASES="YES" ; shift ;;
-    -c|--cluster)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; CLUSTER=${2} ; shift 2 ;;
+    -c|--cluster)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${LINENO}" "ERROR" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; CLUSTER=${2} ; shift 2 ;;
     -c=*|--cluster=*)  CLUSTER=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
-    -d|--datadir)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; DATA_DIR=${2} ; shift 2 ;;
+    -d|--datadir)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${LINENO}" "ERROR" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; DATA_DIR=${2} ; shift 2 ;;
     -d=*|--datadir=*)  DATA_DIR=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
-    -f|--filename)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; FILE_NAME=${2} ; shift 2 ;;
+    -f|--filename)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${LINENO}" "ERROR" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; FILE_NAME=${2} ; shift 2 ;;
     -f=*|--filename=*)  FILE_NAME=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
-    -S|--ssh_user)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; SSH_USER=${2} ; shift 2 ;;
+    -S|--ssh_user)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${LINENO}" "ERROR" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; SSH_USER=${2} ; shift 2 ;;
     -S=*|--ssh_user=*)  SSH_USER=$(echo "${1}" | cut -d '=' -f 2) ; shift   ;;
-    -U|--user_home)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; USER_HOME=${2} ; shift 2 ;;
+    -U|--user_home)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${LINENO}" "ERROR" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; USER_HOME=${2} ; shift 2 ;;
     -U=*|--user_home=*)  USER_HOME=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
-    *)  new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Option, ${BOLD}${YELLOW}${1}${NORMAL}, entered on the command line is not supported." 1>&2 ; display_usage ; exit 1 ; ;;
+    *)  new_message "${LINENO}" "ERROR" "  Option, ${BOLD}${YELLOW}${1}${NORMAL}, entered on the command line is not supported." 1>&2 ; display_usage ; exit 1 ; ;;
   esac
 done
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${SCRIPT_NAME}" "${LINENO}" "DEBUG" "  Variable... ADMUSER >${ADMUSER}< CLUSTER >${CLUSTER}< DATA_DIR >${DATA_DIR}< FILE_NAME >${FILE_NAME}< SSH_USER >${SSH_USER}< USER_HOME >${USER_HOME}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... ADMUSER >${ADMUSER}< CLUSTER >${CLUSTER}< DATA_DIR >${DATA_DIR}< FILE_NAME >${FILE_NAME}< SSH_USER >${SSH_USER}< USER_HOME >${USER_HOME}<" 1>&2 ; fi
 
 #    Root is required to copy certs
-if ! [[ "${USER_ID}"  = 0 ]] ; then
+if ! [[ "${UID}"  = 0 ]] ; then
   display_help | more
-  new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  Use sudo ${COMMAND_NAME}" 1>&2
+  new_message "${LINENO}" "ERROR" "  Use sudo ${COMMAND_NAME}" 1>&2
 #    Help hint
   echo -e "\n\t${BOLD}>>   SCRIPT MUST BE RUN AS ROOT   <<\n${NORMAL}"  1>&2
   exit 1
@@ -415,7 +390,7 @@ fi
 
 #    Test <REGISTRY_PORT> for integer
 if ! [[ "${REGISTRY_PORT}" =~ ^[0-9]+$ ]] ; then       #  requires [[   ]] or  [: =~: binary operator expected
-   new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  <REGISTRY_PORT> is not an interger.  <REGISTRY_PORT> is set to '${REGISTRY_PORT}'" 1>&2
+   new_message "${LINENO}" "ERROR" "  <REGISTRY_PORT> is not an interger.  <REGISTRY_PORT> is set to '${REGISTRY_PORT}'" 1>&2
    exit 1
 fi
 
@@ -427,13 +402,13 @@ if [[ "${CLUSTER}" == "" ]] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
 ADMUSER=${DEFAULT_USER}
 #    Order of precedence: CLI argument, environment variable, default code
 if [[ "${DATA_DIR}" == "" ]] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${SCRIPT_NAME}" "${LINENO}" "DEBUG" "  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
 ###  Example arguments (2)
 #    Order of precedence: CLI argument, default code
 OPTION1=${1:-default_value1}
 OPTION2=${2:-${DEFAULT_VALUE2}}
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${SCRIPT_NAME}" "${LINENO}" "DEBUG" "  Variable... OPTION1 >${OPTION1}< OPTION2 >${OPTION2}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... OPTION1 >${OPTION1}< OPTION2 >${OPTION2}<" 1>&2 ; fi
 
 ###  Example arguments (3)
 ###  production standard 7.0 Default variable value
@@ -444,20 +419,20 @@ if [[ $# -ge  1 ]]  ; then CLUSTER=${1} ; elif [[ "${CLUSTER}" == "" ]] ; then C
 ADMUSER=${2:-${DEFAULT_USER}}
 #    Order of precedence: CLI argument, environment variable, default code
 if [[ $# -ge  3 ]]  ; then DATA_DIR=${3} ; elif [[ "${DATA_DIR}" == "" ]] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${SCRIPT_NAME}" "${LINENO}" "DEBUG" "  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
 
 ###  Example arguments (4)
 #    Check arguement 1 xxx
 if [[ "$1" != "no" ]] && [[ "$1" != "normal" ]] && [[ "$1" != "all" ]] && [[ "$1" != "" ]] ; then
   display_help | more
-  new_message "${SCRIPT_NAME}" "${LINENO}" "ERROR" "  First arguement, ${1}, is NOT no, normal, all." 1>&2
+  new_message "${LINENO}" "ERROR" "  First arguement, ${1}, is NOT no, normal, all." 1>&2
   exit 2
 fi
 
 #
-new_message "${SCRIPT_NAME}" "${LINENO}" "INFO" "  Operation finished..." 1>&2
+new_message "${LINENO}" "INFO" "  Operation finished..." 1>&2
 #    Or
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${SCRIPT_NAME}" "${LINENO}" "DEBUG" "  Operation finished..." 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Operation finished..." 1>&2 ; fi
 ###
 #    DO NOT USE CODE BELOW THIS LINE:
 #    This is here to stop shellcheck warnings: "appears unused. Verify it or export it."
