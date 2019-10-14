@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.533.805  2019-10-13T23:29:17.638287-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.532  
+# 	   template/template.sh   updated Production standard 2.3.529 
 # 	template/template.sh  3.532.804  2019-10-13T14:43:50.439425-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.531-2-ge439603  
 # 	   template/template.sh #43   updated comment Production standard 8.3.530 --usage 
 # 	template/template.sh  3.531.803  2019-10-13T13:51:59.127731-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.531-1-g804e5be  
@@ -345,7 +347,7 @@ GROUP_ID=$(id -g)
 ###  Production standard 2.3.529 log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
 new_message() {  #  $1="${LINENO}"  $2="DEBUG INFO ERROR WARN"  $3="message"
   get_date_stamp
-  echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${SCRIPT_NAME}[$$] ${SCRIPT_VERSION} ${2} ${USER} ${UID}:${GROUP_ID} ${BOLD}[${3}]${NORMAL}  ${4}"
+  echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${SCRIPT_NAME}[$$] ${SCRIPT_VERSION} ${1} ${USER} ${UID}:${GROUP_ID} ${BOLD}[${2}]${NORMAL}  ${3}"
 }
 
 #    INFO
