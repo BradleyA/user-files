@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.537.809  2019-10-22T13:33:16.488348-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.536  
+# 	   template/template.sh  bug ${COMMAND_NAME} is ONLY for display_usage and display_help  ${SCRIPT_NAME} includes Git repository directory and can be used any where in script 
 # 	template/template.sh  3.536.808  2019-10-22T13:01:52.426103-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.535  
 # 	   template/template.sh   add color to message: SCRIPT MUST BE RUN AS ROOT 
 # 	template/template.sh  3.535.807  2019-10-21T15:20:45.139945-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.534  
@@ -342,7 +344,7 @@ LOCALHOST=$(hostname -f)
 #    Assumptions for the next two lines of code:  The second line in this script includes the script path & name as the second item and
 #    the script version as the third item separated with space(s).  The tool I use is called 'markit'. See example line below:
 # 	template/template.sh  3.517.783  2019-09-13T18:20:42.144356-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.516  
-SCRIPT_NAME=$(head -2 "${0}" | awk '{printf $2}')  #  Different from ${COMMAND_NAME}=$(echo "${0}" | sed 's/^.*\///'), SCRIPT_NAME = Git repository directory / COMMAND_NAME (for dev, test teams)
+SCRIPT_NAME=$(head -2 "${0}" | awk '{printf $2}')  #  Different from ${COMMAND_NAME}=$(echo "${0}" | sed 's/^.*\///'), SCRIPT_NAME = includes Git repository directory and can be used any where in script (for dev, test teams)
 SCRIPT_VERSION=$(head -2 "${0}" | awk '{printf $3}')
 if [[ "${SCRIPT_NAME}" == "" ]] ; then SCRIPT_NAME="${0}" ; fi
 if [[ "${SCRIPT_VERSION}" == "" ]] ; then SCRIPT_VERSION="v?.?" ; fi
@@ -408,7 +410,7 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable...
 #    Root is required to copy certs
 if ! [[ "${UID}"  = 0 ]] ; then
   display_usage | more
-  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Use sudo ${COMMAND_NAME}" 1>&2
+  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Use sudo ${SCRIPT_NAME}" 1>&2
 #    Help hint
   echo -e "\n\t${BOLD}>>   ${YELLOW}SCRIPT MUST BE RUN AS ROOT${WHITE}   <<\n${NORMAL}"  1>&2
   exit 1
