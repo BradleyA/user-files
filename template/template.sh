@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.536.808  2019-10-22T13:01:52.426103-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.535  
+# 	   template/template.sh   add color to message: SCRIPT MUST BE RUN AS ROOT 
 # 	template/template.sh  3.535.807  2019-10-21T15:20:45.139945-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.534  
 # 	   template/template.sh   added color to INFO and ERROR new_message 
 # 	template/template.sh  3.534.806  2019-10-21T15:03:32.852528-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.533  
@@ -405,10 +407,10 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable...
 
 #    Root is required to copy certs
 if ! [[ "${UID}"  = 0 ]] ; then
-  display_help | more
+  display_usage | more
   new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Use sudo ${COMMAND_NAME}" 1>&2
 #    Help hint
-  echo -e "\n\t${BOLD}>>   SCRIPT MUST BE RUN AS ROOT   <<\n${NORMAL}"  1>&2
+  echo -e "\n\t${BOLD}>>   ${YELLOW}SCRIPT MUST BE RUN AS ROOT${WHITE}   <<\n${NORMAL}"  1>&2
   exit 1
 fi
 
