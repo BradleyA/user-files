@@ -13,19 +13,14 @@ To clone, change directory to the location you want to download the scripts (exa
 
     git clone https://github.com/BradleyA/user-files.git
     cd user-files
-    
+
+## Install dot Files
 To copy/over-write dot files into your home directory enter the following steps.
 
     cd
     git clone https://github.com/BradleyA/user-files.git
     user-files/bin/copy-user-dot
     rm -rf ./user-files
-
-To include test cases with this repository also enter the following commands to link the pre-commit and post-commit commands.  [To learn more about how to setup test cases.](hooks/README.md)
-    
-    cd hooks
-    ln -s ../../hooks/post-commit ../.git/hooks/post-commit
-    ln -s ../../hooks/pre-commit ../.git/hooks/pre-commit
 
 ## Install a File
 
@@ -66,6 +61,12 @@ To download the latest commit of one of these files, for example .gitignore, cha
 
 #### To watch future updates in this repository select in the upper-right corner, the "Watch" list, and select Watching.
 
+To include test cases with this repository also enter the following commands to link the pre-commit and post-commit commands.  [To learn more about how to setup test cases.](hooks/README.md)
+    
+    cd hooks
+    ln -s ../../hooks/post-commit ../.git/hooks/post-commit
+    ln -s ../../hooks/pre-commit ../.git/hooks/pre-commit
+    
 #### Author
 [<img id="twitter" src="images/twitter.png" width="50" a="twitter.com/bradleyaustintx/">
 ](https://twitter.com/bradleyaustintx/)   [<img id="github" src="images/github.png" width="50" a="https://github.com/BradleyA/">
