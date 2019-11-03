@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cp -p .bash_aliases ~
+cp -p .bashrc ~
+cp -p .dockerignore ~
+cp -pr .git ~
+cp -p .gitconfig ~
+cp -p .gitignore ~
+cp -p .profile ~
+cp -p .vimrc ~
