@@ -13,6 +13,13 @@ To clone, change directory to the location you want to download the scripts (exa
 
     git clone https://github.com/BradleyA/user-files.git
     cd user-files
+    
+To copy/over-write dot files into your home directory enter the following steps.
+
+    cd
+    git clone https://github.com/BradleyA/user-files.git
+    user-files/bin/copy-user-dot
+    rm -rf ./user-files
 
 To include test cases with this repository also enter the following commands to link the pre-commit and post-commit commands.  [To learn more about how to setup test cases.](hooks/README.md)
     
