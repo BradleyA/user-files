@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cp -p ~/user-files/.bash_aliases ~
+cp -p ~/user-files/.bashrc ~
+cp -p ~/user-files/.dockerignore ~
+cp -pr ~/user-files/.git ~
+cp -p ~/user-files/.gitconfig ~
+cp -p ~/user-files/.gitignore ~
+cp -p ~/user-files/.profile ~
+cp -p ~/user-files/.vimrc ~

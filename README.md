@@ -1,9 +1,7 @@
-# user-files  [![Stable Release](https://img.shields.io/badge/Release-3.520-blue.svg)](https://github.com/BradleyA/user-files/releases/tag/3.520)    [![GitHub commits](https://img.shields.io/github/commits-since/BradleyA/user-files/3.520.svg)](https://github.com/BradleyA/user-files/commits/)
+# user-files  [![Stable Release](https://img.shields.io/badge/Release-3.537-blue.svg)](https://github.com/BradleyA/user-files/releases/tag/3.537)    [![GitHub commits](https://img.shields.io/github/commits-since/BradleyA/user-files/3.537.svg)](https://github.com/BradleyA/user-files/commits/)
 General user files, dot files, with a few special tweeks to make my system time better.  When setting up a new system, I pull these files to update my user profiles.
 
 **template directory**, there are a few template files (sh,py) that include **production standards** that I designed as best practices when creating new scripts.  When creating a new script I merge sections of code needed from a template file.  Some of the production standards are --help, DEBUG, log format, shellcheck, Documentation Language, Copyright, Architecture tree, Default variable value, --usage, and Parse CLI options and arguments.  When a production standard is changed it's verson number is updated with the git tag version number.  This allows scripts in development, test, and production to be maintianed with the latest production standard verson.
-
-**hooks directory**, there are two GitHub commit hooks that support running of **test cases**.  The pre-commit GitHub hook bash script creates a list of commited files with repository subdirectory.  The post-commit GitHub hook bash script runs found FVT test case(s) for a commited file.  The hooks directory was created because I wanted to modify the github hooks and track changes per repository.  [Learn more about how to setup test cases.](hooks/README.md)
 
 #### If you like this repository, select in the upper-right corner, star, thank you.
 
@@ -14,11 +12,13 @@ To clone, change directory to the location you want to download the scripts (exa
     git clone https://github.com/BradleyA/user-files.git
     cd user-files
 
-To include test cases with this repository also enter the following commands to link the pre-commit and post-commit commands.  [To learn more about how to setup test cases.](hooks/README.md)
-    
-    cd hooks
-    ln -s ../../hooks/post-commit ../.git/hooks/post-commit
-    ln -s ../../hooks/pre-commit ../.git/hooks/pre-commit
+## Install dot Files
+To copy/over-write dot files into your home directory enter the following steps.
+
+    cd
+    git clone https://github.com/BradleyA/user-files.git
+    user-files/bin/copy-user-dot
+    rm -rf ./user-files
 
 ## Install a File
 
@@ -58,7 +58,7 @@ To download the latest commit of one of these files, for example .gitignore, cha
 ./template/TEST/template.sh/(FVT-option-TEST_CASES , FVT-setup.sh)
 
 #### To watch future updates in this repository select in the upper-right corner, the "Watch" list, and select Watching.
-
+   
 #### Author
 [<img id="twitter" src="images/twitter.png" width="50" a="twitter.com/bradleyaustintx/">
 ](https://twitter.com/bradleyaustintx/)   [<img id="github" src="images/github.png" width="50" a="https://github.com/BradleyA/">
