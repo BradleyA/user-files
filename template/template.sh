@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.539.818  2019-11-13T19:50:03.115620-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.538-7-g95f2da5  
+# 	   template/template.sh   add directory under docker-ca directory 3.539 
 # 	template/template.sh  3.537.809  2019-10-22T13:33:16.488348-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.536  
 # 	   template/template.sh  bug ${COMMAND_NAME} is ONLY for display_usage and display_help  ${SCRIPT_NAME} includes Git repository directory and can be used any where in script 
 # 	template/template.sh  3.536.808  2019-10-22T13:01:52.426103-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.535  
@@ -172,7 +174,7 @@ echo -e "\tLocation of user home directory (default ${DEFAULT_USER_HOME})\n"
 echo    "   -U, --user_home, -U=, --user_home=<USER_HOME>"
 echo -e "   "
 
-###  Production standard 6.1.177 Architecture tree
+###  Production standard 6.3.539  Architecture tree
 echo -e "\n${BOLD}ARCHITECTURE TREE${NORMAL}"  # STORAGE & CERTIFICATION
 echo    "/usr/local/data/                           <-- <DATA_DIR>"
 echo    "├── <CLUSTER>/                             <-- <CLUSTER>"
@@ -231,6 +233,7 @@ echo    "│   ├── ca.pem                             <-- User tlscacert o
 echo    "│   ├── cert.pem                           <-- Symbolic link to user tlscert"
 echo    "│   ├── key.pem                            <-- Symbolic link to user tlskey"
 echo    "│   ├── docker-ca/                         <-- Working directory to create certs"
+echo    "│   │   └── <HOSTNAME>/                    <-- Directory to store certs"  # 3.539
 echo    "│   ├── trust/                             <-- Docker Content Trust (DCT)"
 echo    "│   │   ├── private/                       <-- Notary Canonical Root Key ID"
 echo    "│   │   │                                      (DCT Root Key)"
