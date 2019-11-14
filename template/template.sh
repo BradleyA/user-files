@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.539.818  2019-11-13T19:50:03.115620-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.538-7-g95f2da5  
-# 	   template/template.sh   add directory under docker-ca directory 3.539 
+# 	template/template.sh  3.539.819  2019-11-13T22:54:59.077826-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.539  
+# 	   template/template.sh   Production standard 6.3.539  Architecture tree 
 # 	template/template.sh  3.537.809  2019-10-22T13:33:16.488348-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.536  
 # 	   template/template.sh  bug ${COMMAND_NAME} is ONLY for display_usage and display_help  ${SCRIPT_NAME} includes Git repository directory and can be used any where in script 
 # 	template/template.sh  3.536.808  2019-10-22T13:01:52.426103-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.535  
