@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.540.822  2019-11-20T12:11:33.466303-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.539-3-gcd42ad2  
+# 	   template/template.sh   updated ARCHITECTURE TREE 
 # 	template/template.sh  3.539.821  2019-11-14T20:31:33.148847-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.539-2-g470c96b  
 # 	   template/template.sh   correct a few typos 
 # 	template/template.sh  3.539.820  2019-11-14T18:25:54.926095-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.539-1-g625540e  
@@ -257,8 +259,6 @@ echo    "│   │   │                                      to create registor
 echo    "│   │   ├── ca.crt                         <-- Daemon registry domain cert"
 echo    "│   │   ├── domain.crt                     <-- Registry cert"
 echo    "│   │   └── domain.key                     <-- Registry private key"
-echo    "│   ├── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory"
-echo    "│   │                                          to create registory certs"
 echo    "│   └── registry-certs-<REGISTRY_HOST>-<REGISTRY_PORT>/ <-- Working directory"
 echo    "│                                              to create registory certs"
 echo    "└── <USER-1>/.ssh/                         <-- Secure Socket Shell directory"
