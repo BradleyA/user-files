@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.541.823  2019-11-22T14:54:14.075113-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.540  
+# 	   template/template.sh   Production standard 8.3.541 --usage 
 # 	template/template.sh  3.540.822  2019-11-20T12:11:33.466303-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.539-3-gcd42ad2  
 # 	   template/template.sh   updated ARCHITECTURE TREE 
 # 	template/template.sh  3.539.821  2019-11-14T20:31:33.148847-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.539-2-g470c96b  
@@ -79,9 +81,9 @@ DEFAULT_USER="${USER}"
 DEFAULT_USER_HOME=$(dirname "${HOME}")
 DEFAULT_WORKING_DIRECTORY=~/.docker/docker-ca
 
-###  Production standard 8.3.530 --usage
+###  Production standard 8.3.541 --usage
+COMMAND_NAME=$(echo "${0}" | sed 's/^.*\///')	# 3.541
 display_usage() {
-COMMAND_NAME=$(echo "${0}" | sed 's/^.*\///')
 echo -e "\n${NORMAL}${COMMAND_NAME}\n   brief description . . ."
 echo -e "\n${BOLD}USAGE${NORMAL}"
 echo -e "   ${COMMAND_NAME} [-c <CLUSTER>] [-d <DATA_DIR>] [-a <ADMUSER>] [-f <PATH>/<FILE_NAME>]\n"
