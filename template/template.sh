@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.542.824  2019-11-26T17:28:48.507505-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.541  
+# 	   template/template.sh   Production standard 6.3.542  Architecture tree 
 # 	template/template.sh  3.541.823  2019-11-22T14:54:14.075113-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.540  
 # 	   template/template.sh   Production standard 8.3.541 --usage 
 # 	template/template.sh  3.540.822  2019-11-20T12:11:33.466303-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.539-3-gcd42ad2  
@@ -182,7 +184,7 @@ echo -e "\tLocation of user home directory (default ${DEFAULT_USER_HOME})\n"
 echo    "   -U, --user_home, -U=, --user_home=<USER_HOME>"
 echo -e "   "
 
-###  Production standard 6.3.539  Architecture tree
+###  Production standard 6.3.542  Architecture tree
 echo -e "\n${BOLD}ARCHITECTURE TREE${NORMAL}"  # STORAGE & CERTIFICATION
 echo    "/usr/local/data/                           <-- <DATA_DIR>"
 echo    "├── <CLUSTER>/                             <-- <CLUSTER>"
@@ -246,6 +248,8 @@ echo    "│   │   │   └── ca-priv-key.pem            <-- Current site
 echo    "│   │   ├── ca.pem                         <-- Current site CA cert"               # 3.539
 echo    "│   │   ├── hosts/                         <-- Directory for hostnames"            # 3.539
 echo    "│   │   │   └── <HOST>/                    <-- Directory to store host certs"      # 3.539
+echo    "│   │   │      ├── ca.pem_20xx...          <-- CA Cert"                            # 3.542
+echo    "│   │   │      └── ca-priv-key.pem_20xx... <-- CA Private Key"                     # 3.542
 echo    "│   │   ├── site/                          <-- Directory to store site certs"      # 3.539
 echo    "│   │   │   ├── ca.pem_20xx-...            <-- CA Cert"                            # 3.539
 echo    "│   │   │   └── ca-priv-key.pem_20xx-...   <-- CA Private Key"                     # 3.539
