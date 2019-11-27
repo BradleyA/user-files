@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.543.825  2019-11-26T22:37:34.145663-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.542  
+# 	   template/template.sh   Production standard 6.3.543  Architecture tree 
 # 	template/template.sh  3.542.824  2019-11-26T17:28:48.507505-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.541  
 # 	   template/template.sh   Production standard 6.3.542  Architecture tree 
 # 	template/template.sh  3.541.823  2019-11-22T14:54:14.075113-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.540  
@@ -184,7 +186,7 @@ echo -e "\tLocation of user home directory (default ${DEFAULT_USER_HOME})\n"
 echo    "   -U, --user_home, -U=, --user_home=<USER_HOME>"
 echo -e "   "
 
-###  Production standard 6.3.542  Architecture tree
+###  Production standard 6.3.543  Architecture tree
 echo -e "\n${BOLD}ARCHITECTURE TREE${NORMAL}"  # STORAGE & CERTIFICATION
 echo    "/usr/local/data/                           <-- <DATA_DIR>"
 echo    "├── <CLUSTER>/                             <-- <CLUSTER>"
@@ -248,8 +250,9 @@ echo    "│   │   │   └── ca-priv-key.pem            <-- Current site
 echo    "│   │   ├── ca.pem                         <-- Current site CA cert"               # 3.539
 echo    "│   │   ├── hosts/                         <-- Directory for hostnames"            # 3.539
 echo    "│   │   │   └── <HOST>/                    <-- Directory to store host certs"      # 3.539
-echo    "│   │   │      ├── ca.pem_20xx...          <-- CA Cert"                            # 3.542
-echo    "│   │   │      └── ca-priv-key.pem_20xx... <-- CA Private Key"                     # 3.542
+echo    "│   │   │      ├── ca.pem                  <-- CA Cert"                            # 3.542
+echo    "│   │   │      ├── cert.pem                <-- public key"                         # 3.543
+echo    "│   │   │      └── priv-key.pem            <-- private key"                        # 3.543
 echo    "│   │   ├── site/                          <-- Directory to store site certs"      # 3.539
 echo    "│   │   │   ├── ca.pem_20xx-...            <-- CA Cert"                            # 3.539
 echo    "│   │   │   └── ca-priv-key.pem_20xx-...   <-- CA Private Key"                     # 3.539
@@ -324,15 +327,18 @@ echo    "│   ├── ssh_known_hosts                    <-- OpenSSH systemwi
 echo    "│   │                                          public host keys"
 echo    "│   └── keys                               <-- Support SSH remote login when"
 echo    "│       │                                      user home directory encrypted"
+
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
 echo    "│       ├── <USER-1>/                      <-- User SSH authorized_keys directory 755"
 echo    "│       │   └── authorized_keys            <-- SSH user public keys for login 644"
+
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
 echo    "│       └── <USER-2>/                      <-- User systemwide SSH directory"
 echo -e "└── hosts.equiv                            <-- host-based authentication\n"
 echo    "/var/"
 echo    "├── lib/docker/                            <-- Root directory of persistent"
 echo    "│                                              Docker state files; (images)"
+
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
 echo    "│                                              changed to symbolic link pointing"
 echo    "│                                              to <DATA_DIR>/<CLUSTER>/docker"
