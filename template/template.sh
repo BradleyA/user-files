@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.544.826  2019-12-03T00:23:59.228811-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.543  
+# 	   template/template.sh    Production standard 6.3.544  Architecture tree 
 # 	template/template.sh  3.543.825  2019-11-26T22:37:34.145663-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.542  
 # 	   template/template.sh   Production standard 6.3.543  Architecture tree 
 # 	template/template.sh  3.542.824  2019-11-26T17:28:48.507505-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.541  
@@ -186,7 +188,7 @@ echo -e "\tLocation of user home directory (default ${DEFAULT_USER_HOME})\n"
 echo    "   -U, --user_home, -U=, --user_home=<USER_HOME>"
 echo -e "   "
 
-###  Production standard 6.3.543  Architecture tree
+###  Production standard 6.3.544  Architecture tree
 echo -e "\n${BOLD}ARCHITECTURE TREE${NORMAL}"  # STORAGE & CERTIFICATION
 echo    "/usr/local/data/                           <-- <DATA_DIR>"
 echo    "├── <CLUSTER>/                             <-- <CLUSTER>"
@@ -254,10 +256,13 @@ echo    "│   │   │      ├── ca.pem                  <-- CA Cert"    
 echo    "│   │   │      ├── cert.pem                <-- public key"                         # 3.543
 echo    "│   │   │      └── priv-key.pem            <-- private key"                        # 3.543
 echo    "│   │   ├── site/                          <-- Directory to store site certs"      # 3.539
-echo    "│   │   │   ├── ca.pem_20xx-...            <-- CA Cert"                            # 3.539
-echo    "│   │   │   └── ca-priv-key.pem_20xx-...   <-- CA Private Key"                     # 3.539
-echo    "│   │   └── users/                         <-- Directory for users"                # 3.539
-echo    "│   │       └── <USER>/                    <-- Directory to store user certs"      # 3.539
+echo    "│   │   │   ├── ca.pem                     <-- CA Cert"                            # 3.544
+echo    "│   │   │   └── ca-priv-key.pem            <-- CA Private Key"                     # 3.544
+echo    "│   │   ├── users/                         <-- Directory for users"                # 3.539
+echo    "│   │   │   └── <USER>/                    <-- Directory to store user certs"      # 3.539
+echo    "│   │   │      ├── ca.pem                  <-- CA Cert"                            # 3.544
+echo    "│   │   │      ├── cert.pem                <-- public key"                         # 3.544
+echo    "│   │   │      └── priv-key.pem            <-- private key"                        # 3.544
 echo    "│   ├── trust/                             <-- Docker Content Trust (DCT)"
 echo    "│   │   ├── private/                       <-- Notary Canonical Root Key ID"
 echo    "│   │   │                                      (DCT Root Key)"
