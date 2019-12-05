@@ -1,42 +1,16 @@
 #!/bin/bash
-# 	template/template.sh  3.545.827  2019-12-05T10:07:30.539129-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.544  
-# 	   typo 
+# 	template/template.sh  3.546.828  2019-12-05T12:57:29.432267-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.545  
+# 	   template/template.sh   Production standard 6.3.546  Architecture tree 
 # 	template/template.sh  3.544.826  2019-12-03T00:23:59.228811-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.543  
 # 	   template/template.sh    Production standard 6.3.544  Architecture tree 
-# 	template/template.sh  3.543.825  2019-11-26T22:37:34.145663-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.542  
-# 	   template/template.sh   Production standard 6.3.543  Architecture tree 
-# 	template/template.sh  3.542.824  2019-11-26T17:28:48.507505-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.541  
-# 	   template/template.sh   Production standard 6.3.542  Architecture tree 
 # 	template/template.sh  3.541.823  2019-11-22T14:54:14.075113-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.540  
 # 	   template/template.sh   Production standard 8.3.541 --usage 
-# 	template/template.sh  3.540.822  2019-11-20T12:11:33.466303-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.539-3-gcd42ad2  
-# 	   template/template.sh   updated ARCHITECTURE TREE 
-# 	template/template.sh  3.539.821  2019-11-14T20:31:33.148847-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.539-2-g470c96b  
-# 	   template/template.sh   correct a few typos 
-# 	template/template.sh  3.539.820  2019-11-14T18:25:54.926095-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.539-1-g625540e  
-# 	   template/template.sh   Production standard 6.3.539 Architecture tree 
-# 	template/template.sh  3.539.819  2019-11-13T22:54:59.077826-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.539  
-# 	   template/template.sh   Production standard 6.3.539  Architecture tree 
 # 	template/template.sh  3.537.809  2019-10-22T13:33:16.488348-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.536  
 # 	   template/template.sh  bug ${COMMAND_NAME} is ONLY for display_usage and display_help  ${SCRIPT_NAME} includes Git repository directory and can be used any where in script 
-# 	template/template.sh  3.536.808  2019-10-22T13:01:52.426103-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.535  
-# 	   template/template.sh   add color to message: SCRIPT MUST BE RUN AS ROOT 
-# 	template/template.sh  3.535.807  2019-10-21T15:20:45.139945-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.534  
-# 	   template/template.sh   added color to INFO and ERROR new_message 
-# 	template/template.sh  3.534.806  2019-10-21T15:03:32.852528-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.533  
-# 	   template/template.sh   add YELLOW to INFO upgrade   Production standard 4.3.534 Documentation Language 
 # 	template/template.sh  3.533.805  2019-10-13T23:29:17.638287-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.532  
 # 	   template/template.sh   updated Production standard 2.3.529 
-# 	template/template.sh  3.532.804  2019-10-13T14:43:50.439425-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.531-2-ge439603  
-# 	   template/template.sh #43   updated comment Production standard 8.3.530 --usage 
 # 	template/template.sh  3.531.803  2019-10-13T13:51:59.127731-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.531-1-g804e5be  
 # 	   remove comment in ###  Production standard 1.3.516 DEBUG variable 
-# 	template/template.sh  3.531.802  2019-10-13T13:50:27.400705-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.531  
-# 	   updated comment for Production standard 1.3.516 DEBUG variable 
-# 	template/template.sh  3.531.801  2019-10-13T13:47:51.235310-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.530  
-# 	   close #44   template/template.sh   Production standard 1.3.531 DEBUG variable 
-# 	template/template.sh  3.530.800  2019-10-13T13:03:18.271740-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.529-1-ga27cd5e  
-# 	   close #43   template/template.sh   Production standard 8.3.530  --usage 
 # 	template/template.sh  3.529.799  2019-10-13T09:44:12.507351-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.529  
 # 	   close #42   template/template.sh   Production standard 2.3.529 log format 
 # 	template/template.sh  3.513.776  2019-09-08T20:28:10.251481-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.512  
@@ -190,7 +164,7 @@ echo -e "\tLocation of user home directory (default ${DEFAULT_USER_HOME})\n"
 echo    "   -U, --user_home, -U=, --user_home=<USER_HOME>"
 echo -e "   "
 
-###  Production standard 6.3.544  Architecture tree
+###  Production standard 6.3.546  Architecture tree
 echo -e "\n${BOLD}ARCHITECTURE TREE${NORMAL}"  # STORAGE & CERTIFICATION
 echo    "/usr/local/data/                           <-- <DATA_DIR>"
 echo    "├── <CLUSTER>/                             <-- <CLUSTER>"
@@ -263,8 +237,8 @@ echo    "│   │   │   └── ca-priv-key.pem            <-- CA Private K
 echo    "│   │   ├── users/                         <-- Directory for users"                # 3.539
 echo    "│   │   │   └── <USER>/                    <-- Directory to store user certs"      # 3.539
 echo    "│   │   │      ├── ca.pem                  <-- CA Cert"                            # 3.544
-echo    "│   │   │      ├── cert.pem                <-- public key"                         # 3.544
-echo    "│   │   │      └── priv-key.pem            <-- private key"                        # 3.544
+echo    "│   │   │      ├── user-cert.pem           <-- public key"                         # 3.546
+echo    "│   │   │      └── user-priv-key.pem       <-- private key"                        # 3.546
 echo    "│   ├── trust/                             <-- Docker Content Trust (DCT)"
 echo    "│   │   ├── private/                       <-- Notary Canonical Root Key ID"
 echo    "│   │   │                                      (DCT Root Key)"
