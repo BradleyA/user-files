@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.545.827  2019-12-05T10:07:30.539129-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.544  
+# 	   typo 
 # 	template/template.sh  3.544.826  2019-12-03T00:23:59.228811-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.543  
 # 	   template/template.sh    Production standard 6.3.544  Architecture tree 
 # 	template/template.sh  3.543.825  2019-11-26T22:37:34.145663-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.542  
@@ -213,7 +215,7 @@ echo    "│   │   │   │   ├── shosts.equiv           <-- "
 echo    "│   │   │   │   ├── ssh_host_rsa_key       <-- OpenSSH host private key"
 echo    "│   │   │   │   ├── ssh_host_rsa_key.pub   <-- OpenSSH host public key"
 echo    "│   │   │   │   ├── ssh_host_ed25519_key   <-- OpenSSH host private key"
-echo    "│   │   │   │   ├── ssh_host_ed25519_key.pub <-- OpenSSH host public key"
+echo    "│   │   │   │   ├── ssh_host_ed25519_key.pub < OpenSSH host public key"
 echo    "│   │   │   │   └── keys/"
 echo    "│   │   │   │       ├── <USER-1>/"
 echo    "│   │   │   │       │   └── authorized_keys"
