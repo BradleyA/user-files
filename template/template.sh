@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.546.828  2019-12-05T12:57:29.432267-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.545  
-# 	   template/template.sh   Production standard 6.3.546  Architecture tree 
-# 	template/template.sh  3.544.826  2019-12-03T00:23:59.228811-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.543  
-# 	   template/template.sh    Production standard 6.3.544  Architecture tree 
+# 	template/template.sh  3.547.829  2019-12-07T18:50:21.020308-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.546  
+# 	   template/template.sh    Production standard 6.3.547  Architecture tree 
 # 	template/template.sh  3.541.823  2019-11-22T14:54:14.075113-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.540  
 # 	   template/template.sh   Production standard 8.3.541 --usage 
 # 	template/template.sh  3.537.809  2019-10-22T13:33:16.488348-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.536  
@@ -164,7 +162,7 @@ echo -e "\tLocation of user home directory (default ${DEFAULT_USER_HOME})\n"
 echo    "   -U, --user_home, -U=, --user_home=<USER_HOME>"
 echo -e "   "
 
-###  Production standard 6.3.546  Architecture tree
+###  Production standard 6.3.547  Architecture tree
 echo -e "\n${BOLD}ARCHITECTURE TREE${NORMAL}"  # STORAGE & CERTIFICATION
 echo    "/usr/local/data/                           <-- <DATA_DIR>"
 echo    "├── <CLUSTER>/                             <-- <CLUSTER>"
@@ -229,8 +227,8 @@ echo    "│   │   ├── ca.pem                         <-- Current site C
 echo    "│   │   ├── hosts/                         <-- Directory for hostnames"            # 3.539
 echo    "│   │   │   └── <HOST>/                    <-- Directory to store host certs"      # 3.539
 echo    "│   │   │      ├── ca.pem                  <-- CA Cert"                            # 3.542
-echo    "│   │   │      ├── cert.pem                <-- public key"                         # 3.543
-echo    "│   │   │      └── priv-key.pem            <-- private key"                        # 3.543
+echo    "│   │   │      ├── <HOST>-cert.pem         <-- public key (default: cert.pem)"     # 3.547
+echo    "│   │   │      └── <HOST>-priv-key.pem     <-- private key (default: key.pem)"     # 3.547
 echo    "│   │   ├── site/                          <-- Directory to store site certs"      # 3.539
 echo    "│   │   │   ├── ca.pem                     <-- CA Cert"                            # 3.544
 echo    "│   │   │   └── ca-priv-key.pem            <-- CA Private Key"                     # 3.544
@@ -261,9 +259,9 @@ echo    "/etc/ "
 echo    "├── docker/ "
 echo    "│   ├── certs.d/                           <-- Host docker cert directory"
 echo    "│   │   ├── daemon/                        <-- Daemon cert directory"
-echo    "│   │   │   ├── ca.pem                     <-- Daemon tlscacert"
-echo    "│   │   │   ├── cert.pem                   <-- Daemon tlscert"
-echo    "│   │   │   └── key.pem                    <-- Daemon tlskey"
+echo    "│   │   │   ├── ca.pem                     <-- CA Cert"                            # 3.542
+echo    "│   │   │   ├── <HOST>-cert.pem            <-- public key (default: cert.pem)"     # 3.547
+echo    "│   │   │   └── <HOST>-priv-key.pem        <-- private key (default: key.pem)"     # 3.547
 echo    "│   │   ├── <REGISTRY_HOST>:<REGISTRY_PORT>/ < Registry cert directory"
 echo    "│   │   │   └── ca.crt                     <-- Daemon registry domain cert"
 echo    "│   │   ├── <REGISTRY_HOST>:<REGISTRY_PORT>/ < Registry cert directory"
