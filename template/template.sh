@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.548.830  2019-12-14T07:33:34.861581-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.547  
+# 	   template/template.sh   typo 
 # 	template/template.sh  3.547.829  2019-12-07T18:50:21.020308-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.546  
 # 	   template/template.sh    Production standard 6.3.547  Architecture tree 
 # 	template/template.sh  3.541.823  2019-11-22T14:54:14.075113-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.540  
@@ -103,7 +105,7 @@ echo    "To loop through a list of hosts in the cluster use,"
 echo    "https://github.com/BradleyA/Linux-admin/tree/master/cluster-command"
 echo -e "\t${BOLD}cluster-command.sh special 'sudo check-host-tls.sh'${NORMAL}"
 
-echo -e "\nThe administration user may receive password and/or passphrase prompts from a"
+echo -e "\nAn administration may receive password and/or passphrase prompts from a"
 echo    "remote systen; running the following may stop the prompts in your cluster."
 echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<REMOTE_HOST>${NORMAL}"
 echo    "or"
@@ -333,8 +335,8 @@ echo -e "\n${BOLD}DOCUMENTATION${NORMAL}"
 echo    "   https://github.com/BradleyA/   <<URL to online repository README>>"
 
 echo -e "\n${BOLD}EXAMPLES${NORMAL}"
-echo -e "   <<your code examples description goes here>>\n\t${BOLD}${COMMAND_NAME} <<code example goes here>>${NORMAL}"
-echo -e "   <<your code examples description goes here>>\n\t${BOLD}${COMMAND_NAME}${NORMAL}"
+echo -e "   <<your description about code example goes here>>\n\t${BOLD}${COMMAND_NAME} <<code example goes here>>${NORMAL}"
+echo -e "   <<your description about code example goes here>>\n\t${BOLD}${COMMAND_NAME}${NORMAL}"
 }
 
 #    Date and time function ISO 8601
