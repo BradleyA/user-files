@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.549.831  2019-12-14T14:56:30.201378-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.548  
+# 	   template/template.sh   added FUTURE sections in display_help SEE ALSO AUTHOR$ REPORTING BUGS COPYRIGHT HISTORY 
 # 	template/template.sh  3.548.830  2019-12-14T07:33:34.861581-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.547  
 # 	   template/template.sh   typo 
 # 	template/template.sh  3.547.829  2019-12-07T18:50:21.020308-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.546  
@@ -335,8 +337,20 @@ echo -e "\n${BOLD}DOCUMENTATION${NORMAL}"
 echo    "   https://github.com/BradleyA/   <<URL to online repository README>>"
 
 echo -e "\n${BOLD}EXAMPLES${NORMAL}"
-echo -e "   <<your description about code example goes here>>\n\t${BOLD}${COMMAND_NAME} <<code example goes here>>${NORMAL}"
-echo -e "   <<your description about code example goes here>>\n\t${BOLD}${COMMAND_NAME}${NORMAL}"
+echo -e "   <<your description about code example goes here>>\n\t${BOLD}${COMMAND_NAME} <<code example goes here>>${NORMAL}\n"
+echo -e "   <<your description about code example goes here>>\n\t${BOLD}${COMMAND_NAME}${NORMAL}\n"
+
+#	echo -e "\n${BOLD}SEE ALSO${NORMAL}"
+#	echo    "<command>, command."
+#	echo -e "\n${BOLD}AUTHOR${NORMAL}"
+#	echo    "   ${COMMAND_NAME} was written by Bradley Allen <allen.bradley@ymail.com>"
+#	echo -e "\n${BOLD}REPORTING BUGS${NORMAL}"
+#	echo    "Report ${COMMAND_NAME} bugs https://github.com/BradleyA/user-files/issues/new"
+#	###  Production standard 5.1.160 Copyright
+#	echo -e "\n${BOLD}COPYRIGHT${NORMAL}"
+#	echo    "   Copyright (c) 2019 Bradley Allen"
+#	echo    "   MIT License is online https://github.com/BradleyA/user-files/blob/master/LICENSE"
+#	echo -e "\n${BOLD}HISTORY${NORMAL}"
 }
 
 #    Date and time function ISO 8601
