@@ -34,6 +34,8 @@ To set github login to support automation of script running on system 'two' in c
 
     machine api.github.com login BradleyA password secret-not-known-to-you
 
+[Creating a personal access token for the command line](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
+
 For each repository that requires their data to be pulled will need a file that is formatted like repository:owner-repository and rm -rf Linux-admin/contains the git commands.
 
     #!/bin/bash
