@@ -1,6 +1,6 @@
 ### in design & development
 
-<img alt="Clones" src="https://img.shields.io/static/v1?label=Clones&message=32&color=blue"> <img alt="Views"  src="https://img.shields.io/static/v1?label=Views&message=312&color=blue">
+<img alt="Clones" src="https://img.shields.io/static/v1?label=Clones&message=143&color=blue"> <img alt="Views"  src="https://img.shields.io/static/v1?label=Views&message=1004&color=blue">
 
  <img alt="gitlab"  src="https://img.shields.io/static/v1?logo=gitlab&&message=26,24,1&color=blue">
  
@@ -34,6 +34,8 @@ To set github login to support automation of script running on system 'two' in c
 
     machine api.github.com login BradleyA password secret-not-known-to-you
 
+[Creating a personal access token for the command line](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)  **Make sure to copy your new personal access token now. You won’t be able to see it again!**
+
 For each repository that requires their data to be pulled will need a file that is formatted like repository:owner-repository and rm -rf Linux-admin/contains the git commands.
 
     #!/bin/bash
@@ -42,8 +44,10 @@ For each repository that requires their data to be pulled will need a file that 
 
 #### Traffic
 
- * <img alt="Clones" src="https://img.shields.io/static/v1?label=Clones&message=29&color=blue">  [Clones Table](images/clone.table.md)
- * <img alt="Views" src="https://img.shields.io/static/v1?label=Views&message=203&color=blue">  [Views Table](images/view.table.md)
+ * <img alt="Clones" src="https://img.shields.io/static/v1?label=Clones&message=143&color=blue">  [Clones Table](images/clone.table.md)
+ * <img alt="Views" src="https://img.shields.io/static/v1?label=Views&message=1004&color=blue">  [Views Table](images/view.table.md)
+ 
+**Note**  Data collection stopped between 10/14 & 12/23
 
 #### Author
 [<img id="twitter" src="../images/twitter.png" width="50" a="twitter.com/bradleyaustintx/">

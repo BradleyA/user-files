@@ -58,6 +58,13 @@ To download the latest commit of one of these files, for example .gitignore, cha
 ./template/TEST/template.sh/(FVT-option-TEST_CASES , FVT-setup.sh)
 
 #### To watch future updates in this repository select in the upper-right corner, the "Watch" list, and select Watching.
+
+#### Traffic
+
+ * <img alt="Clones" src="https://img.shields.io/static/v1?label=Clones&message=143&color=blue">  [Clones Table](images/clone.table.md)
+ * <img alt="Views" src="https://img.shields.io/static/v1?label=Views&message=1004&color=blue">  [Views Table](images/view.table.md)
+ 
+**Note**  Data collection stopped between 10/14 & 12/23
    
 #### Author
 [<img id="twitter" src="images/twitter.png" width="50" a="twitter.com/bradleyaustintx/">
