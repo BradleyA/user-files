@@ -1,4 +1,6 @@
 ###
+#	.bash_aliases  3.551.849  2019-12-24T16:19:39.058706-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.550-16-g2a0a631  
+#	   .bash_aliases    added alias to help with relesae notes,  close #41 
 #	.bash_aliases  3.242.466  2019-08-10T19:12:22.696021-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.241-2-g81f236e  
 #	   .bash_aliases uncommented gtop for cd to top of repository 
 #	.bash_aliases  3.229.300  2019-07-30T13:00:45.455564-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.228  
@@ -56,6 +58,7 @@ alias gd='git diff'
 #	alias glgga='git log --graph --decorate --all'
 #	alias glo='git log --oneline --decorate --color'
 #	alias glog='git log --oneline --decorate --color --graph'
+alias release-notes="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gitlog='git log --graph --decorate --oneline --color --stat'
 #	check local repository
 alias gitlogl='git log --graph --decorate --oneline --color --stat origin..HEAD'
