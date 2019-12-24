@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.550.832  2019-12-24T15:23:22.340391-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.549  
+# 	   template.sh   Production standard 5.3.550 Copyright  Production standard 0.3.550 --help  Production standard 4.3.550 Documentation Language  Production standard 1.3.550 DEBUG variable   updated Architecture tree for user-files/github-repository-data/ 
 # 	template/template.sh  3.549.831  2019-12-14T14:56:30.201378-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.548  
 # 	   template/template.sh   added FUTURE sections in display_help SEE ALSO AUTHOR$ REPORTING BUGS COPYRIGHT HISTORY 
 # 	template/template.sh  3.548.830  2019-12-14T07:33:34.861581-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.547  
@@ -21,10 +23,10 @@
 # 	   close #12  template/template.sh   create function for Production standard 2.3.512 log format 
 #86# template/template.sh - shell script template containing my collection of shorthand functions and pre-written code
 ###  Production standard 3.0 shellcheck
-###  Production standard 5.1.160 Copyright
-#    Copyright (c) 2019 Bradley Allen
-#    MIT License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
-###  Production standard 1.3.531 DEBUG variable
+###  Production standard 5.3.550 Copyright                                                  # 3.550
+#    Copyright (c) 2020 Bradley Allen                                                       # 3.550
+#    MIT License is online  https://github.com/BradleyA/user-files/blob/master/LICENSE      # 3.550
+###  Production standard 1.3.550 DEBUG variable                                             # 3.550
 #    Order of precedence: environment variable, default code
 if [[ "${DEBUG}" == ""  ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 if [[ "${DEBUG}" == "2" ]] ; then set -x    ; fi   # Print trace of simple commands before they are executed
@@ -66,7 +68,7 @@ DEFAULT_USER_HOME=$(dirname "${HOME}")
 DEFAULT_WORKING_DIRECTORY=~/.docker/docker-ca
 
 ###  Production standard 8.3.541 --usage
-COMMAND_NAME=$(echo "${0}" | sed 's/^.*\///')	# 3.541
+COMMAND_NAME=$(echo "${0}" | sed 's/^.*\///')                                               # 3.541
 display_usage() {
 echo -e "\n${NORMAL}${COMMAND_NAME}\n   brief description . . ."
 echo -e "\n${BOLD}USAGE${NORMAL}"
@@ -81,10 +83,10 @@ echo    "   ${COMMAND_NAME} [--usage | -usage | -u]"
 echo    "   ${COMMAND_NAME} [--version | -version | -v]"
 }
 
-###  Production standard 0.3.214 --help
+###  Production standard 0.3.550 --help                                                     # 3.550
 display_help() {
 display_usage
-#    Displaying help DESCRIPTION in English en_US.UTF-8
+#    Displaying help DESCRIPTION in English en_US.UTF-8, en.UTF-8, C.UTF-8                  # 3.550
 echo -e "\n${BOLD}DESCRIPTION${NORMAL}"
 echo    "<your help goes here>"
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
@@ -107,35 +109,13 @@ echo    "To loop through a list of hosts in the cluster use,"
 echo    "https://github.com/BradleyA/Linux-admin/tree/master/cluster-command"
 echo -e "\t${BOLD}cluster-command.sh special 'sudo check-host-tls.sh'${NORMAL}"
 
-echo -e "\nAn administration may receive password and/or passphrase prompts from a"
-echo    "remote systen; running the following may stop the prompts in your cluster."
-echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<REMOTE_HOST>${NORMAL}"
-echo    "or"
-echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<192.168.x.x>${NORMAL}"
-echo    "If that does not resolve the prompting challenge then review the man pages for"
-echo    "ssh-agent and ssh-add before entering the following in a terminal window."
-echo -e "\t${BOLD}eval \$(ssh-agent)${NORMAL}"
-echo -e "\t${BOLD}ssh-add${NORMAL}"
-
-###  Production standard 1.3.531 DEBUG variable
-echo -e "\nThe DEBUG environment variable can be set to '', '0', '1', '2', '3', '4' or"
-echo    "'5'.  The setting '' or '0' will turn off all DEBUG messages during execution of"
-echo    "this script.  The setting '1' will print all DEBUG messages during execution of"
-echo    "this script.  The setting '2' (set -x) will print a trace of simple commands"
-echo    "before they are executed in this script.  The setting '3' (set -v) will print"
-echo    "shell input lines as they are read.  The setting '4' (set -e) will exit"
-echo    "immediately if non-zero exit status is recieved with some exceptions.  The"
-echo    "setting '5' (set -e -o pipefail) will do setting '4' and exit if any command in"
-echo    "a pipeline errors.  For more information about any of the set options, see"
-echo    "man bash."
-
-###  Production standard 4.3.534 Documentation Language
+###  Production standard 4.3.550 Documentation Language                                     # 3.550
 #    Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
 if [[ "${LANG}" == "fr_CA.UTF-8" ]] || [[ "${LANG}" == "fr_FR.UTF-8" ]] || [[ "${LANG}" == "fr_CH.UTF-8" ]] ; then
   echo -e "\n--> ${LANG}"
   echo    "<votre aide va ici>" # your help goes here
   echo    "Souhaitez-vous traduire la section description?" # Do you want to translate the description section?
-elif ! [[ "${LANG}" == "en_US.UTF-8" ]] ; then
+elif ! [[ "${LANG}" == "en_US.UTF-8" ||  "${LANG}" == "en.UTF-8" || "${LANG}" == "C.UTF-8" ]] ; then  # 3.550
   new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
 fi
 
@@ -145,7 +125,20 @@ echo    "the environment variable DEBUG to '1' (0 = debug off, 1 = debug on).  U
 echo    "command, 'unset DEBUG' to remove the exported information from the environment"
 echo    "variable DEBUG.  You are on your own defining environment variables if"
 echo    "you are using other shells."
-echo    "   DEBUG           (default off '0')"
+
+###  Production standard 1.3.550 DEBUG variable                                             # 3.550
+echo    "   DEBUG           (default off '0')  The DEBUG environment variable can be set"   # 3.550
+echo    "                   to 0, 1, 2, 3, 4 or 5.  The setting '' or 0 will turn off"      # 3.550
+echo    "                   all DEBUG messages during execution of this script.  The"       # 3.550
+echo    "                   setting 1 will print all DEBUG messages during execution."      # 3.550
+echo    "                   Setting 2 (set -x) will print a trace of simple commands"       # 3.550
+echo    "                   before they are executed.  Setting 3 (set -v) will print"       # 3.550
+echo    "                   shell input lines as they are read.  Setting 4 (set -e) will"   # 3.550
+echo    "                   exit immediately if non-zero exit status is recieved with"      # 3.550
+echo    "                   some exceptions.  Setting 5 (set -e -o pipefail) will do"       # 3.550
+echo    "                   setting 4 and exit if any command in a pipeline errors.  For"   # 3.550
+echo    "                   more information about the set options, see man bash."          # 3.550
+
 echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
 echo    "   SYSTEMS_FILE    Name of file that includes hosts in cluster"
@@ -216,9 +209,20 @@ echo    "│       │   │   └── domain.key             <-- Registry pri
 echo    "│       │   └── docker/                    <-- Registry storage directory"
 echo    "│       ├── <REGISTRY_HOST>-<REGISTRY_PORT>/ < Registry container mount"
 echo    "│       └── <REGISTRY_HOST>-<REGISTRY_PORT>/ < Registry container mount"
-echo    "└── <STANDALONE>/                          <-- <STANDALONE> Architecture tree"
-echo    "                                               is the same as <CLUSTER> TREE but"
-echo -e "                                               the systems are not in a cluster\n"
+echo    "├── <STANDALONE>/                          <-- <STANDALONE> Architecture tree"
+echo    "│                                              is the same as <CLUSTER> TREE but"
+echo    "│                                              the systems are not in a cluster"
+echo    "└── github                                 <-- Github repository traffic"
+echo    "    ├── clone.heading                      <-- Clone table headings"
+echo    "    ├── github.repository.list             <-- Github repository names"
+echo    "    ├── owner.repository                   <-- Default cron job for repositpry"
+echo    "    │                                          download of clone and views data"
+echo    "    ├── parse.repository.data.sh           <-- Parse relevant data out of cron"
+echo    "    │                                          job data files"
+echo    "    ├── setup.github.repository.sh         <-- Setup github repository data"
+echo    "    │                                          tools"
+echo    "    ├── view.heading                       <-- View table headings"
+echo -e "    └── <GITHUB_OWNER>                     <-- Github repository traffic data\n"
 echo    "<USER_HOME>/                               <-- Location of user home directory"
 echo    "├── <USER-1>/.docker/                      <-- User docker cert directory"
 echo    "│   ├── ca.pem                             <-- User tlscacert or symbolic link"
@@ -337,20 +341,36 @@ echo -e "\n${BOLD}DOCUMENTATION${NORMAL}"
 echo    "   https://github.com/BradleyA/   <<URL to online repository README>>"
 
 echo -e "\n${BOLD}EXAMPLES${NORMAL}"
-echo -e "   <<your description about code example goes here>>\n\t${BOLD}${COMMAND_NAME} <<code example goes here>>${NORMAL}\n"
-echo -e "   <<your description about code example goes here>>\n\t${BOLD}${COMMAND_NAME}${NORMAL}\n"
+echo -e "   <<description about code example>>\n\t${BOLD}${COMMAND_NAME} <<code example>>${NORMAL}\n" # 3.550
+echo -e "   <<description about code example>>\n\t${BOLD}${COMMAND_NAME}${NORMAL}\n"        # 3.550
+echo    "   To loop through a list of hosts a user could use, cluster-command.sh."          # 3.550
+echo    "   An administrator may receive password and/or passphrase prompts from a"         # 3.550
+echo    "   remote systen; running the following may stop the prompts."                     # 3.550
+echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<REMOTE_HOST>${NORMAL}"                            # 3.550
+echo    "   or"                                                                             # 3.550
+echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<192.168.x.x>${NORMAL}"                            # 3.550
+echo    "   If that does not resolve the prompting challenge then review man pages for"     # 3.550
+echo    "   ssh-agent and ssh-add."                                                         # 3.550
+echo    "   (https://github.com/BradleyA/Linux-admin/tree/master/cluster-command)"          # 3.550
+echo -e "\t${BOLD}cluster-command.sh special '${COMMAND_NAME}'${NORMAL}\n"                  # 3.550
 
-#	echo -e "\n${BOLD}SEE ALSO${NORMAL}"
-#	echo    "<command>, command."
-#	echo -e "\n${BOLD}AUTHOR${NORMAL}"
-#	echo    "   ${COMMAND_NAME} was written by Bradley Allen <allen.bradley@ymail.com>"
-#	echo -e "\n${BOLD}REPORTING BUGS${NORMAL}"
-#	echo    "Report ${COMMAND_NAME} bugs https://github.com/BradleyA/user-files/issues/new"
-#	###  Production standard 5.1.160 Copyright
-#	echo -e "\n${BOLD}COPYRIGHT${NORMAL}"
-#	echo    "   Copyright (c) 2019 Bradley Allen"
-#	echo    "   MIT License is online https://github.com/BradleyA/user-files/blob/master/LICENSE"
-#	echo -e "\n${BOLD}HISTORY${NORMAL}"
+echo -e "\n${BOLD}SEE ALSO${NORMAL}"                                                        # 3.550
+echo    "   cluster-command.sh (https://github.com/BradleyA/Linux-admin/tree/master/cluster-command)"  # 3.550
+echo    "   <command> (URL)"
+
+echo -e "\n${BOLD}AUTHOR${NORMAL}"                                                          # 3.550
+echo    "   ${COMMAND_NAME} was written by Bradley Allen <allen.bradley@ymail.com>"         # 3.550
+
+echo -e "\n${BOLD}REPORTING BUGS${NORMAL}"                                                  # 3.550
+echo    "   Report ${COMMAND_NAME} bugs https://github.com/BradleyA/user-files/issues/new"  # 3.550
+
+###  Production standard 5.3.550 Copyright                                                  # 3.550
+echo -e "\n${BOLD}COPYRIGHT${NORMAL}"                                                       # 3.550
+echo    "   Copyright (c) 2020 Bradley Allen"                                               # 3.550
+echo    "   MIT License https://github.com/BradleyA/user-files/blob/master/LICENSE"         # 3.550
+
+echo -e "\n${BOLD}HISTORY${NORMAL}"                                                         # 3.550
+echo    "   As of . . .  "                                                                  # 3.550
 }
 
 #    Date and time function ISO 8601
