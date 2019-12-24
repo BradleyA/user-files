@@ -8,3 +8,5 @@ Total clones: 143
 ###### Updated: 2019-12-24
 
 [Return to README](../README.md)
+
+**Note**  Data collection stopped between 10/14 & 12/23
