@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.552.850  2020-01-03T14:32:59.983888-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.551  
+# 	   template/template.sh   typo 
 # 	template/template.sh  3.550.832  2019-12-24T15:23:22.340391-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.549  
 # 	   template.sh   Production standard 5.3.550 Copyright  Production standard 0.3.550 --help  Production standard 4.3.550 Documentation Language  Production standard 1.3.550 DEBUG variable   updated Architecture tree for user-files/github-repository-data/ 
 # 	template/template.sh  3.549.831  2019-12-14T14:56:30.201378-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.548  
@@ -212,9 +214,9 @@ echo    "│       └── <REGISTRY_HOST>-<REGISTRY_PORT>/ < Registry contain
 echo    "├── <STANDALONE>/                          <-- <STANDALONE> Architecture tree"
 echo    "│                                              is the same as <CLUSTER> TREE but"
 echo    "│                                              the systems are not in a cluster"
-echo    "└── github                                 <-- Github repository traffic"
+echo    "└── github                                 <-- GitHub repository traffic"
 echo    "    ├── clone.heading                      <-- Clone table headings"
-echo    "    ├── github.repository.list             <-- Github repository names"
+echo    "    ├── github.repository.list             <-- GitHub repository names"
 echo    "    ├── owner.repository                   <-- Default cron job for repositpry"
 echo    "    │                                          download of clone and views data"
 echo    "    ├── parse.repository.data.sh           <-- Parse relevant data out of cron"
@@ -222,7 +224,7 @@ echo    "    │                                          job data files"
 echo    "    ├── setup.github.repository.sh         <-- Setup github repository data"
 echo    "    │                                          tools"
 echo    "    ├── view.heading                       <-- View table headings"
-echo -e "    └── <GITHUB_OWNER>                     <-- Github repository traffic data\n"
+echo -e "    └── <GITHUB_OWNER>                     <-- GitHub repository traffic data\n"
 echo    "<USER_HOME>/                               <-- Location of user home directory"
 echo    "├── <USER-1>/.docker/                      <-- User docker cert directory"
 echo    "│   ├── ca.pem                             <-- User tlscacert or symbolic link"
