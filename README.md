@@ -60,11 +60,8 @@ To download the latest commit of one of these files, for example .gitignore, cha
 #### To watch future updates in this repository select in the upper-right corner, the "Watch" list, and select Watching.
 
 #### Traffic
-
  * <img alt="Clones" src="https://img.shields.io/static/v1?label=Clones&message=143&color=blue">  [Clones Table](images/clone.table.md)
  * <img alt="Views" src="https://img.shields.io/static/v1?label=Views&message=1004&color=blue">  [Views Table](images/view.table.md)
- 
-**Note**  Data collection stopped between 10/14 & 12/23
    
 #### Author
 [<img id="twitter" src="images/twitter.png" width="50" a="twitter.com/bradleyaustintx/">
@@ -80,10 +77,10 @@ To download the latest commit of one of these files, for example .gitignore, cha
  * Be usable as non-root
  * Be easy to install and configure
 
-## License
+#### License
 MIT License
 
-Copyright (c) 2019  [Bradley Allen](https://www.linkedin.com/in/bradleyhallen)
+Copyright (c) 2020  [Bradley Allen](https://www.linkedin.com/in/bradleyhallen)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
