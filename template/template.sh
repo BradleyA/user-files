@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.553.851  2020-01-06T15:43:18.349301-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.552  
+# 	   template/template.sh   typo 
 # 	template/template.sh  3.552.850  2020-01-03T14:32:59.983888-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.551  
 # 	   template/template.sh   typo 
 # 	template/template.sh  3.550.832  2019-12-24T15:23:22.340391-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.549  
@@ -156,9 +158,9 @@ echo    "   -a, --admuser, -a=, --admuser=<ADMUSER>"
 echo -e "\tSite SRE administrator, default is user running script\n"
 echo    "   -f, --file, -f=, --filename=<FILENAME>"
 echo -e "\tPath and file on system '<path>/<file_name>'\n"
-echo    "   -S, --ssh_user, -S=, --ssh_user=<SSH_USER>"
-echo -e "\tLocation of user home directory (default ${DEFAULT_USER_HOME})\n"
 echo    "   -U, --user_home, -U=, --user_home=<USER_HOME>"
+echo -e "\tLocation of user home directory (default ${DEFAULT_USER_HOME})\n"
+echo    "   -S, --ssh_user, -S=, --ssh_user=<SSH_USER>"
 echo -e "   "
 
 ###  Production standard 6.3.547  Architecture tree
