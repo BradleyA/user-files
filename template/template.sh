@@ -1,12 +1,12 @@
 #!/bin/bash
+# 	template/template.sh  3.555.863  2020-01-18T23:59:35.357482-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.555  
+# 	   template/template.sh    correct Production standard 1.3.550 DEBUG variable 
 # 	template/template.sh  3.555.862  2020-01-18T23:53:02.200409-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.554  
 # 	   template/template.sh   Production standard 5.3.555 Copyright 
 # 	template/template.sh  3.550.832  2019-12-24T15:23:22.340391-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.549  
 # 	   template.sh   Production standard 5.3.550 Copyright  Production standard 0.3.550 --help  Production standard 4.3.550 Documentation Language  Production standard 1.3.550 DEBUG variable   updated Architecture tree for user-files/github-repository-data/ 
 # 	template/template.sh  3.549.831  2019-12-14T14:56:30.201378-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.548  
 # 	   template/template.sh   added FUTURE sections in display_help SEE ALSO AUTHOR$ REPORTING BUGS COPYRIGHT HISTORY 
-# 	template/template.sh  3.548.830  2019-12-14T07:33:34.861581-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.547  
-# 	   template/template.sh   typo 
 # 	template/template.sh  3.547.829  2019-12-07T18:50:21.020308-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.546  
 # 	   template/template.sh    Production standard 6.3.547  Architecture tree 
 # 	template/template.sh  3.541.823  2019-11-22T14:54:14.075113-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.540  
@@ -28,7 +28,7 @@
 ###  Production standard 5.3.555 Copyright                                    # 3.555
 #    Copyright (c) 2020 Bradley Allen                                         # 3.555
 #    MIT License is online in the repository as a file named LICENSE          # 3.555
-###  Production standard 1.3.550 DEBUG variable                               # 3.555
+###  Production standard 1.3.550 DEBUG variable                                             # 3.550
 #    Order of precedence: environment variable, default code
 if [[ "${DEBUG}" == ""  ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 if [[ "${DEBUG}" == "2" ]] ; then set -x    ; fi   # Print trace of simple commands before they are executed
