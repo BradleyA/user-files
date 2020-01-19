@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.553.851  2020-01-06T15:43:18.349301-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.552  
-# 	   template/template.sh   typo 
-# 	template/template.sh  3.552.850  2020-01-03T14:32:59.983888-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.551  
-# 	   template/template.sh   typo 
+# 	template/template.sh  3.554.861  2020-01-18T23:45:30.496264-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.553-9-ge49c5be  
+# 	   template/template.sh  remove   display_usage in --filename due to test cases #36 
 # 	template/template.sh  3.550.832  2019-12-24T15:23:22.340391-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.549  
 # 	   template.sh   Production standard 5.3.550 Copyright  Production standard 0.3.550 --help  Production standard 4.3.550 Documentation Language  Production standard 1.3.550 DEBUG variable   updated Architecture tree for user-files/github-repository-data/ 
 # 	template/template.sh  3.549.831  2019-12-14T14:56:30.201378-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.548  
@@ -434,7 +432,7 @@ while [[ "${#}" -gt 0 ]] ; do
         CLI_OPTION="c" ; shift
       fi ;;
     -f|--filename) CLI_OPTION="f" ; if [[ "${2}" == "" ]] ; then
-        display_usage ; new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1
+        new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1
       fi ; FILE_NAME=${2} ; shift 2 ;;
     --hooks|-hooks) ALL_TEST_CASES="YES" ; shift ;;
     -c|--cluster)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; CLUSTER=${2} ; shift 2 ;;
