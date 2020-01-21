@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.556.864  2020-01-20T21:56:40.578338-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.555-1-gcf5621a  
+# 	   template/template.sh   ARCHITECTURE TREE for git-TEST-cases.sh 
 # 	template/template.sh  3.555.863  2020-01-18T23:59:35.357482-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.555  
 # 	   template/template.sh    correct Production standard 1.3.550 DEBUG variable 
 # 	template/template.sh  3.555.862  2020-01-18T23:53:02.200409-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.554  
@@ -339,6 +341,22 @@ echo    "    └── docker.######.######/              <-- Root directory for
 echo    "                                               execution state files using"
 echo    "                                               user namespace"
 
+
+echo    "<GIT_RESPOITORY>/                      <-- <GIT_RESPOITORY>"
+echo    "├── <FILE_NAME-1>                      <-- FILE_NAME-1 to test"
+echo    "└── TEST/                              <-- TEST case directory"
+echo    "    ├── <FILE_NAME-1>/                 <-- Test case directory for FILE_NAME-1"
+echo    "    │   ├── SA-setup.sh                <-- Test case SA-setup.sh script"
+echo    "    │   ├── SA-cleanup.sh              <-- Test case SA-cleanup.sh script"
+echo    "    │   ├── SA-shellcheck-001          <-- Test case SA-shellcheck-001"
+echo    "    │   ├── SA-shellcheck-001.expected <-- Expected output file from"
+echo    "    │   │                                  test case SA-shellcheck-001 when"
+echo    "    │   │                                  testing <FILE_NAME-1>"
+echo    "    │   ├── SA-permission-775-001      <-- Test case SA-permission-775-001"
+echo    "    │   └── <TEST_CASE>/               <-- Other test cases for <FILE_NAME-1>"
+echo    "    └── <FILE_NAME-2>/                 <-- Test case directory for FILE_NAME-2"
+
+
 echo -e "\n${BOLD}DOCUMENTATION${NORMAL}"
 echo    "   https://github.com/BradleyA/   <<URL to online repository README>>"
 
@@ -416,6 +434,7 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Setting USE
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Name_of_command >${SCRIPT_NAME}< Name_of_arg1 >${1}< Name_of_arg2 >${2}< Name_of_arg3 >${3}<  Version of bash ${BASH_VERSION}" 1>&2 ; fi
 
 ###  Production standard 9.3.513 Parse CLI options and arguments
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
 while [[ "${#}" -gt 0 ]] ; do
   case "${1}" in
     --help|-help|help|-h|h|-\?)  display_help | more ; exit 0 ;;
