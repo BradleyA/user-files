@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.558.866  2020-01-20T23:08:09.240771-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 2.557  
+# 	   template/template.sh   Production standard 9.3.558 Parse CLI options and arguments 
 # 	template/template.sh  2.557.865  2020-01-20T22:32:50.448601-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.556  
 # 	   template/template.sh   Production standard 5.3.557 Copyright 
 # 	template/template.sh  3.556.864  2020-01-20T21:56:40.578338-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.555-1-gcf5621a  
@@ -432,36 +434,48 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Setting USE
 #    DEBUG
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Name_of_command >${SCRIPT_NAME}< Name_of_arg1 >${1}< Name_of_arg2 >${2}< Name_of_arg3 >${3}<  Version of bash ${BASH_VERSION}" 1>&2 ; fi
 
-###  Production standard 9.3.513 Parse CLI options and arguments
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+###  Production standard 9.3.558 Parse CLI options and arguments
 while [[ "${#}" -gt 0 ]] ; do
   case "${1}" in
     --help|-help|help|-h|h|-\?)  display_help | more ; exit 0 ;;
     --usage|-usage|usage|-u)  display_usage ; exit 0  ;;
     --version|-version|version|-v)  echo "${SCRIPT_NAME} ${SCRIPT_VERSION}" ; exit 0  ;;
     -a|--all)   if [[ "${CLI_OPTION}" != "" ]] ; then
-        new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Only one of these option -a, --all, -c, --clean, --none, or -n can be selected." 1>&2 ; exit 1
+        new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected." 1>&2 ; exit 1
       else
         CLI_OPTION="a" ; shift
       fi ;;
+    --add) DEFAULT_ADD_TEST_CASE="YES" ; shift ;;  #  #29
     -c|--clean) if [[ "${CLI_OPTION}" != "" ]] ; then
-        new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Only one of these option -a, --all, -c, --clean, --none, or -n can be selected." 1>&2 ; exit 1
+        new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected." 1>&2 ; exit 1
       else
         CLI_OPTION="c" ; shift
       fi ;;
-    -f|--filename) CLI_OPTION="f" ; if [[ "${2}" == "" ]] ; then
-        new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1
-      fi ; FILE_NAME=${2} ; shift 2 ;;
+    -f|--filename) if [[ "${CLI_OPTION}" != "" ]] ; then
+        new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected." 1>&2 ; exit 1
+      else
+        CLI_OPTION="f"
+        #    Check if FILE_NAME is missing
+        if [[ "${2}" == "" ]] ; then new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi
+        #    Check if option (-) is next not FILE_NAME
+        if [[ ${2:0:1} == "-" ]] ; then new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi
+        FILE_NAME=${2} ; shift 2
+      fi ;;
     --hooks|-hooks) ALL_TEST_CASES="YES" ; shift ;;
-    -c|--cluster)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; CLUSTER=${2} ; shift 2 ;;
+    -n|--none) if [[ "${CLI_OPTION}" != "" ]] ; then  #  #18
+        new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected." 1>&2 ; exit 1
+      else
+        CLI_OPTION="n" ; shift
+      fi ;;
+    -c|--cluster)  if [[ "${2}" == "" ]] ; then  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; CLUSTER=${2} ; shift 2 ;;
     -c=*|--cluster=*)  CLUSTER=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
-    -d|--datadir)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; DATA_DIR=${2} ; shift 2 ;;
+    -d|--datadir)  if [[ "${2}" == "" ]] ; then  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; DATA_DIR=${2} ; shift 2 ;;
     -d=*|--datadir=*)  DATA_DIR=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
-    -f|--filename)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; FILE_NAME=${2} ; shift 2 ;;
+    -f|--filename) CLI_OPTION="f" ; if [[ "${2}" == "" ]] ; then new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; FILE_NAME=${2} ; shift 2 ;;
     -f=*|--filename=*)  FILE_NAME=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
-    -S|--ssh_user)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; SSH_USER=${2} ; shift 2 ;;
+    -S|--ssh_user)  if [[ "${2}" == "" ]] ; then new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; SSH_USER=${2} ; shift 2 ;;
     -S=*|--ssh_user=*)  SSH_USER=$(echo "${1}" | cut -d '=' -f 2) ; shift   ;;
-    -U|--user_home)  if [[ "${2}" == "" ]] ; then  display_usage ; new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; USER_HOME=${2} ; shift 2 ;;
+    -U|--user_home)  if [[ "${2}" == "" ]] ; then new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Argument for ${BOLD}${YELLOW}${1}${NORMAL} is not found on command line" 1>&2 ; exit 1 ; fi ; USER_HOME=${2} ; shift 2 ;;
     -U=*|--user_home=*)  USER_HOME=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
 #    *)  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Option, ${BOLD}${YELLOW}${1}${NORMAL}, entered on the command line is not supported." 1>&2 ; display_usage ; exit 1 ; ;;
 # OR
