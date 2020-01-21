@@ -1,8 +1,8 @@
 #!/bin/bash
+# 	template/template.sh  3.559.867  2020-01-20T23:15:06.840471-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.558  
+# 	   template/template.sh   Production standard 5.3.559 Copyright:w 
 # 	template/template.sh  3.558.866  2020-01-20T23:08:09.240771-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 2.557  
 # 	   template/template.sh   Production standard 9.3.558 Parse CLI options and arguments 
-# 	template/template.sh  2.557.865  2020-01-20T22:32:50.448601-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.556  
-# 	   template/template.sh   Production standard 5.3.557 Copyright 
 # 	template/template.sh  3.556.864  2020-01-20T21:56:40.578338-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.555-1-gcf5621a  
 # 	   template/template.sh   ARCHITECTURE TREE for git-TEST-cases.sh 
 # 	template/template.sh  3.555.863  2020-01-18T23:59:35.357482-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.555  
@@ -29,9 +29,9 @@
 # 	   close #12  template/template.sh   create function for Production standard 2.3.512 log format 
 #86# template/template.sh - shell script template containing my collection of shorthand functions and pre-written code
 ###  Production standard 3.0 shellcheck
-###  Production standard 5.3.557 Copyright                                    # 3.557
+###  Production standard 5.3.559 Copyright                                    # 3.559
 #    Copyright (c) 2020 Bradley Allen                                                # 3.555
-#    MIT License is online in the repository as a file named LICENSE"         # 3.557
+#    MIT License is online in the repository as a file named LICENSE"         # 3.559
 ###  Production standard 1.3.550 DEBUG variable                                             # 3.550
 #    Order of precedence: environment variable, default code
 if [[ "${DEBUG}" == ""  ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
@@ -385,10 +385,10 @@ echo    "   ${COMMAND_NAME} was written by Bradley Allen <allen.bradley@ymail.co
 echo -e "\n${BOLD}REPORTING BUGS${NORMAL}"                                                  # 3.550
 echo    "   Report ${COMMAND_NAME} bugs https://github.com/BradleyA/user-files/issues/new"  # 3.550
 
-###  Production standard 5.3.557 Copyright                                            # 3.557
+###  Production standard 5.3.559 Copyright                                            # 3.559
 echo -e "\n${BOLD}COPYRIGHT${NORMAL}"                                                       # 3.550
 echo    "   Copyright (c) 2020 Bradley Allen"                                               # 3.550
-echo    "   MIT License is online in the repository as a file named LICENSE"          # 3.557
+echo    "   MIT License is online in the repository as a file named LICENSE"          # 3.559
 
 echo -e "\n${BOLD}HISTORY${NORMAL}"                                                         # 3.550
 echo    "   As of . . .  "                                                                  # 3.550
