@@ -1,10 +1,10 @@
 #!/bin/bash
+# 	template/template.sh  2.557.865  2020-01-20T22:32:50.448601-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.556  
+# 	   template/template.sh   Production standard 5.3.557 Copyright 
 # 	template/template.sh  3.556.864  2020-01-20T21:56:40.578338-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.555-1-gcf5621a  
 # 	   template/template.sh   ARCHITECTURE TREE for git-TEST-cases.sh 
 # 	template/template.sh  3.555.863  2020-01-18T23:59:35.357482-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.555  
 # 	   template/template.sh    correct Production standard 1.3.550 DEBUG variable 
-# 	template/template.sh  3.555.862  2020-01-18T23:53:02.200409-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.554  
-# 	   template/template.sh   Production standard 5.3.555 Copyright 
 # 	template/template.sh  3.550.832  2019-12-24T15:23:22.340391-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.549  
 # 	   template.sh   Production standard 5.3.550 Copyright  Production standard 0.3.550 --help  Production standard 4.3.550 Documentation Language  Production standard 1.3.550 DEBUG variable   updated Architecture tree for user-files/github-repository-data/ 
 # 	template/template.sh  3.549.831  2019-12-14T14:56:30.201378-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.548  
@@ -27,9 +27,9 @@
 # 	   close #12  template/template.sh   create function for Production standard 2.3.512 log format 
 #86# template/template.sh - shell script template containing my collection of shorthand functions and pre-written code
 ###  Production standard 3.0 shellcheck
-###  Production standard 5.3.555 Copyright                                    # 3.555
-#    Copyright (c) 2020 Bradley Allen                                         # 3.555
-#    MIT License is online in the repository as a file named LICENSE          # 3.555
+###  Production standard 5.3.557 Copyright                                    # 3.557
+#    Copyright (c) 2020 Bradley Allen                                                # 3.555
+#    MIT License is online in the repository as a file named LICENSE"         # 3.557
 ###  Production standard 1.3.550 DEBUG variable                                             # 3.550
 #    Order of precedence: environment variable, default code
 if [[ "${DEBUG}" == ""  ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
@@ -356,7 +356,6 @@ echo    "    │   ├── SA-permission-775-001      <-- Test case SA-permiss
 echo    "    │   └── <TEST_CASE>/               <-- Other test cases for <FILE_NAME-1>"
 echo    "    └── <FILE_NAME-2>/                 <-- Test case directory for FILE_NAME-2"
 
-
 echo -e "\n${BOLD}DOCUMENTATION${NORMAL}"
 echo    "   https://github.com/BradleyA/   <<URL to online repository README>>"
 
@@ -384,10 +383,10 @@ echo    "   ${COMMAND_NAME} was written by Bradley Allen <allen.bradley@ymail.co
 echo -e "\n${BOLD}REPORTING BUGS${NORMAL}"                                                  # 3.550
 echo    "   Report ${COMMAND_NAME} bugs https://github.com/BradleyA/user-files/issues/new"  # 3.550
 
-###  Production standard 5.3.550 Copyright                                                  # 3.550
+###  Production standard 5.3.557 Copyright                                            # 3.557
 echo -e "\n${BOLD}COPYRIGHT${NORMAL}"                                                       # 3.550
 echo    "   Copyright (c) 2020 Bradley Allen"                                               # 3.550
-echo    "   MIT License https://github.com/BradleyA/user-files/blob/master/LICENSE"         # 3.550
+echo    "   MIT License is online in the repository as a file named LICENSE"          # 3.557
 
 echo -e "\n${BOLD}HISTORY${NORMAL}"                                                         # 3.550
 echo    "   As of . . .  "                                                                  # 3.550
@@ -434,7 +433,7 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Setting USE
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Name_of_command >${SCRIPT_NAME}< Name_of_arg1 >${1}< Name_of_arg2 >${2}< Name_of_arg3 >${3}<  Version of bash ${BASH_VERSION}" 1>&2 ; fi
 
 ###  Production standard 9.3.513 Parse CLI options and arguments
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
 while [[ "${#}" -gt 0 ]] ; do
   case "${1}" in
     --help|-help|help|-h|h|-\?)  display_help | more ; exit 0 ;;
