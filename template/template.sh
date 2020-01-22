@@ -1,6 +1,8 @@
 #!/bin/bash
+# 	template/template.sh  3.560.868  2020-01-22T15:24:29.741425-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.559  
+# 	   template/template.sh   typo 
 # 	template/template.sh  3.559.867  2020-01-20T23:15:06.840471-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.558  
-# 	   template/template.sh   Production standard 5.3.559 Copyright:w 
+# 	   template/template.sh   Production standard 5.3.559 Copyright
 # 	template/template.sh  3.558.866  2020-01-20T23:08:09.240771-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 2.557  
 # 	   template/template.sh   Production standard 9.3.558 Parse CLI options and arguments 
 # 	template/template.sh  3.556.864  2020-01-20T21:56:40.578338-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.555-1-gcf5621a  
@@ -416,7 +418,7 @@ if [[ "${SCRIPT_VERSION}" == "" ]] ; then SCRIPT_VERSION="v?.?" ; fi
 #    GID
 GROUP_ID=$(id -g)
 
-###  Production standard 2.3.529 log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
+###  Production standard 2.3.529 Log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
 new_message() {  #  $1="${LINENO}"  $2="DEBUG INFO ERROR WARN"  $3="message"
   get_date_stamp
   echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${SCRIPT_NAME}[$$] ${SCRIPT_VERSION} ${1} ${USER} ${UID}:${GROUP_ID} ${BOLD}[${2}]${NORMAL}  ${3}"
