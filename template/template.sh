@@ -1,14 +1,8 @@
 #!/bin/bash
-# 	template/template.sh  3.561.869  2020-01-24T20:01:28.766299-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.560  
-# 	   template/template.sh   Production standard 9.3.561 Parse CLI 
-# 	template/template.sh  3.560.868  2020-01-22T15:24:29.741425-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.559  
-# 	   template/template.sh   typo 
+# 	template/template.sh  3.562.870  2020-01-24T20:34:55.986650-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.561  
+# 	   template/template.sh   Production standard 9.3.562 Parse CLI options and arguments 
 # 	template/template.sh  3.559.867  2020-01-20T23:15:06.840471-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.558  
 # 	   template/template.sh   Production standard 5.3.559 Copyright
-# 	template/template.sh  3.558.866  2020-01-20T23:08:09.240771-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 2.557  
-# 	   template/template.sh   Production standard 9.3.558 Parse CLI options and arguments 
-# 	template/template.sh  3.556.864  2020-01-20T21:56:40.578338-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.555-1-gcf5621a  
-# 	   template/template.sh   ARCHITECTURE TREE for git-TEST-cases.sh 
 # 	template/template.sh  3.555.863  2020-01-18T23:59:35.357482-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.555  
 # 	   template/template.sh    correct Production standard 1.3.550 DEBUG variable 
 # 	template/template.sh  3.550.832  2019-12-24T15:23:22.340391-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.549  
@@ -19,18 +13,8 @@
 # 	   template/template.sh    Production standard 6.3.547  Architecture tree 
 # 	template/template.sh  3.541.823  2019-11-22T14:54:14.075113-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.540  
 # 	   template/template.sh   Production standard 8.3.541 --usage 
-# 	template/template.sh  3.537.809  2019-10-22T13:33:16.488348-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.536  
-# 	   template/template.sh  bug ${COMMAND_NAME} is ONLY for display_usage and display_help  ${SCRIPT_NAME} includes Git repository directory and can be used any where in script 
 # 	template/template.sh  3.533.805  2019-10-13T23:29:17.638287-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.532  
-# 	   template/template.sh   updated Production standard 2.3.529 
-# 	template/template.sh  3.531.803  2019-10-13T13:51:59.127731-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.531-1-g804e5be  
-# 	   remove comment in ###  Production standard 1.3.516 DEBUG variable 
-# 	template/template.sh  3.529.799  2019-10-13T09:44:12.507351-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.529  
 # 	   close #42   template/template.sh   Production standard 2.3.529 log format 
-# 	template/template.sh  3.513.776  2019-09-08T20:28:10.251481-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.512  
-# 	   close #24  template/template.sh  Production standard 9.3.513 Parse CLI options, arguments, and new_message 
-# 	template/template.sh  3.512.775  2019-09-08T13:01:15.338262-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.511  
-# 	   close #12  template/template.sh   create function for Production standard 2.3.512 log format 
 #86# template/template.sh - shell script template containing my collection of shorthand functions and pre-written code
 ###  Production standard 3.0 shellcheck
 ###  Production standard 5.3.559 Copyright                                    # 3.559
@@ -438,48 +422,48 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Setting USE
 #    DEBUG
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Name_of_command >${SCRIPT_NAME}< Name_of_arg1 >${1}< Name_of_arg2 >${2}< Name_of_arg3 >${3}<  Version of bash ${BASH_VERSION}" 1>&2 ; fi
 
-###  Production standard 9.3.561 Parse CLI options and arguments
+###  Production standard 9.3.562 Parse CLI options and arguments
 while [[ "${#}" -gt 0 ]] ; do
   case "${1}" in
     --help|-help|help|-h|h|-\?)  display_help | more ; exit 0 ;;
     --usage|-usage|usage|-u)  display_usage ; exit 0  ;;
     --version|-version|version|-v)  echo "${SCRIPT_NAME} ${SCRIPT_VERSION}" ; exit 0  ;;
     -a|--all)   if [[ "${CLI_OPTION}" != "" ]] ; then
-        echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}" ; exit 1
+        echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1
       else
         CLI_OPTION="a" ; shift
       fi ;;
     --add) DEFAULT_ADD_TEST_CASE="YES" ; shift ;;  #  #29
     -c|--clean) if [[ "${CLI_OPTION}" != "" ]] ; then
-        echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}" ; exit 1
+        echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1
       else
         CLI_OPTION="c" ; shift
       fi ;;
     -f|--filename) if [[ "${CLI_OPTION}" != "" ]] ; then
-        echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}" ; exit 1
+        echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1
       else
         CLI_OPTION="f"
         #    Check if FILE_NAME is missing
-        if [[ "${2}" == "" ]]    ; then echo -e "\n${BOLD}    Argument for ${1} is not found on command line" ; exit 1 ; fi
+        if [[ "${2}" == "" ]]    ; then echo -e "\n${BOLD}    Argument for ${1} is not found on command line\n" ; exit 1 ; fi
         #    Check if option (-) is next not FILE_NAME
-        if [[ ${2:0:1} == "-" ]] ; then echo -e "\n${BOLD}    Argument for ${1} is not found on command line" ; exit 1 ; fi
+        if [[ ${2:0:1} == "-" ]] ; then echo -e "\n${BOLD}    Argument for ${1} is not found on command line\n" ; exit 1 ; fi
         FILE_NAME=${2} ; shift 2
       fi ;;
     --hooks|-hooks) ALL_TEST_CASES="YES" ; shift ;;
     -n|--none) if [[ "${CLI_OPTION}" != "" ]] ; then  #  #18
-        echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}" ; exit 1
+        echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1
       else
         CLI_OPTION="n" ; shift
       fi ;;
-    -c|--cluster)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}" ; exit 1 ; fi ; CLUSTER=${2} ; shift 2 ;;
+    -c|--cluster)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; CLUSTER=${2} ; shift 2 ;;
     -c=*|--cluster=*)  CLUSTER=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
-    -d|--datadir)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}" ; exit 1 ; fi ; DATA_DIR=${2} ; shift 2 ;;
+    -d|--datadir)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; DATA_DIR=${2} ; shift 2 ;;
     -d=*|--datadir=*)  DATA_DIR=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
-    -f|--filename) CLI_OPTION="f" ; if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}" ; exit 1 ; fi ; FILE_NAME=${2} ; shift 2 ;;
+    -f|--filename) CLI_OPTION="f" ; if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; FILE_NAME=${2} ; shift 2 ;;
     -f=*|--filename=*)  FILE_NAME=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
-    -S|--ssh_user)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}" ; exit 1 ; fi ; SSH_USER=${2} ; shift 2 ;;
+    -S|--ssh_user)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; SSH_USER=${2} ; shift 2 ;;
     -S=*|--ssh_user=*)  SSH_USER=$(echo "${1}" | cut -d '=' -f 2) ; shift   ;;
-    -U|--user_home)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}" ; exit 1 ; fi ; USER_HOME=${2} ; shift 2 ;;
+    -U|--user_home)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; USER_HOME=${2} ; shift 2 ;;
     -U=*|--user_home=*)  USER_HOME=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
 #    echo -e "\n${BOLD}    Option, ${YELLOW}${1}${WHITE}, is not supported.  Try  ${YELLOW}${COMMAND_NAME} --usage${NORMAL}\n" ; exit 1 ; ;;
 # OR
