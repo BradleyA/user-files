@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.563.871  2020-01-24T20:41:31.910524-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.562  
+# 	   template/template.sh   correct incident shellcheck DEFAULT_ADD_TEST_CASE 
 # 	template/template.sh  3.562.870  2020-01-24T20:34:55.986650-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.561  
 # 	   template/template.sh   Production standard 9.3.562 Parse CLI options and arguments 
 # 	template/template.sh  3.559.867  2020-01-20T23:15:06.840471-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.558  
@@ -39,6 +41,7 @@ CYAN=$(tput   setaf 6)
 WHITE=$(tput  setaf 7)
 
 ###  Production standard 7.0 Default variable value
+DEFAULT_ADD_TEST_CASE="NO"
 DEFAULT_ADM_TLS_USER="${USER}"
 DEFAULT_CLUSTER="us-tx-cluster-1/"
 DEFAULT_CA_CERT="ca.pem"
@@ -555,3 +558,4 @@ echo "${SSH_USER}"
 echo "${USER_HOME}"
 echo "${DEFAULT_SCRIPT_PATH}"
 echo "${ALL_TEST_CASES}"
+echo "${DEFAULT_ADD_TEST_CASE}"
