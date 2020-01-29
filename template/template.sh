@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.567.875  2020-01-29T12:19:05.118586-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.566  
+# 	   template/template.sh   correct incident with version test case and Starting ... 
 # 	template/template.sh  3.566.874  2020-01-29T12:15:34.809565-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.565  
 # 	   template/template.sh   add no help options 
 # 	template/template.sh  3.563.871  2020-01-24T20:41:31.910524-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.562  
@@ -416,7 +418,7 @@ new_message() {  #  $1="${LINENO}"  $2="DEBUG INFO ERROR WARN"  $3="message"
 }
 
 #    INFO
-new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "  Started..." 1>&2
+#	new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "  Started..." 1>&2
 #    Or
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "  Started..." 1>&2 ; fi
 
