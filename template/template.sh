@@ -1,5 +1,5 @@
 #!/bin/bash
-# 	template/template.sh  3.564.872  2020-01-29T11:05:57.419744-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.563  
+# 	template/template.sh  3.565.873  2020-01-29T12:12:47.498444-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.564  
 # 	   template/template.sh   add no help options 
 # 	template/template.sh  3.563.871  2020-01-24T20:41:31.910524-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.562  
 # 	   template/template.sh   correct incident shellcheck DEFAULT_ADD_TEST_CASE 
@@ -420,6 +420,13 @@ new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "  Started..." 1>&2
 #    Or
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "  Started..." 1>&2 ; fi
 
+#    No --help
+if [[ "${1}" != "" ]] ; then
+  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  ${SCRIPT_NAME} does not support arguements." 1>&2
+  echo -e "    For more information:\n${BOLD}${YELLOW}    https://github.com/BradleyA/git-TEST-commit-automation/tree/master/hooks#git-test-commit-automation------\n${NORMAL}"
+  exit 1
+fi
+
 #    Added following code because USER is not defined in crobtab jobs
 if ! [[ "${USER}" == "${LOGNAME}" ]] ; then  USER=${LOGNAME} ; fi
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Setting USER to support crobtab...  USER >${USER}<  LOGNAME >${LOGNAME}<" 1>&2 ; fi
@@ -483,13 +490,6 @@ if ! [[ "${UID}"  = 0 ]] ; then
   new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Use sudo ${SCRIPT_NAME}" 1>&2
 #    Help hint
   echo -e "\n\t${BOLD}>>   ${YELLOW}SCRIPT MUST BE RUN AS ROOT${WHITE}   <<\n${NORMAL}"  1>&2
-  exit 1
-fi
-
-#    No --help
-if [[ "${1}" != "" ]] ; then
-  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  ${SCRIPT_NAME} does not support arguements." 1>&2
-  echo -e "    For more information:\n${BOLD}${YELLOW}    https://github.com/BradleyA/git-TEST-commit-automation/tree/master/hooks#git-test-commit-automation------\n${NORMAL}"
   exit 1
 fi
 
