@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.564.872  2020-01-29T11:05:57.419744-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.563  
+# 	   template/template.sh   add no help options 
 # 	template/template.sh  3.563.871  2020-01-24T20:41:31.910524-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.562  
 # 	   template/template.sh   correct incident shellcheck DEFAULT_ADD_TEST_CASE 
 # 	template/template.sh  3.562.870  2020-01-24T20:34:55.986650-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.561  
@@ -481,6 +483,13 @@ if ! [[ "${UID}"  = 0 ]] ; then
   new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Use sudo ${SCRIPT_NAME}" 1>&2
 #    Help hint
   echo -e "\n\t${BOLD}>>   ${YELLOW}SCRIPT MUST BE RUN AS ROOT${WHITE}   <<\n${NORMAL}"  1>&2
+  exit 1
+fi
+
+#    No --help
+if [[ "${1}" != "" ]] ; then
+  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  ${SCRIPT_NAME} does not support arguements." 1>&2
+  echo -e "    For more information:\n${BOLD}${YELLOW}    https://github.com/BradleyA/git-TEST-commit-automation/tree/master/hooks#git-test-commit-automation------\n${NORMAL}"
   exit 1
 fi
 
