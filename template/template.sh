@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.568.876  2020-01-30T12:26:35.136659-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.567  
+# 	   template/template.sh   add previous code for --help --usage -- version 
 # 	template/template.sh  3.567.875  2020-01-29T12:19:05.118586-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.566  
 # 	   template/template.sh   correct incident with version test case and Starting ... 
 # 	template/template.sh  3.566.874  2020-01-29T12:15:34.809565-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.565  
@@ -536,6 +538,20 @@ if [[ "$1" != "no" ]] && [[ "$1" != "normal" ]] && [[ "$1" != "all" ]] && [[ "$1
   display_help | more
   new_message "${LINENO}" "${RED}ERROR${WHITE}" "  First arguement, ${1}, is NOT no, normal, all." 1>&2
   exit 2
+fi
+
+#       Default help and, usage, version arguments
+if [ "$1" == "--help" ] || [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ] || [ "$1" == "h" ] || [ "$1" == "-?" ] ; then
+        display_help | more
+        exit 0
+fi
+if [ "$1" == "--usage" ] || [ "$1" == "-usage" ] || [ "$1" == "usage" ] || [ "$1" == "-u" ] ; then
+        display_usage | more
+        exit 0
+fi
+if [ "$1" == "--version" ] || [ "$1" == "-version" ] || [ "$1" == "version" ] || [ "$1" == "-v" ] ; then
+        echo "${SCRIPT_NAME} ${SCRIPT_VERSION}"
+        exit 0
 fi
 
 #
