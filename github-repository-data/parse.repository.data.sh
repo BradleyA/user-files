@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	github-repository-data/parse.repository.data.sh  3.571.881  2020-02-04T16:45:43.172349-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.570  
+# 	   github-repository-data/parse.repository.data.sh   begin adding production standards #32 
 # 	github-repository/parse.repository.data.sh  2.98.370  2019-08-08T23:47:37.538761-05:00 (CDT)  https://github.com/BradleyA/Linux-admin  uadmin  two-rpi3b.cptx86.com 2.97  
 # 	   github-repository/parse.repository.data.sh design complete, ready to create test cases 
 ###
@@ -17,15 +19,112 @@
 #       git commit -m '$DATE: automation the update of README table' README.md
 #       git push README.md
 
-###
-### production standard 3.0 shellcheck
-### production standard 5.1.160 Copyright
-#	Copyright (c) 2019 Bradley Allen
-#	MIT License is in the online DOCUMENTATION, DOCUMENTATION URL defined below.
-###
-###     parse.repository.data.sh
+#86# github-repository-data/parse.repository.data.sh
+###  Production standard 3.0 shellcheck
+###  Production standard 5.3.559 Copyright                                    # 3.559
+#    Copyright (c) 2020 Bradley Allen                                                # 3.555
+#    MIT License is online in the repository as a file named LICENSE"         # 3.559
+###  Production standard 1.3.550 DEBUG variable                                             # 3.550
+#    Order of precedence: environment variable, default code
+if [[ "${DEBUG}" == ""  ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
+if [[ "${DEBUG}" == "2" ]] ; then set -x    ; fi   # Print trace of simple commands before they are executed
+if [[ "${DEBUG}" == "3" ]] ; then set -v    ; fi   # Print shell input lines as they are read
+if [[ "${DEBUG}" == "4" ]] ; then set -e    ; fi   # Exit immediately if non-zero exit status
+if [[ "${DEBUG}" == "5" ]] ; then set -e -o pipefail ; fi   # Exit immediately if non-zero exit status and exit if any command in a pipeline errors
 #
-DATA_GITHUB_DIR="/usr/local/data/github/"
+BOLD=$(tput -Txterm bold)
+NORMAL=$(tput -Txterm sgr0)
+RED=$(tput    setaf 1)
+GREEN=$(tput  setaf 2)
+YELLOW=$(tput setaf 3)
+CYAN=$(tput   setaf 6)
+WHITE=$(tput  setaf 7)
+
+###  Production standard 7.0 Default variable value
+DEFAULT_DATA_GITHUB_DIR="/usr/local/data/github/"
+DEFAULT_DATA_YEAR=$(date +%G)
+
+###  Production standard 8.3.541 --usage
+COMMAND_NAME=$(echo "${0}" | sed 's/^.*\///')                                               # 3.541
+display_usage() {
+echo -e "\n${NORMAL}${COMMAND_NAME}\n   Parse relevant data out of cron job data files"
+echo -e "\n${BOLD}USAGE${NORMAL}"
+echo    "   ${YELLOW}Positional Arguments${NORMAL}"
+echo -e "   ${COMMAND_NAME}  <FILE_ORG_NAME>\n"
+echo    "   ${COMMAND_NAME} [--help | -help | help | -h | h | -?]"
+echo    "   ${COMMAND_NAME} [--usage | -usage | -u]"
+echo    "   ${COMMAND_NAME} [--version | -version | -v]"
+}
+
+###  Production standard 0.3.571 --help                                                     # 3.571
+display_help() {
+display_usage
+#    Displaying help DESCRIPTION in English en_US.UTF-8, en.UTF-8, C.UTF-8                  # 3.550
+echo -e "\n${BOLD}DESCRIPTION${NORMAL}"
+echo -e "\n<your help goes here>"
+echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
+
+echo -e "\n<<Paragraph two>>"
+
+###  Production standard 4.3.550 Documentation Language                                     # 3.550
+#    Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
+if [[ "${LANG}" == "fr_CA.UTF-8" ]] || [[ "${LANG}" == "fr_FR.UTF-8" ]] || [[ "${LANG}" == "fr_CH.UTF-8" ]] ; then
+  echo -e "\n--> ${LANG}"
+  echo    "<votre aide va ici>" # your help goes here
+  echo    "Souhaitez-vous traduire la section description?" # Do you want to translate the description section?
+elif ! [[ "${LANG}" == "en_US.UTF-8" ||  "${LANG}" == "en.UTF-8" || "${LANG}" == "C.UTF-8" ]] ; then  # 3.550
+  new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
+fi
+
+echo -e "\n${BOLD}ENVIRONMENT VARIABLES${NORMAL}"
+echo    "If using the bash shell, enter; 'export DEBUG=1' on the command line to set"
+echo    "the environment variable DEBUG to '1' (0 = debug off, 1 = debug on).  Use the"
+echo    "command, 'unset DEBUG' to remove the exported information from the environment"
+echo    "variable DEBUG.  You are on your own defining environment variables if"
+echo    "you are using other shells."
+
+###  Production standard 1.3.550 DEBUG variable                                             # 3.550
+echo    "   DEBUG           (default off '0')  The DEBUG environment variable can be set"   # 3.550
+echo    "                   to 0, 1, 2, 3, 4 or 5.  The setting '' or 0 will turn off"      # 3.550
+echo    "                   all DEBUG messages during execution of this script.  The"       # 3.550
+echo    "                   setting 1 will print all DEBUG messages during execution."      # 3.550
+echo    "                   Setting 2 (set -x) will print a trace of simple commands"       # 3.550
+echo    "                   before they are executed.  Setting 3 (set -v) will print"       # 3.550
+echo    "                   shell input lines as they are read.  Setting 4 (set -e) will"   # 3.550
+echo    "                   exit immediately if non-zero exit status is recieved with"      # 3.550
+echo    "                   some exceptions.  Setting 5 (set -e -o pipefail) will do"       # 3.550
+echo    "                   setting 4 and exit if any command in a pipeline errors.  For"   # 3.550
+echo    "                   more information about the set options, see man bash."          # 3.550
+#
+DEFAULT_DATA_GITHUB_DIR="/usr/local/data/github/"
+DEFAULT_DATA_YEAR=$(date +%G)
+echo    "   CLONE_FILE_NAME Cron job data file (/usr/local/data/github/<GITHUB_OWNER>/<REPOSITORY>)"
+
+echo -e "\n${BOLD}OPTIONS${NORMAL}"
+echo -e "Order of precedence: CLI options, environment variable, default value.\n"     # 3.571
+echo    "   --help, -help, help, -h, h, -?"                                            # 3.571
+echo -e "\tOn-line brief reference manual\n"                                           # 3.571
+echo    "   --usage, -usage, -u"                                                       # 3.571
+echo -e "\tOn-line command usage\n"                                                    # 3.571
+echo    "   --version, -version, -v]"                                                  # 3.571
+echo -e "\tOn-line command version\n"                                                  # 3.571
+#
+
+###  Production standard 6.3.547  Architecture tree
+echo -e "\n${BOLD}ARCHITECTURE TREE${NORMAL}"  # STORAGE & CERTIFICATION
+echo    "/usr/local/data/                           <-- <DATA_DIR>"
+echo    "└── github                                 <-- GitHub repository traffic"
+echo    "    ├── clone.heading                      <-- Clone table headings"
+echo    "    ├── github.repository.list             <-- GitHub repository names"
+echo    "    ├── owner.repository                   <-- Default cron job for repositpry"
+echo    "    │                                          download of clone and views data"
+echo    "    ├── parse.repository.data.sh           <-- Parse relevant data out of cron"
+echo    "    │                                          job data files"
+echo    "    ├── setup.github.repository.sh         <-- Setup github repository data"
+echo    "    │                                          tools"
+echo    "    ├── view.heading                       <-- View table headings"
+echo -e "    └── <GITHUB_OWNER>                     <-- GitHub repository traffic data\n"
+
 
 #       Order of precedence: CLI argument, environment variable
 if [ $# -ge  1 ]  ; then FILE_ORG_NAME=${1} ; elif [ "${FILE_ORG_NAME}" == "" ] ; then
