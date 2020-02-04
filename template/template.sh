@@ -1,14 +1,10 @@
 #!/bin/bash
-# 	template/template.sh  3.569.877  2020-01-30T19:13:16.418501-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.568  
-# 	   template/template.sh 
+# 	template/template.sh  3.570.880  2020-02-04T12:36:32.164086-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.569-2-gd0adf17  
+# 	   template/template.sh   Production standard 0.3.570 --help 
 # 	template/template.sh  3.568.876  2020-01-30T12:26:35.136659-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.567  
 # 	   template/template.sh   add previous code for --help --usage -- version 
-# 	template/template.sh  3.567.875  2020-01-29T12:19:05.118586-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.566  
-# 	   template/template.sh   correct incident with version test case and Starting ... 
 # 	template/template.sh  3.566.874  2020-01-29T12:15:34.809565-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.565  
 # 	   template/template.sh   add no help options 
-# 	template/template.sh  3.563.871  2020-01-24T20:41:31.910524-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.562  
-# 	   template/template.sh   correct incident shellcheck DEFAULT_ADD_TEST_CASE 
 # 	template/template.sh  3.562.870  2020-01-24T20:34:55.986650-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.561  
 # 	   template/template.sh   Production standard 9.3.562 Parse CLI options and arguments 
 # 	template/template.sh  3.559.867  2020-01-20T23:15:06.840471-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.558  
@@ -88,7 +84,7 @@ echo    "   ${COMMAND_NAME} [--usage | -usage | -u]"
 echo    "   ${COMMAND_NAME} [--version | -version | -v]"
 }
 
-###  Production standard 0.3.550 --help                                                     # 3.550
+###  Production standard 0.3.570 --help                                                     # 3.570
 display_help() {
 display_usage
 #    Displaying help DESCRIPTION in English en_US.UTF-8, en.UTF-8, C.UTF-8                  # 3.550
@@ -151,6 +147,13 @@ echo    "                   (default '${DEFAULT_SYSTEMS_FILE}')"
 
 echo -e "\n${BOLD}OPTIONS${NORMAL}"
 echo -e "Order of precedence: CLI options, environment variable, default code.\n"
+echo    "   --help, -help, help, -h, h, -?"                                            # 3.570
+echo -e "\tOn-line brief reference manual\n"                                           # 3.570
+echo    "   --usage, -usage, -u"                                                       # 3.570
+echo -e "\tOn-line command usage\n"                                                    # 3.570
+echo    "   --version, -version, -v]"                                                  # 3.570
+echo -e "\tOn-line command version\n"                                                  # 3.570
+#
 echo    "   -c, --cluster, -c=, --cluster=<CLUSTER>"
 echo -e "\tCluster name (default '${DEFAULT_CLUSTER}')\n"
 echo    "   -d, --datadir, -d=, --datadir=<DATA_DIR>"
@@ -162,7 +165,6 @@ echo -e "\tPath and file on system '<path>/<file_name>'\n"
 echo    "   -U, --user_home, -U=, --user_home=<USER_HOME>"
 echo -e "\tLocation of user home directory (default ${DEFAULT_USER_HOME})\n"
 echo    "   -S, --ssh_user, -S=, --ssh_user=<SSH_USER>"
-echo -e "   "
 
 ###  Production standard 6.3.547  Architecture tree
 echo -e "\n${BOLD}ARCHITECTURE TREE${NORMAL}"  # STORAGE & CERTIFICATION
@@ -375,8 +377,8 @@ echo    "   (https://github.com/BradleyA/Linux-admin/tree/master/cluster-command
 echo -e "\t${BOLD}cluster-command.sh special '${COMMAND_NAME}'${NORMAL}\n"                  # 3.550
 
 echo -e "\n${BOLD}SEE ALSO${NORMAL}"                                                        # 3.550
-echo    "   cluster-command.sh (https://github.com/BradleyA/Linux-admin/tree/master/cluster-command)"  # 3.550
-echo    "   <command> (URL)"
+echo    "   ${BOLD}cluster-command.sh${NORMAL} (https://github.com/BradleyA/Linux-admin/tree/master/cluster-command)"  # 3.550
+echo    "   ${BOLD}<command>${NORMAL} (URL)"
 
 echo -e "\n${BOLD}AUTHOR${NORMAL}"                                                          # 3.550
 echo    "   ${COMMAND_NAME} was written by Bradley Allen <allen.bradley@ymail.com>"         # 3.550
