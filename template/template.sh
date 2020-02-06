@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.576.887  2020-02-06T15:22:59.676895-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.574  
+# 	   template/template.sh   update ARCHITECTURE TREE 
 # 	template/template.sh  3.574.886  2020-02-06T12:06:43.713356-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.573-2-gdd1f9d2  
 # 	   template/template.sh   update ARCHITECTURE TREE 
 # 	template/template.sh  3.572.882  2020-02-04T16:52:15.894057-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.571  
@@ -221,24 +223,24 @@ echo    "│       └── <REGISTRY_HOST>-<REGISTRY_PORT>/ < Registry contain
 echo    "├── <STANDALONE>/                          <-- <STANDALONE> Architecture tree"
 echo    "│                                              is the same as <CLUSTER> TREE but"
 echo    "│                                              the systems are not in a cluster"
-echo    "└── github                                 <-- GitHub repository traffic"
+echo    "└── github                                 <-- GitHub long term traffic solution"
 echo    "    ├── clone.heading                      <-- Clone table headings"
 echo    "    ├── github.repository.list             <-- GitHub repository names"
-echo    "    ├── owner.repository                   <-- Default cron job for repositpry"
-echo    "    │                                          download of clone and views data"
+echo    "    ├── owner.repository                   <-- Default cron job for repository"
+echo    "    │                                          download of GitHub traffic data"
 echo    "    ├── parse.repository.data.sh           <-- Parse relevant data out of cron"
-echo    "    │                                          job data files"
-echo    "    ├── setup.github.repository.sh         <-- Setup github repository data"
-echo    "    │                                          tools"
+echo    "    │                                          job data file"
+echo    "    ├── setup.github.repository.sh         <-- Setup GitHub long term traffic"
+echo    "    │                                          solution"
 echo    "    ├── view.heading                       <-- View table headings"
-echo    "    ├── <GITHUB_OWNER>                     <-- Links to owner.repository"
+echo    "    ├── <GITHUB_OWNER>                     <-- Links to ../owner.repository"
 echo    "    │   ├── <REPOSITORY-1>                 <-- Current year of GitHub repository"
 echo    "    │   │   │                                  traffic data"
 echo    "    │   │   └── <YEAR>                     <-- Previous years of GitHub"
 echo    "    │   │                                      repository traffic data"
 echo    "    │   └── <REPOSITORY-2>                 <-- Current year of GitHub repository"
 echo    "    │                                          traffic data"
-echo -e "    └── <GITHUB_OWNER>                     <-- Links to owner.repository\n"
+echo -e "    └── <GITHUB_OWNER>                     <-- Links to ../owner.repository\n"
 echo    "<USER_HOME>/                               <-- Location of user home directory"
 echo    "├── <USER-1>/.docker/                      <-- User docker cert directory"
 echo    "│   ├── ca.pem                             <-- User tlscacert or symbolic link"
