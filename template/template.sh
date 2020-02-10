@@ -1,7 +1,7 @@
 #!/bin/bash
+# 	template/template.sh  3.577.888  2020-02-10T13:55:10.534115-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.576  
+# 	   template/template.sh   update user hint 
 # 	template/template.sh  3.576.887  2020-02-06T15:22:59.676895-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.574  
-# 	   template/template.sh   update ARCHITECTURE TREE 
-# 	template/template.sh  3.574.886  2020-02-06T12:06:43.713356-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.573-2-gdd1f9d2  
 # 	   template/template.sh   update ARCHITECTURE TREE 
 # 	template/template.sh  3.572.882  2020-02-04T16:52:15.894057-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.571  
 # 	   template/template.sh   Production standard 0.3.572 --help 
@@ -19,8 +19,6 @@
 # 	   template.sh   Production standard 5.3.550 Copyright  Production standard 0.3.550 --help  Production standard 4.3.550 Documentation Language  Production standard 1.3.550 DEBUG variable   updated Architecture tree for user-files/github-repository-data/ 
 # 	template/template.sh  3.549.831  2019-12-14T14:56:30.201378-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.548  
 # 	   template/template.sh   added FUTURE sections in display_help SEE ALSO AUTHOR$ REPORTING BUGS COPYRIGHT HISTORY 
-# 	template/template.sh  3.547.829  2019-12-07T18:50:21.020308-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.546  
-# 	   template/template.sh    Production standard 6.3.547  Architecture tree 
 # 	template/template.sh  3.541.823  2019-11-22T14:54:14.075113-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.540  
 # 	   template/template.sh   Production standard 8.3.541 --usage 
 # 	template/template.sh  3.533.805  2019-10-13T23:29:17.638287-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.532  
@@ -489,7 +487,7 @@ while [[ "${#}" -gt 0 ]] ; do
     -S=*|--ssh_user=*)  SSH_USER=$(echo "${1}" | cut -d '=' -f 2) ; shift   ;;
     -U|--user_home)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; USER_HOME=${2} ; shift 2 ;;
     -U=*|--user_home=*)  USER_HOME=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
-#    echo -e "\n${BOLD}    Option, ${YELLOW}${1}${WHITE}, is not supported.  Try  ${YELLOW}${COMMAND_NAME} --usage${NORMAL}\n" ; exit 1 ; ;;
+#    echo -e "\n${BOLD}    Invalid option, ${YELLOW}${1}${WHITE}, try  ${YELLOW}${COMMAND_NAME} --usage${NORMAL}\n" ; exit 1 ; ;;
 # OR
     *) break ;;
   esac
