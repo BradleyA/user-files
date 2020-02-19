@@ -1,5 +1,6 @@
 # user-files
 [![Stable Release](https://img.shields.io/badge/Release-3.537-blue.svg)](https://github.com/BradleyA/user-files/releases/tag/3.537)    [![GitHub commits](https://img.shields.io/github/commits-since/BradleyA/user-files/3.537.svg)](https://github.com/BradleyA/user-files/commits/)
+[![MIT License](http://img.shields.io/badge/License-MIT-red.png)](LICENSE)
 
 [![GitHub Release](https://img.shields.io/github/release/BradleyA/user-files.svg)](https://github.com/BradleyA/user-files/releases/latest)
 [![GitHub Commits](https://img.shields.io/github/commits-since/BradleyA/user-files/3.537.svg)](https://github.com/BradleyA/user-files/commits)
