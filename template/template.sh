@@ -1,8 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.577.888  2020-02-10T13:55:10.534115-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.576  
-# 	   template/template.sh   update user hint 
-# 	template/template.sh  3.576.887  2020-02-06T15:22:59.676895-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.574  
-# 	   template/template.sh   update ARCHITECTURE TREE 
+# 	template/template.sh  3.578.896  2020-04-11T12:36:04.958108-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.577-7-g6457d65  
+# 	   template/template.sh   Production standard 2.3.578 log format add color to version and line number   close #48 
 # 	template/template.sh  3.572.882  2020-02-04T16:52:15.894057-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.571  
 # 	   template/template.sh   Production standard 0.3.572 --help 
 # 	template/template.sh  3.568.876  2020-01-30T12:26:35.136659-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.567  
@@ -426,10 +424,10 @@ if [[ "${SCRIPT_VERSION}" == "" ]] ; then SCRIPT_VERSION="v?.?" ; fi
 #    GID
 GROUP_ID=$(id -g)
 
-###  Production standard 2.3.529 Log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
+###  Production standard 2.3.578 Log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
 new_message() {  #  $1="${LINENO}"  $2="DEBUG INFO ERROR WARN"  $3="message"
   get_date_stamp
-  echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${SCRIPT_NAME}[$$] ${SCRIPT_VERSION} ${1} ${USER} ${UID}:${GROUP_ID} ${BOLD}[${2}]${NORMAL}  ${3}"
+  echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${SCRIPT_NAME}[$$] ${BOLD}${BLUE}${SCRIPT_VERSION} ${PURPLE}${1}${NORMAL} ${USER} ${UID}:${GROUP_ID} ${BOLD}[${2}]${NORMAL}  ${3}"
 }
 
 #    INFO
@@ -439,10 +437,10 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}INFO${WHITE}
 
 #    Added following code because USER is not defined in crobtab jobs
 if ! [[ "${USER}" == "${LOGNAME}" ]] ; then  USER=${LOGNAME} ; fi
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Setting USER to support crobtab...  USER >${USER}<  LOGNAME >${LOGNAME}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Setting USER to support crobtab...  USER >${YELLOW}${USER}${WHITE}<  LOGNAME >${YELLOW}${LOGNAME}${WHITE}<" 1>&2 ; fi
 
 #    DEBUG
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Name_of_command >${SCRIPT_NAME}< Name_of_arg1 >${1}< Name_of_arg2 >${2}< Name_of_arg3 >${3}<  Version of bash ${BASH_VERSION}" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Name_of_command >${YELLOW}${SCRIPT_NAME}${WHITE}< Name_of_arg1 >${YELLOW}${1}${WHITE}< Name_of_arg2 >${YELLOW}${2}${WHITE}< Name_of_arg3 >${YELLOW}${3}${WHITE}<  Version of bash ${YELLOW}${BASH_VERSION}${WHITE}" 1>&2 ; fi
 
 ###  Production standard 9.3.562 Parse CLI options and arguments
 while [[ "${#}" -gt 0 ]] ; do
@@ -492,7 +490,7 @@ while [[ "${#}" -gt 0 ]] ; do
     *) break ;;
   esac
 done
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... ADMUSER >${ADMUSER}< CLUSTER >${CLUSTER}< DATA_DIR >${DATA_DIR}< FILE_NAME >${FILE_NAME}< SSH_USER >${SSH_USER}< USER_HOME >${USER_HOME}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... ADMUSER >${YELLOW}${ADMUSER}${WHITE}< CLUSTER >${YELLOW}${CLUSTER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}< FILE_NAME >${YELLOW}${FILE_NAME}${WHITE}< SSH_USER >${YELLOW}${SSH_USER}${WHITE}< USER_HOME >${YELLOW}${USER_HOME}${WHITE}<" 1>&2 ; fi
 
 #    No --help
 if [[ "${1}" != "" ]] ; then
@@ -526,13 +524,13 @@ if [[ "${CLUSTER}" == "" ]] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
 ADMUSER=${DEFAULT_USER}
 #    Order of precedence: CLI argument, environment variable, default code
 if [[ "${DATA_DIR}" == "" ]] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... CLUSTER >${YELLOW}${CLUSTER}${WHITE}< ADMUSER >${YELLOW}${ADMUSER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}<" 1>&2 ; fi
 
 ###  Example arguments (2)
 #    Order of precedence: CLI argument, default code
 OPTION1=${1:-default_value1}
 OPTION2=${2:-${DEFAULT_VALUE2}}
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... OPTION1 >${OPTION1}< OPTION2 >${OPTION2}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... OPTION1 >${YELLOW}${OPTION1}${WHITE}< OPTION2 >${YELLOW}${OPTION2}${WHITE}<" 1>&2 ; fi
 
 ###  Example arguments (3)
 ###  production standard 7.0 Default variable value
@@ -543,13 +541,13 @@ if [[ $# -ge  1 ]]  ; then CLUSTER=${1} ; elif [[ "${CLUSTER}" == "" ]] ; then C
 ADMUSER=${2:-${DEFAULT_USER}}
 #    Order of precedence: CLI argument, environment variable, default code
 if [[ $# -ge  3 ]]  ; then DATA_DIR=${3} ; elif [[ "${DATA_DIR}" == "" ]] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... CLUSTER >${CLUSTER}< ADMUSER >${ADMUSER}< DATA_DIR >${DATA_DIR}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... CLUSTER >${YELLOW}${CLUSTER}${WHITE}< ADMUSER >${YELLOW}${ADMUSER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}<" 1>&2 ; fi
 
 ###  Example arguments (4)
 #    Check arguement 1 xxx
 if [[ "$1" != "no" ]] && [[ "$1" != "normal" ]] && [[ "$1" != "all" ]] && [[ "$1" != "" ]] ; then
   display_help | more
-  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  First arguement, ${1}, is NOT no, normal, all." 1>&2
+  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  First arguement, ${YELLOW}${1}${WHITE}, is NOT no, normal, all." 1>&2
   exit 2
 fi
 
