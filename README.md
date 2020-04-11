@@ -1,9 +1,9 @@
 # user-files
-[![Stable Release](https://img.shields.io/badge/Release-3.537-blue.svg)](https://github.com/BradleyA/user-files/releases/tag/3.537)    [![GitHub commits](https://img.shields.io/github/commits-since/BradleyA/user-files/3.537.svg)](https://github.com/BradleyA/user-files/commits/)
+[![Stable Release](https://img.shields.io/badge/Release-3.537-blue.svg)](https://github.com/BradleyA/user-files/releases/tag/3.537)
+[![GitHub commits](https://img.shields.io/github/commits-since/BradleyA/user-files/3.537.svg)](https://github.com/BradleyA/user-files/commits/)
 [![MIT License](http://img.shields.io/badge/License-MIT-red.png)](LICENSE)
-
-[![GitHub Release](https://img.shields.io/github/release/BradleyA/user-files.svg)](https://github.com/BradleyA/user-files/releases/latest)
-[![GitHub Commits](https://img.shields.io/github/commits-since/BradleyA/user-files/3.537.svg)](https://github.com/BradleyA/user-files/commits)
+[<img alt="Clones" src="https://img.shields.io/static/v1?label=Clones&message=151&color=blue">](images/clone.table.md)
+[<img alt="Views" src="https://img.shields.io/static/v1?label=Views&message=1128&color=blue">](images/view.table.md)
 
 General user files, dot files, with a few special tweeks to make my system time better.  When setting up a new system, I pull these files to update my user profiles.
 
@@ -62,10 +62,6 @@ To download the latest commit of one of these files, for example .gitignore, cha
 ./template/template.sh
 
 ./template/TEST/template.sh/(FVT-option-TEST_CASES , FVT-setup.sh)
-
-#### Traffic
- * <img alt="Clones" src="https://img.shields.io/static/v1?label=Clones&message=151&color=blue">  [Clones Table](images/clone.table.md)
- * <img alt="Views" src="https://img.shields.io/static/v1?label=Views&message=1128&color=blue">  [Views Table](images/view.table.md)
    
 #### Author
 [<img id="twitter" src="images/twitter.png" width="50" a="twitter.com/bradleyaustintx/">
