@@ -1,8 +1,8 @@
 #!/bin/bash
+# 	template/template.sh  3.579.903  2020-04-18T15:07:08.923259-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.578-6-gda74217  
+# 	   template/template.sh   Production standard 0.3.579 --help 
 # 	template/template.sh  3.578.896  2020-04-11T12:36:04.958108-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.577-7-g6457d65  
 # 	   template/template.sh   Production standard 2.3.578 log format add color to version and line number   close #48 
-# 	template/template.sh  3.572.882  2020-02-04T16:52:15.894057-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.571  
-# 	   template/template.sh   Production standard 0.3.572 --help 
 # 	template/template.sh  3.568.876  2020-01-30T12:26:35.136659-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.567  
 # 	   template/template.sh   add previous code for --help --usage -- version 
 # 	template/template.sh  3.566.874  2020-01-29T12:15:34.809565-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.565  
@@ -84,7 +84,7 @@ echo    "   ${COMMAND_NAME} [--usage | -usage | -u]"
 echo    "   ${COMMAND_NAME} [--version | -version | -v]"
 }
 
-###  Production standard 0.3.572 --help                                                     # 3.572
+###  Production standard 0.3.579 --help                                                     # 0.3.579
 display_help() {
 display_usage
 #    Displaying help DESCRIPTION in English en_US.UTF-8, en.UTF-8, C.UTF-8                  # 3.550
@@ -151,7 +151,7 @@ echo    "   --help, -help, help, -h, h, -?"                                     
 echo -e "\tOn-line brief reference manual\n"                                           # 3.572
 echo    "   --usage, -usage, -u"                                                       # 3.572
 echo -e "\tOn-line command usage\n"                                                    # 3.572
-echo    "   --version, -version, -v]"                                                  # 3.572
+echo    "   --version, -version, -v"                                                      # 0.3.579 
 echo -e "\tOn-line command version\n"                                                  # 3.572
 #
 echo    "   -c, --cluster, -c=, --cluster=<CLUSTER>"
@@ -165,6 +165,14 @@ echo -e "\tPath and file on system '<path>/<file_name>'\n"
 echo    "   -U, --user_home, -U=, --user_home=<USER_HOME>"
 echo -e "\tLocation of user home directory (default ${DEFAULT_USER_HOME})\n"
 echo    "   -S, --ssh_user, -S=, --ssh_user=<SSH_USER>"
+echo -e "\tUser (default ${DEFAULT_SSH_USER})"
+#                                                                                         # 0.3.579
+echo    "   REMOTE_HOST"                                                                  # 0.3.579
+echo -e "\tRemote host to copy certificates to (default ${DEFAULT_REMOTE_HOST})\n"        # 0.3.579
+echo    "   WORKING_DIRECTORY"                                                            # 0.3.579
+echo -e "\tAbsolute path for working directory (default ${DEFAULT_WORKING_DIRECTORY})\n"  # 0.3.579
+echo    "   CERT_DAEMON_DIR"                                                              # 0.3.579
+echo -e "\tdockerd certification directory (default ${DEFAULT_CERT_DAEMON_DIR})"          # 0.3.579
 
 ###  Production standard 6.3.547  Architecture tree
 echo -e "\n${BOLD}ARCHITECTURE TREE${NORMAL}"  # STORAGE & CERTIFICATION
@@ -391,7 +399,7 @@ echo -e "\n${BOLD}AUTHOR${NORMAL}"                                              
 echo    "   ${COMMAND_NAME} was written by Bradley Allen <allen.bradley@ymail.com>"         # 3.550
 
 echo -e "\n${BOLD}REPORTING BUGS${NORMAL}"                                                  # 3.550
-echo    "   Report ${COMMAND_NAME} bugs https://github.com/BradleyA/user-files/issues/new"  # 3.550
+echo    "   Report ${COMMAND_NAME} bugs https://github.com/BradleyA/user-files/issues/new/choose"  # 0.3.579
 
 ###  Production standard 5.3.559 Copyright                                            # 3.559
 echo -e "\n${BOLD}COPYRIGHT${NORMAL}"                                                       # 3.550
