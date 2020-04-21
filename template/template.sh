@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.580.904  2020-04-20T20:09:24.466013-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.579  
+# 	   template/template.sh   formating typo corrected 
 # 	template/template.sh  3.579.903  2020-04-18T15:07:08.923259-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.578-6-gda74217  
 # 	   template/template.sh   Production standard 0.3.579 --help 
 # 	template/template.sh  3.578.896  2020-04-11T12:36:04.958108-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.577-7-g6457d65  
@@ -561,16 +563,16 @@ fi
 
 #       Default help and, usage, version arguments
 if [ "$1" == "--help" ] || [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ] || [ "$1" == "h" ] || [ "$1" == "-?" ] ; then
-        display_help | more
-        exit 0
+  display_help | more
+  exit 0
 fi
 if [ "$1" == "--usage" ] || [ "$1" == "-usage" ] || [ "$1" == "usage" ] || [ "$1" == "-u" ] ; then
-        display_usage | more
-        exit 0
+  display_usage | more
+  exit 0
 fi
 if [ "$1" == "--version" ] || [ "$1" == "-version" ] || [ "$1" == "version" ] || [ "$1" == "-v" ] ; then
-        echo "${SCRIPT_NAME} ${SCRIPT_VERSION}"
-        exit 0
+  echo "${SCRIPT_NAME} ${SCRIPT_VERSION}"
+  exit 0
 fi
 
 #    This script does not support -* or help or usage or version
