@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.582.906  2020-05-04T11:04:32.396907-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.581  
-# 	   template/template.sh -->   added UNDERLINE  
+# 	template/template.sh  3.583.907  2020-05-04T11:53:01.430625-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.582  
+# 	   template/template.sh -->   Production standard 0.3.583 --help   added UNDERLINE  
 # 	template/template.sh  3.579.903  2020-04-18T15:07:08.923259-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.578-6-gda74217  
 # 	   template/template.sh   Production standard 0.3.579 --help 
 # 	template/template.sh  3.578.896  2020-04-11T12:36:04.958108-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.577-7-g6457d65  
@@ -87,7 +87,7 @@ echo    "   ${COMMAND_NAME} [--usage | -usage | -u]"
 echo    "   ${COMMAND_NAME} [--version | -version | -v]"
 }
 
-###  Production standard 0.3.579 --help                                                     # 0.3.579
+###  Production standard 0.3.583 --help
 display_help() {
 display_usage
 #    Displaying help DESCRIPTION in English en_US.UTF-8, en.UTF-8, C.UTF-8                  # 3.550
@@ -110,7 +110,7 @@ echo    "remote hosts (one-rpi3b.cptx86.com) with ssh port of 12323 as uadmin us
 echo -e "\t${BOLD}ssh -tp 12323 uadmin@one-rpi3b.cptx86.com 'sudo check-host-tls.sh'${NORMAL}"
 
 echo    "To loop through a list of hosts in the cluster use,"
-echo    "https://github.com/BradleyA/Linux-admin/tree/master/cluster-command"
+echo    "${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command${NORMAL}"  # 0.3.583
 echo -e "\t${BOLD}cluster-command.sh special 'sudo check-host-tls.sh'${NORMAL}"
 
 ###  Production standard 4.3.550 Documentation Language                                     # 3.550
@@ -378,7 +378,7 @@ echo    "    │   └── <TEST_CASE>/               <-- Other test cases for
 echo    "    └── <FILE_NAME-2>/                 <-- Test case directory for FILE_NAME-2"
 
 echo -e "\n${BOLD}DOCUMENTATION${NORMAL}"
-echo    "   https://github.com/BradleyA/   <<URL to online repository README>>"
+echo    "   ${UNDERLINE}https://github.com/BradleyA/${NORMAL}   <<URL to online repository README>>"  # 0.3.583
 
 echo -e "\n${BOLD}EXAMPLES${NORMAL}"
 echo -e "   <<description about code example>>\n\t${BOLD}${COMMAND_NAME} <<code example>>${NORMAL}\n" # 3.550
@@ -391,18 +391,18 @@ echo    "   or"                                                                 
 echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<192.168.x.x>${NORMAL}"                            # 3.550
 echo    "   If that does not resolve the prompting challenge then review man pages for"     # 3.550
 echo    "   ssh-agent and ssh-add."                                                         # 3.550
-echo    "   (https://github.com/BradleyA/Linux-admin/tree/master/cluster-command)"          # 3.550
+echo    "   (${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command${NORMAL})"  # 0.3.583
 echo -e "\t${BOLD}cluster-command.sh special '${COMMAND_NAME}'${NORMAL}\n"                  # 3.550
 
 echo -e "\n${BOLD}SEE ALSO${NORMAL}"                                                        # 3.550
-echo    "   ${BOLD}cluster-command.sh${NORMAL} (https://github.com/BradleyA/Linux-admin/tree/master/cluster-command)"  # 3.550
+echo    "   ${BOLD}cluster-command.sh${NORMAL} (${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command${NORMAL})"  # 0.3.583
 echo    "   ${BOLD}<command>${NORMAL} (URL)"
 
 echo -e "\n${BOLD}AUTHOR${NORMAL}"                                                          # 3.550
 echo    "   ${COMMAND_NAME} was written by Bradley Allen <allen.bradley@ymail.com>"         # 3.550
 
 echo -e "\n${BOLD}REPORTING BUGS${NORMAL}"                                                  # 3.550
-echo    "   Report ${COMMAND_NAME} bugs https://github.com/BradleyA/user-files/issues/new/choose"  # 0.3.579
+echo    "   Report ${COMMAND_NAME} bugs ${UNDERLINE}https://github.com/BradleyA/user-files/issues/new/choose${NORMAL}"  # 0.3.583
 
 ###  Production standard 5.3.559 Copyright                                            # 3.559
 echo -e "\n${BOLD}COPYRIGHT${NORMAL}"                                                       # 3.550
@@ -503,10 +503,10 @@ while [[ "${#}" -gt 0 ]] ; do
 done
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... ADMUSER >${YELLOW}${ADMUSER}${WHITE}< CLUSTER >${YELLOW}${CLUSTER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}< FILE_NAME >${YELLOW}${FILE_NAME}${WHITE}< SSH_USER >${YELLOW}${SSH_USER}${WHITE}< USER_HOME >${YELLOW}${USER_HOME}${WHITE}<" 1>&2 ; fi
 
-#    No --help
+#    No --help  # 0.3.583
 if [[ "${1}" != "" ]] ; then
   new_message "${LINENO}" "${RED}ERROR${WHITE}" "  ${SCRIPT_NAME} does not support arguements." 1>&2
-  echo -e "    For more information:\n${BOLD}${YELLOW}    https://github.com/BradleyA/git-TEST-commit-automation/tree/master/hooks#git-test-commit-automation------\n${NORMAL}"
+  echo -e "    For more information:\n${BOLD}${YELLOW}    ${UNDERLINE}https://github.com/BradleyA/git-TEST-commit-automation/tree/master/hooks#git-test-commit-automation------\n${NORMAL}"  # 0.3.583
   exit 1
 fi
 
@@ -580,7 +580,7 @@ fi
 if [[ "${1}" == -* ]] || [[ "${1}" == "help" ]] || [[ "${1}" == "usage" ]] || [[ "${1}" == "version" ]]  ; then
   new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Option, ${YELLOW}${1}${WHITE}, is not supported with ${SCRIPT_NAME}." 1>&2
   #    User Hint
-  echo -e "    For more information:\n${BOLD}${YELLOW}    https://github.com/BradleyA/git-TEST-commit-automation/tree/master/hooks#git-test-commit-automation------${NORMAL}"
+  echo -e "    For more information:\n${BOLD}${YELLOW}    ${UNDERLINE}https://github.com/BradleyA/git-TEST-commit-automation/tree/master/hooks#git-test-commit-automation------${NORMAL}"  # 0.3.583
   exit 1
 fi
 
