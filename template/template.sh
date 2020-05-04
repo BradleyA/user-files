@@ -1,6 +1,6 @@
 #!/bin/bash
-# 	template/template.sh  3.581.905  2020-04-25T08:57:46.409877-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  five-rpi3b.cptx86.com 3.580  
-# 	   template/template.sh -->   update comments  
+# 	template/template.sh  3.582.906  2020-05-04T11:04:32.396907-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.581  
+# 	   template/template.sh -->   added UNDERLINE  
 # 	template/template.sh  3.579.903  2020-04-18T15:07:08.923259-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.578-6-gda74217  
 # 	   template/template.sh   Production standard 0.3.579 --help 
 # 	template/template.sh  3.578.896  2020-04-11T12:36:04.958108-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.577-7-g6457d65  
@@ -37,6 +37,7 @@ if [[ "${DEBUG}" == "4" ]] ; then set -e    ; fi   # Exit immediately if non-zer
 if [[ "${DEBUG}" == "5" ]] ; then set -e -o pipefail ; fi   # Exit immediately if non-zero exit status and exit if any command in a pipeline errors
 #
 BOLD=$(tput -Txterm bold)
+UNDERLINE=$(tput -Txterm sgr 0 1)
 NORMAL=$(tput -Txterm sgr0)
 RED=$(tput    setaf 1)
 GREEN=$(tput  setaf 2)
