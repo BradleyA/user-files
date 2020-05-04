@@ -1,33 +1,37 @@
 #!/bin/bash
+# 	template/template.sh  3.584.908  2020-05-04T13:09:57.014749-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.583  
+# 	   template/template.sh -->   start working on template/template.sh - add trap #37  
 # 	template/template.sh  3.583.907  2020-05-04T11:53:01.430625-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.582  
 # 	   template/template.sh -->   Production standard 0.3.583 --help   added UNDERLINE  
 # 	template/template.sh  3.579.903  2020-04-18T15:07:08.923259-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.578-6-gda74217  
-# 	   template/template.sh   Production standard 0.3.579 --help 
+# 	   template/template.sh -->   Production standard 0.3.579 --help 
 # 	template/template.sh  3.578.896  2020-04-11T12:36:04.958108-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.577-7-g6457d65  
-# 	   template/template.sh   Production standard 2.3.578 log format add color to version and line number   close #48 
+# 	   template/template.sh -->   Production standard 2.3.578 log format add color to version and line number   close #48 
 # 	template/template.sh  3.568.876  2020-01-30T12:26:35.136659-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.567  
-# 	   template/template.sh   add previous code for --help --usage -- version 
+# 	   template/template.sh -->   add previous code for --help --usage -- version 
 # 	template/template.sh  3.566.874  2020-01-29T12:15:34.809565-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.565  
-# 	   template/template.sh   add no help options 
+# 	   template/template.sh -->   add no help options 
 # 	template/template.sh  3.562.870  2020-01-24T20:34:55.986650-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.561  
-# 	   template/template.sh   Production standard 9.3.562 Parse CLI options and arguments 
+# 	   template/template.sh -->   Production standard 9.3.562 Parse CLI options and arguments 
 # 	template/template.sh  3.559.867  2020-01-20T23:15:06.840471-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.558  
-# 	   template/template.sh   Production standard 5.3.559 Copyright
+# 	   template/template.sh -->   Production standard 5.3.559 Copyright
 # 	template/template.sh  3.555.863  2020-01-18T23:59:35.357482-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.555  
-# 	   template/template.sh    correct Production standard 1.3.550 DEBUG variable 
+# 	   template/template.sh -->   correct Production standard 1.3.550 DEBUG variable 
 # 	template/template.sh  3.550.832  2019-12-24T15:23:22.340391-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.549  
-# 	   template.sh   Production standard 5.3.550 Copyright  Production standard 0.3.550 --help  Production standard 4.3.550 Documentation Language  Production standard 1.3.550 DEBUG variable   updated Architecture tree for user-files/github-repository-data/ 
+# 	   template/template.sh -->   Production standard 5.3.550 Copyright  Production standard 0.3.550 --help  Production standard 4.3.550 Documentation Language  Production standard 1.3.550 DEBUG variable   updated Architecture tree for user-files/github-repository-data/ 
 # 	template/template.sh  3.549.831  2019-12-14T14:56:30.201378-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.548  
-# 	   template/template.sh   added FUTURE sections in display_help SEE ALSO AUTHOR$ REPORTING BUGS COPYRIGHT HISTORY 
+# 	   template/template.sh -->   added FUTURE sections in display_help SEE ALSO AUTHOR$ REPORTING BUGS COPYRIGHT HISTORY 
 # 	template/template.sh  3.541.823  2019-11-22T14:54:14.075113-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.540  
-# 	   template/template.sh   Production standard 8.3.541 --usage 
+# 	   template/template.sh -->   Production standard 8.3.541 --usage 
 # 	template/template.sh  3.533.805  2019-10-13T23:29:17.638287-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.532  
-# 	   close #42   template/template.sh   Production standard 2.3.529 log format 
+# 	   template/template.sh -->   close #42   template/template.sh   Production standard 2.3.529 log format 
 #86# template/template.sh - shell script template containing my collection of shorthand functions and pre-written code
-###  Production standard 3.0 shellcheck
 ###  Production standard 5.3.559 Copyright                                    # 3.559
 #    Copyright (c) 2020 Bradley Allen                                                # 3.555
 #    MIT License is online in the repository as a file named LICENSE"         # 3.559
+###  Production standard 3.0 shellcheck
+###  Production standard 10.3.XXX EXIT TRAP      template/template.sh - add trap #37
+
 ###  Production standard 1.3.550 DEBUG variable                                             # 3.550
 #    Order of precedence: environment variable, default code
 if [[ "${DEBUG}" == ""  ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
@@ -35,6 +39,10 @@ if [[ "${DEBUG}" == "2" ]] ; then set -x    ; fi   # Print trace of simple comma
 if [[ "${DEBUG}" == "3" ]] ; then set -v    ; fi   # Print shell input lines as they are read
 if [[ "${DEBUG}" == "4" ]] ; then set -e    ; fi   # Exit immediately if non-zero exit status
 if [[ "${DEBUG}" == "5" ]] ; then set -e -o pipefail ; fi   # Exit immediately if non-zero exit status and exit if any command in a pipeline errors
+#
+FORCE=FALSE
+QUIET=FALSE
+VERBOSE=FALSE
 #
 BOLD=$(tput -Txterm bold)
 UNDERLINE=$(tput -Txterm sgr 0 1)
