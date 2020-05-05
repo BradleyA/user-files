@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.585.909  2020-05-05T13:44:05.758012-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.584  
+# 	   template/template.sh -->   typo missing comment   # 0.3.583  
 # 	template/template.sh  3.584.908  2020-05-04T13:09:57.014749-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.583  
 # 	   template/template.sh -->   start working on template/template.sh - add trap #37  
 # 	template/template.sh  3.583.907  2020-05-04T11:53:01.430625-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.582  
@@ -45,7 +47,7 @@ QUIET=FALSE
 VERBOSE=FALSE
 #
 BOLD=$(tput -Txterm bold)
-UNDERLINE=$(tput -Txterm sgr 0 1)
+UNDERLINE=$(tput -Txterm sgr 0 1)  # 0.3.583
 NORMAL=$(tput -Txterm sgr0)
 RED=$(tput    setaf 1)
 GREEN=$(tput  setaf 2)
