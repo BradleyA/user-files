@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.586.910  2020-05-16T21:43:38.919565-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.585  
+# 	   template/template.sh -->   minor formatting test changes  
 # 	template/template.sh  3.585.909  2020-05-05T13:44:05.758012-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.584  
 # 	   template/template.sh -->   typo missing comment   # 0.3.583  
 # 	template/template.sh  3.584.908  2020-05-04T13:09:57.014749-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.583  
@@ -42,9 +44,9 @@ if [[ "${DEBUG}" == "3" ]] ; then set -v    ; fi   # Print shell input lines as 
 if [[ "${DEBUG}" == "4" ]] ; then set -e    ; fi   # Exit immediately if non-zero exit status
 if [[ "${DEBUG}" == "5" ]] ; then set -e -o pipefail ; fi   # Exit immediately if non-zero exit status and exit if any command in a pipeline errors
 #
-FORCE=FALSE
-QUIET=FALSE
-VERBOSE=FALSE
+FORCE="FALSE"
+QUIET="FALSE"
+VERBOSE="FALSE"
 #
 BOLD=$(tput -Txterm bold)
 UNDERLINE=$(tput -Txterm sgr 0 1)  # 0.3.583
@@ -178,7 +180,7 @@ echo -e "\tPath and file on system '<path>/<file_name>'\n"
 echo    "   -U, --user_home, -U=, --user_home=<USER_HOME>"
 echo -e "\tLocation of user home directory (default ${DEFAULT_USER_HOME})\n"
 echo    "   -S, --ssh_user, -S=, --ssh_user=<SSH_USER>"
-echo -e "\tUser (default ${DEFAULT_SSH_USER})"
+echo -e "\tUser (default ${DEFAULT_SSH_USER})\n"
 #                                                                                         # 0.3.579
 echo    "   REMOTE_HOST"                                                                  # 0.3.579
 echo -e "\tRemote host to copy certificates to (default ${DEFAULT_REMOTE_HOST})\n"        # 0.3.579
@@ -396,9 +398,9 @@ echo -e "   <<description about code example>>\n\t${BOLD}${COMMAND_NAME}${NORMAL
 echo    "   To loop through a list of hosts a user could use, cluster-command.sh."          # 3.550
 echo    "   An administrator may receive password and/or passphrase prompts from a"         # 3.550
 echo    "   remote systen; running the following may stop the prompts."                     # 3.550
-echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<REMOTE_HOST>${NORMAL}"                            # 3.550
-echo    "   or"                                                                             # 3.550
-echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<192.168.x.x>${NORMAL}"                            # 3.550
+echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<REMOTE_HOST>${NORMAL}\n"                            # 3.550
+echo    "   or using the IP address"                                                          # 3.550
+echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<192.168.x.x>${NORMAL}"\n                            # 3.550
 echo    "   If that does not resolve the prompting challenge then review man pages for"     # 3.550
 echo    "   ssh-agent and ssh-add."                                                         # 3.550
 echo    "   (${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command${NORMAL})"  # 0.3.583
@@ -539,11 +541,11 @@ fi
 
 ###  Example arguments (1)
 ###  Production standard 7.0 Default variable value
-#    Order of precedence: CLI argument, environment variable, default code
+#    Order of precedence: environment variable, default code
 if [[ "${CLUSTER}" == "" ]] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
-#    Order of precedence: CLI argument, default code
+#    Order of precedence: default code
 ADMUSER=${DEFAULT_USER}
-#    Order of precedence: CLI argument, environment variable, default code
+#    Order of precedence: environment variable, default code
 if [[ "${DATA_DIR}" == "" ]] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... CLUSTER >${YELLOW}${CLUSTER}${WHITE}< ADMUSER >${YELLOW}${ADMUSER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}<" 1>&2 ; fi
 
@@ -560,8 +562,8 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable...
 if [[ $# -ge  1 ]]  ; then CLUSTER=${1} ; elif [[ "${CLUSTER}" == "" ]] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
 #    Order of precedence: CLI argument, default code
 ADMUSER=${2:-${DEFAULT_USER}}
-#    Order of precedence: CLI argument, environment variable, default code
-if [[ $# -ge  3 ]]  ; then DATA_DIR=${3} ; elif [[ "${DATA_DIR}" == "" ]] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
+#    Order of precedence: CLI argument, default code
+if [[ $# -ge  3 ]]  ; then DATA_DIR=${3} ; else DATA_DIR=${DEFAULT_DATA_DIR} ; fi
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... CLUSTER >${YELLOW}${CLUSTER}${WHITE}< ADMUSER >${YELLOW}${ADMUSER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}<" 1>&2 ; fi
 
 ###  Example arguments (4)
