@@ -7,21 +7,6 @@ assignees: BradleyA
 
 ---
 
-**Describe:**
-A clear and concise description of what you are commenting about:
+**Tell us what you are thinking about:**
 
-    ->
-
-**Detail:**
-Extend your initial statement with additional details that describe a use case:
-
-    ->
-
-**Version:**
- - OS ( lsb_release -a; Ubuntu 14.04  Ubuntu 16.04  Ubuntu 20.04 )
- 
-       ->
- 
-  - Command: ( github-repository/setup.github.repository.sh  2.199.861 )
-
-        ->
+    -> 
