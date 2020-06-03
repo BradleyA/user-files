@@ -9,7 +9,7 @@
 
 ####    Docker environment variables
 #       Content trust - ability to verify both the integrity and publisher of all data received from a registry
-export DOCKER_CONTENT_TRUST=1
+#  export DOCKER_CONTENT_TRUST=1
 #       Docker host and port information
 export DOCKER_HOST=tcp://`hostname -f`:2376
 #       Use TLS and verify the remote
