@@ -526,7 +526,7 @@ fi
 if ! [[ "${UID}"  = 0 ]] ; then
   display_usage | more
   new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Use sudo ${SCRIPT_NAME}" 1>&2
-#    Help hint
+  #    Help hint
   echo -e "\n\t${BOLD}>>   ${YELLOW}SCRIPT MUST BE RUN AS ROOT${WHITE}   <<\n${NORMAL}"  1>&2
   exit 1
 fi
