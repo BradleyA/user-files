@@ -2,8 +2,8 @@
 [![Stable Release](https://img.shields.io/badge/Release-3.537-blue.svg)](https://github.com/BradleyA/user-files/releases/tag/3.537)
 [![GitHub commits](https://img.shields.io/github/commits-since/BradleyA/user-files/3.537.svg)](https://github.com/BradleyA/user-files/commits/)
 [![MIT License](http://img.shields.io/badge/License-MIT-red.png)](LICENSE)
-[<img alt="Clones" src="https://img.shields.io/static/v1?label=Clones&message=203&color=blue">](images/clone.table.md)
-[<img alt="Views" src="https://img.shields.io/static/v1?label=Views&message=1348&color=blue">](images/view.table.md)
+[<img alt="Clones" src="https://img.shields.io/static/v1?label=Clones&message=236&color=blue">](images/clone.table.md)
+[<img alt="Views" src="https://img.shields.io/static/v1?label=Views&message=1421&color=blue">](images/view.table.md)
 
 General user files, dot files, with a few special tweeks to make my system time better.  When setting up a new system, I pull these files to update my user profiles.
 
