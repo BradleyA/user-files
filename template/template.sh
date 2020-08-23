@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.587.929  2020-08-23T11:50:58.361973-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.586-18-g583ce77  
+# 	   template/template.sh -->   updated Production standard 4.3.587 Documentation Language  
 # 	template/template.sh  3.586.910  2020-05-16T21:43:38.919565-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.585  
 # 	   template/template.sh -->   minor formatting test changes  
 # 	template/template.sh  3.585.909  2020-05-05T13:44:05.758012-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.584  
@@ -125,12 +127,12 @@ echo    "To loop through a list of hosts in the cluster use,"
 echo    "${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command${NORMAL}"  # 0.3.583
 echo -e "\t${BOLD}cluster-command.sh special 'sudo check-host-tls.sh'${NORMAL}"
 
-###  Production standard 4.3.550 Documentation Language                                     # 3.550
+###  Production standard 4.3.587 Documentation Language                                     # 3.550
 #    Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
 if [[ "${LANG}" == "fr_CA.UTF-8" ]] || [[ "${LANG}" == "fr_FR.UTF-8" ]] || [[ "${LANG}" == "fr_CH.UTF-8" ]] ; then
   echo -e "\n--> ${LANG}"
-  echo    "<votre aide va ici>" # your help goes here
-  echo    "Souhaitez-vous traduire la section description?" # Do you want to translate the description section?
+  echo    "<Votre aide va ici>" # Your help goes here
+  echo    "Souhaitez-vous traduire la section description?" # Would you like to translate the description section?
 elif ! [[ "${LANG}" == "en_US.UTF-8" ||  "${LANG}" == "en.UTF-8" || "${LANG}" == "C.UTF-8" ]] ; then  # 3.550
   new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
 fi
