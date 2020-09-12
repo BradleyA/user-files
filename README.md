@@ -1,7 +1,4 @@
 # user-files
-[<img alt="Clones" src="https://img.shields.io/static/v1?label=Clones&message=236&color=blue">](images/clone.table.md)
-[<img alt="Views" src="https://img.shields.io/static/v1?label=Views&message=1421&color=blue">](images/view.table.md)
-
 [![GitHub Stable Release](https://img.shields.io/badge/Release-3.537-blue.svg)](https://github.com/BradleyA/user-files/releases/tag/3.537)
 ![GitHub Release Date](https://img.shields.io/github/release-date/BradleyA/user-files?color=blue)
 [![GitHub Commits Since](https://img.shields.io/github/commits-since/BradleyA/user-files/3.537?color=orange)](https://github.com/BradleyA/user-files/commits/)
