@@ -5,6 +5,21 @@
 [<img alt="Clones" src="https://img.shields.io/static/v1?label=Clones&message=236&color=blue">](images/clone.table.md)
 [<img alt="Views" src="https://img.shields.io/static/v1?label=Views&message=1421&color=blue">](images/view.table.md)
 
+[![GitHub Stable Release](https://img.shields.io/badge/Release-3.537-blue.svg)](https://github.com/BradleyA/user-files/releases/tag/3.537)
+![GitHub Release Date](https://img.shields.io/github/release-date/BradleyA/user-files?color=blue)
+[![GitHub Commits Since](https://img.shields.io/github/commits-since/BradleyA/user-files/3.537?color=orange)](https://github.com/BradleyA/user-files/commits/)
+[![GitHub Last Commits](https://img.shields.io/github/last-commit/BradleyA/user-files.svg)](https://github.com/BradleyA/user-files/commits/)
+
+[![GitHub Open Issues](https://img.shields.io/github/issues/BradleyA/user-files?color=purple)](https://github.com/BradleyA/user-files/issues?q=is%3Aopen+is%3Aissue)
+[![GitHub Closed Issues](https://img.shields.io/github/issues-closed/BradleyA/user-files?color=purple)](https://github.com/BradleyA/user-files/issues?q=is%3Aclosed+is%3Aissue)
+[<img alt="GitHub Clones" src="https://img.shields.io/static/v1?label=Clones&message=190&color=blueviolet">](https://github.com/BradleyA/user-files/blob/master/images/clone.table.md)
+[<img alt="GitHub Views" src="https://img.shields.io/static/v1?label=Views&message=3071&color=blueviolet">](https://github.com/BradleyA/user-files/blob/master/images/view.table.md)
+[![GitHub Size](https://img.shields.io/github/repo-size/BradleyA/user-files.svg)](https://github.com/BradleyA/user-files/)
+![Written in Bash](https://img.shields.io/badge/written%20in-bash-blue.svg)
+[![MIT License](http://img.shields.io/badge/License-MIT-blue.png)](LICENSE)
+
+----
+
 General user files, dot files, with a few special tweeks to make my system time better.  When setting up a new system, I pull these files to update my user profiles.
 
 **template directory**, there are a few template files (sh,py) that include **production standards** that I designed as best practices when creating new scripts.  When creating a new script I merge sections of code needed from a template file.  Some of the production standards are --help, DEBUG, log format, shellcheck, Documentation Language, Copyright, Architecture tree, Default variable value, --usage, and Parse CLI options and arguments.  When a production standard is changed it's verson number is updated with the git tag version number.  This allows scripts in development, test, and production to be maintianed with the latest production standard verson.
