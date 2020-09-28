@@ -26,6 +26,11 @@ Testing other links from other repositories
 [![Docker Pulls](https://img.shields.io/docker/pulls/oznu/homebridge.svg)](https://hub.docker.com/r/oznu/homebridge/)
 [![Discord](https://img.shields.io/discord/432663330281226270?color=728ED5&logo=discord&label=discord)](https://discord.gg/Cmq8a44)
 
+[![Join the chat at https://gitter.im/hypriot/talk](https://badges.gitter.im/hypriot/talk.svg)](https://gitter.im/hypriot/talk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://circleci.com/gh/hypriot/image-builder-rpi.svg?style=svg)](https://circleci.com/gh/hypriot/image-builder-rpi)
+[![Latest Release](https://img.shields.io/github/downloads/hypriot/image-builder-rpi/v1.12.1/total.svg)](https://github.com/hypriot/image-builder-rpi/releases/tag/v1.12.1)
+[![All Releases](https://img.shields.io/github/downloads/hypriot/image-builder-rpi/total.svg)](https://github.com/hypriot/image-builder-rpi/releases)
+<a href="https://liberapay.com/Hypriot/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
 ----
 
 General user files, dot files, with a few special tweeks to make my system time better.  When setting up a new system, I pull these files to update my user profiles.
