@@ -14,6 +14,15 @@
 
 ----
 
+Testing other links from other repositories
+[![Go Report Card](https://goreportcard.com/badge/github.com/cjimti/iotwifi)](https://goreportcard.com/report/github.com/cjimti/iotwifi)
+[![GoDoc](https://godoc.org/github.com/cjimti/iotwifi/iotwifi?status.svg)](https://godoc.org/github.com/cjimti/iotwifi/iotwifi)
+[![Docker Container Image Size](https://shields.beevelop.com/docker/image/image-size/cjimti/iotwifi/latest.svg)](https://hub.docker.com/r/cjimti/iotwifi/)
+[![Docker Container Layers](https://shields.beevelop.com/docker/image/layers/cjimti/iotwifi/latest.svg)](https://hub.docker.com/r/cjimti/iotwifi/)
+[![Docker Container Pulls](https://img.shields.io/docker/pulls/cjimti/iotwifi.svg)](https://hub.docker.com/r/cjimti/iotwifi/)
+
+----
+
 General user files, dot files, with a few special tweeks to make my system time better.  When setting up a new system, I pull these files to update my user profiles.
 
 **template directory**, there are a few template files (sh,py) that include **production standards** that I designed as best practices when creating new scripts.  When creating a new script I merge sections of code needed from a template file.  Some of the production standards are --help, DEBUG, log format, shellcheck, Documentation Language, Copyright, Architecture tree, Default variable value, --usage, and Parse CLI options and arguments.  When a production standard is changed it's verson number is updated with the git tag version number.  This allows scripts in development, test, and production to be maintianed with the latest production standard verson.
