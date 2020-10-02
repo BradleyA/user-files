@@ -32,6 +32,12 @@ Testing other links from other repositories:
 [![Latest Release](https://img.shields.io/github/downloads/hypriot/image-builder-rpi/v1.12.1/total.svg)](https://github.com/hypriot/image-builder-rpi/releases/tag/v1.12.1)
 [![All Releases](https://img.shields.io/github/downloads/hypriot/image-builder-rpi/total.svg)](https://github.com/hypriot/image-builder-rpi/releases)
 <a href="https://liberapay.com/Hypriot/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+
+----
+
+[![Latest Release](https://img.shields.io/github/downloads/BradleyA/user-files/3.537/total.svg)](https://github.com/BradleyA/user-files/releases/tag/3.537)
+[![All Releases](https://img.shields.io/github/downloads/BradleyA/user-files/total.svg)](https://github.com/BradleyA/user-files/releases)
+
 ----
 
 General user files, dot files, with a few special tweeks to make my system time better.  When setting up a new system, I pull these files to update my user profiles.
