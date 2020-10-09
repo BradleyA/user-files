@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.589.931  2020-10-09T16:17:10.424352-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.588  
+# 	   template/template.sh -->   added MESSAGE & MESSAGEHD to ARCHITECTURE TREE  
 # 	template/template.sh  3.588.930  2020-08-29T14:44:55.536614-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.587  
 # 	   template/template.sh -->   added comments to help understand changes for Production standard 9.3.558   9.3.561  9.3.562  
 # 	template/template.sh  3.587.929  2020-08-23T11:50:58.361973-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.586-18-g583ce77  
@@ -203,6 +205,8 @@ echo    "│   │   └── ######.######/                 <-- Root directory
 echo    "│   │                                          Docker state files; (images)"
 echo    "│   │                                          when using user namespace"
 echo    "│   ├── SYSTEMS                            <-- List of hosts in cluster"
+echo    "│   ├── MESSAGE                            <-- Pimoroni Scroll-pHAT message"
+echo    "│   ├── MESSAGEHD                          <-- Pimoroni Scroll-pHAT-HD message"
 echo    "│   ├── log/                               <-- Host log directory"
 echo    "│   ├── logrotate/                         <-- Host logrotate directory"
 echo    "│   ├── docker-accounts/                   <-- Docker TLS certs"
