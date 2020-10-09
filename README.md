@@ -1,9 +1,48 @@
 # user-files
-[![Stable Release](https://img.shields.io/badge/Release-3.537-blue.svg)](https://github.com/BradleyA/user-files/releases/tag/3.537)
-[![GitHub commits](https://img.shields.io/github/commits-since/BradleyA/user-files/3.537.svg)](https://github.com/BradleyA/user-files/commits/)
-[![MIT License](http://img.shields.io/badge/License-MIT-red.png)](LICENSE)
-[<img alt="Clones" src="https://img.shields.io/static/v1?label=Clones&message=236&color=blue">](images/clone.table.md)
-[<img alt="Views" src="https://img.shields.io/static/v1?label=Views&message=1421&color=blue">](images/view.table.md)
+[![GitHub Stable Release](https://img.shields.io/badge/Release-3.537-blue.svg)](https://github.com/BradleyA/user-files/releases/tag/3.537)
+![GitHub Release Date](https://img.shields.io/github/release-date/BradleyA/user-files?color=blue)
+[![GitHub Commits Since](https://img.shields.io/github/commits-since/BradleyA/user-files/3.537?color=orange)](https://github.com/BradleyA/user-files/commits/)
+[![GitHub Last Commits](https://img.shields.io/github/last-commit/BradleyA/user-files.svg)](https://github.com/BradleyA/user-files/commits/)
+
+[![GitHub Open Issues](https://img.shields.io/github/issues/BradleyA/user-files?color=purple)](https://github.com/BradleyA/user-files/issues?q=is%3Aopen+is%3Aissue)
+[![GitHub Closed Issues](https://img.shields.io/github/issues-closed/BradleyA/user-files?color=purple)](https://github.com/BradleyA/user-files/issues?q=is%3Aclosed+is%3Aissue)
+[<img alt="GitHub Clones" src="https://img.shields.io/static/v1?label=Clones&message=266&color=blueviolet">](https://github.com/BradleyA/user-files/blob/master/images/clone.table.md)
+[<img alt="GitHub Views" src="https://img.shields.io/static/v1?label=Views&message=1475&color=blueviolet">](https://github.com/BradleyA/user-files/blob/master/images/view.table.md)
+[![GitHub Size](https://img.shields.io/github/repo-size/BradleyA/user-files.svg)](https://github.com/BradleyA/user-files/)
+![Language Bash](https://img.shields.io/badge/%20Language-bash-blue.svg)
+[![MIT License](http://img.shields.io/badge/License-MIT-blue.png)](LICENSE)
+
+----
+
+Testing other links from other repositories:
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/cjimti/iotwifi)](https://goreportcard.com/report/github.com/cjimti/iotwifi)
+[![GoDoc](https://godoc.org/github.com/cjimti/iotwifi/iotwifi?status.svg)](https://godoc.org/github.com/cjimti/iotwifi/iotwifi)
+[![Docker Container Image Size](https://shields.beevelop.com/docker/image/image-size/cjimti/iotwifi/latest.svg)](https://hub.docker.com/r/cjimti/iotwifi/)
+[![Docker Container Layers](https://shields.beevelop.com/docker/image/layers/cjimti/iotwifi/latest.svg)](https://hub.docker.com/r/cjimti/iotwifi/)
+[![Docker Container Pulls](https://img.shields.io/docker/pulls/cjimti/iotwifi.svg)](https://hub.docker.com/r/cjimti/iotwifi/)
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/wagoodman/dive)](https://goreportcard.com/report/github.com/wagoodman/dive)
+[![Pipeline Status](https://circleci.com/gh/wagoodman/dive.svg?style=svg)](https://circleci.com/gh/wagoodman/dive)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg?style=flat)](https://www.paypal.me/wagoodman)
+
+[![Donate](https://img.shields.io/badge/donate-paypal-yellowgreen.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZEW8TFQCU2MSJ&source=url)
+[![Docker Build Status](https://github.com/oznu/docker-homebridge/workflows/Build/badge.svg)](https://github.com/oznu/docker-homebridge/actions)
+[![Docker Pulls](https://img.shields.io/docker/pulls/oznu/homebridge.svg)](https://hub.docker.com/r/oznu/homebridge/)
+[![Discord](https://img.shields.io/discord/432663330281226270?color=728ED5&logo=discord&label=discord)](https://discord.gg/Cmq8a44)
+
+[![Join the chat at https://gitter.im/hypriot/talk](https://badges.gitter.im/hypriot/talk.svg)](https://gitter.im/hypriot/talk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://circleci.com/gh/hypriot/image-builder-rpi.svg?style=svg)](https://circleci.com/gh/hypriot/image-builder-rpi)
+[![Latest Release](https://img.shields.io/github/downloads/hypriot/image-builder-rpi/v1.12.1/total.svg)](https://github.com/hypriot/image-builder-rpi/releases/tag/v1.12.1)
+[![All Releases](https://img.shields.io/github/downloads/hypriot/image-builder-rpi/total.svg)](https://github.com/hypriot/image-builder-rpi/releases)
+<a href="https://liberapay.com/Hypriot/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+
+----
+
+[![Latest Release](https://img.shields.io/github/downloads/BradleyA/user-files/3.537/total.svg)](https://github.com/BradleyA/user-files/releases/tag/3.537)
+[![All Releases](https://img.shields.io/github/downloads/BradleyA/user-files/total.svg)](https://github.com/BradleyA/user-files/releases)
+
+----
 
 General user files, dot files, with a few special tweeks to make my system time better.  When setting up a new system, I pull these files to update my user profiles.
 
