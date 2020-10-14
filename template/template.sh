@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.590.947  2020-10-14T16:09:22.749116-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.589-15-g6df1682  
+# 	   template/template.sh -->   updates to formating in OPTIONS section  
 # 	template/template.sh  3.589.931  2020-10-09T16:17:10.424352-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.588  
 # 	   template/template.sh -->   added MESSAGE & MESSAGEHD to ARCHITECTURE TREE  
 # 	template/template.sh  3.588.930  2020-08-29T14:44:55.536614-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.587  
@@ -75,6 +77,7 @@ DEFAULT_CERT_DIR="${HOME}/.docker"
 DEFAULT_CERT_DAEMON_DIR="/etc/docker/certs.d/daemon/"
 DEFAULT_DATA_DIR="/usr/local/data/"
 DEFAULT_FQDN="$(hostname -f)"  # local host
+DEFAULT_MESSAGE_FILE="MESSAGE"
 DEFAULT_NUMBER_DAYS="730"
 DEFAULT_REGISTRY_HOST="$(hostname -f)"  # local host
 DEFAULT_REGISTRY_PORT="5000"
@@ -94,7 +97,7 @@ COMMAND_NAME=$(echo "${0}" | sed 's/^.*\///')                                   
 display_usage() {
 echo -e "\n${NORMAL}${COMMAND_NAME}\n   brief description . . ."
 echo -e "\n${BOLD}USAGE${NORMAL}"
-echo -e "   ${COMMAND_NAME} [-c <CLUSTER>] [-d <DATA_DIR>] [-a <ADMUSER>] [-f <PATH>/<FILE_NAME>]\n"
+echo -e "   ${COMMAND_NAME} [-c <CLUSTER>] [-d <DATA_DIR>] [-a <ADM_TLS_USER>] [-f <PATH>/<FILE_NAME>]\n"
 echo    "   ${YELLOW}Positional Arguments${NORMAL}"
 echo    "   ${COMMAND_NAME} [<REGISTRY_HOST>]"
 echo    "   ${COMMAND_NAME}  <REGISTRY_HOST> [<REGISTRY_PORT>]"
@@ -175,25 +178,29 @@ echo -e "\tOn-line command usage\n"                                             
 echo    "   --version, -version, -v"                                                      # 0.3.579
 echo -e "\tOn-line command version\n"                                                  # 3.572
 #
-echo    "   -c, --cluster, -c=, --cluster=<CLUSTER>"
+echo    "   --cluster, -c, --cluster=<CLUSTER>, -c="
 echo -e "\tCluster name (default '${DEFAULT_CLUSTER}')\n"
-echo    "   -d, --datadir, -d=, --datadir=<DATA_DIR>"
+echo    "   --datadir, -d, --datadir=<DATA_DIR>, -d="
 echo -e "\tData directory (default '${DEFAULT_DATA_DIR}')\n"
-echo    "   -a, --admuser, -a=, --admuser=<ADMUSER>"
+echo    "   --admuser, -a, --admuser=<ADM_TLS_USER>, -a="
 echo -e "\tSite SRE administrator, default is user running script\n"
-echo    "   -f, --file, -f=, --filename=<FILENAME>"
+echo    "   --file, -f, --filename=<FILENAME>, -f="
 echo -e "\tPath and file on system '<path>/<file_name>'\n"
-echo    "   -U, --user_home, -U=, --user_home=<USER_HOME>"
-echo -e "\tLocation of user home directory (default ${DEFAULT_USER_HOME})\n"
-echo    "   -S, --ssh_user, -S=, --ssh_user=<SSH_USER>"
-echo -e "\tUser (default ${DEFAULT_SSH_USER})\n"
+echo    "   --user_home, -U, --user_home=<USER_HOME>, -U="
+echo -e "\tLocation of user home directory (default '${DEFAULT_USER_HOME}')\n"
+echo    "   --ssh_user, -S, --ssh_user=<SSH_USER>, -S="
+echo -e "\tUser (default '${DEFAULT_SSH_USER}')\n"
+echo    "   --message, -m, --message=<MESSAGE_FILE>, -m=MESSAGE_FILE>"
+echo -e "\tName of file that stores Pimoroni Scroll-pHAT(-HD) message\n\t(default '${DEFAULT_MESSAGE_FILE}')"
+echo    "   --systems, -s, --systems=<SYSTEMS_FILE>, -s="
+echo -e "\tName of systems file (default '${DEFAULT_SYSTEMS_FILE}')"
 #                                                                                         # 0.3.579
 echo    "   REMOTE_HOST"                                                                  # 0.3.579
-echo -e "\tRemote host to copy certificates to (default ${DEFAULT_REMOTE_HOST})\n"        # 0.3.579
+echo -e "\tRemote host to copy certificates to (default '${DEFAULT_REMOTE_HOST}')\n"        # 0.3.579
 echo    "   WORKING_DIRECTORY"                                                            # 0.3.579
-echo -e "\tAbsolute path for working directory (default ${DEFAULT_WORKING_DIRECTORY})\n"  # 0.3.579
+echo -e "\tAbsolute path for working directory (default '${DEFAULT_WORKING_DIRECTORY}')\n"  # 0.3.579
 echo    "   CERT_DAEMON_DIR"                                                              # 0.3.579
-echo -e "\tdockerd certification directory (default ${DEFAULT_CERT_DAEMON_DIR})"          # 0.3.579
+echo -e "\tdockerd certification directory (default '${DEFAULT_CERT_DAEMON_DIR}')"          # 0.3.579
 
 ###  Production standard 6.3.547  Architecture tree
 echo -e "\n${BOLD}ARCHITECTURE TREE${NORMAL}"  # STORAGE & CERTIFICATION
@@ -408,7 +415,7 @@ echo    "   An administrator may receive password and/or passphrase prompts from
 echo    "   remote systen; running the following may stop the prompts."                     # 3.550
 echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<REMOTE_HOST>${NORMAL}\n"                            # 3.550
 echo    "   or using the IP address"                                                          # 3.550
-echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<192.168.x.x>${NORMAL}"\n                            # 3.550
+echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<192.168.x.x>${NORMAL}\n"                            # 3.550
 echo    "   If that does not resolve the prompting challenge then review man pages for"     # 3.550
 echo    "   ssh-agent and ssh-add."                                                         # 3.550
 echo    "   (${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command${NORMAL})"  # 0.3.583
@@ -521,7 +528,7 @@ while [[ "${#}" -gt 0 ]] ; do
     *) break ;;
   esac
 done
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... ADMUSER >${YELLOW}${ADMUSER}${WHITE}< CLUSTER >${YELLOW}${CLUSTER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}< FILE_NAME >${YELLOW}${FILE_NAME}${WHITE}< SSH_USER >${YELLOW}${SSH_USER}${WHITE}< USER_HOME >${YELLOW}${USER_HOME}${WHITE}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... ADM_TLS_USER >${YELLOW}${ADM_TLS_USER}${WHITE}< CLUSTER >${YELLOW}${CLUSTER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}< FILE_NAME >${YELLOW}${FILE_NAME}${WHITE}< SSH_USER >${YELLOW}${SSH_USER}${WHITE}< USER_HOME >${YELLOW}${USER_HOME}${WHITE}<" 1>&2 ; fi
 
 #    No --help  # 0.3.583
 if [[ "${1}" != "" ]] ; then
@@ -552,10 +559,10 @@ fi
 #    Order of precedence: environment variable, default code
 if [[ "${CLUSTER}" == "" ]] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
 #    Order of precedence: default code
-ADMUSER=${DEFAULT_USER}
+ADM_TLS_USER=${DEFAULT_USER}
 #    Order of precedence: environment variable, default code
 if [[ "${DATA_DIR}" == "" ]] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... CLUSTER >${YELLOW}${CLUSTER}${WHITE}< ADMUSER >${YELLOW}${ADMUSER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... CLUSTER >${YELLOW}${CLUSTER}${WHITE}< ADM_TLS_USER >${YELLOW}${ADM_TLS_USER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}<" 1>&2 ; fi
 
 ###  Example arguments (2)
 #    Order of precedence: CLI argument, default code
@@ -569,10 +576,10 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable...
 #    Order of precedence: CLI argument, environment variable, default code
 if [[ $# -ge  1 ]]  ; then CLUSTER=${1} ; elif [[ "${CLUSTER}" == "" ]] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
 #    Order of precedence: CLI argument, default code
-ADMUSER=${2:-${DEFAULT_USER}}
+ADM_TLS_USER=${2:-${DEFAULT_USER}}
 #    Order of precedence: CLI argument, default code
 if [[ $# -ge  3 ]]  ; then DATA_DIR=${3} ; else DATA_DIR=${DEFAULT_DATA_DIR} ; fi
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... CLUSTER >${YELLOW}${CLUSTER}${WHITE}< ADMUSER >${YELLOW}${ADMUSER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... CLUSTER >${YELLOW}${CLUSTER}${WHITE}< ADM_TLS_USER >${YELLOW}${ADM_TLS_USER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}<" 1>&2 ; fi
 
 ###  Example arguments (4)
 #    Check arguement 1 xxx
