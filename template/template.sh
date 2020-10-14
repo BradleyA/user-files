@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.591.955  2020-10-14T16:29:28.398964-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.590-7-g97ee45a  
+# 	   template/template.sh -->   update format examples  
 # 	template/template.sh  3.590.947  2020-10-14T16:09:22.749116-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.589-15-g6df1682  
 # 	   template/template.sh -->   updates to formating in OPTIONS section  
 # 	template/template.sh  3.589.931  2020-10-09T16:17:10.424352-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.588  
@@ -423,7 +425,8 @@ echo -e "\t${BOLD}cluster-command.sh special '${COMMAND_NAME}'${NORMAL}\n"      
 
 echo -e "\n${BOLD}SEE ALSO${NORMAL}"                                                        # 3.550
 echo    "   ${BOLD}cluster-command.sh${NORMAL} (${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command${NORMAL})"  # 0.3.583
-echo    "   ${BOLD}<command>${NORMAL} (URL)"
+echo    "   ${BOLD}<command>${NORMAL} (${UNDERLINE}<URL> ${NORMAL})"
+echo    "   ${BOLD}<command>${NORMAL} (${UNDERLINE}<URL> ${NORMAL})"
 
 echo -e "\n${BOLD}AUTHOR${NORMAL}"                                                          # 3.550
 echo    "   ${COMMAND_NAME} was written by Bradley Allen <allen.bradley@ymail.com>"         # 3.550
