@@ -44,6 +44,29 @@ Testing other links from other repositories:
 
 ----
 
+## Goal
+Bash scripts . . . . .
+
+#### If you like this repository, select in the upper-right corner, [![GitHub stars](https://img.shields.io/github/stars/BradleyA/user-files.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BradleyA/user-files/stargazers/), thank you.
+
+<details>
+<summary>Table of content</summary>
+    
+    
+## Table of content
+- [Description](#Description)
+- [Command Descriptions](#Command-Descriptions)
+    - [ARCHITECTURE TREE](#ARCHITECTURE-TREE)
+    - [Future Objectives](#Future-Objectives)
+    - [Author](#Author)
+    - [System OS script tested](#System-OS-script-tested)
+    - [Design Principles](#Design-Principles)
+    - [License](#License)
+
+</details>
+
+----
+
 General user files, dot files, with a few special tweeks to make my system time better.  When setting up a new system, I pull these files to update my user profiles.
 
 **template directory**, there are a few template files (sh,py) that include **production standards** that I designed as best practices when creating new scripts.  When creating a new script I merge sections of code needed from a template file.  Some of the production standards are --help, DEBUG, log format, shellcheck, Documentation Language, Copyright, Architecture tree, Default variable value, --usage, and Parse CLI options and arguments.  When a production standard is changed it's verson number is updated with the git tag version number.  This allows scripts in development, test, and production to be maintianed with the latest production standard verson.
