@@ -44,11 +44,39 @@ Testing other links from other repositories:
 
 ----
 
-General user files, dot files, with a few special tweeks to make my system time better.  When setting up a new system, I pull these files to update my user profiles.
+[![GitHub contributors](https://img.shields.io/github/contributors/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/contributors/)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/pull/)
+[![GitHub pull-requests closed](https://img.shields.io/github/issues-pr-closed/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/pull/)
+
+----
+
+## Goal
+
+General user files, dot files, with a few special tweeks to make my system time better. When setting up a new system, I pull these files to update my user profiles.
+
+#### If you like this repository, select in the upper-right corner, [![GitHub stars](https://img.shields.io/github/stars/BradleyA/user-files.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BradleyA/user-files/stargazers/), thank you.
+
+<details>
+<summary>Table of content</summary>
+    
+    
+## Table of content
+- [Description](#Description)
+- [Command Descriptions](#Command-Descriptions)
+    - [ARCHITECTURE TREE](#ARCHITECTURE-TREE)
+    - [Future Objectives](#Future-Objectives)
+    - [Author](#Author)
+    - [System OS script tested](#System-OS-script-tested)
+    - [Design Principles](#Design-Principles)
+    - [License](#License)
+
+</details>
+
+----
+
+## Description
 
 **template directory**, there are a few template files (sh,py) that include **production standards** that I designed as best practices when creating new scripts.  When creating a new script I merge sections of code needed from a template file.  Some of the production standards are --help, DEBUG, log format, shellcheck, Documentation Language, Copyright, Architecture tree, Default variable value, --usage, and Parse CLI options and arguments.  When a production standard is changed it's verson number is updated with the git tag version number.  This allows scripts in development, test, and production to be maintianed with the latest production standard verson.
-
-#### If you like this repository, select in the upper-right corner, star, thank you.
 
 ## Clone
 
@@ -103,7 +131,7 @@ To download the latest commit of one of these files, for example .gitignore, cha
 ./template/TEST/template.sh/(FVT-option-TEST_CASES , FVT-setup.sh)
 
 #### Author
-[<img id="github" src="images/github.png" width="50" a="https://github.com/BradleyA/">](https://github.com/BradleyA/)    [<img src="images/linkedin.png" style="max-width:100%;" >](https://www.linkedin.com/in/bradleyhallen) [<img id="twitter" src="images/twitter.png" width="50" a="twitter.com/bradleyaustintx/">](https://twitter.com/bradleyaustintx/)       <a href="https://twitter.com/intent/follow?screen_name=bradleyaustintx"> <img src="https://img.shields.io/twitter/follow/bradleyaustintx.svg?label=Follow%20@bradleyaustintx" alt="Follow @bradleyaustintx" />    </a>
+[<img id="github" src="images/github.png" width="50" a="https://github.com/BradleyA/">](https://github.com/BradleyA/)    [<img src="images/linkedin.png" style="max-width:100%;" >](https://www.linkedin.com/in/bradleyhallen) [<img id="twitter" src="images/twitter.png" width="50" a="twitter.com/bradleyaustintx/">](https://twitter.com/bradleyaustintx/)       <a href="https://twitter.com/intent/follow?screen_name=bradleyaustintx"> <img src="https://img.shields.io/twitter/follow/bradleyaustintx.svg?label=Follow%20@bradleyaustintx" alt="Follow @bradleyaustintx" />    </a>       [![GitHub followers](https://img.shields.io/github/followers/BradleyA.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/BradleyA?tab=followers)
 
 #### System OS script tested
  * Ubuntu 14.04.3   LTS (amd64,armv7l)
