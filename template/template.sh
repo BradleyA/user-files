@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.592.956  2020-10-14T16:33:15.683268-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.591  
+# 	   template/template.sh -->   add space after $UNDERLINE<URL>  
 # 	template/template.sh  3.591.955  2020-10-14T16:29:28.398964-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.590-7-g97ee45a  
 # 	   template/template.sh -->   update format examples  
 # 	template/template.sh  3.590.947  2020-10-14T16:09:22.749116-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.589-15-g6df1682  
@@ -420,11 +422,11 @@ echo    "   or using the IP address"                                            
 echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<192.168.x.x>${NORMAL}\n"                            # 3.550
 echo    "   If that does not resolve the prompting challenge then review man pages for"     # 3.550
 echo    "   ssh-agent and ssh-add."                                                         # 3.550
-echo    "   (${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command${NORMAL})"  # 0.3.583
+echo    "   (${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command ${NORMAL})"  # 0.3.583
 echo -e "\t${BOLD}cluster-command.sh special '${COMMAND_NAME}'${NORMAL}\n"                  # 3.550
 
 echo -e "\n${BOLD}SEE ALSO${NORMAL}"                                                        # 3.550
-echo    "   ${BOLD}cluster-command.sh${NORMAL} (${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command${NORMAL})"  # 0.3.583
+echo    "   ${BOLD}cluster-command.sh${NORMAL} (${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command ${NORMAL})"  # 0.3.583
 echo    "   ${BOLD}<command>${NORMAL} (${UNDERLINE}<URL> ${NORMAL})"
 echo    "   ${BOLD}<command>${NORMAL} (${UNDERLINE}<URL> ${NORMAL})"
 
@@ -432,7 +434,7 @@ echo -e "\n${BOLD}AUTHOR${NORMAL}"                                              
 echo    "   ${COMMAND_NAME} was written by Bradley Allen <allen.bradley@ymail.com>"         # 3.550
 
 echo -e "\n${BOLD}REPORTING BUGS${NORMAL}"                                                  # 3.550
-echo    "   Report ${COMMAND_NAME} bugs ${UNDERLINE}https://github.com/BradleyA/user-files/issues/new/choose${NORMAL}"  # 0.3.583
+echo    "   Report ${COMMAND_NAME} bugs ${UNDERLINE}https://github.com/BradleyA/user-files/issues/new/choose ${NORMAL}"  # 0.3.583
 
 ###  Production standard 5.3.559 Copyright                                            # 3.559
 echo -e "\n${BOLD}COPYRIGHT${NORMAL}"                                                       # 3.550
