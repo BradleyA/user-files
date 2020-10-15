@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.593.957  2020-10-14T22:36:02.971787-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.592  
+# 	   template/template.sh -->   added comment  
 # 	template/template.sh  3.592.956  2020-10-14T16:33:15.683268-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.591  
 # 	   template/template.sh -->   add space after $UNDERLINE<URL>  
 # 	template/template.sh  3.591.955  2020-10-14T16:29:28.398964-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.590-7-g97ee45a  
@@ -491,6 +493,7 @@ while [[ "${#}" -gt 0 ]] ; do
     --help|-help|help|-h|h|-\?)  display_help | more ; exit 0 ;;
     --usage|-usage|usage|-u)  display_usage ; exit 0  ;;
     --version|-version|version|-v)  echo "${SCRIPT_NAME} ${SCRIPT_VERSION}" ; exit 0  ;;
+#
     -a|--all)   if [[ "${CLI_OPTION}" != "" ]] ; then
         echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1 # 9.3.558  9.3.561  9.3.562
       else
