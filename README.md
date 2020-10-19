@@ -65,9 +65,6 @@ General user files, dot files, with a few special tweeks to make my system time 
 - [Install dot Files](#Install-dot-Files)
 - [Install a File](#Install-a-File)
 - [Files](#Files)
-- [Clone](#Clone)
-- [Clone](#Clone)
-- [Clone](#Clone)
 ---
 - [Contribute](#Contribute)
 - [Author](#Author)
@@ -83,12 +80,16 @@ General user files, dot files, with a few special tweeks to make my system time 
 
 **template directory**, there are a few template files (sh,py) that include **production standards** that I designed as best practices when creating new scripts.  When creating a new script I merge sections of code needed from a template file.  Some of the production standards are --help, DEBUG, log format, shellcheck, Documentation Language, Copyright, Architecture tree, Default variable value, --usage, and Parse CLI options and arguments.  When a production standard is changed it's verson number is updated with the git tag version number.  This allows scripts in development, test, and production to be maintianed with the latest production standard verson.
 
+[Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
+
 ## Clone
 
 To clone, change directory to the location you want to download the scripts (example: cd ~/github).  Use git to pull or clone these files into the directory. If you do not have git then enter; "sudo apt-get install git" if using Ubuntu. On the GitHub page of this script use the "HTTPS clone URL" with the 'git clone' command.
 
     git clone https://github.com/BradleyA/user-files.git
     cd user-files
+
+[Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
 
 ## Install dot Files
 To copy/over-write dot files into your home directory enter the following steps.
@@ -98,12 +99,16 @@ To copy/over-write dot files into your home directory enter the following steps.
     user-files/bin/copy-user-dot
     rm -rf ./user-files
 
+[Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
+
 ## Install a File
 
 To download the latest commit of one of these files, for example .gitignore, change to the location you want to download.  If in sub-directory on Github include the directory; example   FILEX=bin/term-layout.sh
 
     FILEX=.gitignore
     curl -L https://api.github.com/repos/BradleyA/user-files/tarball | tar -xzf - --wildcards BradleyA-user-files-*/$FILEX ; mv BradleyA-user-files-*/$FILEX . ; rm -r BradleyA-user-files-*/
+
+[Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
 
 ## Files
 
@@ -135,6 +140,8 @@ To download the latest commit of one of these files, for example .gitignore, cha
 
 ./template/TEST/template.sh/(FVT-option-TEST_CASES , FVT-setup.sh)
 
+[Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
+
 ----
 
 #### Contribute
@@ -145,14 +152,20 @@ Please do contribute!  Issues and pull requests are welcome.  Thank you for your
 #### Author
 [<img id="github" src="images/github.png" width="50" a="https://github.com/BradleyA/">](https://github.com/BradleyA/)    [<img src="images/linkedin.png" style="max-width:100%;" >](https://www.linkedin.com/in/bradleyhallen) [<img id="twitter" src="images/twitter.png" width="50" a="twitter.com/bradleyaustintx/">](https://twitter.com/bradleyaustintx/)       <a href="https://twitter.com/intent/follow?screen_name=bradleyaustintx"> <img src="https://img.shields.io/twitter/follow/bradleyaustintx.svg?label=Follow%20@bradleyaustintx" alt="Follow @bradleyaustintx" />    </a>       [![GitHub followers](https://img.shields.io/github/followers/BradleyA.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/BradleyA?tab=followers)
 
+[Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
+
 #### Tested OS
  * Ubuntu 14.04.3   LTS (amd64,armv7l)
  * Ubuntu 16.04.3-5 LTS (armv7l)
+
+[Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
 
 #### Design Principles
  * Have a simple setup process and a minimal learning curve
  * Be usable as non-root
  * Be easy to install and configure
+
+[Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
 
 #### License
 MIT License
@@ -164,3 +177,5 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+[Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
