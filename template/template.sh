@@ -1,7 +1,5 @@
 #!/bin/bash
-# 	template/template.sh  3.598.970  2020-10-24T13:39:07.955099-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.597  
-# 	   template/template.sh -->   debuging code for test  
-# 	template/template.sh  3.597.969  2020-10-24T13:34:19.268126-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.596  
+# 	template/template.sh  3.599.971  2020-10-24T13:40:41.703582-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.598  
 # 	   template/template.sh -->   testing  
 # 	template/template.sh  3.596.968  2020-10-24T13:19:57.727095-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.595  
 # 	   template/template.sh -->   Production standard 9.3.596 Parse CLI options and arguments  
