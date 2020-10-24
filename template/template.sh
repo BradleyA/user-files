@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.600.972  2020-10-24T13:52:00.309435-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.599  
+# 	   template/template.sh -->   clean up shellcheck  
 # 	template/template.sh  3.599.971  2020-10-24T13:40:41.703582-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.598  
 # 	   template/template.sh -->   testing  
 # 	template/template.sh  3.596.968  2020-10-24T13:19:57.727095-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.595  
@@ -525,13 +527,13 @@ fi
 ###
 
 #    Check if ${DATA_DIR} directory is on system
-if ! [[ -d ${DATA_DIR} ]] ; then
+if ! [[ -d "${DATA_DIR}" ]] ; then
   new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Path to cluster data directory, ${DATA_DIR}, not found." 1>&2
   exit 1
 fi
 
 #    Check if ${CLUSTER} directory is on system
-if ! [[ -d ${DATA_DIR}/${CLUSTER} ]] ; then
+if ! [[ -d "${DATA_DIR}"/"${CLUSTER}" ]] ; then
   new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Cluster directory name, ${CLUSTER}, not found." 1>&2
   exit 1
 fi
@@ -539,10 +541,10 @@ fi
 #    Check if ${SYSTEMS_FILE} file is on system, one FQDN or IP address per line for all hosts in cluster
 if ! [[ -e ${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE} ]] || ! [[ -s ${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE} ]] ; then
   new_message "${LINENO}" "${YELLOW}WARN${WHITE}" "  Name of systems file, ${SYSTEMS_FILE} not found or empty.  Creating ${SYSTEMS_FILE} file and including local host.  Edit ${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE} file and add additional hosts that are in the cluster." 1>&2
-  echo -e "###     List of hosts used by cluster-command.sh & create-message.sh"  > ${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE}
-  echo -e "#       One FQDN or IP address per line for all hosts in cluster" > ${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE}
-  echo -e "###" > ${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE}
-  echo    "${LOCALHOST}" > ${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE}
+  echo -e "###     List of hosts used by cluster-command.sh & create-message.sh"  > "${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE}"
+  echo -e "#       One FQDN or IP address per line for all hosts in cluster" > "${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE}"
+  echo -e "###" > "${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE}"
+  echo    "${LOCALHOST}" > "${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE}"
 fi
 
 ###  Example arguments (1)
@@ -649,3 +651,6 @@ echo "${USER_HOME}"
 echo "${DEFAULT_SCRIPT_PATH}"
 echo "${ALL_TEST_CASES}"
 echo "${DEFAULT_ADD_TEST_CASE}"
+echo "${FORCE}"
+echo "${QUIET}"
+echo "${VERBOSE}"
