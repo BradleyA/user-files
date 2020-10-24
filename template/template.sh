@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.598.970  2020-10-24T13:39:07.955099-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.597  
+# 	   template/template.sh -->   debuging code for test  
 # 	template/template.sh  3.597.969  2020-10-24T13:34:19.268126-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.596  
 # 	   template/template.sh -->   testing  
 # 	template/template.sh  3.596.968  2020-10-24T13:19:57.727095-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.595  
@@ -522,15 +524,6 @@ if [[ "${1}" != "" ]] ; then
   exit 1
 fi
 
-#    Root is required to copy certs
-if ! [[ "${UID}"  = 0 ]] ; then
-  display_usage | more
-  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Use sudo ${SCRIPT_NAME}" 1>&2
-  #    Help hint
-  echo -e "\n\t${BOLD}>>   ${YELLOW}SCRIPT MUST BE RUN AS ROOT${WHITE}   <<\n${NORMAL}"  1>&2
-  exit 1
-fi
-
 ###
 
 #    Check if ${DATA_DIR} directory is on system
@@ -615,6 +608,15 @@ fi
 if ! [[ "${REGISTRY_PORT}" =~ ^[0-9]+$ ]] ; then       #  requires [[   ]] or  [: =~: binary operator expected
    new_message "${LINENO}" "${RED}ERROR${WHITE}" "  <REGISTRY_PORT> is not an interger.  <REGISTRY_PORT> is set to '${REGISTRY_PORT}'" 1>&2
    exit 1
+fi
+
+#    Root is required to copy certs
+if ! [[ "${UID}"  = 0 ]] ; then
+  display_usage | more
+  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Use sudo ${SCRIPT_NAME}" 1>&2
+  #    Help hint
+  echo -e "\n\t${BOLD}>>   ${YELLOW}SCRIPT MUST BE RUN AS ROOT${WHITE}   <<\n${NORMAL}"  1>&2
+  exit 1
 fi
 
 #
