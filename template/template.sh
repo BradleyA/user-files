@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.596.968  2020-10-24T13:19:57.727095-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.595  
+# 	   template/template.sh -->   Production standard 9.3.596 Parse CLI options and arguments  
 # 	template/template.sh  3.595.967  2020-10-24T11:00:54.907897-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.594-8-g0b4870f  
 # 	   template/template.sh -->   Production standard 0.3.595 --help  
 # 	template/template.sh  3.589.931  2020-10-09T16:17:10.424352-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.588  
@@ -468,51 +470,43 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Setting USE
 #    DEBUG
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Name_of_command >${YELLOW}${SCRIPT_NAME}${WHITE}< Name_of_arg1 >${YELLOW}${1}${WHITE}< Name_of_arg2 >${YELLOW}${2}${WHITE}< Name_of_arg3 >${YELLOW}${3}${WHITE}<  Version of bash ${YELLOW}${BASH_VERSION}${WHITE}" 1>&2 ; fi  #  2.3.578
 
-###  Production standard 9.3.562 Parse CLI options and arguments
+###  Production standard 9.3.596 Parse CLI options and arguments
 while [[ "${#}" -gt 0 ]] ; do
   case "${1}" in
     --help|-help|help|-h|h|-\?)  display_help | more ; exit 0 ;;
     --usage|-usage|usage|-u)  display_usage ; exit 0  ;;
     --version|-version|version|-v)  echo "${SCRIPT_NAME} ${SCRIPT_VERSION}" ; exit 0  ;;
 #
-    -a|--all)   if [[ "${CLI_OPTION}" != "" ]] ; then
-        echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1 # 9.3.558  9.3.561  9.3.562
-      else
-        CLI_OPTION="a" ; shift
-      fi ;;
+    -c|--cluster)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; CLUSTER=${2} ; shift 2  ;;  # 9.3.596
+    -c=*|--cluster=*)  CLUSTER="${1#*=}" ; if [[ "${CLUSTER}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; shift  ;;  # 9.3.596
+    -d|--datadir)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; DATA_DIR=${2} ; shift 2  ;;  # 9.3.596
+    -d=*|--datadir=*)  DATA_DIR="${1#*=}" ; if [[ "${DATA_DIR}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; shift  ;;  # 9.3.596
+    -s|--systems)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; SYSTEMS_FILE=${2} ; shift 2  ;;  # 9.3.596
+    -s=*|--systems=*) SYSTEMS_FILE="${1#*=}" ; if [[ "${SYSTEMS_FILE}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; shift  ;;  # 9.3.596
+#
+    -a|--all)   if [[ "${CLI_OPTION}" != "" ]] ; then echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1 # 9.3.596
+      else CLI_OPTION="a" ; shift ; fi ;;  # 9.3.596
     --add) DEFAULT_ADD_TEST_CASE="YES" ; shift ;;  #  #29
-    -c|--clean) if [[ "${CLI_OPTION}" != "" ]] ; then
-        echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1 # 9.3.558  9.3.561  9.3.562
-      else
-        CLI_OPTION="c" ; shift
-      fi ;;
-    -f|--filename) if [[ "${CLI_OPTION}" != "" ]] ; then # 9.3.558
-        echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1 # 9.3.558   9.3.561  9.3.562
-      else # 9.3.558
-        CLI_OPTION="f" # 9.3.558
-        #    Check if FILE_NAME is missing # 9.3.558
+    -c|--clean) if [[ "${CLI_OPTION}" != "" ]] ; then echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1 # 9.3.596
+      else CLI_OPTION="c" ; shift ; fi ;;  # 9.3.596
+    -f|--filename) if [[ "${CLI_OPTION}" != "" ]] ; then echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1 # 9.3.596
+      else CLI_OPTION="f" 
+        #    Check if FILE_NAME is missing. # 9.3.558
         if [[ "${2}" == "" ]]    ; then echo -e "\n${BOLD}    Argument for ${1} is not found on command line\n" ; exit 1 ; fi # 9.3.558   9.3.561  9.3.562
         #    Check if option (-) is next not FILE_NAME # 9.3.558
         if [[ ${2:0:1} == "-" ]] ; then echo -e "\n${BOLD}    Argument for ${1} is not found on command line\n" ; exit 1 ; fi # 9.3.558   9.3.561  9.3.562
-        FILE_NAME=${2} ; shift 2 # 9.3.558
-      fi ;; # 9.3.558
+        FILE_NAME=${2} ; shift 2 ; fi ;;  # 9.3.596
     --hooks|-hooks) ALL_TEST_CASES="YES" ; shift ;;
-    -n|--none) if [[ "${CLI_OPTION}" != "" ]] ; then  #  #18 # 9.3.558
-        echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1 # # 9.3.558  9.3.561  9.3.562
-      else # 9.3.558
-        CLI_OPTION="n" ; shift # 9.3.558
-      fi ;; # 9.3.558
-    -c|--cluster)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; CLUSTER=${2} ; shift 2 ;; # 9.3.558  9.3.561  9.3.562
-    -c=*|--cluster=*)  CLUSTER=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
-    -d|--datadir)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; DATA_DIR=${2} ; shift 2 ;; # 9.3.558  9.3.561  9.3.562
-    -d=*|--datadir=*)  DATA_DIR=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
+    -n|--none) if [[ "${CLI_OPTION}" != "" ]] ; then echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1 # 18  # 9.3.596
+      else CLI_OPTION="n" ; shift ; fi ;; # 9.3.596
     -f|--filename) CLI_OPTION="f" ; if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; FILE_NAME=${2} ; shift 2 ;; # 9.3.558  9.3.561  9.3.562
     -f=*|--filename=*)  FILE_NAME=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
     -S|--ssh_user)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; SSH_USER=${2} ; shift 2 ;; # 9.3.558  9.3.561  9.3.562
     -S=*|--ssh_user=*)  SSH_USER=$(echo "${1}" | cut -d '=' -f 2) ; shift   ;;
     -U|--user_home)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; USER_HOME=${2} ; shift 2 ;; # 9.3.558  9.3.561  9.3.562
     -U=*|--user_home=*)  USER_HOME=$(echo "${1}" | cut -d '=' -f 2) ; shift  ;;
-#    echo -e "\n${BOLD}    Invalid option, ${YELLOW}${1}${WHITE}, try  ${YELLOW}${COMMAND_NAME} --usage${NORMAL}\n" ; exit 1 ; ;; # 9.3.561
+#
+    *) echo -e "\n${BOLD}    Invalid option, ${YELLOW}${1}${WHITE}, try  ${YELLOW}${COMMAND_NAME} --usage${NORMAL}\n" ; exit 1 ; ;; # 9.3.596
 # OR
     *) break ;;
   esac
