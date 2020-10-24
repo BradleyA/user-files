@@ -1,56 +1,36 @@
 #!/bin/bash
-# 	template/template.sh  3.593.957  2020-10-14T22:36:02.971787-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.592  
-# 	   template/template.sh -->   added comment  
-# 	template/template.sh  3.592.956  2020-10-14T16:33:15.683268-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.591  
-# 	   template/template.sh -->   add space after $UNDERLINE<URL>  
-# 	template/template.sh  3.591.955  2020-10-14T16:29:28.398964-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.590-7-g97ee45a  
-# 	   template/template.sh -->   update format examples  
-# 	template/template.sh  3.590.947  2020-10-14T16:09:22.749116-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.589-15-g6df1682  
-# 	   template/template.sh -->   updates to formating in OPTIONS section  
+# 	template/template.sh  3.595.967  2020-10-24T11:00:54.907897-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.594-8-g0b4870f  
+# 	   template/template.sh -->   Production standard 0.3.595 --help  
 # 	template/template.sh  3.589.931  2020-10-09T16:17:10.424352-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.588  
 # 	   template/template.sh -->   added MESSAGE & MESSAGEHD to ARCHITECTURE TREE  
 # 	template/template.sh  3.588.930  2020-08-29T14:44:55.536614-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.587  
 # 	   template/template.sh -->   added comments to help understand changes for Production standard 9.3.558   9.3.561  9.3.562  
 # 	template/template.sh  3.587.929  2020-08-23T11:50:58.361973-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.586-18-g583ce77  
 # 	   template/template.sh -->   updated Production standard 4.3.587 Documentation Language  
-# 	template/template.sh  3.586.910  2020-05-16T21:43:38.919565-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.585  
-# 	   template/template.sh -->   minor formatting test changes  
-# 	template/template.sh  3.585.909  2020-05-05T13:44:05.758012-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.584  
-# 	   template/template.sh -->   typo missing comment   # 0.3.583  
-# 	template/template.sh  3.584.908  2020-05-04T13:09:57.014749-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.583  
-# 	   template/template.sh -->   start working on template/template.sh - add trap #37  
 # 	template/template.sh  3.583.907  2020-05-04T11:53:01.430625-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.582  
 # 	   template/template.sh -->   Production standard 0.3.583 --help   added UNDERLINE  
-# 	template/template.sh  3.579.903  2020-04-18T15:07:08.923259-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.578-6-gda74217  
-# 	   template/template.sh -->   Production standard 0.3.579 --help 
 # 	template/template.sh  3.578.896  2020-04-11T12:36:04.958108-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.577-7-g6457d65  
 # 	   template/template.sh -->   Production standard 2.3.578 log format add color to version and line number   close #48 
-# 	template/template.sh  3.568.876  2020-01-30T12:26:35.136659-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.567  
-# 	   template/template.sh -->   add previous code for --help --usage -- version 
 # 	template/template.sh  3.566.874  2020-01-29T12:15:34.809565-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.565  
 # 	   template/template.sh -->   add no help options 
 # 	template/template.sh  3.562.870  2020-01-24T20:34:55.986650-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.561  
 # 	   template/template.sh -->   Production standard 9.3.562 Parse CLI options and arguments 
 # 	template/template.sh  3.559.867  2020-01-20T23:15:06.840471-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.558  
 # 	   template/template.sh -->   Production standard 5.3.559 Copyright
-# 	template/template.sh  3.555.863  2020-01-18T23:59:35.357482-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.555  
-# 	   template/template.sh -->   correct Production standard 1.3.550 DEBUG variable 
 # 	template/template.sh  3.550.832  2019-12-24T15:23:22.340391-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.549  
-# 	   template/template.sh -->   Production standard 5.3.550 Copyright  Production standard 0.3.550 --help  Production standard 4.3.550 Documentation Language  Production standard 1.3.550 DEBUG variable   updated Architecture tree for user-files/github-repository-data/ 
+# 	   template/template.sh -->   Production standard 1.3.550 DEBUG variable   updated Architecture tree for user-files/github-repository-data/ 
 # 	template/template.sh  3.549.831  2019-12-14T14:56:30.201378-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.548  
 # 	   template/template.sh -->   added FUTURE sections in display_help SEE ALSO AUTHOR$ REPORTING BUGS COPYRIGHT HISTORY 
 # 	template/template.sh  3.541.823  2019-11-22T14:54:14.075113-06:00 (CST)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.540  
 # 	   template/template.sh -->   Production standard 8.3.541 --usage 
-# 	template/template.sh  3.533.805  2019-10-13T23:29:17.638287-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.532  
-# 	   template/template.sh -->   close #42   template/template.sh   Production standard 2.3.529 log format 
 #86# template/template.sh - shell script template containing my collection of shorthand functions and pre-written code
-###  Production standard 5.3.559 Copyright                                    # 3.559
-#    Copyright (c) 2020 Bradley Allen                                                # 3.555
-#    MIT License is online in the repository as a file named LICENSE"         # 3.559
+###  Production standard 5.3.559 Copyright
+#    Copyright (c) 2020 Bradley Allen
+#    MIT License is online in the repository as a file named LICENSE"         # 5.3.559
 ###  Production standard 3.0 shellcheck
 ###  Production standard 10.3.XXX EXIT TRAP      template/template.sh - add trap #37
 
-###  Production standard 1.3.550 DEBUG variable                                             # 3.550
+###  Production standard 1.3.550 DEBUG variable
 #    Order of precedence: environment variable, default code
 if [[ "${DEBUG}" == ""  ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 if [[ "${DEBUG}" == "2" ]] ; then set -x    ; fi   # Print trace of simple commands before they are executed
@@ -99,7 +79,7 @@ DEFAULT_USER_HOME=$(dirname "${HOME}")
 DEFAULT_WORKING_DIRECTORY=~/.docker/docker-ca
 
 ###  Production standard 8.3.541 --usage
-COMMAND_NAME=$(echo "${0}" | sed 's/^.*\///')                                               # 3.541
+COMMAND_NAME=$(echo "${0}" | sed 's/^.*\///')
 display_usage() {
 echo -e "\n${NORMAL}${COMMAND_NAME}\n   brief description . . ."
 echo -e "\n${BOLD}USAGE${NORMAL}"
@@ -114,10 +94,10 @@ echo    "   ${COMMAND_NAME} [--usage | -usage | -u]"
 echo    "   ${COMMAND_NAME} [--version | -version | -v]"
 }
 
-###  Production standard 0.3.583 --help
+###  Production standard 0.3.595 --help
 display_help() {
 display_usage
-#    Displaying help DESCRIPTION in English en_US.UTF-8, en.UTF-8, C.UTF-8                  # 3.550
+#    Displaying help DESCRIPTION in English en_US.UTF-8, en.UTF-8, C.UTF-8
 echo -e "\n${BOLD}DESCRIPTION${NORMAL}"
 echo    "<your help goes here>"
 echo    ">>> NEED TO COMPLETE THIS SOON, ONCE I KNOW HOW IT IS GOING TO WORK :-) <<<    |"
@@ -140,13 +120,13 @@ echo    "To loop through a list of hosts in the cluster use,"
 echo    "${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command${NORMAL}"  # 0.3.583
 echo -e "\t${BOLD}cluster-command.sh special 'sudo check-host-tls.sh'${NORMAL}"
 
-###  Production standard 4.3.587 Documentation Language                                     # 3.550
+###  Production standard 4.3.587 Documentation Language
 #    Displaying help DESCRIPTION in French fr_CA.UTF-8, fr_FR.UTF-8, fr_CH.UTF-8
 if [[ "${LANG}" == "fr_CA.UTF-8" ]] || [[ "${LANG}" == "fr_FR.UTF-8" ]] || [[ "${LANG}" == "fr_CH.UTF-8" ]] ; then
   echo -e "\n--> ${LANG}"
   echo    "<Votre aide va ici>" # Your help goes here
   echo    "Souhaitez-vous traduire la section description?" # Would you like to translate the description section?
-elif ! [[ "${LANG}" == "en_US.UTF-8" ||  "${LANG}" == "en.UTF-8" || "${LANG}" == "C.UTF-8" ]] ; then  # 3.550
+elif ! [[ "${LANG}" == "en_US.UTF-8" ||  "${LANG}" == "en.UTF-8" || "${LANG}" == "C.UTF-8" ]] ; then
   new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "  Your language, ${LANG}, is not supported.  Would you like to translate the description section?" 1>&2
 fi
 
@@ -157,18 +137,18 @@ echo    "command, 'unset DEBUG' to remove the exported information from the envi
 echo    "variable DEBUG.  You are on your own defining environment variables if"
 echo    "you are using other shells."
 
-###  Production standard 1.3.550 DEBUG variable                                             # 3.550
-echo    "   DEBUG           (default off '0')  The DEBUG environment variable can be set"   # 3.550
-echo    "                   to 0, 1, 2, 3, 4 or 5.  The setting '' or 0 will turn off"      # 3.550
-echo    "                   all DEBUG messages during execution of this script.  The"       # 3.550
-echo    "                   setting 1 will print all DEBUG messages during execution."      # 3.550
-echo    "                   Setting 2 (set -x) will print a trace of simple commands"       # 3.550
-echo    "                   before they are executed.  Setting 3 (set -v) will print"       # 3.550
-echo    "                   shell input lines as they are read.  Setting 4 (set -e) will"   # 3.550
-echo    "                   exit immediately if non-zero exit status is recieved with"      # 3.550
-echo    "                   some exceptions.  Setting 5 (set -e -o pipefail) will do"       # 3.550
-echo    "                   setting 4 and exit if any command in a pipeline errors.  For"   # 3.550
-echo    "                   more information about the set options, see man bash."          # 3.550
+###  Production standard 1.3.550 DEBUG variable                                             # 1.3.550
+echo    "   DEBUG           (default off '0')  The DEBUG environment variable can be set"   # 1.3.550
+echo    "                   to 0, 1, 2, 3, 4 or 5.  The setting '' or 0 will turn off"      # 1.3.550
+echo    "                   all DEBUG messages during execution of this script.  The"       # 1.3.550
+echo    "                   setting 1 will print all DEBUG messages during execution."      # 1.3.550
+echo    "                   Setting 2 (set -x) will print a trace of simple commands"       # 1.3.550
+echo    "                   before they are executed.  Setting 3 (set -v) will print"       # 1.3.550
+echo    "                   shell input lines as they are read.  Setting 4 (set -e) will"   # 1.3.550
+echo    "                   exit immediately if non-zero exit status is recieved with"      # 1.3.550
+echo    "                   some exceptions.  Setting 5 (set -e -o pipefail) will do"       # 1.3.550
+echo    "                   setting 4 and exit if any command in a pipeline errors.  For"   # 1.3.550
+echo    "                   more information about the set options, see man bash."          # 1.3.550
 #
 echo    "   CLUSTER         Cluster name (default '${DEFAULT_CLUSTER}')"
 echo    "   DATA_DIR        Data directory (default '${DEFAULT_DATA_DIR}')"
@@ -176,36 +156,37 @@ echo    "   SYSTEMS_FILE    Name of file that includes hosts in cluster"
 echo    "                   (default '${DEFAULT_SYSTEMS_FILE}')"
 
 echo -e "\n${BOLD}OPTIONS${NORMAL}"
-echo -e "Order of precedence: CLI options, environment variable, default value.\n"     # 3.572
-echo    "   --help, -help, help, -h, h, -?"                                            # 3.572
-echo -e "\tOn-line brief reference manual\n"                                           # 3.572
-echo    "   --usage, -usage, -u"                                                       # 3.572
-echo -e "\tOn-line command usage\n"                                                    # 3.572
-echo    "   --version, -version, -v"                                                      # 0.3.579
-echo -e "\tOn-line command version\n"                                                  # 3.572
+echo -e "Order of precedence: CLI options, environment variable, default value.\n"                     # 0.3.595
+echo    "   --help, -help, help, -h, h, -?"                                                            # 0.3.595
+echo -e "\tOn-line brief reference manual\n"                                                           # 0.3.595
+echo    "   --usage, -usage, -u"                                                                       # 0.3.595
+echo -e "\tOn-line command usage\n"                                                                    # 0.3.595
+echo    "   --version, -version, -v"                                                                   # 0.3.595
+echo -e "\tOn-line command version\n"                                                                  # 0.3.595
 #
-echo    "   --cluster, -c, --cluster=<CLUSTER>, -c="
+echo    "   --cluster <CLUSTER>, -c <CLUSTER>, --cluster=<CLUSTER>, -c=<CLUSTER>"                      # 0.3.595
 echo -e "\tCluster name (default '${DEFAULT_CLUSTER}')\n"
-echo    "   --datadir, -d, --datadir=<DATA_DIR>, -d="
+echo    "   --datadir <DATA_DIR>, -d <DATA_DIR>, --datadir=<DATA_DIR>, -d=<DATA_DIR>"                  # 0.3.595
 echo -e "\tData directory (default '${DEFAULT_DATA_DIR}')\n"
-echo    "   --admuser, -a, --admuser=<ADM_TLS_USER>, -a="
-echo -e "\tSite SRE administrator, default is user running script\n"
-echo    "   --file, -f, --filename=<FILENAME>, -f="
-echo -e "\tPath and file on system '<path>/<file_name>'\n"
-echo    "   --user_home, -U, --user_home=<USER_HOME>, -U="
-echo -e "\tLocation of user home directory (default '${DEFAULT_USER_HOME}')\n"
-echo    "   --ssh_user, -S, --ssh_user=<SSH_USER>, -S="
-echo -e "\tUser (default '${DEFAULT_SSH_USER}')\n"
-echo    "   --message, -m, --message=<MESSAGE_FILE>, -m=MESSAGE_FILE>"
-echo -e "\tName of file that stores Pimoroni Scroll-pHAT(-HD) message\n\t(default '${DEFAULT_MESSAGE_FILE}')"
-echo    "   --systems, -s, --systems=<SYSTEMS_FILE>, -s="
+echo    "   --systems <SYSTEMS_FILE>, -s <SYSTEMS_FILE>, --systems=<SYSTEMS_FILE>, -s=<SYSTEMS_FILE>"  # 0.3.595
 echo -e "\tName of systems file (default '${DEFAULT_SYSTEMS_FILE}')"
-#                                                                                         # 0.3.579
-echo    "   REMOTE_HOST"                                                                  # 0.3.579
+#
+echo    "   --admuser <ADM_TLS_USER>, -a <ADM_TLS_USER>, --admuser=<ADM_TLS_USER>, -a=<ADM_TLS_USER>"  # 0.3.595
+echo -e "\tSite SRE administrator, default is user running script\n"
+echo    "   --file <FILENAME>, -f <FILENAME>, --filename=<FILENAME>, -f=<FILENAME>"                    # 0.3.595
+echo -e "\tPath and file on system '<path>/<file_name>'\n"
+echo    "   --user_home <USER_HOME>, -U <USER_HOME>, --user_home=<USER_HOME>, -U=<USER_HOME>"          # 0.3.595
+echo -e "\tLocation of user home directory (default '${DEFAULT_USER_HOME}')\n"
+echo    "   --ssh_user <SSH_USER>, -S <SSH_USER>, --ssh_user=<SSH_USER>, -S=<SSH_USER>"                # 0.3.595
+echo -e "\tUser (default '${DEFAULT_SSH_USER}')\n"
+echo    "   --message <MESSAGE_FILE>, -m <MESSAGE_FILE>, --message=<MESSAGE_FILE>, -m=<MESSAGE_FILE>"  # 0.3.595
+echo -e "\tName of file that stores Pimoroni Scroll-pHAT(-HD) message\n\t(default '${DEFAULT_MESSAGE_FILE}')"
+#                                                                                           # 0.3.579
+echo    "   REMOTE_HOST"                                                                    # 0.3.579
 echo -e "\tRemote host to copy certificates to (default '${DEFAULT_REMOTE_HOST}')\n"        # 0.3.579
-echo    "   WORKING_DIRECTORY"                                                            # 0.3.579
+echo    "   WORKING_DIRECTORY"                                                              # 0.3.579
 echo -e "\tAbsolute path for working directory (default '${DEFAULT_WORKING_DIRECTORY}')\n"  # 0.3.579
-echo    "   CERT_DAEMON_DIR"                                                              # 0.3.579
+echo    "   CERT_DAEMON_DIR"                                                                # 0.3.579
 echo -e "\tdockerd certification directory (default '${DEFAULT_CERT_DAEMON_DIR}')"          # 0.3.579
 
 ###  Production standard 6.3.547  Architecture tree
@@ -287,22 +268,22 @@ echo    "│   ├── ca.pem                             <-- User tlscacert o
 echo    "│   ├── cert.pem                           <-- Symbolic link to user tlscert"
 echo    "│   ├── key.pem                            <-- Symbolic link to user tlskey"
 echo    "│   ├── docker-ca/                         <-- Working directory to create certs"
-echo    "│   │   ├── .private/                      "                                       # 3.539
-echo    "│   │   │   └── ca-priv-key.pem            <-- Current site CA Private Key"        # 3.539
-echo    "│   │   ├── ca.pem                         <-- Current site CA cert"               # 3.539
-echo    "│   │   ├── hosts/                         <-- Directory for hostnames"            # 3.539
-echo    "│   │   │   └── <HOST>/                    <-- Directory to store host certs"      # 3.539
-echo    "│   │   │      ├── ca.pem                  <-- CA Cert"                            # 3.542
-echo    "│   │   │      ├── <HOST>-cert.pem         <-- public key (default: cert.pem)"     # 3.547
-echo    "│   │   │      └── <HOST>-priv-key.pem     <-- private key (default: key.pem)"     # 3.547
-echo    "│   │   ├── site/                          <-- Directory to store site certs"      # 3.539
-echo    "│   │   │   ├── ca.pem                     <-- CA Cert"                            # 3.544
-echo    "│   │   │   └── ca-priv-key.pem            <-- CA Private Key"                     # 3.544
-echo    "│   │   ├── users/                         <-- Directory for users"                # 3.539
-echo    "│   │   │   └── <USER>/                    <-- Directory to store user certs"      # 3.539
-echo    "│   │   │      ├── ca.pem                  <-- CA Cert"                            # 3.544
-echo    "│   │   │      ├── user-cert.pem           <-- public key"                         # 3.546
-echo    "│   │   │      └── user-priv-key.pem       <-- private key"                        # 3.546
+echo    "│   │   ├── .private/                      "                                       # 6.3.539
+echo    "│   │   │   └── ca-priv-key.pem            <-- Current site CA Private Key"        # 6.3.539
+echo    "│   │   ├── ca.pem                         <-- Current site CA cert"               # 6.3.539
+echo    "│   │   ├── hosts/                         <-- Directory for hostnames"            # 6.3.539
+echo    "│   │   │   └── <HOST>/                    <-- Directory to store host certs"      # 6.3.539
+echo    "│   │   │      ├── ca.pem                  <-- CA Cert"                            # 6.3.542
+echo    "│   │   │      ├── <HOST>-cert.pem         <-- public key (default: cert.pem)"     # 6.3.547
+echo    "│   │   │      └── <HOST>-priv-key.pem     <-- private key (default: key.pem)"     # 6.3.547
+echo    "│   │   ├── site/                          <-- Directory to store site certs"      # 6.3.539
+echo    "│   │   │   ├── ca.pem                     <-- CA Cert"                            # 6.3.544
+echo    "│   │   │   └── ca-priv-key.pem            <-- CA Private Key"                     # 6.3.544
+echo    "│   │   ├── users/                         <-- Directory for users"                # 6.3.539
+echo    "│   │   │   └── <USER>/                    <-- Directory to store user certs"      # 6.3.539
+echo    "│   │   │      ├── ca.pem                  <-- CA Cert"                            # 6.3.544
+echo    "│   │   │      ├── user-cert.pem           <-- public key"                         # 6.3.546
+echo    "│   │   │      └── user-priv-key.pem       <-- private key"                        # 6.3.546
 echo    "│   ├── trust/                             <-- Docker Content Trust (DCT)"
 echo    "│   │   ├── private/                       <-- Notary Canonical Root Key ID"
 echo    "│   │   │                                      (DCT Root Key)"
@@ -325,9 +306,9 @@ echo    "/etc/ "
 echo    "├── docker/ "
 echo    "│   ├── certs.d/                           <-- Host docker cert directory"
 echo    "│   │   ├── daemon/                        <-- Daemon cert directory"
-echo    "│   │   │   ├── ca.pem                     <-- CA Cert"                            # 3.542
-echo    "│   │   │   ├── <HOST>-cert.pem            <-- public key (default: cert.pem)"     # 3.547
-echo    "│   │   │   └── <HOST>-priv-key.pem        <-- private key (default: key.pem)"     # 3.547
+echo    "│   │   │   ├── ca.pem                     <-- CA Cert"                            # 6.3.542
+echo    "│   │   │   ├── <HOST>-cert.pem            <-- public key (default: cert.pem)"     # 6.3.547
+echo    "│   │   │   └── <HOST>-priv-key.pem        <-- private key (default: key.pem)"     # 6.3.547
 echo    "│   │   ├── <REGISTRY_HOST>:<REGISTRY_PORT>/ < Registry cert directory"
 echo    "│   │   │   └── ca.crt                     <-- Daemon registry domain cert"
 echo    "│   │   ├── <REGISTRY_HOST>:<REGISTRY_PORT>/ < Registry cert directory"
@@ -414,37 +395,37 @@ echo -e "\n${BOLD}DOCUMENTATION${NORMAL}"
 echo    "   ${UNDERLINE}https://github.com/BradleyA/${NORMAL}   <<URL to online repository README>>"  # 0.3.583
 
 echo -e "\n${BOLD}EXAMPLES${NORMAL}"
-echo -e "   <<description about code example>>\n\t${BOLD}${COMMAND_NAME} <<code example>>${NORMAL}\n" # 3.550
-echo -e "   <<description about code example>>\n\t${BOLD}${COMMAND_NAME}${NORMAL}\n"        # 3.550
-echo    "   To loop through a list of hosts a user could use, cluster-command.sh."          # 3.550
-echo    "   An administrator may receive password and/or passphrase prompts from a"         # 3.550
-echo    "   remote systen; running the following may stop the prompts."                     # 3.550
-echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<REMOTE_HOST>${NORMAL}\n"                            # 3.550
-echo    "   or using the IP address"                                                          # 3.550
-echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<192.168.x.x>${NORMAL}\n"                            # 3.550
-echo    "   If that does not resolve the prompting challenge then review man pages for"     # 3.550
-echo    "   ssh-agent and ssh-add."                                                         # 3.550
+echo -e "   <<description about code example>>\n\t${BOLD}${COMMAND_NAME} <<code example>>${NORMAL}\n" # 0.3.550
+echo -e "   <<description about code example>>\n\t${BOLD}${COMMAND_NAME}${NORMAL}\n"        # 0.3.550
+echo    "   To loop through a list of hosts a user could use, cluster-command.sh."          # 0.3.550
+echo    "   An administrator may receive password and/or passphrase prompts from a"         # 0.3.550
+echo    "   remote systen; running the following may stop the prompts."                     # 0.3.550
+echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<REMOTE_HOST>${NORMAL}\n"                          # 0.3.550
+echo    "   or using the IP address"                                                        # 0.3.550
+echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<192.168.x.x>${NORMAL}\n"                          # 0.3.550
+echo    "   If that does not resolve the prompting challenge then review man pages for"     # 0.3.550
+echo    "   ssh-agent and ssh-add."                                                         # 0.3.550
 echo    "   (${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command ${NORMAL})"  # 0.3.583
-echo -e "\t${BOLD}cluster-command.sh special '${COMMAND_NAME}'${NORMAL}\n"                  # 3.550
+echo -e "\t${BOLD}cluster-command.sh special '${COMMAND_NAME}'${NORMAL}\n"                  # 0.3.550
 
-echo -e "\n${BOLD}SEE ALSO${NORMAL}"                                                        # 3.550
+echo -e "\n${BOLD}SEE ALSO${NORMAL}"                                                        # 0.3.550
 echo    "   ${BOLD}cluster-command.sh${NORMAL} (${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command ${NORMAL})"  # 0.3.583
 echo    "   ${BOLD}<command>${NORMAL} (${UNDERLINE}<URL> ${NORMAL})"
 echo    "   ${BOLD}<command>${NORMAL} (${UNDERLINE}<URL> ${NORMAL})"
 
-echo -e "\n${BOLD}AUTHOR${NORMAL}"                                                          # 3.550
-echo    "   ${COMMAND_NAME} was written by Bradley Allen <allen.bradley@ymail.com>"         # 3.550
+echo -e "\n${BOLD}AUTHOR${NORMAL}"                                                          # 0.3.550
+echo    "   ${COMMAND_NAME} was written by Bradley Allen <allen.bradley@ymail.com>"         # 0.3.550
 
-echo -e "\n${BOLD}REPORTING BUGS${NORMAL}"                                                  # 3.550
+echo -e "\n${BOLD}REPORTING BUGS${NORMAL}"                                                  # 0.3.550
 echo    "   Report ${COMMAND_NAME} bugs ${UNDERLINE}https://github.com/BradleyA/user-files/issues/new/choose ${NORMAL}"  # 0.3.583
 
-###  Production standard 5.3.559 Copyright                                            # 3.559
-echo -e "\n${BOLD}COPYRIGHT${NORMAL}"                                                       # 3.550
-echo    "   Copyright (c) 2020 Bradley Allen"                                               # 3.550
-echo    "   MIT License is online in the repository as a file named LICENSE"          # 3.559
+###  Production standard 5.3.559 Copyright                                            # 5.3.559
+echo -e "\n${BOLD}COPYRIGHT${NORMAL}"
+echo    "   Copyright (c) 2020 Bradley Allen"
+echo    "   MIT License is online in the repository as a file named LICENSE"          # 5.3.559
 
-echo -e "\n${BOLD}HISTORY${NORMAL}"                                                         # 3.550
-echo    "   As of . . .  "                                                                  # 3.550
+echo -e "\n${BOLD}HISTORY${NORMAL}"                                                         # 0.3.550
+echo    "   As of . . .  "                                                                  # 0.3.550
 }
 
 #    Date and time function ISO 8601
