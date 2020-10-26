@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.604.976  2020-10-25T22:36:26.429583-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.603  
+# 	   template/template.sh -->   add Loop through hosts in ${SYSTEMS_FILE} file example  
 # 	template/template.sh  3.603.975  2020-10-25T22:27:21.520959-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.602  
 # 	   template/template.sh -->   testing  
 # 	template/template.sh  3.602.974  2020-10-25T22:24:26.939673-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.601  
@@ -618,6 +620,18 @@ if [[ "${1}" == -* ]] || [[ "${1}" == "help" ]] || [[ "${1}" == "usage" ]] || [[
   echo -e "    For more information:\n${BOLD}${YELLOW}    ${UNDERLINE}https://github.com/BradleyA/git-TEST-commit-automation/tree/master/hooks#git-test-commit-automation------${NORMAL}"  # 0.3.583
   exit 1
 fi
+
+#    Loop through hosts in ${SYSTEMS_FILE} file
+REMOTE_COMMAND="find ~/.. 2>/dev/null -type d -name '.git' -print | sed 's/^.*\.\./   \~/' | sed 's/\/\.git//'"
+REMOTEHOST=$(grep -v "#" "${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE}")
+for NODE in ${REMOTEHOST} ; do
+  echo -e "\n${BOLD}  -->  ${CYAN}${NODE}${NORMAL}    ->${PURPLE}${REMOTE_COMMAND}${WHITE}<-"
+  if [[ "${LOCALHOST}" != "${NODE}" ]] ; then
+    ssh -t "${USER}"@"${NODE}" "echo -e '${BOLD}${YELLOW}\c' ; ${REMOTE_COMMAND} ; echo -e '${NORMAL}\c'"
+  else
+    eval "echo -e '${BOLD}${YELLOW}\c' ; ${REMOTE_COMMAND} ; echo -e '${NORMAL}\c'"
+  fi
+done
 
 #    Test <REGISTRY_PORT> for integer
 if ! [[ "${REGISTRY_PORT}" =~ ^[0-9]+$ ]] ; then       #  requires [[   ]] or  [: =~: binary operator expected
