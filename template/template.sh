@@ -1,12 +1,10 @@
 #!/bin/bash
+# 	template/template.sh  3.603.975  2020-10-25T22:27:21.520959-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.602  
+# 	   template/template.sh -->   testing  
 # 	template/template.sh  3.602.974  2020-10-25T22:24:26.939673-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.601  
 # 	   template/template.sh -->   Production standard 7.3.602 Default variable value  
-# 	template/template.sh  3.601.973  2020-10-24T13:56:23.428262-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.600  
-# 	   template/template.sh -->   testing  
 # 	template/template.sh  3.600.972  2020-10-24T13:52:00.309435-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.599  
 # 	   template/template.sh -->   clean up shellcheck  
-# 	template/template.sh  3.599.971  2020-10-24T13:40:41.703582-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.598  
-# 	   template/template.sh -->   testing  
 # 	template/template.sh  3.596.968  2020-10-24T13:19:57.727095-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.595  
 # 	   template/template.sh -->   Production standard 9.3.596 Parse CLI options and arguments  
 # 	template/template.sh  3.595.967  2020-10-24T11:00:54.907897-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.594-8-g0b4870f  
