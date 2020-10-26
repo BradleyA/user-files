@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.602.974  2020-10-25T22:24:26.939673-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.601  
+# 	   template/template.sh -->   Production standard 7.3.602 Default variable value  
 # 	template/template.sh  3.601.973  2020-10-24T13:56:23.428262-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.600  
 # 	   template/template.sh -->   testing  
 # 	template/template.sh  3.600.972  2020-10-24T13:52:00.309435-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.599  
@@ -61,7 +63,7 @@ PURPLE=$(tput setaf 5)
 CYAN=$(tput   setaf 6)
 WHITE=$(tput  setaf 7)
 
-###  Production standard 7.0 Default variable value
+###  Production standard 7.3.602 Default variable value
 DEFAULT_ADD_TEST_CASE="NO"
 DEFAULT_ADM_TLS_USER="${USER}"
 DEFAULT_CLUSTER="us-tx-cluster-1/"
@@ -450,7 +452,7 @@ LOCALHOST=$(hostname -f)
 #    Assumptions for the next two lines of code:  The second line in this script includes the script path & name as the second item and
 #    the script version as the third item separated with space(s).  The tool I use is called 'markit'. See example line below:
 # 	template/template.sh  3.517.783  2019-09-13T18:20:42.144356-05:00 (CDT)  https://github.com/BradleyA/user-files.git  uadmin  one-rpi3b.cptx86.com 3.516  
-SCRIPT_NAME=$(head -2 "${0}" | awk '{printf $2}')  #  Different from ${COMMAND_NAME}=$(echo "${0}" | sed 's/^.*\///'), SCRIPT_NAME = includes Git repository directory and can be used any where in script (for dev, test teams)
+SCRIPT_NAME=$(head -2 "${0}" | awk '{printf $2}')  #  Different from ${COMMAND_NAME}=$(echo "${0}" | sed 's/^.*\///'), SCRIPT_NAME = includes Git repository directory and can be used anywhere in script (for dev, test teams)
 SCRIPT_VERSION=$(head -2 "${0}" | awk '{printf $3}')
 if [[ "${SCRIPT_NAME}" == "" ]] ; then SCRIPT_NAME="${0}" ; fi
 if [[ "${SCRIPT_VERSION}" == "" ]] ; then SCRIPT_VERSION="v?.?" ; fi
@@ -528,20 +530,33 @@ fi
 
 ###
 
-#    Check if ${CLUSTER} directory is on system
-if ! [[ -d "${DATA_DIR}"/"${CLUSTER}" ]] ; then
-  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Cluster directory name, ${CLUSTER}, not found." 1>&2
-  exit 1
-fi
-
+###  Production standard 7.3.602 Default variable value
+#    Order of precedence: CLI argument, environment variable, default code
+if [[ "${CLUSTER}" == "" ]] ; then CLUSTER="${DEFAULT_CLUSTER}" ; fi
+if [[ "${DATA_DIR}" == "" ]] ; then DATA_DIR="${DEFAULT_DATA_DIR}" ; fi
+if [[ "${SYSTEMS_FILE}" == "" ]] ; then SYSTEMS_FILE="${DEFAULT_SYSTEMS_FILE}" ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  CLUSTER >${CLUSTER}< DATA_DIR >${DATA_DIR}< SYSTEMS_FILE >${SYSTEMS_FILE}< PATH >${PATH}<" 1>&2 ; fi
+#
 #    Check if ${DATA_DIR} directory is on system
 if ! [[ -d "${DATA_DIR}" ]] ; then
   new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Path to cluster data directory, ${DATA_DIR}, not found." 1>&2
   exit 1
 fi
-
+#
+#    Check if ${CLUSTER} directory is on system
+if ! [[ -d "${DATA_DIR}"/"${CLUSTER}" ]] ; then
+  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Cluster directory name, ${CLUSTER}, not found." 1>&2
+  exit 1
+fi
+#
+#    Check if ${SYSTEMS_FILE} file contains /
+if [[  "${SYSTEMS_FILE}" == *"/"* ]] ; then
+  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  SYSTEMS filename, ${SYSTEMS_FILE}, includes a '/'." 1>&2
+  exit 1
+fi
+#
 #    Check if ${SYSTEMS_FILE} file is on system, one FQDN or IP address per line for all hosts in cluster
-if ! [[ -e ${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE} ]] || ! [[ -s ${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE} ]] ; then
+if ! [[ -e "${DATA_DIR}"/"${CLUSTER}"/"${SYSTEMS_FILE}" ]] || ! [[ -s "${DATA_DIR}"/"${CLUSTER}"/"${SYSTEMS_FILE}" ]] ; then
   new_message "${LINENO}" "${YELLOW}WARN${WHITE}" "  Name of systems file, ${SYSTEMS_FILE} not found or empty.  Creating ${SYSTEMS_FILE} file and including local host.  Edit ${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE} file and add additional hosts that are in the cluster." 1>&2
   echo -e "###     List of hosts used by cluster-command.sh & create-message.sh"  > "${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE}"
   echo -e "#       One FQDN or IP address per line for all hosts in cluster" > "${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE}"
