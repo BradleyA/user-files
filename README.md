@@ -81,14 +81,12 @@ General user files, dot files, with a few special tweeks to make my system time 
 ----
 
 ## Description
-
 **template directory**, there are a few template files (sh,py) that include **production standards** that I designed as best practices when creating new scripts.  When creating a new script I merge sections of code needed from a template file.  Some of the production standards are --help, DEBUG, log format, shellcheck, Documentation Language, Copyright, Architecture tree, Default variable value, --usage, and Parse CLI options and arguments.  When a production standard is changed it's verson number is updated with the git tag version number.  This allows scripts in development, test, and production to be maintianed with the latest production standard verson.
 
 [Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
 
 ## Clone
-
-To clone, change directory to the location you want to download the scripts (example: cd ~/github).  Use git to pull or clone these files into the directory. If you do not have git then enter; "sudo apt-get install git" if using Ubuntu. On the GitHub page of this script use the "HTTPS clone URL" with the 'git clone' command.
+To Install, change into a directory that you want to download the scripts. Use git to pull or clone these scripts into the directory. If you do not have Git installed then enter; "sudo apt-get install git" if using Debian/Ubuntu. Other Linux distribution install methods can be found here: https://git-scm.com/download/linux. On the GitHub page of this script use the "HTTPS clone URL" with the 'git clone' command.
 
     git clone https://github.com/BradleyA/user-files.git
     cd user-files
@@ -106,7 +104,6 @@ To copy/over-write dot files into your home directory enter the following steps.
 [Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
 
 ## Install a File
-
 To download the latest commit of one of these files, for example .gitignore, change to the location you want to download.  If in sub-directory on Github include the directory; example   FILEX=bin/term-layout.sh
 
     FILEX=.gitignore
@@ -115,7 +112,6 @@ To download the latest commit of one of these files, for example .gitignore, cha
 [Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
 
 ## Files
-
 .bash_aliases
 
 .bashrc
