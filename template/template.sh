@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.606.981  2020-11-12T12:49:46.379781-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.605-3-gbc5e651  
+# 	   template/template.sh -->   Production standard 9.3.606 Parse CLI options and arguments  
 # 	template/template.sh  3.605.977  2020-10-29T22:20:16.180284-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.604  
 # 	   template/template.sh -->   Production standard 9.3.605 Parse CLI options and arguments  
 # 	template/template.sh  3.604.976  2020-10-25T22:36:26.429583-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.603  
@@ -480,7 +482,7 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Setting USE
 #    DEBUG
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Name_of_command >${YELLOW}${SCRIPT_NAME}${WHITE}< Name_of_arg1 >${YELLOW}${1}${WHITE}< Name_of_arg2 >${YELLOW}${2}${WHITE}< Name_of_arg3 >${YELLOW}${3}${WHITE}<  Version of bash ${YELLOW}${BASH_VERSION}${WHITE}" 1>&2 ; fi  #  2.3.578
 
-###  Production standard 9.3.605 Parse CLI options and arguments
+###  Production standard 9.3.606 Parse CLI options and arguments
 while [[ "${#}" -gt 0 ]] ; do
   case "${1}" in
     --help|-help|help|-h|h|-\?)  display_help | more ; exit 0 ;;
@@ -519,7 +521,7 @@ while [[ "${#}" -gt 0 ]] ; do
     -U|--user_home)  if [[ "${2}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; USER_HOME=${2} ; shift 2 ;; # 9.3.558  9.3.561  9.3.562
     -U=*|--user_home=*)  USER_HOME="${1#*=}" ; if [[ "${USER_HOME}" == "" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi ; shift  ;;  # 9.3.605
 #
-    *) echo -e "\n${BOLD}    Invalid option, ${YELLOW}${1}${WHITE}, try  ${YELLOW}${COMMAND_NAME} --usage${NORMAL}\n" ; exit 1 ; ;; # 9.3.596
+    *) echo -e "\n${BOLD}    Invalid option, ${YELLOW}${1}${WHITE}, try ${YELLOW}--usage${NORMAL}\n" ; exit 1 ; ;; # 9.3.606
 # OR
     *) break ;;
   esac
