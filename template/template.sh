@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.611.986  2020-11-23T14:12:14.414609-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.610  
+# 	   template/template.sh -->   clean up shellcheck issue  
 # 	template/template.sh  3.610.985  2020-11-23T13:55:57.085441-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.609  
 # 	   template/template.sh -->   Production standard 0.3.610 --help  
 # 	template/template.sh  3.609.984  2020-11-23T13:14:47.525499-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.608  
@@ -544,15 +546,6 @@ while [[ "${#}" -gt 0 ]] ; do
 done
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... ADM_TLS_USER >${YELLOW}${ADM_TLS_USER}${WHITE}< CLUSTER >${YELLOW}${CLUSTER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}< FILE_NAME >${YELLOW}${FILE_NAME}${WHITE}< SSH_USER >${YELLOW}${SSH_USER}${WHITE}< USER_HOME >${YELLOW}${USER_HOME}${WHITE}<" 1>&2 ; fi
 
-#    No --help  # 0.3.610
-if [[ "${1}" != "" ]] ; then
-  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  ${SCRIPT_NAME} does not support arguements." 1>&2
-  echo -e "    ${BOLD}For more information:\n    ${UNDERLINE}${BOLD}${YELLOW}https://github.com/BradleyA/git-TEST-commit-automation/blob/master/hooks/README.md\n${NORMAL}"  # 0.3.610
-  exit 1
-fi
-
-###
-
 ###  Production standard 7.3.602 Default variable value
 #    Order of precedence: CLI argument, environment variable, default code
 if [[ "${CLUSTER}" == "" ]] ; then CLUSTER="${DEFAULT_CLUSTER}" ; fi
@@ -636,6 +629,13 @@ if [ "$1" == "--version" ] || [ "$1" == "-version" ] || [ "$1" == "version" ] ||
   exit 0
 fi
 
+#    No --help  # 0.3.610
+if [[ "${1}" != "" ]] ; then
+  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  ${SCRIPT_NAME} does not support arguements." 1>&2
+  echo -e "    ${BOLD}For more information:\n    ${UNDERLINE}${BOLD}${YELLOW}https://github.com/BradleyA/git-TEST-commit-automation/blob/master/hooks/README.md\n${NORMAL}"  # 0.3.610
+  exit 1
+fi
+
 #    This script does not support -* or help or usage or version  0.3.610
 if [[ "${1}" == -* ]] || [[ "${1}" == "help" ]] || [[ "${1}" == "usage" ]] || [[ "${1}" == "version" ]]  ; then
   new_message "${LINENO}" "${RED}ERROR${WHITE}" "  Option, ${YELLOW}${1}${WHITE}, is not supported with ${SCRIPT_NAME}." 1>&2
@@ -650,7 +650,7 @@ REMOTEHOST=$(grep -v "#" "${DATA_DIR}/${CLUSTER}/${SYSTEMS_FILE}")
 for NODE in ${REMOTEHOST} ; do
   echo -e "\n${BOLD}  -->  ${CYAN}${NODE}${NORMAL}    ->${PURPLE}${REMOTE_COMMAND}${WHITE}<-"
   if [[ "${LOCALHOST}" != "${NODE}" ]] ; then
-    ssh -t "${USER}"@"${NODE}" "echo -e '${BOLD}${YELLOW}\c' ; ${REMOTE_COMMAND} ; echo -e '${NORMAL}\c'"
+    ssh -t "${USER}"@"${NODE}" 'echo -e "${BOLD}${YELLOW}\c" ; ${REMOTE_COMMAND} ; echo -e "${NORMAL}\c"'
   else
     eval "echo -e '${BOLD}${YELLOW}\c' ; ${REMOTE_COMMAND} ; echo -e '${NORMAL}\c'"
   fi
