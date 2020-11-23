@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.608.983  2020-11-23T13:09:11.509537-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.607  
+# 	   template/template.sh -->   Production standard 9.3.608 Parse CLI options and arguments  
 # 	template/template.sh  3.607.982  2020-11-18T15:42:54.929092-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.606  
 # 	   template/template.sh -->   Production standard 9.3.607 Parse CLI options and arguments  
 # 	template/template.sh  3.606.981  2020-11-12T12:49:46.379781-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.605-3-gbc5e651  
@@ -484,7 +486,7 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Setting USE
 #    DEBUG
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Name_of_command >${YELLOW}${SCRIPT_NAME}${WHITE}< Name_of_arg1 >${YELLOW}${1}${WHITE}< Name_of_arg2 >${YELLOW}${2}${WHITE}< Name_of_arg3 >${YELLOW}${3}${WHITE}<  Version of bash ${YELLOW}${BASH_VERSION}${WHITE}" 1>&2 ; fi  #  2.3.578
 
-###  Production standard 9.3.607 Parse CLI options and arguments
+###  Production standard 9.3.608 Parse CLI options and arguments
 while [[ "${#}" -gt 0 ]] ; do
   case "${1}" in
     --help|-help|help|-h|h|-\?)  display_help | more ; exit 0 ;;
@@ -510,6 +512,14 @@ while [[ "${#}" -gt 0 ]] ; do
         #    Check if option (-) is next not FILE_NAME # 9.3.558
         if [[ ${2:0:1} == "-" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi # 9.3.558  9.3.561  9.3.562  9.3.607
         FILE_NAME=${2} ; shift 2 ; fi ;;  # 9.3.596
+    -f=*|--filename=*)  if [[ "${CLI_OPTION}" != "" ]] ; then echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1  # 9.3.608
+      else CLI_OPTION="f"  # 9.3.608
+        FILE_NAME="${1#*=}"  # 9.3.608
+        #    Check if FILE_NAME is missing.  # 9.3.608
+        if [[ "${FILE_NAME}" == "" ]]    ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi  # 9.3.608
+        #    Check if option (-) is next not FILE_NAME  # 9.3.608
+        if [[ ${FILE_NAME:0:1} == "-" ]] ; then echo -e "\n${BOLD}    Argument for ${YELLOW}${1}${WHITE} is not found on command line.${NORMAL}\n" ; exit 1 ; fi  # 9.3.608
+        shift 2 ; fi ;;  # 9.3.608
     --hooks|-hooks)  ALL_TEST_CASES="YES" ; shift ;;
     -n|--none)  if [[ "${CLI_OPTION}" != "" ]] ; then echo -e "\n${BOLD}    Only one of these option -a, --all, -c, --clean, -f, --filename, -n, or --none can be selected.${NORMAL}\n" ; exit 1 # 18  # 9.3.596
       else CLI_OPTION="n" ; shift ; fi ;; # 9.3.596
