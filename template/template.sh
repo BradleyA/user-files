@@ -1,10 +1,10 @@
 #!/bin/bash
+# 	template/template.sh  3.612.988  2020-11-23T14:15:57.223050-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.611-1-gb649444  
+# 	   template/template.sh -->   testing changes  
 # 	template/template.sh  3.611.986  2020-11-23T14:12:14.414609-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.610  
 # 	   template/template.sh -->   clean up shellcheck issue  
 # 	template/template.sh  3.610.985  2020-11-23T13:55:57.085441-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.609  
 # 	   template/template.sh -->   Production standard 0.3.610 --help  
-# 	template/template.sh  3.609.984  2020-11-23T13:14:47.525499-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.608  
-# 	   template/template.sh -->   Production standard 0.3.609 --help  
 # 	template/template.sh  3.608.983  2020-11-23T13:09:11.509537-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.607  
 # 	   template/template.sh -->   Production standard 9.3.608 Parse CLI options and arguments  
 # 	template/template.sh  3.607.982  2020-11-18T15:42:54.929092-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.606  
@@ -31,8 +31,6 @@
 # 	   template/template.sh -->   added comments to help understand changes for Production standard 9.3.558   9.3.561  9.3.562  
 # 	template/template.sh  3.587.929  2020-08-23T11:50:58.361973-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.586-18-g583ce77  
 # 	   template/template.sh -->   updated Production standard 4.3.587 Documentation Language  
-# 	template/template.sh  3.583.907  2020-05-04T11:53:01.430625-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.582  
-# 	   template/template.sh -->   Production standard 0.3.583 --help   added UNDERLINE  
 # 	template/template.sh  3.578.896  2020-04-11T12:36:04.958108-05:00 (CDT)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.577-7-g6457d65  
 # 	   template/template.sh -->   Production standard 2.3.578 log format add color to version and line number   close #48 
 # 	template/template.sh  3.566.874  2020-01-29T12:15:34.809565-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.565  
