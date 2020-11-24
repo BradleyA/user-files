@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.613.989  2020-11-24T10:29:29.723868-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.612  
+# 	   template/template.sh -->   remove new_maessage requirement for No --help  
 # 	template/template.sh  3.612.988  2020-11-23T14:15:57.223050-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.611-1-gb649444  
 # 	   template/template.sh -->   testing changes  
 # 	template/template.sh  3.611.986  2020-11-23T14:12:14.414609-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.610  
@@ -629,7 +631,7 @@ fi
 
 #    No --help  # 0.3.610
 if [[ "${1}" != "" ]] ; then
-  new_message "${LINENO}" "${RED}ERROR${WHITE}" "  ${SCRIPT_NAME} does not support arguements." 1>&2
+  echo    "${LINENO}" "${RED}ERROR${WHITE}" "  Arguements and options are not supported." 1>&2  # 0.3.610
   echo -e "    ${BOLD}For more information:\n    ${UNDERLINE}${BOLD}${YELLOW}https://github.com/BradleyA/git-TEST-commit-automation/blob/master/hooks/README.md\n${NORMAL}"  # 0.3.610
   exit 1
 fi
