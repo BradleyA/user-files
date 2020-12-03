@@ -1,10 +1,8 @@
 #!/bin/bash
+# 	template/template.sh  3.614.990  2020-12-03T17:05:37.060693-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.613  
+# 	   template/template.sh -->   Production standard 1.3.614 DEBUG variable  Production standard 2.3.614 Log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)  
 # 	template/template.sh  3.613.989  2020-11-24T10:29:29.723868-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.612  
 # 	   template/template.sh -->   remove new_maessage requirement for No --help  
-# 	template/template.sh  3.612.988  2020-11-23T14:15:57.223050-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.611-1-gb649444  
-# 	   template/template.sh -->   testing changes  
-# 	template/template.sh  3.611.986  2020-11-23T14:12:14.414609-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.610  
-# 	   template/template.sh -->   clean up shellcheck issue  
 # 	template/template.sh  3.610.985  2020-11-23T13:55:57.085441-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.609  
 # 	   template/template.sh -->   Production standard 0.3.610 --help  
 # 	template/template.sh  3.608.983  2020-11-23T13:09:11.509537-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.607  
@@ -53,8 +51,7 @@
 #    MIT License is online in the repository as a file named LICENSE"         # 5.3.559
 ###  Production standard 3.0 shellcheck
 ###  Production standard 10.3.XXX EXIT TRAP      template/template.sh - add trap #37
-
-###  Production standard 1.3.550 DEBUG variable
+###  Production standard 1.3.614 DEBUG variable
 #    Order of precedence: environment variable, default code
 if [[ "${DEBUG}" == ""  ]] ; then DEBUG="0" ; fi   # 0 = debug off, 1 = debug on, 'export DEBUG=1', 'unset DEBUG' to unset environment variable (bash)
 if [[ "${DEBUG}" == "2" ]] ; then set -x    ; fi   # Print trace of simple commands before they are executed
@@ -161,7 +158,7 @@ echo    "command, 'unset DEBUG' to remove the exported information from the envi
 echo    "variable DEBUG.  You are on your own defining environment variables if"
 echo    "you are using other shells."
 
-###  Production standard 1.3.550 DEBUG variable                                             # 1.3.550
+###  Production standard 1.3.614 DEBUG variable
 echo    "   DEBUG           (default off '0')  The DEBUG environment variable can be set"   # 1.3.550
 echo    "                   to 0, 1, 2, 3, 4 or 5.  The setting '' or 0 will turn off"      # 1.3.550
 echo    "                   all DEBUG messages during execution of this script.  The"       # 1.3.550
@@ -474,23 +471,23 @@ if [[ "${SCRIPT_VERSION}" == "" ]] ; then SCRIPT_VERSION="v?.?" ; fi
 #    GID
 GROUP_ID=$(id -g)
 
-###  Production standard 2.3.578 Log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
+###  Production standard 2.3.614 Log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)
 new_message() {  #  $1="${LINENO}"  $2="DEBUG INFO ERROR WARN"  $3="message"
   get_date_stamp
-  echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${SCRIPT_NAME}[$$] ${BOLD}${BLUE}${SCRIPT_VERSION} ${PURPLE}${1}${NORMAL} ${USER} ${UID}:${GROUP_ID} ${BOLD}[${2}]${NORMAL}  ${3}"
+  echo -e "${NORMAL}${DATE_STAMP} ${LOCALHOST} ${BOLD}${CYAN}${SCRIPT_NAME}${NORMAL}[$$] ${BOLD}${BLUE}${SCRIPT_VERSION} ${PURPLE}${1}${NORMAL} ${USER} ${UID}:${GROUP_ID} ${BOLD}[${2}]${NORMAL}  ${3}"  # 2.3.614
 }
 
 #    INFO
-#	new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "  Started..." 1>&2
+#	new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "${BOLD}${CYAN}  Started...${NORMAL}" 1>&2  # 1.3.614
 #    Or
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "  Started..." 1>&2 ; fi  #  2.3.578
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "${BOLD}${CYAN}  Started...${NORMAL}" 1>&2 ; fi  # 1.3.614
 
 #    Added following code because USER is not defined in crobtab jobs
 if ! [[ "${USER}" == "${LOGNAME}" ]] ; then  USER=${LOGNAME} ; fi
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Setting USER to support crobtab...  USER >${YELLOW}${USER}${WHITE}<  LOGNAME >${YELLOW}${LOGNAME}${WHITE}<" 1>&2 ; fi  #  2.3.578
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}DEBUG${WHITE}" "  Setting USER to support crobtab...  USER >${YELLOW}${USER}${WHITE}<  LOGNAME >${YELLOW}${LOGNAME}${WHITE}<" 1>&2 ; fi  # 1.3.614
 
-#    DEBUG
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Name_of_command >${YELLOW}${SCRIPT_NAME}${WHITE}< Name_of_arg1 >${YELLOW}${1}${WHITE}< Name_of_arg2 >${YELLOW}${2}${WHITE}< Name_of_arg3 >${YELLOW}${3}${WHITE}<  Version of bash ${YELLOW}${BASH_VERSION}${WHITE}" 1>&2 ; fi  #  2.3.578
+#    DEBUG  # 1.3.614
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}DEBUG${WHITE}" "  Name_of_command >${YELLOW}${SCRIPT_NAME}${WHITE}< Name_of_arg1 >${YELLOW}${1}${WHITE}< Name_of_arg2 >${YELLOW}${2}${WHITE}< Name_of_arg3 >${YELLOW}${3}${WHITE}<  Version of bash ${YELLOW}${BASH_VERSION}${WHITE}" 1>&2 ; fi  # 1.3.614
 
 ###  Production standard 9.3.608 Parse CLI options and arguments
 while [[ "${#}" -gt 0 ]] ; do
@@ -544,14 +541,14 @@ while [[ "${#}" -gt 0 ]] ; do
     *)  break ;; # 9.3.607
   esac
 done
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... ADM_TLS_USER >${YELLOW}${ADM_TLS_USER}${WHITE}< CLUSTER >${YELLOW}${CLUSTER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}< FILE_NAME >${YELLOW}${FILE_NAME}${WHITE}< SSH_USER >${YELLOW}${SSH_USER}${WHITE}< USER_HOME >${YELLOW}${USER_HOME}${WHITE}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}DEBUG${WHITE}" "  Variable... ADM_TLS_USER >${YELLOW}${ADM_TLS_USER}${WHITE}< CLUSTER >${YELLOW}${CLUSTER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}< FILE_NAME >${YELLOW}${FILE_NAME}${WHITE}< SSH_USER >${YELLOW}${SSH_USER}${WHITE}< USER_HOME >${YELLOW}${USER_HOME}${WHITE}<" 1>&2 ; fi  # 1.3.614
 
 ###  Production standard 7.3.602 Default variable value
 #    Order of precedence: CLI argument, environment variable, default code
 if [[ "${CLUSTER}" == "" ]] ; then CLUSTER="${DEFAULT_CLUSTER}" ; fi
 if [[ "${DATA_DIR}" == "" ]] ; then DATA_DIR="${DEFAULT_DATA_DIR}" ; fi
 if [[ "${SYSTEMS_FILE}" == "" ]] ; then SYSTEMS_FILE="${DEFAULT_SYSTEMS_FILE}" ; fi
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  CLUSTER >${CLUSTER}< DATA_DIR >${DATA_DIR}< SYSTEMS_FILE >${SYSTEMS_FILE}< PATH >${PATH}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}DEBUG${WHITE}" "  CLUSTER >${CLUSTER}< DATA_DIR >${DATA_DIR}< SYSTEMS_FILE >${SYSTEMS_FILE}< PATH >${PATH}<" 1>&2 ; fi  # 1.3.614
 #
 #    Check if ${DATA_DIR} directory is on system
 if ! [[ -d "${DATA_DIR}" ]] ; then
@@ -588,13 +585,13 @@ if [[ "${CLUSTER}" == "" ]] ; then CLUSTER=${DEFAULT_CLUSTER} ; fi
 ADM_TLS_USER=${DEFAULT_USER}
 #    Order of precedence: environment variable, default code
 if [[ "${DATA_DIR}" == "" ]] ; then DATA_DIR=${DEFAULT_DATA_DIR} ; fi
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... CLUSTER >${YELLOW}${CLUSTER}${WHITE}< ADM_TLS_USER >${YELLOW}${ADM_TLS_USER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}DEBUG${WHITE}" "  Variable... CLUSTER >${YELLOW}${CLUSTER}${WHITE}< ADM_TLS_USER >${YELLOW}${ADM_TLS_USER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}<" 1>&2 ; fi  # 1.3.614
 
 ###  Example arguments (2)
 #    Order of precedence: CLI argument, default code
 OPTION1=${1:-default_value1}
 OPTION2=${2:-${DEFAULT_VALUE2}}
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... OPTION1 >${YELLOW}${OPTION1}${WHITE}< OPTION2 >${YELLOW}${OPTION2}${WHITE}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}DEBUG${WHITE}" "  Variable... OPTION1 >${YELLOW}${OPTION1}${WHITE}< OPTION2 >${YELLOW}${OPTION2}${WHITE}<" 1>&2 ; fi  # 1.3.614
 
 ###  Example arguments (3)
 ###  production standard 7.0 Default variable value
@@ -605,7 +602,7 @@ if [[ $# -ge  1 ]]  ; then CLUSTER=${1} ; elif [[ "${CLUSTER}" == "" ]] ; then C
 ADM_TLS_USER=${2:-${DEFAULT_USER}}
 #    Order of precedence: CLI argument, default code
 if [[ $# -ge  3 ]]  ; then DATA_DIR=${3} ; else DATA_DIR=${DEFAULT_DATA_DIR} ; fi
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Variable... CLUSTER >${YELLOW}${CLUSTER}${WHITE}< ADM_TLS_USER >${YELLOW}${ADM_TLS_USER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}<" 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}DEBUG${WHITE}" "  Variable... CLUSTER >${YELLOW}${CLUSTER}${WHITE}< ADM_TLS_USER >${YELLOW}${ADM_TLS_USER}${WHITE}< DATA_DIR >${YELLOW}${DATA_DIR}${WHITE}<" 1>&2 ; fi  # 1.3.614
 
 ###  Example arguments (4)
 #    Check arguement 1 xxx
@@ -674,7 +671,7 @@ fi
 #
 new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "  Operation finished..." 1>&2
 #    Or
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "DEBUG" "  Operation finished..." 1>&2 ; fi
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "${BOLD}${CYAN}  Operation finished...${NORMAL}" 1>&2 ; fi  # 1.3.614
 ###
 #    DO NOT USE CODE BELOW THIS LINE:
 #    This is here to stop shellcheck warnings: "appears unused. Verify it or export it."
