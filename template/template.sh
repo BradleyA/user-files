@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.615.991  2020-12-05T20:00:12.801340-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.614  
+# 	   template/template.sh -->   update SEE ALSO  
 # 	template/template.sh  3.614.990  2020-12-03T17:05:37.060693-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.613  
 # 	   template/template.sh -->   Production standard 1.3.614 DEBUG variable  Production standard 2.3.614 Log format (WHEN WHERE WHAT Version Line WHO UID:GID [TYPE] Message)  
 # 	template/template.sh  3.613.989  2020-11-24T10:29:29.723868-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.612  
@@ -115,7 +117,7 @@ echo    "   ${COMMAND_NAME} [--usage | -usage | -u]"
 echo    "   ${COMMAND_NAME} [--version | -version | -v]"
 }
 
-###  Production standard 0.3.610 --help
+###  Production standard 0.3.615 --help
 display_help() {
 display_usage
 #    Displaying help DESCRIPTION in English en_US.UTF-8, en.UTF-8, C.UTF-8
@@ -429,10 +431,22 @@ echo    "   ssh-agent and ssh-add."                                             
 echo    "   (${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command ${NORMAL})"  # 0.3.583
 echo -e "\t${BOLD}cluster-command.sh special '${COMMAND_NAME}'${NORMAL}\n"                  # 0.3.550
 
-echo -e "\n${BOLD}SEE ALSO${NORMAL}"                                                        # 0.3.550
-echo    "   ${BOLD}cluster-command.sh${NORMAL} (${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command ${NORMAL})"  # 0.3.583
-echo    "   ${BOLD}<command>${NORMAL} (${UNDERLINE}<URL> ${NORMAL})"
-echo    "   ${BOLD}<command>${NORMAL} (${UNDERLINE}<URL> ${NORMAL})"
+echo -e "\n${BOLD}SEE ALSO${NORMAL}"                                                                          #  0.3.615
+echo    "   ${BOLD}git-set-env-for-manual-test.sh${NORMAL}  sets EXAMPLES_DIRECTORY and"                      #  0.3.615
+echo -e "\tREPOSITORY_DIR_COUNT environment variables to manually test TEST cases"                            #  0.3.615
+echo -e "\t(${UNDERLINE}https://github.com/BradleyA/git-TEST-commit-automation/blob/master/hooks/README.md#description${NORMAL})\n"  #  0.3.615
+echo    "   ${BOLD}git-setup-TEST-cases.sh${NORMAL}  setup and update git-TEST-commit-automation"             #  0.3.615
+echo -e "\tfiles in <REPOSITORY-NAME>/hooks/ directory of current Git repository"                             #  0.3.615
+echo -e "\t(${UNDERLINE}https://github.com/BradleyA/git-TEST-commit-automation/blob/master/hooks/README.md#description${NORMAL})\n"  #  0.3.615
+echo    "   ${BOLD}git-uninstall-TEST-cases.sh${NORMAL}  uninstall git-TEST-commit-automation in"             #  0.3.615
+echo -e "\t<REPOSITORY-NAME>/hooks/ and <REPOSITORY-NAME>/TEST/<COMMIT_FILE>/ directories of"                 #  0.3.615
+echo -e "\tcurrent Git repository"                                                                            #  0.3.615
+echo -e "\t(${UNDERLINE}https://github.com/BradleyA/git-TEST-commit-automation/blob/master/hooks/README.md#description${NORMAL})\n"  #  0.3.615
+echo    "   ${BOLD}markit${NORMAL}  adds Git Verion Control information into files and git add, git commit,"  #  0.3.615
+echo -e "\tgit pushes them to GitHub, Bitbucket, and/or GitLab."                                              #  0.3.615
+echo -e "\t(${UNDERLINE}https://github.com/BradleyA/markit/blob/master/README.md#markit------${NORMAL})"      #  0.3.615
+echo -e "   ${BOLD}<command>${NORMAL} (${UNDERLINE}<URL> ${NORMAL})\n"                                        #  0.3.615
+echo    "   ${BOLD}<command>${NORMAL} (${UNDERLINE}<URL> ${NORMAL})"                                          #  0.3.615
 
 echo -e "\n${BOLD}AUTHOR${NORMAL}"                                                          # 0.3.550
 echo    "   ${COMMAND_NAME} was written by Bradley Allen <allen.bradley@ymail.com>"         # 0.3.550
