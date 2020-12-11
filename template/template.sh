@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.616.992  2020-12-11T12:11:08.159654-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.615  
+# 	   template/template.sh -->   typo  
 # 	template/template.sh  3.615.991  2020-12-05T20:00:12.801340-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.614  
 # 	   template/template.sh -->   update SEE ALSO  
 # 	template/template.sh  3.614.990  2020-12-03T17:05:37.060693-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.613  
@@ -429,7 +431,7 @@ echo -e "\t${BOLD}ssh-copy-id <TLS_USER>@<192.168.x.x>${NORMAL}\n"              
 echo    "   If that does not resolve the prompting challenge then review man pages for"     # 0.3.550
 echo    "   ssh-agent and ssh-add."                                                         # 0.3.550
 echo    "   (${UNDERLINE}https://github.com/BradleyA/Linux-admin/tree/master/cluster-command#cluster-command ${NORMAL})"  # 0.3.583
-echo -e "\t${BOLD}cluster-command.sh special '${COMMAND_NAME}'${NORMAL}\n"                  # 0.3.550
+echo -e "\t${BOLD}cluster-command.sh special '${COMMAND_NAME}'${NORMAL}"                    # 0.3.550
 
 echo -e "\n${BOLD}SEE ALSO${NORMAL}"                                                                          #  0.3.615
 echo    "   ${BOLD}git-set-env-for-manual-test.sh${NORMAL}  sets EXAMPLES_DIRECTORY and"                      #  0.3.615
@@ -562,7 +564,7 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}DEBUG${WHITE
 if [[ "${CLUSTER}" == "" ]] ; then CLUSTER="${DEFAULT_CLUSTER}" ; fi
 if [[ "${DATA_DIR}" == "" ]] ; then DATA_DIR="${DEFAULT_DATA_DIR}" ; fi
 if [[ "${SYSTEMS_FILE}" == "" ]] ; then SYSTEMS_FILE="${DEFAULT_SYSTEMS_FILE}" ; fi
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}DEBUG${WHITE}" "  CLUSTER >${CLUSTER}< DATA_DIR >${DATA_DIR}< SYSTEMS_FILE >${SYSTEMS_FILE}< PATH >${PATH}<" 1>&2 ; fi  # 1.3.614
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}DEBUG${WHITE}" "  CLUSTER >${BOLD}${CYAN}${CLUSTER}< DATA_DIR >${BOLD}${CYAN}${DATA_DIR}< SYSTEMS_FILE >${BOLD}${CYAN}${SYSTEMS_FILE}< PATH >${BOLD}${CYAN}${PATH}<" 1>&2 ; fi  # 1.3.614
 #
 #    Check if ${DATA_DIR} directory is on system
 if ! [[ -d "${DATA_DIR}" ]] ; then
@@ -683,7 +685,7 @@ if ! [[ "${UID}"  = 0 ]] ; then
 fi
 
 #
-new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "  Operation finished..." 1>&2
+new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "${BOLD}${CYAN}  Operation finished...${NORMAL}" 1>&2  # 1.3.614
 #    Or
 if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}INFO${WHITE}" "${BOLD}${CYAN}  Operation finished...${NORMAL}" 1>&2 ; fi  # 1.3.614
 ###
