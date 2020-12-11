@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.617.993  2020-12-11T14:29:10.619301-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.616  
+# 	   template/template.sh -->   typo  
 # 	template/template.sh  3.616.992  2020-12-11T12:11:08.159654-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.615  
 # 	   template/template.sh -->   typo  
 # 	template/template.sh  3.615.991  2020-12-05T20:00:12.801340-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.614  
@@ -564,7 +566,7 @@ if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}DEBUG${WHITE
 if [[ "${CLUSTER}" == "" ]] ; then CLUSTER="${DEFAULT_CLUSTER}" ; fi
 if [[ "${DATA_DIR}" == "" ]] ; then DATA_DIR="${DEFAULT_DATA_DIR}" ; fi
 if [[ "${SYSTEMS_FILE}" == "" ]] ; then SYSTEMS_FILE="${DEFAULT_SYSTEMS_FILE}" ; fi
-if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}DEBUG${WHITE}" "  CLUSTER >${BOLD}${CYAN}${CLUSTER}< DATA_DIR >${BOLD}${CYAN}${DATA_DIR}< SYSTEMS_FILE >${BOLD}${CYAN}${SYSTEMS_FILE}< PATH >${BOLD}${CYAN}${PATH}<" 1>&2 ; fi  # 1.3.614
+if [[ "${DEBUG}" == "1" ]] ; then new_message "${LINENO}" "${YELLOW}DEBUG${WHITE}" "  CLUSTER >${BOLD}${CYAN}${CLUSTER}${NORMAL}< DATA_DIR >${BOLD}${CYAN}${DATA_DIR}${NORMAL}< SYSTEMS_FILE >${BOLD}${CYAN}${SYSTEMS_FILE}${NORMAL}< PATH >${BOLD}${CYAN}${PATH}${NORMAL}<" 1>&2 ; fi  # 1.3.614
 #
 #    Check if ${DATA_DIR} directory is on system
 if ! [[ -d "${DATA_DIR}" ]] ; then
