@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.618.994  2020-12-13T13:39:13.713203-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.617  
+# 	   template/template.sh -->   typo  
 # 	template/template.sh  3.617.993  2020-12-11T14:29:10.619301-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.616  
 # 	   template/template.sh -->   typo  
 # 	template/template.sh  3.616.992  2020-12-11T12:11:08.159654-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.615  
@@ -424,6 +426,9 @@ echo    "   ${UNDERLINE}https://github.com/BradleyA/${NORMAL}   <<URL to online 
 echo -e "\n${BOLD}EXAMPLES${NORMAL}"
 echo -e "   <<description about code example>>\n\t${BOLD}${COMMAND_NAME} <<code example>>${NORMAL}\n" # 0.3.550
 echo -e "   <<description about code example>>\n\t${BOLD}${COMMAND_NAME}${NORMAL}\n"        # 0.3.550
+echo -e "   Mark tracked file(s) and push to remote Git repository\n\t${BOLD}${COMMAND_NAME}${NORMAL}\n" #  3.550
+echo -e "   Mark tracked and untracked files, directories, and files in untracked\n   directories\n\t${BOLD}${COMMAND_NAME} all${NORMAL}\n"  # 3.550
+echo -e "   Mark tracked file(s) but don't push to remote Git repository, only update\n   local repository\n\t${BOLD}export MARKITLOCAL=1 ; ${COMMAND_NAME} ; unset MARKITLOCAL${NORMAL}\n"  # 3.550
 echo    "   To loop through a list of hosts a user could use, cluster-command.sh."          # 0.3.550
 echo    "   An administrator may receive password and/or passphrase prompts from a"         # 0.3.550
 echo    "   remote systen; running the following may stop the prompts."                     # 0.3.550
