@@ -1,4 +1,6 @@
 #!/bin/bash
+# 	template/template.sh  3.619.995  2020-12-14T13:02:21.250659-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.618  
+# 	   template/template.sh -->   update Architecture tree for git-TEST-commit-automation  
 # 	template/template.sh  3.618.994  2020-12-13T13:39:13.713203-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.617  
 # 	   template/template.sh -->   typo  
 # 	template/template.sh  3.617.993  2020-12-11T14:29:10.619301-06:00 (CST)  https://github.com/BradleyA/user-files.git  master  uadmin  one-rpi3b.cptx86.com 3.616  
@@ -405,20 +407,35 @@ echo    "    └── docker.######.######/              <-- Root directory for
 echo    "                                               execution state files using"
 echo    "                                               user namespace"
 
-
 echo    "<GIT_RESPOITORY>/                      <-- <GIT_RESPOITORY>"
+echo    "├── hooks/                             <-- git-TEST-commit-automation solution"
+echo    "│   ├── bin/                           <-- git-TEST-commit-automation commands"
+echo    "│   ├── CHANGELOG.md                   <-- git-TEST-commit-automation chronolog"
+echo    "│   │                                      ical list of changes"
+echo    "│   ├── docs/                          <-- git-TEST-commit-automation documents"
+echo    "│   │                                      and tutorials"
+echo    "│   ├── EXAMPLES/                      <-- Default TEST cases"
+echo    "│   ├── images/                        <-- git-TEST-commit-automation images"
+echo    "│   ├── LICENSE                        <-- git-TEST-commit-automation license"
+echo    "│   ├── post-commit                    <-- Searches for TEST/<filename>/ sub-"
+echo    "│   │                                      directory If TRUE runs TEST/<file"
+echo    "│   │                                      name>/SA-setup.sh and/or FVT-setup.sh"
+echo    "│   │                                      then run test cases"
+echo    "│   ├── pre-commit                     <-- Creates ${REPOSITORY-NAME}/hooks/"
+echo    "│   │                                      COMMIT_FILE_LIST with commited files"
+echo    "│   └── README.md                      <-- git-TEST-commit-automation README"
 echo    "├── <FILE_NAME-1>                      <-- FILE_NAME-1 to test"
 echo    "└── TEST/                              <-- TEST case directory"
-echo    "    ├── <FILE_NAME-1>/                 <-- Test case directory for FILE_NAME-1"
-echo    "    │   ├── SA-setup.sh                <-- Test case SA-setup.sh script"
-echo    "    │   ├── SA-cleanup.sh              <-- Test case SA-cleanup.sh script"
-echo    "    │   ├── SA-shellcheck-001          <-- Test case SA-shellcheck-001"
+echo    "    ├── <FILE_NAME-1>/                 <-- TEST case directory for FILE_NAME-1"
+echo    "    │   ├── SA-setup.sh                <-- TEST case SA-setup.sh script"
+echo    "    │   ├── SA-cleanup.sh              <-- TEST case SA-cleanup.sh script"
+echo    "    │   ├── SA-shellcheck-001          <-- TEST case SA-shellcheck-001"
 echo    "    │   ├── SA-shellcheck-001.expected <-- Expected output file from"
-echo    "    │   │                                  test case SA-shellcheck-001 when"
+echo    "    │   │                                  TEST case SA-shellcheck-001 when"
 echo    "    │   │                                  testing <FILE_NAME-1>"
-echo    "    │   ├── SA-permission-775-001      <-- Test case SA-permission-775-001"
-echo    "    │   └── <TEST_CASE>/               <-- Other test cases for <FILE_NAME-1>"
-echo    "    └── <FILE_NAME-2>/                 <-- Test case directory for FILE_NAME-2"
+echo    "    │   ├── SA-permission-775-001      <-- TEST case SA-permission-775-001"
+echo    "    │   └── <TEST_CASE>/               <-- Other TEST cases for <FILE_NAME-1>"
+echo    "    └── <FILE_NAME-2>/                 <-- TEST case directory for FILE_NAME-2"
 
 echo -e "\n${BOLD}DOCUMENTATION${NORMAL}"
 echo    "   ${UNDERLINE}https://github.com/BradleyA/${NORMAL}   <<URL to online repository README>>"  # 0.3.583
