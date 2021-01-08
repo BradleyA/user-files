@@ -77,7 +77,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;37m\]`date +%d%H%M` ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00;36m\]@\[\033[01;33m\]\h\[\033[01;37m\]: \[\033[01;34m\]\w\[\033[01;37m\]\n     \$ '
+    PS1='\[\033[01;37m\]`date +%d[%H:%M]` ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00;36m\]@\[\033[01;33m\]\h\[\033[01;37m\]: \[\033[01;34m\]\w\[\033[01;37m\]\n     \$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h: \w     \$ '
 fi
