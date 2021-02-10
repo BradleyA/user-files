@@ -155,14 +155,14 @@ Please do contribute!  Issues and pull requests are welcome.  Thank you for your
 [Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
 
 #### Stars
-[![Stargazers repo roster for @BradleyA/XXXXX](https://reporoster.com/stars/BradleyA/XXXXX)](https://github.com/BradleyA/XXXXX/stargazers)
+[![Stargazers repo roster for @BradleyA/user-files](https://reporoster.com/stars/BradleyA/user-files)](https://github.com/BradleyA/user-files/stargazers)
 
-[Return to top](https://github.com/BradleyA/XXXXX/blob/master/README.md#XXXXX)
+[Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
 
 #### Forks
-[![Forkers repo roster for @BradleyA/XXXXX](https://reporoster.com/forks/BradleyA/XXXXX)](https://github.com/BradleyA/XXXXX/network/members)
+[![Forkers repo roster for @BradleyA/user-files](https://reporoster.com/forks/BradleyA/user-files)](https://github.com/BradleyA/user-files/network/members)
 
-[Return to top](https://github.com/BradleyA/XXXXX/blob/master/README.md#XXXXX)
+[Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
 
 #### Tested OS
 * Ubuntu 14.04.6 LTS (amd64,armv7l)
