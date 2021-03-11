@@ -50,7 +50,7 @@ Testing other links from other repositories:
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/pull/)
 [![GitHub pull-requests closed](https://img.shields.io/github/issues-pr-closed/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/pull/)
 
-#### Demo :star: :stars: :construction: :eyes: :octocat: :rotating_light: https://gist.github.com/rxaviers/7360908
+#### Demo :star: :stars: :construction: :eyes: :octocat: :warning: :memo: :penguin: :bulb:  https://gist.github.com/rxaviers/7360908
 
 ----
 
