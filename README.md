@@ -10,7 +10,6 @@
 
 [<img alt="GitHub Repo Clones" src="https://img.shields.io/static/v1?label=Clones&message=332&color=blueviolet">](https://github.com/BradleyA/user-files/blob/master/images/clone.table.md)
 [<img alt="GitHub Repo Clones" src="https://img.shields.io/static/v1?label=Repo_Clones&message=332&color=blueviolet">](https://github.com/BradleyA/user-files/blob/master/images/clone.table.md)
-[<img alt="GitHub Repo Clones" src="https://img.shields.io/static/v1?label=Repo Clones&message=332&color=blueviolet">](https://github.com/BradleyA/user-files/blob/master/images/clone.table.md)
 
 [<img alt="GitHub Repo Views" src="https://img.shields.io/static/v1?label=Repo Views&message=1592&color=blueviolet">](https://github.com/BradleyA/user-files/blob/master/images/view.table.md)
 
