@@ -147,7 +147,7 @@ To download the latest commit of one of these files, for example .gitignore, cha
 ----
 
 #### Contribute
-Please do contribute!  Issues and pull requests are welcome.  Thank you for your help improving software.
+Please do contribute!  Issues, comments, and pull requests are welcome.  Thank you for your help improving software.
 
 [Return to top](https://github.com/BradleyA/user-files/blob/master/README.md#user-files)
 
